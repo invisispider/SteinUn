@@ -6,63 +6,77 @@ import { collection, query, where, orderBy, serverTimestamp,
   onSnapshot, addDoc, doc, deleteDoc
 } from "firebase/firestore"
 const store = useStore()
-const newTodo = ref("");
+const newTodo = ref("")
 const Todos = ref([])
 const colRef = collection(firestoreDb, "todo_collection")
-
-const q = query(colRef, where("user", "==", store.username), orderBy("createdAt"))
+const listName = ref("")
+const q = query(colRef, orderBy("createdAt"))
 // real time collection data
-const killCupid = onSnapshot(q, (snapshot) => {
-  let todos = []
-  snapshot.docs.forEach((doc) => {
-    todos.push({ ...doc.data(), id: doc.id })
-  })
-  Todos.value = todos
-}, err => {
-  console.log(err.message)
-})
-
-
-const addTodo = () => {
-  if (store.username) {
-    addDoc(colRef, {
-      description: newTodo.value,
-      user: store.username,
-      createdAt: serverTimestamp(),
-    }).then(() => {
-      newTodo.value = ""
+const unsubSnap = onSnapshot(q, (snapshot) => {
+    let todos = []
+    snapshot.docs.forEach((doc) => {
+      todos.push({ ...doc.data(), id: doc.id })
     })
-  }
+    Todos.value = todos
+  }, err => console.log(err.message)
+)
+const showList = (list) => listName.value = list
+// const q = query(colRef, where("list", "==", listName.value), orderBy("createdAt"))
+// // real time collection data
+// const unsubSnap = onSnapshot(q, (snapshot) => {
+//   let todos = []
+//   snapshot.docs.forEach((doc) => {
+//     todos.push({ ...doc.data(), id: doc.id })
+//   })
+//   Todos.value = todos
+// }, err => {
+//   console.log(err.message)
+// })
+const addTodo = () => {
+  addDoc(colRef, {
+    description: newTodo.value,
+    list: listName.value,
+    createdAt: serverTimestamp(),
+  })
+  newTodo.value = ""
 }
 const removeTodo = (id) => {
-  if (store.username) {
-    const docRef = doc(firestoreDb, "todo_collection", id)
-    deleteDoc(docRef)
-  }
+  const docRef = doc(firestoreDb, "todo_collection", id)
+  deleteDoc(docRef)
 }
 onUnmounted(()=>{
-  killCupid()
+  if(unsubSnap) {
+    unsubSnap()
+  }
 })
 </script>
 <template>
   <div class="todo-list">
+    <button class="userButton btn-list-selector" @click.prevent="showList('')">Project</button>
+    <button class="userButton btn-list-selector" @click.prevent="showList('show_ideas')">Show Ideas</button>
+    <button class="userButton btn-list-selector" @click.prevent="showList('songs')">Songs</button>
+    <!-- <button class="userButton btn-list-selector" @click.prevent="showList('random')">Random</button> -->
+    <button class="userButton btn-list-selector" @click.prevent="showList('memo')">Memo</button>
     <form @submit.prevent="addTodo">
+      <h2>{{`list: ${listName}`}}</h2>
       <input v-model="newTodo" />
       <i class="material-icons">cruelty_free</i>
     </form>
     <div class="todo-title"><h2>unDoMe</h2></div>
-    <div class="todo-item" v-for="ado in Todos" :key="ado">
-      <a class="material-icons" @click.prevent="removeTodo(ado.id)">delete</a>
-      <span class="todo-desc">{{ ado.description }}</span>
-      <span class="todo-time">
-        {{ado.createdAt.toDate().toLocaleString("en-us", {
-            dateStyle: "short",
-            timeStyle: "short",
-            hour12: false,
-          })
-        }}
-      </span>
-    </div>
+    <template v-for="ado in Todos" :key="ado">
+      <div class="todo-item" v-if="ado.list==listName">
+        <a class="material-icons" @click.prevent="removeTodo(ado.id)">delete</a>
+        <span class="todo-desc">{{ ado.description }}</span>
+        <span class="todo-time">
+          {{ado&&ado.createdAt&&ado.createdAt.toDate&&ado.createdAt.toDate().toLocaleString("en-us", {
+              dateStyle: "short",
+              timeStyle: "short",
+              hour12: false,
+            })
+          }}
+        </span>
+      </div>
+    </template>
   </div>
 </template>
 <style lang="sass">
@@ -108,7 +122,6 @@ $section-gap: 160px
     justify-content: center
   form
     display: flex
-  i
     font-size: 2rem
 @media (min-width: 1024px)
   form

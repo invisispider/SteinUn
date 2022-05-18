@@ -9,9 +9,10 @@ lerna-debug.log*
 
 *.rules
 *.indexes.json
+
 firebase.json
 
-Archive
+archive
 node_modules
 .DS_Store
 dist

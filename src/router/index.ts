@@ -1,29 +1,37 @@
 import { createRouter, createWebHistory } from "vue-router"
 import type { RouteRecordRaw } from "vue-router"
+import Home from "@/views/Home.vue"
+import {pinia} from "@/main"
+import {useStore} from "@/stores/index"
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "HomeView",
-    component: ()=> import("@/views/HomeView.vue"),
-    // beforeEnter: () => {
-    //   const useStore = () => import("@/stores/index.ts");
-    //   const store = useStore(pinia);
-    // },
+    name: "Home",
+    component: Home,
   },
-  // {
-  //   path: "/Talk",
-  //   name: "TalkView",
-  //   component: () => import("@/views/TalkView.vue"),
-  // },
-  // {
-  //   path: "/user/:user",
-  //   name: "UserView"
-  // },
-  // {
-    //   path: "/assets/avatar/:avatar",
-    //   name: "Avatar",
-    //   component: ChatWindow,
-    // },
+  {
+    path: "/Chat",
+    name: "ChatApp",
+    meta: {requiresAuth: true},
+    component: () => import("@/components/Chat/ChatApp.vue"),
+  },
+  {
+    path: "/Logout",
+    name: "LogoutComponent",
+    component: () => import("@/components/LogoutComponent.vue"),
+  },
+  {
+    path: "/Admin",
+    name: "Admin",
+    meta: {requiresAuth: true},
+    component: () => import("@/views/Admin.vue"),
+    beforeEnter: () => {
+      const store = useStore(pinia)
+      if (store.uid!==import.meta.env.VITE_UID) {
+        return false
+      }
+    },
+  },
   {
     path: "/UnThinkMe",
     name: "UnThinkMe",
@@ -31,31 +39,23 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/Next",
-    name: "NextView",
-    component: () => import("@/views/NextView.vue"),
+    name: "Next",
+    component: () => import("@/views/Next.vue"),
   },
   {
     path: "/Crossword",
-    name: "CrosswordView",
-    component: () => import("@/views/CrosswordView.vue"),
-    // beforeEnter: () => {
-    //   const useCrossword = () => import("@/stores/crosswordvideogame.ts");
-    //   const store = useCrossword(pinia);
-    // },
+    name: "Crossword",
+    component: () => import("@/views/Crossword.vue"),
   },
   {
     path: "/Teacher",
-    name: "TeacherView",
-    component: () => import("@/views/TeacherView.vue"),
+    name: "Teacher",
+    component: () => import("@/views/Teacher.vue"),
   },
   {
     path: "/UnTimeMe",
     name: "UnTimeMe",
     component: () => import("@/views/UnTimeMe.vue"),
-    // beforeEnter: () => {
-    //   const useTime = () => import("@/stores/time.ts");
-    //   const store = useTime(pinia);
-    // },
   },
   {
     path: "/UnReadMe",
@@ -77,11 +77,13 @@ const routes: Array<RouteRecordRaw> = [
     name: "FourOhFour",
     component: () => import("@/views/404.vue"),
   },
-];
-
+]
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
-});
-
+})
+router.beforeEach((to) => {
+  const store = useStore(pinia)
+  if (to.meta.requiresAuth && !store.isIn) return '/'
+})
 export default router;

@@ -8,10 +8,15 @@ import {
 } from 'firebase/storage'
 
 const FILES_PATH = 'chatFiles'
+const AVATARS_PATH = 	'avatars'
+const SFX_PATH = 'sounds'
+export const getSoundUrl = async (fileName) => await getDownloadURL(ref(storage, `${SFX_PATH}/${fileName}`))
+export const getAvatarUrl = async (fileName) => await getDownloadURL(ref(storage, `${AVATARS_PATH}/${fileName}`))
 
 const fileRef = (currentUserId, messageId, fileName) => {
 	return ref(storage, `${FILES_PATH}/${currentUserId}/${messageId}/${fileName}`)
 }
+
 
 export const deleteFile = (currentUserId, messageId, file) => {
 	return deleteObject(

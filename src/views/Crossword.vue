@@ -16,7 +16,7 @@ const toggle = (direc) => {
   } else {
     collapseDown.value = !collapseDown.value;
   }
-};
+}
 const enumerateCells = (pRef) => 11 * (pRef[0] - 1) + pRef[1];
 const getElement = (pRef) => {
   var refCell = document.querySelector(
@@ -39,11 +39,11 @@ const drawWord = (pRef, chars, direc) => {
       i++;
     }
   }
-};
+}
 const renderChars = () => {
   across.value.forEach((datum) => drawWord(datum.pos, datum.answer, "across"));
   down.value.forEach((datum) => drawWord(datum.pos, datum.answer, "down"));
-};
+}
 onMounted(() => {
   const renderMatrix = () => {
     let m = [];
@@ -109,7 +109,7 @@ onMounted(() => {
 const selectMe = async (pRef) => {
   let el = getElement(pRef);
   await nextTick(() => el.lastChild.focus());
-};
+}
 const resetInputs = (warn) => {
   if (warn) {
     if (confirm("Really want to CLEAR all your progresst?")) {
@@ -120,7 +120,7 @@ const resetInputs = (warn) => {
     let inputs = [...document.getElementsByClassName("clearme")];
     inputs.forEach((input) => (input.value = ""));
   }
-};
+}
 const clueMe = () => {
   if (
     confirm(
@@ -132,7 +132,7 @@ const clueMe = () => {
     }, 3000);
     renderChars();
   }
-};
+}
 const infoMe = () => {
   var instructions = "";
   instructions +=
@@ -140,7 +140,7 @@ const infoMe = () => {
   instructions +=
     "Clue Button will briefly display answers and reset board.\nGet good.\n";
   alert(instructions);
-};
+}
 const moveMe = (keyPress, row, col) => {
   if (keyPress === "left") {
     let el = getElement([row, col]);
@@ -163,7 +163,7 @@ const moveMe = (keyPress, row, col) => {
       el.lastChild.focus();
     }
   }
-};
+}
 // so, in the render, check if querySelectorAll("input[value='']"), setTimeout, change values,
 // then instead of refresh all function, use those stored input refs to clear.
 </script>
@@ -215,29 +215,25 @@ const moveMe = (keyPress, row, col) => {
       </div>
       <div id="acrossDiv">
         <h2 @click="toggle('across')">Across</h2>
-        <ul id="across" name="across" v-show="!collapseAcross">
-          <TransitionGroup name="grow">
-            <li v-for="ac in across" tabindex="1" :key="ac.answer">
-              <span class="material-icons" @click="selectMe(ac.pos)"
-                >chair</span
-              >
-              {{ enumerateCells(ac.pos) }}. {{ ac.question }}
-            </li>
-          </TransitionGroup>
-        </ul>
+        <transition-group name="grow" tag="ul" id="across" Name="across">
+          <li v-for="ac in across" v-show="!collapseAcross" tabindex="1" :key="ac.answer">
+            <span class="material-icons" @click="selectMe(ac.pos)"
+              >chair</span
+            >
+            {{ enumerateCells(ac.pos) }}. {{ ac.question }}
+          </li>
+        </transition-group>
       </div>
       <div id="downDiv">
         <h2 @click="toggle('down')">Down</h2>
-        <ul id="down" name="down" v-show="!collapseDown">
-          <TransitionGroup name="grow">
-            <li v-for="dow in down" tabindex="1" :key="dow.answer">
-              <span class="material-icons" @click="selectMe(dow.pos)"
-                >chair</span
-              >
-              {{ enumerateCells(dow.pos) }}. {{ dow.question }}
-            </li>
-          </TransitionGroup>
-        </ul>
+        <transition-group name="grow" tag="ul" id="down">
+          <li v-for="dow in down" v-show="!collapseDown" tabindex="1" :key="dow.answer">
+            <span class="material-icons" @click="selectMe(dow.pos)"
+              >chair</span
+            >
+            {{ enumerateCells(dow.pos) }}. {{ dow.question }}
+          </li>
+        </transition-group>
       </div>
     </div>
   </div>
@@ -268,7 +264,6 @@ $thalmon: rgb(249, 194, 159)
 .clue-done
 	color: #999
 	text-decoration: line-through
-
 #puzzle-body
 	font: 62.5%/1.3em Helvetica, sans-serif
 	// background-color: rgb(16, 9, 54)
@@ -288,7 +283,6 @@ $thalmon: rgb(249, 194, 159)
 			text-align: center
 			// right: 0.3em
 			// margin: 12px
-		i
 			font-size: 2.6rem
 			right: 0.3em
 			margin: 12px
@@ -366,7 +360,6 @@ $thalmon: rgb(249, 194, 159)
 					top: -1px
 					left: 1px
 					display: block
-
 @media screen and (min-width: 430px)
 	#puzzle-body
 		width: 100vw
