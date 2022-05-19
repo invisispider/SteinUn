@@ -29,7 +29,7 @@ const showPlaylist = ref(true)
 					and always accept new students for remote or local sessions.
 				</h4>
 				<div @click="getMail">
-					<img v-if="showEmail" class="pulse" id="emailImg" src="@/assets/images/gmail.png" />
+					<img v-if="showEmail" class="pulse" id="emailImg" src="@/assets/img/gmail.png" />
 					<h2 v-else class="bounceMe">Contact Me!</h2>
 				</div>
 			</div>
@@ -50,7 +50,7 @@ const showPlaylist = ref(true)
 						love watching Mason's love for music grow and we have Adam to thank
 						for that.
 					</p>
-					<img src="@/assets/images/kid2.jpg" />
+					<img src="@/assets/img/Owen.jpg" />
 				</div>
 				<div class="testimonial">
 					<p>
@@ -58,7 +58,7 @@ const showPlaylist = ref(true)
 						instruction. He is encouraging, motivating, and she loves coming to
 						class each week. We would highly recommend him!
 					</p>
-					<img src="@/assets/images/ruby.jpg" />
+					<img src="@/assets/img/ruby.jpg" />
 				</div>
 				<div class="testimonial">
 					<p>
@@ -66,14 +66,14 @@ const showPlaylist = ref(true)
 						grasp of musicality in addition to the patience to teach this art
 						form. I support and recommend this teacher for your student.
 					</p>
-					<img src="@/assets/images/kid3.jpg" />
+					<img src="@/assets/img/kid2.jpg" />
 				</div>
 				<div class="testimonial">
 					<p>
 						My name is Owen. I play the drums. Adam is a very good teacher. He
 						helps me learning new songs and is patient with me.
 					</p>
-					<img src="@/assets/images/Owen.jpg" />
+					<img src="@/assets/img/kid3.jpg" />
 				</div>
 			</div>
 		</div>
@@ -118,12 +118,12 @@ body
 		border-bottom: 1px solid white
 		margin-bottom: 1rem
 		@media screen and (max-width: 800px)
-			background-image: url("@/assets/images/smileyOutline.png"), url("@/assets/images/cabworkr.png")
+			background-image: url("@/assets/img/smileyOutline.png"), url("@/assets/img/cabworkr.png")
 			background-position-x: left, right
 			background-position-y: bottom, top
 			padding-bottom: 500px
 		@media screen and (min-width: 800px)
-			background-image: url("@/assets/images/smileyOutline.png"), url("@/assets/images/cabworkr.png")
+			background-image: url("@/assets/img/smileyOutline.png"), url("@/assets/img/cabworkr.png")
 			background-position-x: left, right
 			background-position-y: bottom, bottom
 			padding-bottom: 300px
@@ -195,9 +195,9 @@ body
 			grid-template-columns: 1fr 1fr
 			justify-items: center
 	.piano-div
-		background-image: url(@/assets/images/paintpiano.jpg)
+		background-image: url(@/assets/img/paintpiano.jpg)
 	.sea-div
-		background-image: url(@/assets/images/seattle.jpg)
+		background-image: url(@/assets/img/seattle.jpg)
 		h2
 			font-style: italic
 			cursor: pointer

@@ -1,23 +1,20 @@
 <script setup lang="ts">
+import { ref, computed, onMounted, watchEffect, nextTick, onUnmounted } from "vue";
 import { RouterLink } from "vue-router";
 import UnJamMeComponent from "@/components/UnJamMeComponent.vue";
-import { ref, computed, onMounted, watchEffect, nextTick, onUnmounted } from "vue";
 import { useStore } from "@/stores/index.ts";
+import SidebarLink from "@/components/sidebar/SidebarLink.vue"
+import { collapsed, toggleSidebar, sidebarWidth } from './state'
+import FooterComponent from "@/components/FooterComponent.vue"
 const store = useStore()
-const moveItUp = ref(false)
 const randGuy = Math.floor(Math.random()*(200)+1)
 // 5 E + 13 M = 18 EM
 const oneInTwoHundred = randGuy==18?true:false
-const neverShow = ref(false);
-const showJams = ref(false);
 const doShowJams = () => {
 	setTimeout(()=> {
 		showJams.value = false
 	}, 2000)
 	showJams.value = true
-}
-const expandToggle = ($event) => {
-	moveItUp.value=!moveItUp.value
 }
 const carlBatman = watchEffect(() => {
 	if (store.uid) localStorage.setItem("uid", JSON.stringify(store.uid))
@@ -38,85 +35,60 @@ onUnmounted(()=> {
 })
 </script>
 <template>
-	<div>
-		<!-- <Teleport to="body"> -->
-			<!-- <div class="glow" v-if="store.uid">
-				<i class='material-icons spinMe wheelie' @click="toggleNav=!toggleNav">accessible_forward</i>
-			</div> -->
-		<!-- </Teleport> -->
-		<nav class="topnav" :class="moveItUp?'move-up':''">
-			<div class="topnav-icon glow" key="banano">
-				<span v-if="store.username" class="christmas-icons center">
+	<div class="sidebar topnav" :style="{ width: sidebarWidth }">
+		<h1>
+			<span v-if="collapsed">
+				<div>S</div>
+				<div>U</div>
+			</span>
+			<span v-else>Stein Unlimited</span>
+		</h1>
+		<template v-if="!collapsed">
+			<transition-group name="fadeDown" key="banana" tag="div" class="glow" mode="in-out">
+				<SidebarLink v-if="store.uid" key="0a" class="navItem" to="/Chat"
+				>Talk</SidebarLink>
+				<SidebarLink v-if="store.uid" key="1a" class="navItem" to="/Logout"
+				>Logout</SidebarLink>
+				<SidebarLink v-if="store.admin" key="11a" class="navItem" to="/Admin"
+				>Admin</SidebarLink>
+				<SidebarLink to="/" v-if="!store.uid" key="2a" class="navItem"
+				>Login</SidebarLink>
+				<!-- <SidebarLink to="/Crossword" key="3a" class="navItem" icon="keyboard_double_arrow_left"
+				>Puzzle</SidebarLink> -->
+				<!-- <SidebarLink to="/Next" v-if="oneInTwoHundred" key="em"
+					class="navItem nav-item-dark"	icon="keyboard_double_arrow_left"
+					>TEMP</SidebarLink> -->
+				<SidebarLink to="/Teacher" key="5a" class="navItem"
+				>Music</SidebarLink>
+				<SidebarLink to="/UnTimeMe" key="6a" class="navItem"
+				>zenTime</SidebarLink>
+				<!-- <component :is="UnJamMeComponent" v-if="showJams" key="7a" class="navItem"
+					id="music-player" /> -->
+				<!-- <a v-else id="songToggle" @click="doShowJams" -->
+				<!-- >UnJamMe</a> -->
+				<SidebarLink to="/UnThinkMe" key="9a" class="navItem"
+				>unThinkMe</SidebarLink>
+				<SidebarLink to="/UnReadMe" key="8a" class="navItem"
+				>unReadMe</SidebarLink>
+			</transition-group>
+			<!-- <transition name="shrink" appear>
+				<component :is="FooterComponent" />
+			</transition> -->
+			<div class="glow" v-if="!collapsed" key="banano">
+				<span v-if="store.username" class="christmas-icon center">
 					<span class="green">{{store.username}}</span>
 				</span>
 				<span v-else class="red christmas-icon">
 					<i class='material-icons'>vpn_key</i>
 				</span>
 			</div>
-			<transition-group name="fadeDown" key="banana" tag="ul" class="glow">
-				<li v-if="store.uid" key="0a" class="userButton">
-					<router-link to="/Chat">Talk</router-link>
-				</li>
-				<li v-if="store.uid" key="1a" class="userButton">
-					<router-link to="/Logout">Logout</router-link>
-				</li>
-				<li v-if="store.admin" key="11a" class="navItem">
-					<router-link to="/Admin">Admin</router-link>
-				</li>
-				<li v-if="!store.uid" key="2a" class="navItem">
-					<router-link to="/">Login</router-link>
-				</li>
-				<li key="3a" class="navItem">
-					<router-link to="/Crossword">Puzzle</router-link>
-				</li>
-				<li v-if="oneInTwoHundred" key="em" class="navItem nav-item-dark">
-					<router-link to="/Next">TEMP</router-link>
-				</li>
-				<li key="5a" class="navItem">
-					<router-link to="/Teacher">Learn Music</router-link>
-				</li>
-				<li key="6a" class="navItem">
-					<router-link to="/UnTimeMe">zenTime</router-link>
-				</li>
-				<li key="7a" class="navItem" id="music-player">
-					<component :is="UnJamMeComponent" v-if="showJams" />
-					<a id="songToggle" v-else @click="doShowJams">UnJamMe</a>
-				</li>
-				<li key="9a" class="navItem">
-					<router-link to="/UnThinkMe">unThinkMe</router-link>
-				</li>
-				<li key="8a" class="navItem">
-					<router-link to="/UnReadMe">unReadMe</router-link>
-				</li>
-				<li key="10a" v-if="neverShow" class="navItem">
-					<a href="#" @click="this.$router.go(-1)">Back</a>
-				</li>
-				<transition name="rotate" mode="out-in" key="nut">
-					<i key="suckit10" @click="expandToggle" :class="{ rotate: moveItUp, moveIconUp: moveItUp }" class="material-icons expander-arrow">expand_less</i>
-				</transition>
-			</transition-group>
-		</nav>
+		</template>
+		<span
+		class="collapse-icon"
+		:class="{ 'rotate-180': collapsed }"
+		@click="toggleSidebar"
+		>
+			<i class='material-icons three-hundred-up'>keyboard_double_arrow_left</i>
+		</span>
 	</div>
 </template>
-<style lang="sass">
-.expander-arrow
-	display: grid
-	color: lightBlue
-	text-shadow: -2px 1px rgb(38, 255, 67), 2px -1px black
-	font-size: 2em
-	// z-index: 90000
-	position: relative
-	left: 50vw
-	top: 60px
-	z-index: 909
-@keyframes rotate
-	0%
-		transform: rotateX(0deg)
-	100%
-		transform: rotateX(180deg)
-.rotate
-	animation: rotate 1s ease
-.move-icon-up
-	top: -10px
-	// transform: rotateX(180deg)
-</style>

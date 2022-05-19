@@ -74,9 +74,6 @@ const dayOfWeekZen = computed(()=>store.dayNames[(state.dayOfHabit-1)%5])
 </script>
 <template>
 	<div class="untable">
-		<div class="unheader">
-			<h2>NthDayOfYear: {{state.dayOfYear+1}}</h2>
-		</div>
 		<div class="calendars-container">
 			<section id="habits">
 				<h2>{{dayOfWeekZen}} {{state.dayOfHabit}} {{habitName}} {{10000+gYear}}</h2>
@@ -117,6 +114,9 @@ const dayOfWeekZen = computed(()=>store.dayNames[(state.dayOfHabit-1)%5])
 					<!-- <div v-for="index of endCap" class="uncell uncell-greg" :key="index"></div> -->
 				</div>
 			</section>
+		</div>
+		<div class="unheader">
+			<h2>Day Of Year: {{state.dayOfYear+1}}</h2>
 		</div>
 	</div>
 </template>
@@ -162,6 +162,11 @@ $box-midnight-cream: 0 0 0 1px $midnight-cream
 		padding: 0
 		display: grid
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+		text-align: center
+		color: orange
+		list-style: none
+		font-size: 1.3em
+		color: $safe-light
 		li
 			text-transform: capitalize
 			border: 1px solid $secondary-light
@@ -173,11 +178,6 @@ $box-midnight-cream: 0 0 0 1px $midnight-cream
 		.selected
 			background-color: $purple
 			color: white
-		text-align: center
-		color: orange
-		list-style: none
-		font-size: 1.3em
-		color: $safe-light
 .greg-date-td
 	margin: 0
 	box-shadow: $box-midnight-cream

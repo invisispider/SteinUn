@@ -13,7 +13,7 @@ var state = reactive({
 		<transition name="shrinkDiv">
 			<img
 				id="abaDon"
-				src="@/assets/images/Abandon.jpg"
+				src="@/assets/img/Abandon.jpg"
 				class="transparent"
 				v-if="state.one"
 				@mouseleave="state.one=false"
@@ -73,7 +73,7 @@ body
 	height: 100vh
 	margin: auto
 	padding: 0
-	background-image: url("@/assets/images/P1.jpg")
+	background-image: url("@/assets/img/P1.jpg")
 	background-repeat: no-repeat
 	background-position: bottom left
 	background-size: 100vw

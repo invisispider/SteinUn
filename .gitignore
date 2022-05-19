@@ -9,7 +9,7 @@ lerna-debug.log*
 
 *.rules
 *.indexes.json
-
+notepad.txt
 firebase.json
 
 archive

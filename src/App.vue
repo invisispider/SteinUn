@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import '@/assets/css/base.css'
+import '@/assets/css/base.sass'
 import { defineComponent } from "vue"
 import { RouterView } from "vue-router"
 // import LoadingComponent from "@/components/LoadingComponent.vue"
@@ -127,7 +127,7 @@ import { sidebarWidth } from '@/components/sidebar/state'
 // 	left: 0
 // 	z-index: 5
 // 	max-width: 100vw
-// 	background-image: url("@/assets/images/keys.jpg")
+// 	background-image: url("@/assets/img/keys.jpg")
 // 	background-color: rgba(0, 0, 0, 0)
 // 	background-repeat: repeat-x
 // 	background-size: 40%

@@ -82,6 +82,7 @@ const trigger = () => (sTitleLogo.value = !sTitleLogo.value)
 		</transition>
 	</div>
 </template>
+<!--
 <style lang="sass">
 $bg: #001215
 $wavelength-gray: #e0e0e0
@@ -128,18 +129,18 @@ $box-midnight-light: 0 0 0 1px $midnight-light
 	min-width: 80vw
 	max-height: 100vh
 	overflow: auto
-		color: $stein-lumenwhite
-		font-size: 3rem
-		line-height: 105%
-		margin: 0.1em 0em
-		margin: 0em 0em 0.4em 0em
-		color: $stein-magenta
-		font-size: 2rem
-		font-size: 1.31em
-		margin: 0em 0em 0.1em 0em
-		color: $stein-green
-		color: $stein-lumenwhite
-		font-size: 46px
+	// color: $stein-lumenwhite
+	// font-size: 3rem
+	// line-height: 105%
+	// margin: 0.1em 0em
+	// margin: 0em 0em 0.4em 0em
+	// color: $stein-magenta
+	// font-size: 2rem
+	// font-size: 1.31em
+	// margin: 0em 0em 0.1em 0em
+	// color: $stein-green
+	// color: $stein-lumenwhite
+	// font-size: 46px
 	div.col
 		display: grid
 		grid: auto auto auto / auto
@@ -189,10 +190,11 @@ $box-midnight-light: 0 0 0 1px $midnight-light
 		background: $stein-lightpurple
 		max-width: 200px
 .title-logo
-	// margin-top: 2em
 	display: grid
 	font-size: 4rem
+	// margin-top: 2em
 @keyframes woggle
+	0%
 		transform: scale(1)
 	50%
 		transform: scale(0.7)
@@ -270,6 +272,7 @@ $box-midnight-light: 0 0 0 1px $midnight-light
 		stroke: #D0FFF1
 		fill: none
 @keyframes tick-pulse
+	0%
 		transform: translateY(0px)
 	80%
 		transform: translateY(0px)
@@ -300,16 +303,16 @@ $box-midnight-light: 0 0 0 1px $midnight-light
 			border: 1px solid darkmagenta
 		.th-blue
 			border: 1px solid lightskyblue
-@media screen and (min-width: 430px)
-	.conversionTable
-		align-items: stretch
-		margin: 2rem
-		padding: 2em
-		grid-gap: 2rem
-	.calendars-container
-		display: grid
-		grid-template-columns: 1fr 1fr
-		align-content: flex-start
+// @media screen and (min-width: 430px)
+.conversionTable
+	align-items: stretch
+	margin: 2rem
+	padding: 2em
+	grid-gap: 2rem
+.calendars-container
+	display: grid
+	grid-template-columns: 1fr 1fr
+	align-content: flex-start
 // zenCalendar
 .content
 	margin: 0
@@ -320,23 +323,23 @@ $box-midnight-light: 0 0 0 1px $midnight-light
 	margin: 0
 	// padding: 0
 	// min-height: 100vh
-		text-align: center
-		justify-content: center
-		margin: 0
-		padding: 0
-		display: grid
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
-		li
-			text-transform: capitalize
-			border: 1px solid $secondary-light
-			padding: 5px
-			cursor: pointer
-			border-radius: 5px
-			background-color: $stein-dark-purple
-			color: $secondary-light
-		.selected
-			background-color: $stein-purple
-			color: white
+	text-align: center
+	justify-content: center
+	margin: 0
+	padding: 0
+	display: grid
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+	li
+		text-transform: capitalize
+		border: 1px solid $secondary-light
+		padding: 5px
+		cursor: pointer
+		border-radius: 5px
+		background-color: $stein-dark-purple
+		color: $secondary-light
+	.selected
+		background-color: $stein-purple
+		color: white
 		list-style: none
 		font-size: 1.3em
 		color: $safe-light
@@ -400,4 +403,259 @@ $box-midnight-light: 0 0 0 1px $midnight-light
 	color: $contrast-dark
 	background-color: $midnight-deluxe
 	font-weight: bolder
+</style>
+-->
+<style lang="sass">
+.zen-wrapper
+  display: flex
+  flex-direction: column
+  color: #e0e0e0
+  background-color: #000202
+  margin: 3rem 0
+  max-width: 100vw
+  min-width: 80vw
+  max-height: 100vh
+  overflow: auto
+.zen-wrapper h1
+  color: #d0fff1
+  font-size: 3rem
+  line-height: 105%
+  margin: .1em 0
+.zen-wrapper h2
+  margin: 0 0 .4em
+  color: #af5ce9
+  font-size: 2rem
+.zen-wrapper h3
+  font-size: 1.31em
+  margin: 0 0 .1em
+  color: #4fa
+.zen-wrapper h4
+  color: #d0fff1
+.zen-wrapper h1
+  font-size: 46px
+.zen-wrapper div.col
+  display: grid
+  grid: auto auto auto/auto
+  justify-content: center
+  align-content: center
+.zen-wrapper span
+  line-height: 1.4
+  font-weight: 700
+  color: #641899
+  font-size: 1.4em
+  margin: .1rem 2%
+  padding: .3rem
+  width: 45vw
+.zen-wrapper a:hover
+  text-decoration: none
+.selectables
+  display: grid
+  grid-gap: .3rem
+  max-width: 100%
+  font-size: .6em
+  margin: 0
+  grid: auto/auto auto auto
+  height: 100vh
+@media screen and (min-width: 380px)
+  .selectables
+    font-size: 1em
+@media screen and (min-width: 800px)
+  .selectables
+    font-size: 16px
+.time-nav
+  display: grid
+  margin: 0
+  position: fixed
+  bottom: .2em
+  left: 200px
+.time-nav .time-nav-item
+  background: rgb(131, 33, 255)
+  max-width: 200px
+.title-logo
+  display: grid
+  font-size: 4rem
+@keyframes woggle
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(.7)
+  70%
+    transform: scale(1.2)
+  to
+    transform: scale(0)
+.wiggle-enter-active
+  animation: woggle .5s reverse
+.wiggle-leave-active
+  animation: woggle .5s ease
+@media screen and (min-width: 430px)
+  .zen-wrapper
+    place-items: center
+    min-height: 50vh
+    margin: 0
+  .selectables
+    align-items: center
+.zentime-container
+  display: grid
+  grid-template-columns: 1fr 1fr
+  justify-content: space-between
+.zen-meters
+  display: flex
+  flex-direction: column
+.zen-meters label
+  font-size: 1.4rem
+  text-align: center
+.zen-meters meter
+  width: 100%
+.zen-meters progress
+  width: 100%
+.time-container
+  font-family: Roboto
+  textAlign: center
+  float: right
+  padding: .9em
+  max-height: 100vh
+.time-container .greg-dark, .time-container .greg-light, .time-container .zen-borders
+  rx: 5px
+  ry: 5px
+.time-container .greg-dark
+  stroke: #d0fff1
+  fill: #1d229a
+.time-container .greg-light
+  stroke: #d0fff1
+  fill: #386bdd
+.time-container .greg-text
+  stroke: #d0fff1
+  fill: #fff
+.time-container .center-circle
+  fill: #5bf641b3
+.time-container .zen-dark
+  stroke: #715
+  fill: #9400d3
+.time-container .clock-hand
+  stroke: #5bf641b3
+  stroke-width: 4
+.time-container .zen-rect
+  stroke: #d0fff1
+  fill: #0a1e0a80
+.time-container .zen-mint
+  fill: #4fa
+.time-container .zen-borders
+  stroke: #d0fff1
+  fill: none
+@keyframes tick-pulse
+  0%
+    transform: translateY(0)
+  80%
+    transform: translateY(0)
+  90%
+    transform: translateY(-2px)
+  to
+    transform: translateY(0)
+.tick-pulse
+  animation: tick-pulse 1s ease
+  animation-iteration-count: infinite
+.conversionTable
+  max-width: 80vw
+  margin: 0
+  display: grid
+  padding: 0
+  grid-gap: 0
+  background-color: #000
+.conversionTable table
+  color: #e6e6fa
+  box-shadow: 0 0 8px 1px #add8e6
+  fontSize: 1.2rem
+.conversionTable table th
+  padding: .5rem .8rem
+.conversionTable table .th
+  border: 1px solid darkmagenta
+.conversionTable table .th-blue
+  border: 1px solid lightskyblue
+@media screen and (min-width: 430px)
+  .conversionTable
+    align-items: stretch
+    margin: 2rem
+    padding: 2em
+    grid-gap: 2rem
+  .calendars-container
+    display: grid
+    grid-template-columns: 1fr 1fr
+    align-content: flex-start
+.content
+  margin: 0
+  padding: 0
+.untable
+  display: grid
+  margin: 0
+.untable ol
+  text-align: center
+  justify-content: center
+  margin: 0
+  padding: 0
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+.untable ol li
+  text-transform: capitalize
+  border: 1px solid #D9F
+  padding: 5px
+  cursor: pointer
+  border-radius: 5px
+  background-color: #340459
+  color: #d9f
+.untable ol .selected
+  background-color: #310e7a
+  color: #fff
+.untable li
+  list-style: none
+  font-size: 1.3em
+  color: #dfd
+.greg-date-td
+  margin: 0
+  box-shadow: 0 0 0 1px #101
+#habits, #months
+  display: grid
+  grid-gap: 30px
+.unheader
+  border-radius: 5px
+  box-shadow: 0 0 0 1px #fdc
+  display: flex
+  margin: 1em auto
+  padding: 1em 3em .4em
+.baheader
+  text-align: center
+  font-weight: 500
+  height: 20px
+  align-self: flex-end
+.baheader-zen
+  background-color: #a5d
+  color: #000
+.baheader-greg
+  background-color: #4f7
+  color: #000
+.unchunk
+  color: #dfd
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+  grid-gap: 2px
+.unchunk-greg
+  color: #dfd
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+  grid-gap: 2px
+.uncell
+  background-color: #000202
+  margin: 0
+  padding: 1em
+.uncell-greg
+  border: 1px solid #7FA
+.uncell-zen
+  border: 1px solid #D9F
+  cursor: pointer
+.uncell-zen:hover
+  border: 1px solid #A5D
+  background-color: #101
+.selected-date
+  color: #810
+  background-color: #323
+  font-weight: bolder
 </style>
