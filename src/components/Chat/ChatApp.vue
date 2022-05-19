@@ -12,9 +12,9 @@ import { parseTimestamp, formatTimestamp } from '@/components/Chat/utils/dates'
 // import ChatContainer from '@/components/Chat/ChatContainer.vue'
 // import ChatWindow from '@/components/Chat/ChatWindow.vue'
 // import ChatWindow from '@/components/Chat/ChatContainer.vue'
-
-import ChatWindow from 'vue-advanced-chat'
-import 'vue-advanced-chat/dist/vue-advanced-chat.css'
+import ChatContainer from '@/components/Chat/ChatContainer.vue'
+// import ChatWindow from 'vue-advanced-chat'
+// import 'vue-advanced-chat/dist/vue-advanced-chat.css'
 // import { useStore } from "@/stores/index.ts"
 // import { ref } from "vue"
 import { collection, where, query, onSnapshot } from "firebase/firestore"
@@ -714,14 +714,13 @@ const resetForms = () => {
 // 	this.dbRequestCount += size
 // 	console.log(type, size)
 // }
-
 </script>
 <template>
 	<div>
 		<div class="app-container" style="background: rgba(40, 40, 40, 0.5);"
 			:class="{ 'app-mobile': state.isDevice, 'app-mobile-dark': state.theme === 'dark' }"
     >
-			<chat-window
+			<component :is="ChatContainer"
 			:current-user-id="currentUserId"
 			:theme="state.theme"
 			:is-device="state.isDevice"
