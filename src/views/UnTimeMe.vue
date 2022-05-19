@@ -12,8 +12,8 @@ const timePulse = () => {
 	let luxDate = DateTime.now().toLocal()
 	let luxString =
 		"" + luxDate.toLocaleString(DateTime.TIME_24_WITH_SHORT_OFFSET)
-	let luxCalendar =
-		" ||  " + luxDate.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)
+	let luxCalendar = ""
+		// " ||  " + luxDate.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)
 	let sec = luxDate.second
 	let min = luxDate.minute
 	let hou = luxDate.hour
@@ -23,7 +23,8 @@ const timePulse = () => {
 	let adjh = (adjsecs / 3600) % 24
 	let whiles = Math.floor((adjsecs / store.ins_in_whi) % store.mom_in_whi)
 	let sess = Math.floor(adjh / store.hou_in_sess)
-	store.forma = luxString + "" + luxCalendar
+	store.forma = luxString
+	 // + "" + luxCalendar
 	store.second = sec
 	store.minute = min
 	store.hour = hou

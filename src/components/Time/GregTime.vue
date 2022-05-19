@@ -8,7 +8,7 @@ const svgGuageH = ref(20);
 </script>
 <template>
   <div style="float: left, margin: 15px">
-    <h2>Gregorian Time</h2>
+    <h2>GregTime</h2>
     <h3>{{ store.forma }}</h3>
     <div>
       <svg :width="svgW" :height="svgGuageH">
