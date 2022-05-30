@@ -2,7 +2,7 @@
 import { ref } from "vue"
 import { useTime } from "@/stores/time"
 const store = useTime()
-const emit = defineEmits(['holiday', 'solstice', 'equinox'])
+const emit = defineEmits(['holiday', 'solstice', 'equinox', 'habits'])
 const BoxWidth = 500
 const BoxHeight = 500
 const pi = Math.PI
@@ -40,6 +40,7 @@ const testHabit = (habit)=>habit==store.habitName?'selected':''
                 stroke-width="150"
                 stroke-dasharray="2 57" />
       <!-- <text x="210" y="290" fill="blueviolet">YEAR</text> -->
+      <g @click="emit('habits')">
       <text :class="store.habitNum===0?'glow active':''"
         x="214" y="195" fill="black">{{store.habitNames[0]}}</text>
       <text :class="store.habitNum===1?'glow active':''"
@@ -56,12 +57,13 @@ const testHabit = (habit)=>habit==store.habitName?'selected':''
         x="64" y="260" fill="black">{{store.habitNames[6]}}</text>
       <text :class="store.habitNum===7?'glow active':''"
         x="134" y="195" fill="black">{{store.habitNames[7]}}</text>
+      </g>
       <circle r="54" cx="205" cy="120" fill="white" />
       <circle r="18" cx="205" cy="120" fill="bisque"
                 stroke="tomato"
                 stroke-width="15"
                 stroke-dasharray="1 1" />
-      <text x="165" y="125" fill="black" @click="emit('zenday')">~NewZen~</text>
+      <text x="165" y="125" fill="black" @click="emit('newzen')">~NewZen~</text>
       <text x="266" y="126" fill="red" @click="emit('holiday')">Holidays</text>
       <path d="M196 480 l8 -323 z" stroke="white" stroke-width="2" />
       <text x="205" y="478" fill="white"

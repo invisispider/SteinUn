@@ -3,9 +3,10 @@ import { useTime } from "@/stores/time.ts"
 const store = useTime()
 const svgW = 400
 const svgH = 22
+const emit = defineEmits(['zentime'])
 </script>
 <template>
-  <div class="zentime-container">
+  <div class="zentime-container" @click="emit('zentime')">
     <div>
       <svg :width="svgW" :height="svgH">
         <g>

@@ -49,7 +49,8 @@ watchEffect(()=> {
 				<div class="uncell uncell-zen" v-for="d of daysInHabit"
 					:class="d==state.dayOfHabit?'selected-date':''"
 					:key="d">
-					{{ d }}
+					<i v-if="d===1" class="material-icons holiday">self_improvement</i>
+					<template v-else>{{ d }}</template>
 				</div>
 			</div>
 			<div class="unchunk" v-else>

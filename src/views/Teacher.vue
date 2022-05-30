@@ -35,15 +35,18 @@ const showPlaylist = ref(true)
 			</div>
 			<component v-if="showPlaylist" :is="ThousandPlusPlaylist" />
 		</div>
+		<div class="double-width glow">
+			<h1>Testimonials</h1>
+		</div>
 		<div class="testimonials">
 			<div class="testimonial glow">
+				<img src="@/assets/img/Owen.jpg" />
 				<p>
 					Adam has been a patient and encouraging teacher. He even helped my son
 					print his own song, 'The Mason Jam', so he could 'sell' copies. We
 					love watching Mason's love for music grow and we have Adam to thank
 					for that.
 				</p>
-				<img src="@/assets/img/Owen.jpg" />
 			</div>
 			<div class="testimonial glow">
 				<p>
@@ -54,12 +57,12 @@ const showPlaylist = ref(true)
 				<img src="@/assets/img/ruby.jpg" />
 			</div>
 			<div class="testimonial glow">
+				<img src="@/assets/img/kid2.jpg" />
 				<p>
 					There are no shortcuts in music. Adam is a teacher with an effective
 					grasp of musicality in addition to the patience to teach this art
 					form. I support and recommend this teacher for your student.
 				</p>
-				<img src="@/assets/img/kid2.jpg" />
 			</div>
 			<div class="testimonial glow">
 				<p>
@@ -68,9 +71,6 @@ const showPlaylist = ref(true)
 				</p>
 				<img src="@/assets/img/kid3.jpg" />
 			</div>
-		</div>
-		<div class="double-width glow">
-			<h1>Testimonials</h1>
 		</div>
 	</div>
 </template>

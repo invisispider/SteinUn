@@ -68,11 +68,6 @@
 			@typing-message="typingMessage"
 			@toggle-rooms-list="$emit('show-demo-options', $event.opened)"
 		>
-			<!-- <template #emoji-picker="{ emojiOpened, addEmoji }">
-				<button @click="addEmoji({ unicode: '😁' })">
-					{{ emojiOpened }}
-				</button>
-			</template> -->
 		</ChatWindow>
 	</div>
 </template>
