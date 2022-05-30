@@ -1,19 +1,27 @@
-<script setup>
-import { ref, onMounted, onUnmounted } from "vue"
+<script setup lang="ts">
+import { ref, computed, onMounted, onUnmounted } from "vue"
 import { useTime } from "@/stores/time.ts"
-import ZenTime from "@/components/Time/ZenTime.vue"
-import ZenCalendar from "@/components/Time/ZenCalendar.vue"
-import TimeConversions from "@/components/Time/TimeConversions.vue"
-// import ZenDocs from "@/components/Time/ZenDocs.vue"
 import { DateTime } from "luxon"
+import YearWheel from "@/components/Time/YearWheel.vue"
+import ZenDay from "@/components/Time/ZenDay.vue"
+import ZenHabit from "@/components/Time/ZenHabit.vue"
+import OGSvgs from "@/components/Time/OGSvgs.vue"
+// import ZenCalendar from "@/components/Time/ZenCalendar.vue"
+// import TimeConversions from "@/components/Time/TimeConversions.vue"
+// import ZenDocs from "@/components/Time/ZenDocs.vue"
 document.title = "Stein Unlimited Calendar System"
-const store = useTime()
-const timePulse = () => {
+const store = useTime();
+const timezone = new Date().toLocaleTimeString('en-us',{timeZoneName:'short'}).split(' ')[2]
+const displayZenTime = computed(() => [
+	store.zsessionNames.filter((all, id) => id == store.zsess).pop(),
+	" ", store.zsess + 1,
+	".", String(store.zmoment).padStart(2, '0'),
+	"`", store.instant,
+	" ", timezone
+])
+const timePulse = async () => {
 	let luxDate = DateTime.now().toLocal()
-	let luxString =
-		"" + luxDate.toLocaleString(DateTime.TIME_24_WITH_SHORT_OFFSET)
-	let luxCalendar = ""
-		// " ||  " + luxDate.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)
+	let luxCalendar = luxDate.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)
 	let sec = luxDate.second
 	let min = luxDate.minute
 	let hou = luxDate.hour
@@ -23,8 +31,7 @@ const timePulse = () => {
 	let adjh = (adjsecs / 3600) % 24
 	let whiles = Math.floor((adjsecs / store.ins_in_whi) % store.mom_in_whi)
 	let sess = Math.floor(adjh / store.hou_in_sess)
-	store.forma = luxString
-	 // + "" + luxCalendar
+	store.forma = luxDate.toLocaleString(DateTime.TIME_24_WITH_SHORT_OFFSET)+" "+luxCalendar
 	store.second = sec
 	store.minute = min
 	store.hour = hou
@@ -41,27 +48,87 @@ onMounted(() => {
 	timerID = setInterval(timePulse, 1000)
 })
 onUnmounted(() => {
-	clearInterval(timerID)
+	timePulse()
 })
-const whichView = ref('time')
-const setView = (which) => {
-	if (which==='time') {
-		whichView.value = 'time'
-	} else {
-		whichView.value = 'date'
-	}
+const infoTemplate = ref(`<h1>zenCalendar System</h1>`)
+const todayName = ref(null)
+const showInfo = ref(false)
+const toggleInfoView = (infoView: string) => {
+  showInfo.value = true
+  if (infoView==='zendate') {
+    infoTemplate.value = `
+      <h4>This is the current date in zen calendar</h4>
+    `
+  } else if (infoView==='holiday') {
+    infoTemplate.value = `
+      <h4>Holidays occur on the first of every Habit and share the Habit name.</h4>
+      <h6>ZenWeek is a special weeklong Holiday at the end/start of the year</h6>
+    `
+  } else if (infoView==='solstice') {
+    infoTemplate.value = `
+      <h4>Solstice is the maximum intensity point of seasonal oscillation, marking the end and halfway point of the year.</h4>
+    `
+  } else if (infoView==='equinox') {
+    infoTemplate.value = `
+      <h4>Equinox is the center intensity point of seasonal transition, and defines the quarters of the year.</h4>
+      <h6>The habit simple makes one further division, dividing the year into 8 periods of equal length (and one holiday week)</h6>
+    `
+  } else {
+    infoTemplate.value = `
+      <h1>zenCalendar System</h1>
+    `
+    showInfo.value = false
+  }
 }
-const sTitleLogo = ref(true)
-const trigger = () => (sTitleLogo.value = !sTitleLogo.value)
+
 </script>
 <template>
 	<div class="zen-wrapper">
-		<div class="selectables">
-			<component :is="ZenTime" v-if="whichView==='time'" />
-			<component :is="TimeConversions" v-if="whichView==='time'" />
-			<component :is="ZenCalendar" v-else />
+		<div class="info-panel" v-if="showInfo" v-html="infoTemplate"
+			@click="toggleInfoView('')">
 		</div>
-		<aside class="time-nav">
+		<div class="flex-me-center">
+			<div class="zen-meters">
+				<h3>{{ store.forma }}</h3>
+				<transition name="wiggle" appear>
+					<div class="title-logo">
+						<h1>zenCalendar</h1>
+						<button>
+							<i class="material-icons">mood</i>
+						</button>
+						<h2>by SteinUnlimited</h2>
+						<!-- <h3>{{store.zenDate}}</h3> -->
+					</div>
+				</transition>
+				<!-- <h2>zenTime</h2> -->
+				<h3>
+					<span v-for="t of displayZenTime" key="t">{{t}}</span>
+				</h3>
+				<!-- <label for="Session">Session {{store.zsess+1}}</label>
+				<meter id="Session" :value="store.zsess" max="11"></meter>
+				<label for="While">{{`While/Moment ${store.zmoment}`}}</label>
+				<meter id="While" :value="store.zmoment" max="100"></meter>
+				<label for="Instant">Instant {{store.instant}}</label>
+				<meter id="Instant" :value="store.instant" max="80"></meter> -->
+				<component :is="OGSvgs" />
+				<div class="flex-me">
+					<component :is="ZenDay" />
+					<component :is="YearWheel"
+					@zendate="toggleInfoView('zendate')"
+					@holiday="toggleInfoView('holiday')"
+					@solstice="toggleInfoView('solstice')"
+					@equinox="toggleInfoView('equinox')"
+					/>
+				</div>
+			</div>
+		</div>
+		<component :is="ZenHabit" />
+			<!-- <component :is="TimeConversions" v-if="whichView==='time'" /> -->
+		<!-- <aside class="time-nav">
+			<button class="time-nav-item" @click.prevent="setView('united')">
+				Overview
+				<i class="material-icons">alarm_off</i>
+			</button>
 			<button class="time-nav-item" @click.prevent="setView('time')">
 				Clock
 				<i class="material-icons">alarm_off</i>
@@ -70,130 +137,50 @@ const trigger = () => (sTitleLogo.value = !sTitleLogo.value)
 				Calendar
 				<i class="material-icons">calendar_month</i>
 			</button>
-			<button @click.prevent="trigger"
-				class="material-icons time-nav-item"
-				v-text="sTitleLogo ? `mood` : `sentiment_very_dissatisfied`"
-			></button>
-		</aside>
-		<transition name="wiggle" appear>
-			<div class="title-logo" v-if="sTitleLogo" @click.prevent="trigger">
-				<h1>zenCalendar</h1>
-				<h2>by SteinUnlimited</h2>
-			</div>
-		</transition>
+		</aside> -->
 	</div>
 </template>
-<!--
 <style lang="sass">
-$bg: #001215
-$wavelength-gray: #e0e0e0
-$stein-green: #44ffaa
-$stein-lightgreen: #00ffaa
+$primary-dark: #192
+$primary: #4F7
+$stein-green: #4f4
+$slime-green: #3f3
+$stein-lightgreen: #9f9
+$primary-light: #AFA
+$safe-light: #DFD
 $stein-lumenwhite: #d0fff1
+$teal: teal
+$light-teal: #4fa
 $stein-blue: #2800ff
+$greg-dark: rgb(29, 34, 154)
+$greg-light: rgb(56, 107, 221)
 $midnight: #000202
 $midnight-cream: #101
 $midnight-deluxe: #323
 $midnight-light: #FDC
-$safe-light: #DFD
-$primary-light: #7FA
-$primary: #4F7
-$primary-dark: #194
 $secondary-dark: #204
 $contrast-light: #F84
 $contrast: #C40
 $contrast-dark: #810
 $secondary-light: #D9F
 $secondary: #A5D
-$stein-magenta: rgb(175, 92, 233)
-$stein-lightpurple: rgb(131, 33, 255)
-$medium-orchid: rgb(100, 24, 153)
-$stein-purple: rgb(49, 14, 122)
-$stein-dark-purple: rgb(52, 4, 89)
-$darker-purple: rgb(35, 6, 51)
+$stein-magenta: rgb(105, 92, 233)
+$stein-lightpurple: rgb(71, 53, 240)
+$medium-orchid: rgb(70, 34, 153)
+$stein-purple: rgb(49, 14, 132)
+$stein-dark-purple: rgb(42, 4, 109)
+$darker-purple: rgb(25, 0, 51)
+$hot-purple: rgb(131, 33, 255)
 $box-midnight-cream: 0 0 0 1px $midnight-cream
 $box-midnight-light: 0 0 0 1px $midnight-light
-// @font-face
-// 	font-family: HK Grotesk
-// 	src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
-// @font-face
-// 	font-family: HK Grotesk
-// 	font-weight: bold
-// 	src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
-.zen-wrapper
-	display: flex
-	flex-direction: column
-	color: $wavelength-gray
-	background-color: $midnight
-	margin: 3rem 0
-	max-width: 100vw
-	min-width: 80vw
-	max-height: 100vh
-	overflow: auto
-	// color: $stein-lumenwhite
-	// font-size: 3rem
-	// line-height: 105%
-	// margin: 0.1em 0em
-	// margin: 0em 0em 0.4em 0em
-	// color: $stein-magenta
-	// font-size: 2rem
-	// font-size: 1.31em
-	// margin: 0em 0em 0.1em 0em
-	// color: $stein-green
-	// color: $stein-lumenwhite
-	// font-size: 46px
-	div.col
-		display: grid
-		grid: auto auto auto / auto
-		justify-content: center
-		align-content: center
-	span
-		line-height: 1.4
-		font-weight: bold
-		color: $medium-orchid
-		font-size: 1.4em
-		margin: 0.1rem 2%
-		padding: 0.3rem
-		width: 45vw
-	// ul
-	// 	// font-weight: medium
-	// 	// font-family: "Tahoma"
-	// 	line-height: 1.4
-	// 	color: $medium-orchid
-	// 	font-size: 1.4em
-	// 	list-style-type: none
-	// button
-	// 	color: $stein-magenta
-	a:hover
-		text-decoration: none
-.selectables
-	display: grid
-	grid-gap: 0.3rem
-	max-width: 100%
-	font-size: 0.6em
-	margin: 0
-	grid: auto / auto auto auto
-	height: 100vh
-@media screen and (min-width: 380px)
-	.selectables
-		font-size: 1em
-@media screen and (min-width: 800px)
-	.selectables
-		font-size: 16px
-.time-nav
-	display: grid
-	margin: 0
-	position: fixed
-	bottom: 0.2em
-	left: 200px
-	// right: 0.2em
-	.time-nav-item
-		background: $stein-lightpurple
-		max-width: 200px
-.title-logo
-	display: grid
-	font-size: 4rem
-	// margin-top: 2em
+@font-face
+	font-family: HK Grotesk
+	src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
+@font-face
+	font-family: HK Grotesk
+	font-weight: bold
+	src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
+
 @keyframes woggle
 	0%
 		transform: scale(1)
@@ -207,166 +194,156 @@ $box-midnight-light: 0 0 0 1px $midnight-light
 	animation: woggle 0.5s reverse
 .wiggle-leave-active
 	animation: woggle 0.5s ease
-@media screen and (min-width: 430px)
-	.zen-wrapper
-		place-items: center
-		min-height: 50vh
-		margin: 0 0em
-		// flex-direction: row
-	.selectables
-		// flex-direction: column
-		align-items: center
-		// justify-content: center
-// zenTime
-.zentime-container
+.time-nav
 	display: grid
-	grid-template-columns: 1fr 1fr
-	// width: 100vw
-	justify-content: space-between
+	margin: 0
+	position: fixed
+	bottom: .2em
+	left: 200px
+.time-nav-item
+	background: $hot-purple
+	color: $slime-green
+	max-width: 200px
+.title-logo
+	display: grid
+	font-size: 4rem
+	button
+		margin: 1em 13em
+		background-image: linear-gradient(to right, $stein-lumenwhite, white, $stein-lumenwhite)
+		i
+			color: $midnight
+
+// zenTime
 .zen-meters
 	display: flex
 	flex-direction: column
-	// grid-template-rows: repeat(8, 1fr)
-	// grid-template-columns: 1fr 1fr
-	// text-align: center
-	// justify-content: space-between
-	label
-		font-size: 1.4rem
-		text-align: center
-	meter
-		width: 100%
-	progress
-		width: 100%
-// sessionsChart / timeContainer???
-.time-container
-	font-family: Roboto
-	textAlign: center
-	float: right
-	padding: 0.9em
-	max-height: 100vh
-	.greg-dark, .greg-light, .zen-borders
-		rx: 5px
-		ry: 5px
-	.greg-dark
-		stroke: #D0FFF1
-		fill: rgb(29, 34, 154)
-	.greg-light
-		stroke: #D0FFF1
-		fill: rgb(56, 107, 221)
-	.greg-text
-		stroke: #D0FFF1
-		fill: #FFFFFF
-	.center-circle
-		fill: rgba(91, 246, 65, 0.7)
-	.zen-dark
-		stroke: #715
-		fill: DarkViolet
-	.clock-hand
-		stroke: rgba(91, 246, 65, 0.7)
-		stroke-width: 4
-	.zen-rect
-		stroke: #D0FFF1
-		fill: rgb(10, 30, 10, 50%)
-	.zen-mint
-		fill: #4FA
-	.zen-borders
-		stroke: #D0FFF1
-		fill: none
+	justify-content: space-around
+.greg-dark, .greg-light, .zen-borders
+	rx: 5px
+	ry: 5px
+.greg-dark
+	stroke: $stein-lumenwhite
+	fill: $greg-dark
+.greg-light
+	stroke: $stein-lumenwhite
+	fill: $greg-light
+.greg-text
+	stroke: $stein-lumenwhite
+	fill: $midnight-light
+.center-circle
+	fill: rgba(91, 246, 65, 0.7)
+	stroke: white
+	stroke-dasharray: 3 200
+	stroke-width: 18
+
 @keyframes tick-pulse
 	0%
-		transform: translateY(0px)
-	80%
-		transform: translateY(0px)
-	90%
-		transform: translateY(-2px)
-	100%
-		transform: translateY(0px)
+		transform: rotate(-90deg)
+	to
+		transform: rotate(270deg)
 .tick-pulse
 	animation: tick-pulse 1s ease
 	animation-iteration-count: infinite
+.clock-hand
+	// stroke: $contrast-light
+	stroke: rgba(91, 246, 65, 0.7)
+	stroke-width: 4
+.zen-rect
+	// stroke: $stein-lumenwhite
+.zen-mint
+	fill: $slime-green
+.zen-borders
+	fill: none
+	fill: rgba(40, 0, 100, 0.2)
+	stroke: $stein-lumenwhite
+
 // TimeConversions
 .conversionTable
 	max-width: 80vw
-	// max-height: 100vh
-	margin: 0
 	display: grid
-	padding: 0
-	grid-gap: 0
 	background-color: black
+	align-items: stretch
+	margin: 2rem
+	padding: 2em
+	grid-gap: 2rem
 	table
 		color: lavender
 		box-shadow: 0 0 8px 1px lightblue
-		fontSize: 1.2rem
+		font-size: 1.2rem
 		th
-			// max-width: 80px
 			padding: 0.5rem 0.8rem
 		.th
 			border: 1px solid darkmagenta
 		.th-blue
 			border: 1px solid lightskyblue
-// @media screen and (min-width: 430px)
-.conversionTable
-	align-items: stretch
-	margin: 2rem
-	padding: 2em
-	grid-gap: 2rem
-.calendars-container
+
+.flex-me
+	display: flex
+	@media screen and (max-width: 800px)
+		margin: 0
+		flex-direction: column
+.zen-wrapper
+	// max-width: 1970px
+	// width: 100vw
+	font-family: HK Grotesk
 	display: grid
-	grid-template-columns: 1fr 1fr
-	align-content: flex-start
-// zenCalendar
-.content
-	margin: 0
-	padding: 0
-	// margin-top: 0
-.untable
-	display: grid
-	margin: 0
-	// padding: 0
-	// min-height: 100vh
-	text-align: center
-	justify-content: center
-	margin: 0
-	padding: 0
-	display: grid
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
-	li
-		text-transform: capitalize
-		border: 1px solid $secondary-light
-		padding: 5px
-		cursor: pointer
-		border-radius: 5px
-		background-color: $stein-dark-purple
-		color: $secondary-light
+	@media screen and (min-width: 1440px)
+		grid-template: auto / 1fr 1fr
+	@media screen and (max-width: 425px)
+		display: flex
+		flex-direction: column
+		width: 425px
+		align-items: center
+		overflow-x: hidden
+		svg
+			// transform: scaleX(60%)
+		// overflow-x: scroll
+	@media screen and (max-width: 800px)
+		min-width: 100%
+		grid-template: 1fr / auto
+	color: $stein-lumenwhite
+	background-color: $midnight
+	justify-content: space-evenly
+	min-height: 100vh
+	padding: 10px 5px
+	margin: 0 auto
+	grid-gap: 10px
+	h1
+		font-size: 46px
+		color: $stein-lumenwhite
+		font-size: 3rem
+		line-height: 105%
+		margin: .1em 0
+	h2
+		margin: 0 0 .4em
+		color: $hot-purple
+		font-size: 2rem
+	h3
+		font-size: 1.31em
+		margin: 0 0 .1em
+		color: $teal
+	.flex-me-center
+		display: flex
+		justify-content: space-around
+		// grid-row: 1 / 3
 	.selected
 		background-color: $stein-purple
 		color: white
 		list-style: none
 		font-size: 1.3em
 		color: $safe-light
-.greg-date-td
-	margin: 0
-	box-shadow: $box-midnight-cream
+	a:hover
+		text-decoration: none
 #habits
-	display: grid
-	grid-gap: 30px
-#months
-	display: grid
-	grid-gap: 30px
-.unheader
-	border-radius: 5px
-	box-shadow: $box-midnight-light
 	display: flex
-	margin: 1em auto
-	padding: 1em 3em 0.4em 3em
-	// text-align: center
-	// background-color: #316
-	// text-transform: uppercase
-	// flex-direction: row
-	// align-items: center
-	// margin: 20px auto
-	// writing-mode: vertical-rl
-	// text-orientation: upright
+	flex-direction: column
+	@media screen and (min-width: 799px)
+		grid-gap: 30px
+		display: grid
+		box-shadow: 0 0 2px $midnight-light
+		margin: 1em
+		align-items: space-around
+	// grid-row: 1 / 3
 .baheader
 	text-align: center
 	font-weight: 500
@@ -374,26 +351,16 @@ $box-midnight-light: 0 0 0 1px $midnight-light
 	align-self: flex-end
 .baheader-zen
 	background-color: $secondary
-	color: black
-.baheader-greg
-	background-color: $primary
-	color: black
+	color: $stein-lumenwhite
 .unchunk
 	color: $safe-light
 	display: grid
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr
 	grid-gap: 2px
-.unchunk-greg
-	color: $safe-light
-	display: grid
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr
-	grid-gap: 2px
 .uncell
 	background-color: $midnight
 	margin: 0
 	padding: 1em
-.uncell-greg
-	border: 1px solid $primary-light
 .uncell-zen
 	border: 1px solid $secondary-light
 	cursor: pointer
@@ -401,262 +368,63 @@ $box-midnight-light: 0 0 0 1px $midnight-light
 	border: 1px solid $secondary
 	background-color: $midnight-cream
 .selected-date
-	color: $contrast-dark
-	background-color: $midnight-deluxe
 	font-weight: bolder
-</style>
--->
-<style lang="sass">
-.zen-wrapper
-  display: flex
-  flex-direction: column
-  color: #e0e0e0
-  background-color: #000202
-  margin: 3rem 0
-  max-width: 100vw
-  min-width: 80vw
-  max-height: 100vh
-  overflow: auto
-.zen-wrapper h1
-  color: #d0fff1
-  font-size: 3rem
-  line-height: 105%
-  margin: .1em 0
-.zen-wrapper h2
-  margin: 0 0 .4em
-  color: #af5ce9
-  font-size: 2rem
-.zen-wrapper h3
-  font-size: 1.31em
-  margin: 0 0 .1em
-  color: #4fa
-.zen-wrapper h4
-  color: #d0fff1
-.zen-wrapper h1
-  font-size: 46px
-.zen-wrapper div.col
-  display: grid
-  grid: auto auto auto/auto
-  justify-content: center
-  align-content: center
-.zen-wrapper span
-  line-height: 1.4
-  font-weight: 700
-  color: #641899
-  font-size: 1.4em
-  margin: .1rem 2%
-  padding: .3rem
-  width: 45vw
-.zen-wrapper a:hover
-  text-decoration: none
-.selectables
-  display: grid
-  grid-gap: .3rem
-  max-width: 100%
-  font-size: .6em
-  margin: 0
-  grid: auto/auto auto auto
-  height: 100vh
-@media screen and (min-width: 380px)
-  .selectables
-    font-size: 1em
-@media screen and (min-width: 800px)
-  .selectables
-    font-size: 16px
-.time-nav
-  display: grid
-  margin: 0
-  position: fixed
-  bottom: .2em
-  left: 200px
-.time-nav .time-nav-item
-  background: rgb(131, 33, 255)
-  max-width: 200px
-.title-logo
-  display: grid
-  font-size: 4rem
-@keyframes woggle
-  0%
-    transform: scale(1)
-  50%
-    transform: scale(.7)
-  70%
-    transform: scale(1.2)
-  to
-    transform: scale(0)
-.wiggle-enter-active
-  animation: woggle .5s reverse
-.wiggle-leave-active
-  animation: woggle .5s ease
-@media screen and (min-width: 430px)
-  .zen-wrapper
-    place-items: center
-    min-height: 50vh
-    margin: 0
-  .selectables
-    align-items: center
+	background-color: $stein-purple
+	color: $primary
+
+.info-panel
+	position: absolute
+	bottom: 0
+	right: 0
+	background: rgba(80, 80, 180, 0.8)
+	height: 100vh
+	width: 90vw
+.zenwheel text
+	cursor: pointer
+.dayname
+	color: lime
+.dayname-active
+	background-color: darkViolet
+.session-cell
+	color: black
+	background-color: lime
+	text-align: left
+.active
+	background-color: darkViolet
 .zentime-container
-  display: grid
-  grid-template-columns: 1fr 1fr
-  justify-content: space-between
-.zen-meters
-  display: flex
-  flex-direction: column
-.zen-meters label
-  font-size: 1.4rem
-  text-align: center
-.zen-meters meter
-  width: 100%
-.zen-meters progress
-  width: 100%
-.time-container
-  font-family: Roboto
-  textAlign: center
-  float: right
-  padding: .9em
-  max-height: 100vh
-.time-container .greg-dark, .time-container .greg-light, .time-container .zen-borders
-  rx: 5px
-  ry: 5px
-.time-container .greg-dark
-  stroke: #d0fff1
-  fill: #1d229a
-.time-container .greg-light
-  stroke: #d0fff1
-  fill: #386bdd
-.time-container .greg-text
-  stroke: #d0fff1
-  fill: #fff
-.time-container .center-circle
-  fill: #5bf641b3
-.time-container .zen-dark
-  stroke: #715
-  fill: #9400d3
-.time-container .clock-hand
-  stroke: #5bf641b3
-  stroke-width: 4
-.time-container .zen-rect
-  stroke: #d0fff1
-  fill: #0a1e0a80
-.time-container .zen-mint
-  fill: #4fa
-.time-container .zen-borders
-  stroke: #d0fff1
-  fill: none
-@keyframes tick-pulse
-  0%
-    transform: translateY(0)
-  80%
-    transform: translateY(0)
-  90%
-    transform: translateY(-2px)
-  to
-    transform: translateY(0)
-.tick-pulse
-  animation: tick-pulse 1s ease
-  animation-iteration-count: infinite
-.conversionTable
-  max-width: 80vw
-  margin: 0
-  display: grid
-  padding: 0
-  grid-gap: 0
-  background-color: #000
-.conversionTable table
-  color: #e6e6fa
-  box-shadow: 0 0 8px 1px #add8e6
-  fontSize: 1.2rem
-.conversionTable table th
-  padding: .5rem .8rem
-.conversionTable table .th
-  border: 1px solid darkmagenta
-.conversionTable table .th-blue
-  border: 1px solid lightskyblue
-@media screen and (min-width: 430px)
-  .conversionTable
-    align-items: stretch
-    margin: 2rem
-    padding: 2em
-    grid-gap: 2rem
-  .calendars-container
-    display: grid
-    grid-template-columns: 1fr 1fr
-    align-content: flex-start
-.content
-  margin: 0
-  padding: 0
-.untable
-  display: grid
-  margin: 0
-.untable ol
-  text-align: center
-  justify-content: center
-  margin: 0
-  padding: 0
-  display: grid
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
-.untable ol li
-  text-transform: capitalize
-  border: 1px solid #D9F
-  padding: 5px
-  cursor: pointer
-  border-radius: 5px
-  background-color: #340459
-  color: #d9f
-.untable ol .selected
-  background-color: #310e7a
-  color: #fff
-.untable li
-  list-style: none
-  font-size: 1.3em
-  color: #dfd
-.greg-date-td
-  margin: 0
-  box-shadow: 0 0 0 1px #101
-#habits, #months
-  display: grid
-  grid-gap: 30px
-.unheader
-  border-radius: 5px
-  box-shadow: 0 0 0 1px #fdc
-  display: flex
-  margin: 1em auto
-  padding: 1em 3em .4em
-.baheader
-  text-align: center
-  font-weight: 500
-  height: 20px
-  align-self: flex-end
-.baheader-zen
-  background-color: #a5d
-  color: #000
-.baheader-greg
-  background-color: #4f7
-  color: #000
-.unchunk
-  color: #dfd
-  display: grid
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr
-  grid-gap: 2px
-.unchunk-greg
-  color: #dfd
-  display: grid
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr
-  grid-gap: 2px
-.uncell
-  background-color: #000202
-  margin: 0
-  padding: 1em
-.uncell-greg
-  border: 1px solid #7FA
-.uncell-zen
-  border: 1px solid #D9F
-  cursor: pointer
-.uncell-zen:hover
-  border: 1px solid #A5D
-  background-color: #101
-.selected-date
-  color: #810
-  background-color: #323
-  font-weight: bolder
+	margin: 0.2em 6em
+	@media screen and (max-width: 800px)
+		padding: 1em 4em
+		margin: 1em
+	border-radius: 60px
+	background-color: $stein-dark-purple
+	div
+		padding: 5px 0
+		.stroke-me
+			stroke: chartreuse
+.zenwheel
+	text.active
+		fill: white
+.above-cal
+	display: grid
+	@media screen and (max-width: 799px)
+		// grid-template: auto / auto
+		display: flex
+		flex-direction: column
+	@media screen and (min-width: 800px)
+		grid-template: 3fr 1fr / 1fr
+		justify-content: center
+		align-items: flex-end
+.zen-calendar
+	margin: 1em
+.day-container
+	justify-content: space-around
+	align-items: center
+	align-content: center
+	svg
+		align-self: flex-end
+		display: block
+		transform: translateX(9rem)
+		@media screen and (min-width: 800px)
+			transform: translateX(3em)
 </style>

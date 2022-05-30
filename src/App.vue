@@ -48,13 +48,7 @@ import { sidebarWidth } from '@/components/sidebar/state'
 
 
 <!--// <script setup lang="ts">
-// import { defineComponent } from "vue"
-// import { RouterView } from "vue-router"
-// import NavbarComponent from "@/components/NavbarComponent.vue"
 // import FooterComponent from "@/components/FooterComponent.vue"
-// </script>
-// <template>
-// 	<div id="app">
 // 		<div class="content">
 // 			<component :is="NavbarComponent" />
 // 			<main>
@@ -64,9 +58,6 @@ import { sidebarWidth } from '@/components/sidebar/state'
 // 				<component :is="FooterComponent" />
 // 			</transition>
 // 		</div>
-// 	</div>
-// </template>
-// <style lang="sass">
 // // VITE / VUE THEME
 // $white: #ffffff
 // $white-soft: #f8f8f8
