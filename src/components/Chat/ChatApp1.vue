@@ -25,8 +25,8 @@ const store = useStore()
 const router = useRouter()
 
 const chatRooms = ref([])
-const colRef = collection(firestoreDb, "chatRooms")
-const q1 = query(colRef, where('users', 'array-contains', store.uid))
+const colRef = collection(firestoreDb, "room_coll")
+const q1 = query(colRef, where('users', 'array-contains', store.username))
 const getChatMessages = onSnapshot(q1, (snap) => {
   let chats = []
   snap.forEach((doc) => {
@@ -44,8 +44,6 @@ onAuthStateChanged(auth, async (user) => {
 	store.setAuthIsReady()
 })
 // get download links here:
-// console.info(storageService.getSoundUrl('unmaximize.mp3'))
-// console.info(storageService.getSoundUrl('notification.mp3'))
 // console.info(storageService.getAvatarUrl('nien_nunb.resized.png'))
 const currentUserId = ref(store.uid)
 const username = ref(store.username)
@@ -714,98 +712,114 @@ const resetForms = () => {
 </script>
 <template>
 	<div>
-    <!-- <div v-if="showOptions" class="button-theme">
-      <button class="button-light" @click="state.theme = 'light'">
-        Light
-      </button>
-      <button class="button-dark" @click="state.theme = 'dark'">
-        Dark
-      </button>
-      <button class="button-github">
-        <i class="material-icons">cyclone</i>
-      </button>
-    </div> -->
-
-  	<!-- <div class="window-container" :class="{ 'window-mobile': state.isDevice }"> -->
-  		<form v-if="state.addNewRoom" @submit.prevent="createRoom">
-  			<input v-model="state.addRoomUsername" type="text" placeholder="Add username" />
-  			<button type="submit" :disabled="state.disableForm || !state.addRoomUsername">
-  				Create Room
-  			</button>
-  			<button class="button-cancel" @click="state.addNewRoom = false">
-  				Cancel
-  			</button>
-  		</form>
-
-  		<form v-if="state.inviteRoomId" @submit.prevent="addRoomUser">
-  			<input v-model="state.invitedUsername" type="text" placeholder="Add username" />
-  			<button type="submit" :disabled="state.disableForm || !state.invitedUsername">
-  				Add User
-  			</button>
-  			<button class="button-cancel" @click="state.inviteRoomId = null">
-  				Cancel
-  			</button>
-  		</form>
-
-  		<form v-if="state.removeRoomId" @submit.prevent="deleteRoomUser">
-  			<select v-model="state.removeUserId">
-  				<option default value="">
-  					Select User
-  				</option>
-  				<option v-for="user in state.removeUsers" :key="user._id" :value="user._id">
-  					{{ user.username }}
-  				</option>
-  			</select>
-  			<button type="submit" :disabled="state.disableForm || !state.removeUserId">
-  				Remove User
-  			</button>
-  			<button class="button-cancel" @click="state.removeRoomId = null">
-  				Cancel
-  			</button>
-  		</form>
-
-  		<ChatWindow
-        :show-emojis="false"
-        :emojis-suggestion-enabled="false"
-  			:height="screenHeight"
-  			:theme="state.theme"
-  			:styles="state.styles"
-  			:current-user-id="currentUserId"
-  			:room-id="state.roomId"
-  			:rooms="loadedRooms"
-  			:loading-rooms="state.loadingRooms"
-  			:messages="state.messages"
-  			:messages-loaded="state.messagesLoaded"
-  			:rooms-loaded="state.roomsLoaded"
-  			:room-actions="state.roomActions"
-  			:menu-actions="state.menuActions"
-  			:message-selection-actions="state.messageSelectionActions"
-  			:room-message="state.roomMessage"
-  			:templates-text="state.templatesText"
-  			@fetch-more-rooms="fetchMoreRooms"
-  			@fetch-messages="fetchMessages"
-  			@send-message="sendMessage"
-  			@edit-message="editMessage"
-  			@delete-message="deleteMessage"
-  			@open-file="openFile"
-  			@open-user-tag="openUserTag"
-  			@add-room="addRoom"
-  			@room-action-handler="menuActionHandler"
-  			@menu-action-handler="menuActionHandler"
-  			@message-selection-action-handler="messageSelectionActionHandler"
-  			@send-message-reaction="sendMessageReaction"
-  			@typing-message="typingMessage"
-        @toggle-rooms-list="state.showDemoOptions=false"
-  		>
-  		</ChatWindow>
-  	<!-- </div> -->
-    <audio ref="unmaximize" type="audio/mpeg"
-        src="https://firebasestorage.googleapis.com/v0/b/stein-unlimited.appspot.com/o/sounds%2Funmaximize.mp3?alt=media&token=5f31afe5-3f06-4e5b-912a-6c6e02b5f156"
+		<div class="app-container"
+			:class="{ 'app-mobile': state.isDevice, 'app-mobile-dark': state.theme === 'dark' }"
     >
-    </audio>
-    <audio ref="notification" type="audio/mpeg"
-        src="https://firebasestorage.googleapis.com/v0/b/stein-unlimited.appspot.com/o/sounds%2Fnotification.mp3?alt=media&token=2b383dc8-019b-4975-885c-8bcb58734bc3"
-    >
-    </audio>
+      <div v-if="showOptions" class="button-theme">
+        <button class="button-light" @click="state.theme = 'light'">
+          Light
+        </button>
+        <button class="button-dark" @click="state.theme = 'dark'">
+          Dark
+        </button>
+        <button class="button-github">
+          <i class="material-icons">cyclone</i>
+        </button>
+      </div>
+
+
+    	<div class="window-container" :class="{ 'window-mobile': state.isDevice }">
+    		<form v-if="addNewRoom" @submit.prevent="createRoom">
+    			<input v-model="addRoomUsername" type="text" placeholder="Add username" />
+    			<button type="submit" :disabled="disableForm || !addRoomUsername">
+    				Create Room
+    			</button>
+    			<button class="button-cancel" @click="addNewRoom = false">
+    				Cancel
+    			</button>
+    		</form>
+
+    		<form v-if="inviteRoomId" @submit.prevent="addRoomUser">
+    			<input v-model="invitedUsername" type="text" placeholder="Add username" />
+    			<button type="submit" :disabled="disableForm || !invitedUsername">
+    				Add User
+    			</button>
+    			<button class="button-cancel" @click="inviteRoomId = null">
+    				Cancel
+    			</button>
+    		</form>
+
+    		<form v-if="removeRoomId" @submit.prevent="deleteRoomUser">
+    			<select v-model="removeUserId">
+    				<option default value="">
+    					Select User
+    				</option>
+    				<option v-for="user in removeUsers" :key="user._id" :value="user._id">
+    					{{ user.username }}
+    				</option>
+    			</select>
+    			<button type="submit" :disabled="disableForm || !removeUserId">
+    				Remove User
+    			</button>
+    			<button class="button-cancel" @click="removeRoomId = null">
+    				Cancel
+    			</button>
+    		</form>
+
+    		<ChatWindow
+    			:height="screenHeight"
+    			:theme="state.theme"
+    			:styles="styles"
+    			:current-user-id="currentUserId"
+    			:room-id="roomId"
+    			:rooms="loadedRooms"
+    			:loading-rooms="loadingRooms"
+    			:messages="messages"
+    			:messages-loaded="messagesLoaded"
+    			:rooms-loaded="roomsLoaded"
+    			:room-actions="roomActions"
+    			:menu-actions="menuActions"
+    			:message-selection-actions="messageSelectionActions"
+    			:room-message="roomMessage"
+    			:templates-text="templatesText"
+    			@fetch-more-rooms="fetchMoreRooms"
+    			@fetch-messages="fetchMessages"
+    			@send-message="sendMessage"
+    			@edit-message="editMessage"
+    			@delete-message="deleteMessage"
+    			@open-file="openFile"
+    			@open-user-tag="openUserTag"
+    			@add-room="addRoom"
+    			@room-action-handler="menuActionHandler"
+    			@menu-action-handler="menuActionHandler"
+    			@message-selection-action-handler="messageSelectionActionHandler"
+    			@send-message-reaction="sendMessageReaction"
+    			@typing-message="typingMessage"
+          @toggle-rooms-list="state.showDemoOptions=false"
+    		>
+    		</ChatWindow>
+    	</div>
+			<!-- <div> -->
+				<!-- <button @click="resetData">
+					Clear Data
+				</button>
+				<button :disabled="updatingData" @click="addData">
+					Add Data
+				</button> -->
+			<!-- </div> -->
+			<!-- <span
+				v-if="showOptions"
+				class="user-logged"
+				:class="{ 'user-logged-dark': state.theme === 'dark' }"
+			>
+				Logged as
+			</span> -->
+			<!-- <div v-if="showOptions">
+				<h1 :key="store.username"
+					style="color: white;" :value="store.username">
+					{{ store.username }}
+				</h1>
+			</div> -->
+		</div>
 	</div>
 </template>

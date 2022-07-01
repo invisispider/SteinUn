@@ -13,11 +13,11 @@ import * as storageService from '@/components/Chat/database/storage'
 
 import { parseTimestamp, formatTimestamp } from '@/components/Chat/utils/dates'
 
+import ChatContainer from '@/components/Chat/ChatContainer.vue'
+import 'vue-advanced-chat/dist/vue-advanced-chat.css'
+
 import { collection, where, query, onSnapshot } from "firebase/firestore"
 import { firestoreDb } from "@/services/firebaseconfig"
-
-import ChatWindow from 'vue-advanced-chat'
-import 'vue-advanced-chat/dist/vue-advanced-chat.css'
 
 document.title="unTalkMe"
 
@@ -25,8 +25,8 @@ const store = useStore()
 const router = useRouter()
 
 const chatRooms = ref([])
-const colRef = collection(firestoreDb, "chatRooms")
-const q1 = query(colRef, where('users', 'array-contains', store.uid))
+const colRef = collection(firestoreDb, "room_coll")
+const q1 = query(colRef, where('users', 'array-contains', store.username))
 const getChatMessages = onSnapshot(q1, (snap) => {
   let chats = []
   snap.forEach((doc) => {
@@ -44,8 +44,6 @@ onAuthStateChanged(auth, async (user) => {
 	store.setAuthIsReady()
 })
 // get download links here:
-// console.info(storageService.getSoundUrl('unmaximize.mp3'))
-// console.info(storageService.getSoundUrl('notification.mp3'))
 // console.info(storageService.getAvatarUrl('nien_nunb.resized.png'))
 const currentUserId = ref(store.uid)
 const username = ref(store.username)
@@ -129,10 +127,9 @@ onMounted(() => {
 	if (!username.value) {
 		router.push('/UnThinkMe')
 	}
-  state.showDemoOptions=false
-  if (username.value=="Adam") {
-    state.showDemoOptions=true
-  }
+  // if (username.value=="Adam") {
+  //   state.showDemoOptions=true
+  // }
 	state.isDevice = window.innerWidth < 500
 	firebaseService.updateUserOnlineStatus(currentUserId.value)
 	fetchRooms()
@@ -604,6 +601,7 @@ const typingMessage = ({ message, roomId }) => {
 }
 const listenRooms =  async (query) => {
 	const listener = firestoreService.listenRooms(query, rooms => {
+		// this.incrementDbCounter('Listen Rooms Typing Users', rooms.length)
 		rooms.forEach(room => {
 			const foundRoom = state.rooms.find(r => r.roomId === room.id)
 			if (foundRoom) {
@@ -685,23 +683,27 @@ const deleteRoomUser = async () => {
 	state.removeUserId = ''
 	fetchRooms()
 }
-const deleteRoom = async (roomId) => {
-	const room = state.rooms.find(r => r.roomId === roomId)
-	if (user.username !== 'Adam') return alert('No peepee on your eyes')
-	firestoreService.getMessages(roomId).then(({ data }) => {
-		data.forEach(message => {
-			firestoreService.deleteMessage(roomId, message.id)
-			if (message.files) {
-				message.files.forEach(file => {
-					storageService.deleteFile(currentUserId.value, message.id, file)
-				})
-			}
-		})
-	})
-	await firestoreService.deleteRoom(roomId)
-	fetchRooms()
-}
-
+// const deleteRoom = async (roomId) => {
+// 	const room = state.rooms.find(r => r.roomId === roomId)
+// 	if (
+// 		room.users.find(user => user._id === 'SGmFnBZB4xxMv9V4CVlW') ||
+// 		room.users.find(user => user._id === '6jMsIXUrBHBj7o2cRlau')
+// 	) {
+// 		return alert('Nope, for demo purposes you cannot delete this room')
+// 	}
+// 	firestoreService.getMessages(roomId).then(({ data }) => {
+// 		data.forEach(message => {
+// 			firestoreService.deleteMessage(roomId, message.id)
+// 			if (message.files) {
+// 				message.files.forEach(file => {
+// 					storageService.deleteFile(currentUserId.value, message.id, file)
+// 				})
+// 			}
+// 		})
+// 	})
+// 	await firestoreService.deleteRoom(roomId)
+// 	fetchRooms()
+// }
 const resetForms = () => {
 	state.disableForm = false
 	state.addNewRoom = null
@@ -711,101 +713,56 @@ const resetForms = () => {
 	state.removeRoomId = null
 	state.removeUserId = ''
 }
+// ,incrementDbCounter(type, size) {
+// 	size = size || 1
+// 	this.dbRequestCount += size
+// 	console.log(type, size)
+// }
 </script>
 <template>
 	<div>
-    <!-- <div v-if="showOptions" class="button-theme">
-      <button class="button-light" @click="state.theme = 'light'">
-        Light
-      </button>
-      <button class="button-dark" @click="state.theme = 'dark'">
-        Dark
-      </button>
-      <button class="button-github">
-        <i class="material-icons">cyclone</i>
-      </button>
-    </div> -->
-
-  	<!-- <div class="window-container" :class="{ 'window-mobile': state.isDevice }"> -->
-  		<form v-if="state.addNewRoom" @submit.prevent="createRoom">
-  			<input v-model="state.addRoomUsername" type="text" placeholder="Add username" />
-  			<button type="submit" :disabled="state.disableForm || !state.addRoomUsername">
-  				Create Room
-  			</button>
-  			<button class="button-cancel" @click="state.addNewRoom = false">
-  				Cancel
-  			</button>
-  		</form>
-
-  		<form v-if="state.inviteRoomId" @submit.prevent="addRoomUser">
-  			<input v-model="state.invitedUsername" type="text" placeholder="Add username" />
-  			<button type="submit" :disabled="state.disableForm || !state.invitedUsername">
-  				Add User
-  			</button>
-  			<button class="button-cancel" @click="state.inviteRoomId = null">
-  				Cancel
-  			</button>
-  		</form>
-
-  		<form v-if="state.removeRoomId" @submit.prevent="deleteRoomUser">
-  			<select v-model="state.removeUserId">
-  				<option default value="">
-  					Select User
-  				</option>
-  				<option v-for="user in state.removeUsers" :key="user._id" :value="user._id">
-  					{{ user.username }}
-  				</option>
-  			</select>
-  			<button type="submit" :disabled="state.disableForm || !state.removeUserId">
-  				Remove User
-  			</button>
-  			<button class="button-cancel" @click="state.removeRoomId = null">
-  				Cancel
-  			</button>
-  		</form>
-
-  		<ChatWindow
-        :show-emojis="false"
-        :emojis-suggestion-enabled="false"
-  			:height="screenHeight"
-  			:theme="state.theme"
-  			:styles="state.styles"
+		<div class="app-container"
+			:class="{ 'app-mobile': state.isDevice, 'app-mobile-dark': state.theme === 'dark' }"
+    >
+      <div v-if="showOptions" class="button-theme">
+        <button class="button-light" @click="state.theme = 'light'">
+          Light
+        </button>
+        <button class="button-dark" @click="state.theme = 'dark'">
+          Dark
+        </button>
+        <button @click.prevent="state.showDemoOptions=!state.showDemoOptions" class="button-github">
+          <i class="material-icons">cyclone</i>
+        </button>
+      </div>
+			<component :is="ChatContainer"
   			:current-user-id="currentUserId"
-  			:room-id="state.roomId"
-  			:rooms="loadedRooms"
-  			:loading-rooms="state.loadingRooms"
-  			:messages="state.messages"
-  			:messages-loaded="state.messagesLoaded"
-  			:rooms-loaded="state.roomsLoaded"
-  			:room-actions="state.roomActions"
-  			:menu-actions="state.menuActions"
-  			:message-selection-actions="state.messageSelectionActions"
-  			:room-message="state.roomMessage"
-  			:templates-text="state.templatesText"
-  			@fetch-more-rooms="fetchMoreRooms"
-  			@fetch-messages="fetchMessages"
-  			@send-message="sendMessage"
-  			@edit-message="editMessage"
-  			@delete-message="deleteMessage"
-  			@open-file="openFile"
-  			@open-user-tag="openUserTag"
-  			@add-room="addRoom"
-  			@room-action-handler="menuActionHandler"
-  			@menu-action-handler="menuActionHandler"
-  			@message-selection-action-handler="messageSelectionActionHandler"
-  			@send-message-reaction="sendMessageReaction"
-  			@typing-message="typingMessage"
-        @toggle-rooms-list="state.showDemoOptions=false"
-  		>
-  		</ChatWindow>
-  	<!-- </div> -->
-    <audio ref="unmaximize" type="audio/mpeg"
-        src="https://firebasestorage.googleapis.com/v0/b/stein-unlimited.appspot.com/o/sounds%2Funmaximize.mp3?alt=media&token=5f31afe5-3f06-4e5b-912a-6c6e02b5f156"
-    >
-    </audio>
-    <audio ref="notification" type="audio/mpeg"
-        src="https://firebasestorage.googleapis.com/v0/b/stein-unlimited.appspot.com/o/sounds%2Fnotification.mp3?alt=media&token=2b383dc8-019b-4975-885c-8bcb58734bc3"
-    >
-    </audio>
+  			:theme="state.theme"
+  			:is-device="state.isDevice"
+  			@show-demo-options="state.showDemoOptions = $event"
+			/>
+
+			<!-- <div> -->
+				<!-- <button @click="resetData">
+					Clear Data
+				</button>
+				<button :disabled="updatingData" @click="addData">
+					Add Data
+				</button> -->
+			<!-- </div> -->
+			<!-- <span
+				v-if="showOptions"
+				class="user-logged"
+				:class="{ 'user-logged-dark': state.theme === 'dark' }"
+			>
+				Logged as
+			</span> -->
+			<!-- <div v-if="showOptions">
+				<h1 :key="store.username"
+					style="color: white;" :value="store.username">
+					{{ store.username }}
+				</h1>
+			</div> -->
+		</div>
 	</div>
 </template>
