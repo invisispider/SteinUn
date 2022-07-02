@@ -1,18 +1,20 @@
 <script setup>
-import { defineComponent, onMounted, ref } from "vue"
-const thisQuote = ref({ source: '', quote: ''})
+import { onMounted, ref } from "vue";
+const thisQuote = ref({ source: "", quote: "" });
 const getQuotes = async () => {
-  const PhilosophyQuotesLink = "https://philosophy-quotes-api.glitch.me/quotes"
-  let data = await fetch(PhilosophyQuotesLink, (error)=>console.error(error.message))
-  let json = await data.json()
+  const PhilosophyQuotesLink = "https://philosophy-quotes-api.glitch.me/quotes";
+  let data = await fetch(PhilosophyQuotesLink, (error) =>
+    console.error(error.message)
+  );
+  let json = await data.json();
   // console.log(json)
-  let random = Math.floor(Math.random()*json.length)
-  let quo = await json[random]
-  thisQuote.value = await quo
-}
-onMounted(()=> {
-  getQuotes()
-})
+  let random = Math.floor(Math.random() * json.length);
+  let quo = await json[random];
+  thisQuote.value = await quo;
+};
+onMounted(() => {
+  getQuotes();
+});
 </script>
 <template>
   <div class="unthinkme">
@@ -20,12 +22,14 @@ onMounted(()=> {
     <i class="material-icons glow" @click="getQuotes">park</i>
     <div v-if="thisQuote.quote">
       <p v-text="thisQuote.quote"></p>
-      <h4>{{thisQuote.source}}</h4>
+      <h4>{{ thisQuote.source }}</h4>
     </div>
     <div v-else>
       <p>Louie is thinking...</p>
-      <img alt="nien nunb"
-      src="https://firebasestorage.googleapis.com/v0/b/stein-unlimited.appspot.com/o/avatars%2Fnien_nunb.png?alt=media&token=b5fe8859-af90-4431-8ce4-00ae55fd1cda" />
+      <img
+        alt="nien nunb"
+        src="https://firebasestorage.googleapis.com/v0/b/stein-unlimited.appspot.com/o/avatars%2Fnien_nunb.png?alt=media&token=b5fe8859-af90-4431-8ce4-00ae55fd1cda"
+      />
     </div>
   </div>
 </template>

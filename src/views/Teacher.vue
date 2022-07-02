@@ -1,41 +1,47 @@
 <script setup lang="ts">
-import { ref } from "vue"
-import ThousandPlusPlaylist from "@/components/ThousandPlusPlaylist.vue"
-document.title = "Music Lessons with Adam"
-const showEmail = ref(false)
+import { ref } from "vue";
+import ThousandPlusPlaylist from "@/components/ThousandPlusPlaylist.vue";
+document.title = "Music Lessons with Adam";
+const showEmail = ref(false);
 const getMail = () => {
-	showEmail.value = !showEmail.value
-}
-const showPlaylist = ref(true)
+  showEmail.value = !showEmail.value;
+};
+const showPlaylist = ref(true);
 </script>
 <template>
-	<div id="bodyMain">
-		<div class="headban fadeInUp">
-			<div class="bounceInRight">
-				<h1 class="glow" id="hometitle">MUSIC LESSONS</h1>
-			</div>
-			<div class="bounceInleft animationDelay">
-				<h2>with Adam Loewen</h2>
-			</div>
-			<div class="bounceIn animationDelayMed">
-				<h3>Piano | Guitar | Bass | Ukelele | Drums | Voice</h3>
-			</div>
-		</div>
-		<div class="top-container">
-			<div class="glow contdiv insert-into piano-div">
-				<h2>Private/Group Lessons and Coaching</h2>
-				<h4>
-					I have switched careers and no longer teach full time.<br> I love to teach and play,
-					and always accept new students for remote or local sessions.
-				</h4>
-				<div @click="getMail">
-					<img v-if="showEmail" class="pulse" id="emailImg" src="@/assets/img/gmail.png" />
-					<h2 v-else class="bounceMe">Contact Me!</h2>
-				</div>
-			</div>
-			<component v-if="showPlaylist" :is="ThousandPlusPlaylist" />
-		</div>
-		<div class="double-width glow">
+  <div id="bodyMain">
+    <div class="headban fadeInUp">
+      <div class="bounceInRight">
+        <h1 class="glow" id="hometitle">MUSIC LESSONS</h1>
+      </div>
+      <div class="bounceInleft animationDelay">
+        <h2>with Adam Loewen</h2>
+      </div>
+      <div class="bounceIn animationDelayMed">
+        <h3>Piano | Guitar | Bass | Ukelele | Drums | Voice</h3>
+      </div>
+    </div>
+    <div class="top-container">
+      <div class="glow contdiv insert-into piano-div">
+        <h2>Private/Group Lessons and Coaching</h2>
+        <h4>
+          I have switched careers and no longer teach full time.<br />
+          I love to teach and play, and always accept new students for remote or
+          local sessions.
+        </h4>
+        <div @click="getMail">
+          <img
+            v-if="showEmail"
+            class="pulse"
+            id="emailImg"
+            src="@/assets/img/gmail.png"
+          />
+          <h2 v-else class="bounceMe">Contact Me!</h2>
+        </div>
+      </div>
+      <component v-if="showPlaylist" :is="ThousandPlusPlaylist" />
+    </div>
+    <!-- <div class="double-width glow">
 			<h1>Testimonials</h1>
 		</div>
 		<div class="testimonials">
@@ -71,8 +77,8 @@ const showPlaylist = ref(true)
 				</p>
 				<img src="@/assets/img/kid3.jpg" />
 			</div>
-		</div>
-	</div>
+		</div> -->
+  </div>
 </template>
 <style lang="sass">
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap')

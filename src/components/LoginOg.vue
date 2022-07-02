@@ -1,28 +1,29 @@
 <script setup>
-import { useStore } from "@/stores/index"
-import { ref } from "vue"
-import { auth, firestoreDb } from "@/services/firebaseconfig"
-import { signInWithEmailAndPassword } from "firebase/auth"
-import { doc, getDoc } from "firebase/firestore"
-const store = useStore()
-const inputPassword = ref("")
-const inputUsername = ref("")
+import { useStore } from "@/stores/index";
+import { ref } from "vue";
+import { auth, firestoreDb } from "@/services/firebaseconfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
+const store = useStore();
+const inputPassword = ref("");
+const inputUsername = ref("");
 const signIn = function () {
   signInWithEmailAndPassword(auth, inputUsername.value, inputPassword.value)
     .then((userCredential) => {
-      store.setEmail(userCredential.email)
-      store.setUid(userCredential.uid)
-      store.setIsIn()
-    }).catch((err) => console.log(err))
-    if (store.uid) {
-      const docRef = doc(firestoreDb, "users", store.uid)
-      const docSnap = getDoc(docRef)
-      if (docSnap) {
-        store.setUsername(docSnap.data().username)
-      }
+      store.setEmail(userCredential.email);
+      store.setUid(userCredential.uid);
+      store.setIsIn();
+    })
+    .catch((err) => console.log(err));
+  if (store.uid) {
+    const docRef = doc(firestoreDb, "users", store.uid);
+    const docSnap = getDoc(docRef);
+    if (docSnap) {
+      store.setUsername(docSnap.data().username);
     }
-    store.setAuthIsReady()
-}
+  }
+  store.setAuthIsReady();
+};
 </script>
 <template>
   <form

@@ -1,18 +1,18 @@
 <script setup>
-import { useRouter } from "vue-router"
+import { useRouter } from "vue-router";
 import { ref } from "vue";
-import { auth } from "@/services/firebaseconfig"
-import { useStore } from "@/stores/index.ts"
-import { signOut } from "firebase/auth"
-const router = useRouter()
-const emit = defineEmits(["sent"])
-const store = useStore()
-const showWarn = ref(true)
+import { auth } from "@/services/firebaseconfig";
+import { useStore } from "@/stores/index.ts";
+import { signOut } from "firebase/auth";
+const router = useRouter();
+// const emit = defineEmits(["sent"]);
+const store = useStore();
+const showWarn = ref(true);
 const unLogMe = async () => {
-  await signOut(auth)
-  store.$reset()
-  localStorage.clear()
-  router.push('/')
+  await signOut(auth);
+  store.$reset();
+  localStorage.clear();
+  router.push("/");
   // store.setEmail(null)
   // store.setIsOut()
   // emit("sent")

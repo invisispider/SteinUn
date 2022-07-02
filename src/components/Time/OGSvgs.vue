@@ -1,9 +1,9 @@
 <script setup>
-import { useTime } from "@/stores/time.ts"
-const store = useTime()
-const svgW = 400
-const svgH = 22
-const emit = defineEmits(['zentime'])
+import { useTime } from "@/stores/time.ts";
+const store = useTime();
+const svgW = 400;
+const svgH = 22;
+const emit = defineEmits(["zentime"]);
 </script>
 <template>
   <div class="zentime-container" @click="emit('zentime')">
@@ -12,9 +12,9 @@ const emit = defineEmits(['zentime'])
         <g>
           <rect :width="svgW" :height="svgH" fill="black" class="stroke-me" />
           <rect
-          :width="(svgW / 10.8) * store.zsess"
-          :height="svgH"
-          fill="MediumPurple"
+            :width="(svgW / 10.8) * store.zsess"
+            :height="svgH"
+            fill="MediumPurple"
           />
         </g>
         <text x="4" y="16" fill="white">
@@ -37,7 +37,9 @@ const emit = defineEmits(['zentime'])
             fill="MediumPurple"
           />
         </g>
-        <text x="4" y="16" fill="white">While & Moment: {{ store.zmoment }}</text>
+        <text x="4" y="16" fill="white">
+          While & Moment: {{ store.zmoment }}
+        </text>
       </svg>
     </div>
     <div>
@@ -45,9 +47,9 @@ const emit = defineEmits(['zentime'])
         <g>
           <rect :width="svgW" :height="svgH" fill="black" class="stroke-me" />
           <rect
-          :width="(svgW / store.ins_in_mom) * store.instant"
-          :height="svgH"
-          fill="MediumPurple"
+            :width="(svgW / store.ins_in_mom) * store.instant"
+            :height="svgH"
+            fill="MediumPurple"
           />
         </g>
         <text x="4" y="16" fill="white">Instant: {{ store.instant }}</text>

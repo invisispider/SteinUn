@@ -1,68 +1,69 @@
 <script setup lang="ts">
-import TodoComponent from "@/components/TodoComponent.vue"
-import ScheduleComponent from "@/components/ScheduleComponent.vue"
-import MJBlog from "@/components/MJBlog.vue"
-import { ref, nextTick, onMounted } from "vue"
-import { useStore } from "@/stores/index"
-import { auth, firestoreDb } from "@/services/firebaseconfig"
-import { onAuthStateChanged } from "firebase/auth"
-import { doc, getDoc } from "firebase/firestore"
-import { useRouter } from "vue-router"
-import { httpsCallable } from "firebase/functions"
-import { fireFunctions } from "@/services/firebaseconfig"
-document.title = "the Experiment"
-const store = useStore()
-const router = useRouter()
-const doShowTodo = ref(false)
-const doShowSchedule = ref(false)
-const doShowMJ = ref(false)
-const collapseState = ref(false)
+import TodoComponent from "@/components/TodoComponent.vue";
+import ScheduleComponent from "@/components/ScheduleComponent.vue";
+import MJBlog from "@/components/MJBlog.vue";
+import { ref, nextTick, onMounted } from "vue";
+import { useStore } from "@/stores/index";
+import { auth, firestoreDb } from "@/services/firebaseconfig";
+import { onAuthStateChanged } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
+import { useRouter } from "vue-router";
+// import { httpsCallable } from "firebase/functions";
+// import { fireFunctions } from "@/services/firebaseconfig";
+document.title = "the Experiment";
+const store = useStore();
+const router = useRouter();
+const doShowTodo = ref(false);
+const doShowSchedule = ref(false);
+const doShowMJ = ref(false);
+const collapseState = ref(false);
 const chooseWindow = (which: string) => {
-  doShowTodo.value = false
-  doShowSchedule.value = false
-  doShowMJ.value = false
+  doShowTodo.value = false;
+  doShowSchedule.value = false;
+  doShowMJ.value = false;
   nextTick(() => {
     if (which === "todo") {
-      doShowTodo.value = true
+      doShowTodo.value = true;
     } else if (which === "schedule") {
-      doShowSchedule.value = true
+      doShowSchedule.value = true;
     } else if (which === "mjblog") {
-      doShowMJ.value = true
+      doShowMJ.value = true;
     }
-  })
-}
+  });
+};
 onAuthStateChanged(auth, async (user) => {
   if (user) {
-    auth.currentUser.getIdTokenResult()
+    auth.currentUser
+      .getIdTokenResult()
       .then((idTokenResult) => {
-        if (!!idTokenResult.claims.admin) {
-           console.info("you are a faggot")
-           store.setAdmin();
-         }
+        if (idTokenResult.claims.admin) {
+          console.info("you are a faggot");
+          store.setAdmin();
+        }
       })
       .catch((error) => {
         console.log(error);
       });
-    store.setIsIn()
-    store.setUid(await user.uid as string)
-    const docRef = doc(firestoreDb, "users", user.uid)
-    const docSnap = await getDoc(docRef)
+    store.setIsIn();
+    store.setUid((await user.uid) as string);
+    const docRef = doc(firestoreDb, "users", user.uid);
+    const docSnap = await getDoc(docRef);
     if (docSnap) {
-      store.setUsername(await docSnap.data().username)
+      store.setUsername(await docSnap.data().username);
     } else {
-      console.log("No such document!")
+      console.log("No such document!");
     }
   } else {
     // store.$reset()
     // router.push('/')
-  store.setAuthIsReady()
+    store.setAuthIsReady();
   }
-})
-onMounted(()=>{
-  if (store.uid!==import.meta.env.VITE_UID) {
-    router.push('/UnThinkMe')
+});
+onMounted(() => {
+  if (store.uid !== import.meta.env.VITE_UID) {
+    router.push("/UnThinkMe");
   }
-})
+});
 </script>
 <template>
   <main class="home-container">
@@ -73,13 +74,32 @@ onMounted(()=>{
         <component :is="MJBlog" v-if="doShowMJ" />
       </div>
       <nav class="collapseNav" v-show="store.username">
-        <button v-show="!collapseState" class="userButton" @click.prevent="chooseWindow('todo')">Memo
+        <button
+          v-show="!collapseState"
+          class="userButton"
+          @click.prevent="chooseWindow('todo')"
+        >
+          Memo
         </button>
-        <button v-show="!collapseState" class="userButton" @click.prevent="chooseWindow('schedule')">Habit
+        <button
+          v-show="!collapseState"
+          class="userButton"
+          @click.prevent="chooseWindow('schedule')"
+        >
+          Habit
         </button>
-        <button v-show="!collapseState" class="userButton" @click.prevent="chooseWindow('mjblog')">MJ Blog
+        <button
+          v-show="!collapseState"
+          class="userButton"
+          @click.prevent="chooseWindow('mjblog')"
+        >
+          MJ Blog
         </button>
-        <i class="material-icons christmas-icon green" @click.prevent="collapseState=!collapseState">terminal</i>
+        <i
+          class="material-icons christmas-icon green"
+          @click.prevent="collapseState = !collapseState"
+          >terminal</i
+        >
       </nav>
     </template>
   </main>

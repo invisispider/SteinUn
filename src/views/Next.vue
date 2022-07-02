@@ -2,52 +2,55 @@
 import { reactive } from "vue";
 document.title = "Wow You Found It!";
 var state = reactive({
-	one: true,
-	two: true,
-	three: true,
-	four: true,
-})
+  one: true,
+  two: true,
+  three: true,
+  four: true,
+});
 </script>
 <template>
-	<div id="nextBody">
-		<transition name="shrinkDiv">
-			<img
-				id="abaDon"
-				src="@/assets/img/Abandon.jpg"
-				class="transparent"
-				v-if="state.one"
-				@mouseleave="state.one=false"
-			/>
-		</transition>
-		<h1 style="text-align: center">
-			/NEXT Error: This Feature Does Not Exist Yet!
-		</h1>
-		<div>
-			<h2 style="color: #ffffff">/NEXT Error10441: ThisFeaturedoesnotexits</h2>
-			<transition name="growText">
-				<h4 id="abaDont" v-if="state.two" @mouseover="state.two=false">
-					Oh... you know, I didn't think you'd get here so soon. <br />
-					I, uh... I don't really have anything ready for you yet.<br />
-					It's like, the opposite of that.<br />
-					You know the old tale about the ant and the grasshopper, right?<br />
-					I left an old copy lying around, in case you get bored.<br />
-					It's inside the shop. I think I've gotht eh key around here somewhere.
-					Uh...<br />
-					Check back with us soon, though! I'm really sorry.
-				</h4>
-			</transition>
-		</div>
-		<transition name="shrinkText">
-			<p id="abaDona" v-if="state.three" @mouseover="state.three=false" align="left">
-				<br /><br /><br /><br /><br /><br />
-			</p>
-		</transition>
-		<transition name="appearDiv">
-			<p id="abaDong" v-if="!state.four" align="left">
-				<br /><br /><br />
-			</p>
-		</transition>
-		<!--<p align="right"> The past poisoned, he staggars forwardr through strange lands, hindered by harsh forests.<br>
+  <div id="nextBody">
+    <transition name="shrinkDiv">
+      <img
+        id="abaDon"
+        src="@/assets/img/Abandon.jpg"
+        class="transparent"
+        v-if="state.one"
+        @mouseleave="state.one = false"
+      />
+    </transition>
+    <h1 style="text-align: center">
+      /NEXT Error: This Feature Does Not Exist Yet!
+    </h1>
+    <div>
+      <h2 style="color: #ffffff">/NEXT Error10441: ThisFeaturedoesnotexits</h2>
+      <transition name="growText">
+        <h4 id="abaDont" v-if="state.two" @mouseover="state.two = false">
+          Oh... you know, I didn't think you'd get here so soon. <br />
+          I, uh... I don't really have anything ready for you yet.<br />
+          It's like, the opposite of that.<br />
+          You know the old tale about the ant and the grasshopper, right?<br />
+          I left an old copy lying around, in case you get bored.<br />
+          It's inside the shop. I think I've gotht eh key around here somewhere.
+          Uh...<br />
+          Check back with us soon, though! I'm really sorry.
+        </h4>
+      </transition>
+    </div>
+    <transition name="shrinkText">
+      <p
+        id="abaDona"
+        v-if="state.three"
+        @mouseover="state.three = false"
+        align="left"
+      >
+        <br /><br /><br /><br /><br /><br />
+      </p>
+    </transition>
+    <transition name="appearDiv">
+      <p id="abaDong" v-if="!state.four" align="left"><br /><br /><br /></p>
+    </transition>
+    <!--<p align="right"> The past poisoned, he staggars forwardr through strange lands, hindered by harsh forests.<br>
 			Once proud and true, he was known to venture the darkness<br>
 			and walk with a limp. In solitude, he sought friendship<br>
 			among cowards, beggars, and liars.<br>
@@ -55,10 +58,10 @@ var state = reactive({
 			With proper names, numbers, and symbols they were aassembled.<br>
 			Ever after from that madness with his icon of solid crystal he stole to the humble grove village of Em.</p>
 		-->
-		<div id="footer" class="text-center" @click="state.four=false">
-			comments--><!---->
-		</div>
-	</div>
+    <div id="footer" class="text-center" @click="state.four = false">
+      comments--><!---->
+    </div>
+  </div>
 </template>
 <style lang="sass">
 body

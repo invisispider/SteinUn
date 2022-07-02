@@ -1,8 +1,8 @@
-import { createRouter, createWebHistory } from "vue-router"
-import type { RouteRecordRaw } from "vue-router"
-import Home from "@/views/Home.vue"
-import {pinia} from "@/main"
-import {useStore} from "@/stores/index"
+import { createRouter, createWebHistory } from "vue-router";
+import type { RouteRecordRaw } from "vue-router";
+import Home from "@/views/Home.vue";
+import { pinia } from "@/main";
+import { useStore } from "@/stores/index";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -12,7 +12,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/Chat",
     name: "ChatApp",
-    meta: {requiresAuth: true},
+    meta: { requiresAuth: true },
     component: () => import("@/components/Chat/ChatApp.vue"),
   },
   {
@@ -23,12 +23,12 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/Admin",
     name: "Admin",
-    meta: {requiresAuth: true},
+    meta: { requiresAuth: true },
     component: () => import("@/views/Admin.vue"),
     beforeEnter: () => {
-      const store = useStore(pinia)
-      if (store.uid!==import.meta.env.VITE_UID) {
-        return false
+      const store = useStore(pinia);
+      if (store.uid !== import.meta.env.VITE_UID) {
+        return false;
       }
     },
   },
@@ -77,13 +77,13 @@ const routes: Array<RouteRecordRaw> = [
     name: "FourOhFour",
     component: () => import("@/views/404.vue"),
   },
-]
+];
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
-})
+});
 router.beforeEach((to) => {
-  const store = useStore(pinia)
-  if (to.meta.requiresAuth && !store.isIn) return '/'
-})
+  const store = useStore(pinia);
+  if (to.meta.requiresAuth && !store.isIn) return "/";
+});
 export default router;

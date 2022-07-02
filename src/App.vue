@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import '@/assets/css/base.sass'
-import { defineComponent } from "vue"
-import { RouterView } from "vue-router"
+import "@/assets/css/base.sass";
+// import { defineComponent } from "vue";
+import { RouterView } from "vue-router";
 // import LoadingComponent from "@/components/LoadingComponent.vue"
-import Sidebar from '@/components/sidebar/Sidebar.vue'
-import { sidebarWidth } from '@/components/sidebar/state'
+import Sidebar from "@/components/sidebar/Sidebar.vue";
+import { sidebarWidth } from "@/components/sidebar/state";
 </script>
 <template>
-	<div id="app">
-		<Sidebar />
-		<div :style="{ 'margin-left': sidebarWidth }">
-			<router-view v-slot="{ Component} ">
-				<transition name="route" mode="out-in">
-					<component :is="Component" />
-				</transition>
-			</router-view>
-		</div>
-	</div>
+  <div id="app">
+    <Sidebar />
+    <div :style="{ 'margin-left': sidebarWidth }">
+      <router-view v-slot="{ Component }">
+        <transition name="route" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+    </div>
+  </div>
 </template>
 <style lang="sass">
 .route-enter-from
@@ -43,9 +43,6 @@ import { sidebarWidth } from '@/components/sidebar/state'
 #nav a.router-link-exact-active
 	color: #42b983
 </style>
-
-
-
 
 <!--// <script setup lang="ts">
 // import FooterComponent from "@/components/FooterComponent.vue"

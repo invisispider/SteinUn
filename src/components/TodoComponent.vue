@@ -1,26 +1,36 @@
 <script setup>
 import { ref, onUnmounted } from "vue";
-import { firestoreDb } from "@/services/firebaseconfig.ts"
-import { useStore } from "@/stores/index.ts"
-import { collection, query, where, orderBy, serverTimestamp,
-  onSnapshot, addDoc, doc, deleteDoc
-} from "firebase/firestore"
-const store = useStore()
-const newTodo = ref("")
-const Todos = ref([])
-const colRef = collection(firestoreDb, "todo_collection")
-const listName = ref("")
-const q = query(colRef, orderBy("createdAt"))
+import { firestoreDb } from "@/services/firebaseconfig.ts";
+// import { useStore } from "@/stores/index.ts";
+import {
+  collection,
+  query,
+  orderBy,
+  serverTimestamp,
+  onSnapshot,
+  addDoc,
+  doc,
+  deleteDoc,
+} from "firebase/firestore";
+// const store = useStore();
+const newTodo = ref("");
+const Todos = ref([]);
+const colRef = collection(firestoreDb, "todo_collection");
+const listName = ref("");
+const q = query(colRef, orderBy("createdAt"));
 // real time collection data
-const unsubSnap = onSnapshot(q, (snapshot) => {
-    let todos = []
+const unsubSnap = onSnapshot(
+  q,
+  (snapshot) => {
+    let todos = [];
     snapshot.docs.forEach((doc) => {
-      todos.push({ ...doc.data(), id: doc.id })
-    })
-    Todos.value = todos
-  }, err => console.log(err.message)
-)
-const showList = (list) => listName.value = list
+      todos.push({ ...doc.data(), id: doc.id });
+    });
+    Todos.value = todos;
+  },
+  (err) => console.log(err.message)
+);
+const showList = (list) => (listName.value = list);
 // const q = query(colRef, where("list", "==", listName.value), orderBy("createdAt"))
 // // real time collection data
 // const unsubSnap = onSnapshot(q, (snapshot) => {
@@ -37,38 +47,59 @@ const addTodo = () => {
     description: newTodo.value,
     list: listName.value,
     createdAt: serverTimestamp(),
-  })
-  newTodo.value = ""
-}
+  });
+  newTodo.value = "";
+};
 const removeTodo = (id) => {
-  const docRef = doc(firestoreDb, "todo_collection", id)
-  deleteDoc(docRef)
-}
-onUnmounted(()=>{
-  if(unsubSnap) {
-    unsubSnap()
+  const docRef = doc(firestoreDb, "todo_collection", id);
+  deleteDoc(docRef);
+};
+onUnmounted(() => {
+  if (unsubSnap) {
+    unsubSnap();
   }
-})
+});
 </script>
 <template>
   <div class="todo-list">
-    <button class="userButton btn-list-selector" @click.prevent="showList('')">Project</button>
-    <button class="userButton btn-list-selector" @click.prevent="showList('show_ideas')">Show Ideas</button>
-    <button class="userButton btn-list-selector" @click.prevent="showList('songs')">Songs</button>
+    <button class="userButton btn-list-selector" @click.prevent="showList('')">
+      Project
+    </button>
+    <button
+      class="userButton btn-list-selector"
+      @click.prevent="showList('show_ideas')"
+    >
+      Show Ideas
+    </button>
+    <button
+      class="userButton btn-list-selector"
+      @click.prevent="showList('songs')"
+    >
+      Songs
+    </button>
     <!-- <button class="userButton btn-list-selector" @click.prevent="showList('random')">Random</button> -->
-    <button class="userButton btn-list-selector" @click.prevent="showList('memo')">Memo</button>
+    <button
+      class="userButton btn-list-selector"
+      @click.prevent="showList('memo')"
+    >
+      Memo
+    </button>
     <form @submit.prevent="addTodo">
-      <h2>{{`list: ${listName}`}}</h2>
+      <h2>{{ `list: ${listName}` }}</h2>
       <input v-model="newTodo" />
       <i class="material-icons">cruelty_free</i>
     </form>
     <div class="todo-title"><h2>unDoMe</h2></div>
     <template v-for="ado in Todos" :key="ado">
-      <div class="todo-item" v-if="ado.list==listName">
+      <div class="todo-item" v-if="ado.list == listName">
         <a class="material-icons" @click.prevent="removeTodo(ado.id)">delete</a>
         <span class="todo-desc">{{ ado.description }}</span>
         <span class="todo-time">
-          {{ado&&ado.createdAt&&ado.createdAt.toDate&&ado.createdAt.toDate().toLocaleString("en-us", {
+          {{
+            ado &&
+            ado.createdAt &&
+            ado.createdAt.toDate &&
+            ado.createdAt.toDate().toLocaleString("en-us", {
               dateStyle: "short",
               timeStyle: "short",
               hour12: false,

@@ -2,13 +2,11 @@
 document.title = "UnReadMe";
 </script>
 <template>
-	<div class="UnReadMe">
-		<h1>Welcome to the Future.</h1>
-		<p>
-			Pick up controller.
-		</p>
-		<!-- <ul> -->
-			<!-- <li>
+  <div class="UnReadMe">
+    <h1>Welcome to the Future.</h1>
+    <p>Pick up controller.</p>
+    <!-- <ul> -->
+    <!-- <li>
 				<h3>Site Content</h3>
 			</li>
 			<li>
@@ -32,8 +30,8 @@ document.title = "UnReadMe";
 			<li>
 				<a href="/unReadMe"><strong>unReadMe</strong><br>This Page</a>
 			</li> -->
-		<!-- </ul> -->
-		<!-- <p>
+    <!-- </ul> -->
+    <!-- <p>
 			Feel free to contact me with any thoughts about this project, or if you would
 			like to contribute. I hope that the site content is somewhat self explanatory
 			and compelling, but I always want to know how it could be more so.
@@ -41,13 +39,13 @@ document.title = "UnReadMe";
 			milestones. Please do not cheat or hack unless invited to do so (there will be
 			opportunities). There's always a better way. Don't stamp on the flower.
 		</p> -->
-		<!-- <p style="margin-bottom: 2em">
+    <!-- <p style="margin-bottom: 2em">
 			This site was made with Vue 3 setup script, Typescript, Pinia, Sass, and
 			Firebase, culled together from different projects written in PHP/MySQL,
 			Python/Flask, React, etc, and some early vanilla on vanilla trying too hard.
 			Refactoring and config was pretty harsh, but we now have a component mill.
 		</p> -->
-	</div>
+  </div>
 </template>
 <style lang="sass" scoped>
 $salmon: rgb(233, 105, 151)
