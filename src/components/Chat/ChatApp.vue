@@ -1,39 +1,34 @@
 <script setup lang="ts">
+import { ref, reactive, computed, onMounted, watchEffect, onUnmounted } from "vue"
 import { useRouter } from "vue-router"
-import { ref, reactive, toRefs, computed, onMounted, watchEffect, onUnmounted } from "vue"
-
-import { onAuthStateChanged } from "firebase/auth"
-
 import { useStore } from "@/stores/index"
+import { onAuthStateChanged } from "firebase/auth"
 import { auth } from "@/services/firebaseconfig"
-
 import * as firestoreService from '@/components/Chat/database/firestore'
 import * as firebaseService from '@/components/Chat/database/firebase'
 import * as storageService from '@/components/Chat/database/storage'
-
 import { parseTimestamp, formatTimestamp } from '@/components/Chat/utils/dates'
-
-import { collection, where, query, onSnapshot } from "firebase/firestore"
-import { firestoreDb } from "@/services/firebaseconfig"
-
 import ChatWindow from 'vue-advanced-chat'
 import 'vue-advanced-chat/dist/vue-advanced-chat.css'
+
+// import { collection, where, query, onSnapshot } from "firebase/firestore"
+// import { firestoreDb } from "@/services/firebaseconfig"
 
 document.title="unTalkMe"
 
 const store = useStore()
 const router = useRouter()
 
-const chatRooms = ref([])
-const colRef = collection(firestoreDb, "chatRooms")
-const q1 = query(colRef, where('users', 'array-contains', store.uid))
-const getChatMessages = onSnapshot(q1, (snap) => {
-  let chats = []
-  snap.forEach((doc) => {
-    chats.push({ ...doc.data(), id: doc.id })
-  })
-  chatRooms.value = chats
-})
+// const chatRooms = ref([])
+// const colRef = collection(firestoreDb, "chatRooms")
+// const q1 = query(colRef, where('users', 'array-contains', store.uid))
+// const getChatMessages = onSnapshot(q1, (snap) => {
+//   let chats = []
+//   snap.forEach((doc) => {
+//     chats.push({ ...doc.data(), id: doc.id })
+//   })
+//   chatRooms.value = chats
+// })
 
 const unmaximize = ref(null)
 const notification = ref(null)
@@ -47,11 +42,8 @@ onAuthStateChanged(auth, async (user) => {
 // console.info(storageService.getSoundUrl('unmaximize.mp3'))
 // console.info(storageService.getSoundUrl('notification.mp3'))
 // console.info(storageService.getAvatarUrl('nien_nunb.resized.png'))
-const currentUserId = ref(store.uid)
-const username = ref(store.username)
 
 const state = reactive({
-	devMessage: '',
 	theme: 'dark',
 	isDevice: false,
 	showChat: true,
@@ -115,26 +107,25 @@ const state = reactive({
 	}
 )
 
-const showOptions = computed(() => !state.isDevice || state.showDemoOptions)
+// const showOptions = computed(() => !state.isDevice || state.showDemoOptions)
 const loadedRooms = computed(() => state.rooms.slice(0, state.roomsLoadedCount))
 const screenHeight = computed(() => state.isDevice ? window.innerHeight + 'px' : 'calc(90vh - 80px)')
 const unsub = watchEffect(() => {
-	if (!currentUserId.value) {
+	if (!store.uid) {
 		// state.showChat = false
 		setTimeout(() => (state.showChat = true), 10050)
 		setTimeout(() => (router.push('/')), 20000)
 	}
 })
 onMounted(() => {
-	if (!username.value) {
+	if (!store.username) {
 		router.push('/UnThinkMe')
 	}
-  state.showDemoOptions=false
-  if (username.value=="Adam") {
-    state.showDemoOptions=true
-  }
+  // if (store.username=="Adam") {
+  //   state.showDemoOptions=true
+  // }
 	state.isDevice = window.innerWidth < 500
-	firebaseService.updateUserOnlineStatus(currentUserId.value)
+	firebaseService.updateUserOnlineStatus(store.uid)
 	fetchRooms()
 })
 onUnmounted(() => {
@@ -178,7 +169,7 @@ const fetchMoreRooms = async () => {
 		return
 	}
 	const query = firestoreService.roomsQuery(
-		currentUserId.value,
+		store.uid,
 		state.roomsPerPage,
 		state.startRooms
 	)
@@ -215,7 +206,7 @@ const fetchMoreRooms = async () => {
 	Object.keys(roomList).forEach((key) => {
 		const room = roomList[key]
 		const roomContacts = room.users.filter(
-			user => user._id !== currentUserId.value
+			user => user._id !== store.uid
 		)
 		// room.roomName = room.roomName
 		// +' ~ '+
@@ -283,7 +274,7 @@ const formatLastMessage = (message, room) => {
 		content = `${file.name}.${file.extension || file.type}`
 	}
 	const username =
-		message.sender_id !== currentUserId.value
+		message.sender_id !== store.uid
 			? room.users.find(user => message.sender_id === user._id)?.username
 			: ''
 	return {
@@ -296,10 +287,10 @@ const formatLastMessage = (message, room) => {
 			),
 			username: username,
 			distributed: true,
-			seen: message.sender_id === currentUserId.value ? message.seen : null,
+			seen: message.sender_id === store.uid ? message.seen : null,
 			new:
-				message.sender_id !== currentUserId.value &&
-				(!message.seen || !message.seen[currentUserId.value])
+				message.sender_id !== store.uid &&
+				(!message.seen || !message.seen[store.uid])
 		}
 	}
 }
@@ -359,11 +350,11 @@ const listenMessages = (room) => {
 }
 const markMessagesSeen = (room, message) => {
 	if (
-		message.sender_id !== currentUserId.value &&
-		(!message.seen || !message.seen[currentUserId.value])
+		message.sender_id !== store.uid &&
+		(!message.seen || !message.seen[store.uid])
 	) {
 		firestoreService.updateMessage(room.roomId, message.id, {
-			[`seen.${currentUserId.value}`]: new Date()
+			[`seen.${store.uid}`]: new Date()
 		})
 	}
 }
@@ -394,7 +385,7 @@ const formatMessage = (room, message) => {
 }
 const sendMessage = async ({ content, roomId, files, replyMessage }) => {
 	const message = {
-		sender_id: currentUserId.value,
+		sender_id: store.uid,
 		content,
 		timestamp: new Date()
 	}
@@ -443,7 +434,7 @@ const deleteMessage = async ({ message, roomId }) => {
 	const { files } = message
 	if (files) {
 		files.forEach(file => {
-			storageService.deleteFile(currentUserId.value, message._id, file)
+			storageService.deleteFile(store.uid, message._id, file)
 		})
 	}
 }
@@ -454,7 +445,7 @@ const uploadFile = async ({ file, messageId, roomId }) => {
 			type = file.type
 		}
 		storageService.listenUploadImageProgress(
-			currentUserId.value,
+			store.uid,
 			messageId,
 			file,
 			type,
@@ -513,8 +504,8 @@ const openUserTag = async ({ user }) => {
 			const userId1 = room.users[0]._id
 			const userId2 = room.users[1]._id
 			if (
-				(userId1 === user._id || userId1 === currentUserId.value) &&
-				(userId2 === user._id || userId2 === currentUserId.value)
+				(userId1 === user._id || userId1 === store.uid) &&
+				(userId2 === user._id || userId2 === store.uid)
 			) {
 				roomId = room.roomId
 			}
@@ -525,7 +516,7 @@ const openUserTag = async ({ user }) => {
 		return
 	}
 	const query1 = await firestoreService.getUserRooms(
-		currentUserId.value,
+		store.uid,
 		user._id
 	)
 	if (query1.data.length) {
@@ -533,15 +524,15 @@ const openUserTag = async ({ user }) => {
 	}
 	const query2 = await firestoreService.getUserRooms(
 		user._id,
-		currentUserId.value
+		store.uid
 	)
 	if (query2.data.length) {
 		return loadRoom(query2)
 	}
 	const users =
-		user._id === currentUserId.value
-			? [currentUserId.value]
-			: [user._id, currentUserId.value]
+		user._id === store.uid
+			? [store.uid]
+			: [user._id, store.uid]
 	const room = await firestoreService.addRoom({
 		users: users,
 		lastUpdated: new Date()
@@ -579,7 +570,7 @@ const sendMessageReaction =  async ({ reaction, remove, messageId, roomId }) => 
 	firestoreService.updateMessageReactions(
 		roomId,
 		messageId,
-		currentUserId.value,
+		store.uid,
 		reaction.unicode,
 		remove ? 'remove' : 'add'
 	)
@@ -597,7 +588,7 @@ const typingMessage = ({ message, roomId }) => {
 		state.typingMessageCache = message
 		firestoreService.updateRoomTypingUsers(
 			roomId,
-			currentUserId.value,
+			store.uid,
 			message ? 'add' : 'remove'
 		)
 	}
@@ -641,67 +632,67 @@ const addRoom = () => {
 	resetForms()
 	state.addNewRoom = true
 }
-const createRoom =  async () => {
-	state.disableForm = true
-	const { id } = await firestoreService.addUser({
-		username: state.addRoomUsername
-	})
-	await firestoreService.updateUser(id, { _id: id })
-	await firestoreService.addRoom({
-		users: [id, currentUserId.value],
-		lastUpdated: new Date()
-	})
-	state.addNewRoom = false
-	state.addRoomUsername = ''
-	fetchRooms()
-}
-const inviteUser = (roomId) => {
-	resetForms()
-	state.inviteRoomId = roomId
-}
-const addRoomUser = async () => {
-	state.disableForm = true
-	const { id } = await firestoreService.addUser({
-		username: state.invitedUsername
-	})
-	await firestoreService.updateUser(id, { _id: id })
-	await firestoreService.addRoomUser(state.inviteRoomId, id)
-	state.inviteRoomId = null
-	state.invitedUsername = ''
-	fetchRooms()
-}
-const removeUser = (roomId) => {
-	resetForms()
-	state.removeRoomId = roomId
-	state.removeUsers = state.rooms.find(room => room.roomId === roomId).users
-}
-const deleteRoomUser = async () => {
-	state.disableForm = true
-	await firestoreService.removeRoomUser(
-		state.removeRoomId,
-		state.removeUserId
-	)
-	state.removeRoomId = null
-	state.removeUserId = ''
-	fetchRooms()
-}
-const deleteRoom = async (roomId) => {
-	const room = state.rooms.find(r => r.roomId === roomId)
-	if (user.username !== 'Adam') return alert('No peepee on your eyes')
-	firestoreService.getMessages(roomId).then(({ data }) => {
-		data.forEach(message => {
-			firestoreService.deleteMessage(roomId, message.id)
-			if (message.files) {
-				message.files.forEach(file => {
-					storageService.deleteFile(currentUserId.value, message.id, file)
-				})
-			}
-		})
-	})
-	await firestoreService.deleteRoom(roomId)
-	fetchRooms()
-}
-
+// const createRoom =  async () => {
+// 	state.disableForm = true
+// 	const { id } = await firestoreService.addUser({
+// 		username: state.addRoomUsername
+// 	})
+// 	await firestoreService.updateUser(id, { _id: id })
+// 	await firestoreService.addRoom({
+// 		users: [id, store.uid],
+// 		lastUpdated: new Date()
+// 	})
+// 	state.addNewRoom = false
+// 	state.addRoomUsername = ''
+// 	fetchRooms()
+// }
+// const inviteUser = (roomId) => {
+// 	resetForms()
+// 	state.inviteRoomId = roomId
+// }
+// const addRoomUser = async () => {
+// 	state.disableForm = true
+// 	const { id } = await firestoreService.addUser({
+// 		username: state.invitedUsername
+// 	})
+// 	await firestoreService.updateUser(id, { _id: id })
+// 	await firestoreService.addRoomUser(state.inviteRoomId, id)
+// 	state.inviteRoomId = null
+// 	state.invitedUsername = ''
+// 	fetchRooms()
+// }
+// const removeUser = (roomId) => {
+// 	resetForms()
+// 	state.removeRoomId = roomId
+// 	state.removeUsers = state.rooms.find(room => room.roomId === roomId).users
+// }
+// const deleteRoomUser = async () => {
+// 	state.disableForm = true
+// 	await firestoreService.removeRoomUser(
+// 		state.removeRoomId,
+// 		state.removeUserId
+// 	)
+// 	state.removeRoomId = null
+// 	state.removeUserId = ''
+// 	fetchRooms()
+// }
+// const deleteRoom = async (roomId) => {
+// 	const room = state.rooms.find(r => r.roomId === roomId)
+// 	if (user.username !== 'Adam') return alert('No peepee on your eyes')
+// 	firestoreService.getMessages(roomId).then(({ data }) => {
+// 		data.forEach(message => {
+// 			firestoreService.deleteMessage(roomId, message.id)
+// 			if (message.files) {
+// 				message.files.forEach(file => {
+// 					storageService.deleteFile(store.uid, message.id, file)
+// 				})
+// 			}
+// 		})
+// 	})
+// 	await firestoreService.deleteRoom(roomId)
+// 	fetchRooms()
+// }
+//
 const resetForms = () => {
 	state.disableForm = false
 	state.addNewRoom = null
@@ -714,20 +705,9 @@ const resetForms = () => {
 </script>
 <template>
 	<div>
-    <!-- <div v-if="showOptions" class="button-theme">
-      <button class="button-light" @click="state.theme = 'light'">
-        Light
-      </button>
-      <button class="button-dark" @click="state.theme = 'dark'">
-        Dark
-      </button>
-      <button class="button-github">
-        <i class="material-icons">cyclone</i>
-      </button>
-    </div> -->
+    <!-- <div class="window-container" :class="{ 'window-mobile': state.isDevice }"> -->
 
-  	<!-- <div class="window-container" :class="{ 'window-mobile': state.isDevice }"> -->
-  		<form v-if="state.addNewRoom" @submit.prevent="createRoom">
+  		<!-- <form v-if="state.addNewRoom" @submit.prevent="createRoom">
   			<input v-model="state.addRoomUsername" type="text" placeholder="Add username" />
   			<button type="submit" :disabled="state.disableForm || !state.addRoomUsername">
   				Create Room
@@ -762,19 +742,21 @@ const resetForms = () => {
   			<button class="button-cancel" @click="state.removeRoomId = null">
   				Cancel
   			</button>
-  		</form>
+  		</form> -->
 
   		<ChatWindow
+        :messages="state.messages"
         :show-emojis="false"
         :emojis-suggestion-enabled="false"
+        :show-reaction-emojis="false"
+        :show-files="false"
   			:height="screenHeight"
   			:theme="state.theme"
   			:styles="state.styles"
-  			:current-user-id="currentUserId"
+  			:current-user-id="store.uid"
   			:room-id="state.roomId"
   			:rooms="loadedRooms"
   			:loading-rooms="state.loadingRooms"
-  			:messages="state.messages"
   			:messages-loaded="state.messagesLoaded"
   			:rooms-loaded="state.roomsLoaded"
   			:room-actions="state.roomActions"
@@ -796,16 +778,27 @@ const resetForms = () => {
   			@send-message-reaction="sendMessageReaction"
   			@typing-message="typingMessage"
         @toggle-rooms-list="state.showDemoOptions=false"
-  		>
-  		</ChatWindow>
-  	<!-- </div> -->
-    <audio ref="unmaximize" type="audio/mpeg"
-        src="https://firebasestorage.googleapis.com/v0/b/stein-unlimited.appspot.com/o/sounds%2Funmaximize.mp3?alt=media&token=5f31afe5-3f06-4e5b-912a-6c6e02b5f156"
-    >
-    </audio>
-    <audio ref="notification" type="audio/mpeg"
-        src="https://firebasestorage.googleapis.com/v0/b/stein-unlimited.appspot.com/o/sounds%2Fnotification.mp3?alt=media&token=2b383dc8-019b-4975-885c-8bcb58734bc3"
-    >
-    </audio>
+  		/>
+      <!-- <div v-if="state.showDemoOptions" class="button-theme">
+        <button class="button-light" @click="state.theme='light'">
+          Light
+        </button>
+        <button class="button-dark" @click="state.theme='dark'">
+          Dark
+        </button>
+        <button class="button-github">
+          <i class="material-icons">cyclone</i>
+        </button>
+      </div> -->
+
+      <audio ref="unmaximize" type="audio/mpeg"
+          src="https://firebasestorage.googleapis.com/v0/b/stein-unlimited.appspot.com/o/sounds%2Funmaximize.mp3?alt=media&token=5f31afe5-3f06-4e5b-912a-6c6e02b5f156"
+      >
+      </audio>
+      <audio ref="notification" type="audio/mpeg"
+          src="https://firebasestorage.googleapis.com/v0/b/stein-unlimited.appspot.com/o/sounds%2Fnotification.mp3?alt=media&token=2b383dc8-019b-4975-885c-8bcb58734bc3"
+      >
+      </audio>
+    <!-- </div> -->
 	</div>
 </template>
