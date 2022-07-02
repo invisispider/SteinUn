@@ -1,34 +1,39 @@
 <script setup lang="ts">
-import { ref, reactive, computed, onMounted, watchEffect, onUnmounted } from "vue"
 import { useRouter } from "vue-router"
-import { useStore } from "@/stores/index"
+import { ref, reactive, toRefs, computed, onMounted, watchEffect, onUnmounted } from "vue"
+
 import { onAuthStateChanged } from "firebase/auth"
+
+import { useStore } from "@/stores/index"
 import { auth } from "@/services/firebaseconfig"
+
 import * as firestoreService from '@/components/Chat/database/firestore'
 import * as firebaseService from '@/components/Chat/database/firebase'
 import * as storageService from '@/components/Chat/database/storage'
+
 import { parseTimestamp, formatTimestamp } from '@/components/Chat/utils/dates'
+
+import { collection, where, query, onSnapshot } from "firebase/firestore"
+import { firestoreDb } from "@/services/firebaseconfig"
+
 import ChatWindow from 'vue-advanced-chat'
 import 'vue-advanced-chat/dist/vue-advanced-chat.css'
-
-// import { collection, where, query, onSnapshot } from "firebase/firestore"
-// import { firestoreDb } from "@/services/firebaseconfig"
 
 document.title="unTalkMe"
 
 const store = useStore()
 const router = useRouter()
 
-// const chatRooms = ref([])
-// const colRef = collection(firestoreDb, "chatRooms")
-// const q1 = query(colRef, where('users', 'array-contains', store.uid))
-// const getChatMessages = onSnapshot(q1, (snap) => {
-//   let chats = []
-//   snap.forEach((doc) => {
-//     chats.push({ ...doc.data(), id: doc.id })
-//   })
-//   chatRooms.value = chats
-// })
+const chatRooms = ref([])
+const colRef = collection(firestoreDb, "chatRooms")
+const q1 = query(colRef, where('users', 'array-contains', store.uid))
+const getChatMessages = onSnapshot(q1, (snap) => {
+  let chats = []
+  snap.forEach((doc) => {
+    chats.push({ ...doc.data(), id: doc.id })
+  })
+  chatRooms.value = chats
+})
 
 const unmaximize = ref(null)
 const notification = ref(null)
@@ -42,8 +47,11 @@ onAuthStateChanged(auth, async (user) => {
 // console.info(storageService.getSoundUrl('unmaximize.mp3'))
 // console.info(storageService.getSoundUrl('notification.mp3'))
 // console.info(storageService.getAvatarUrl('nien_nunb.resized.png'))
+const currentUserId = ref(store.uid)
+const username = ref(store.username)
 
 const state = reactive({
+	devMessage: '',
 	theme: 'dark',
 	isDevice: false,
 	showChat: true,
@@ -111,21 +119,22 @@ const state = reactive({
 const loadedRooms = computed(() => state.rooms.slice(0, state.roomsLoadedCount))
 const screenHeight = computed(() => state.isDevice ? window.innerHeight + 'px' : 'calc(90vh - 80px)')
 const unsub = watchEffect(() => {
-	if (!store.uid) {
+	if (!currentUserId.value) {
 		// state.showChat = false
 		setTimeout(() => (state.showChat = true), 10050)
 		setTimeout(() => (router.push('/')), 20000)
 	}
 })
 onMounted(() => {
-	if (!store.username) {
+	if (!username.value) {
 		router.push('/UnThinkMe')
 	}
-  // if (store.username=="Adam") {
+  // state.showDemoOptions=false
+  // if (username.value=="Adam") {
   //   state.showDemoOptions=true
   // }
-	state.isDevice = window.innerWidth < 500
-	firebaseService.updateUserOnlineStatus(store.uid)
+	// state.isDevice = window.innerWidth < 500
+	firebaseService.updateUserOnlineStatus(currentUserId.value)
 	fetchRooms()
 })
 onUnmounted(() => {
@@ -169,7 +178,7 @@ const fetchMoreRooms = async () => {
 		return
 	}
 	const query = firestoreService.roomsQuery(
-		store.uid,
+		currentUserId.value,
 		state.roomsPerPage,
 		state.startRooms
 	)
@@ -206,7 +215,7 @@ const fetchMoreRooms = async () => {
 	Object.keys(roomList).forEach((key) => {
 		const room = roomList[key]
 		const roomContacts = room.users.filter(
-			user => user._id !== store.uid
+			user => user._id !== currentUserId.value
 		)
 		// room.roomName = room.roomName
 		// +' ~ '+
@@ -274,7 +283,7 @@ const formatLastMessage = (message, room) => {
 		content = `${file.name}.${file.extension || file.type}`
 	}
 	const username =
-		message.sender_id !== store.uid
+		message.sender_id !== currentUserId.value
 			? room.users.find(user => message.sender_id === user._id)?.username
 			: ''
 	return {
@@ -287,10 +296,10 @@ const formatLastMessage = (message, room) => {
 			),
 			username: username,
 			distributed: true,
-			seen: message.sender_id === store.uid ? message.seen : null,
+			seen: message.sender_id === currentUserId.value ? message.seen : null,
 			new:
-				message.sender_id !== store.uid &&
-				(!message.seen || !message.seen[store.uid])
+				message.sender_id !== currentUserId.value &&
+				(!message.seen || !message.seen[currentUserId.value])
 		}
 	}
 }
@@ -350,11 +359,11 @@ const listenMessages = (room) => {
 }
 const markMessagesSeen = (room, message) => {
 	if (
-		message.sender_id !== store.uid &&
-		(!message.seen || !message.seen[store.uid])
+		message.sender_id !== currentUserId.value &&
+		(!message.seen || !message.seen[currentUserId.value])
 	) {
 		firestoreService.updateMessage(room.roomId, message.id, {
-			[`seen.${store.uid}`]: new Date()
+			[`seen.${currentUserId.value}`]: new Date()
 		})
 	}
 }
@@ -385,7 +394,7 @@ const formatMessage = (room, message) => {
 }
 const sendMessage = async ({ content, roomId, files, replyMessage }) => {
 	const message = {
-		sender_id: store.uid,
+		sender_id: currentUserId.value,
 		content,
 		timestamp: new Date()
 	}
@@ -434,7 +443,7 @@ const deleteMessage = async ({ message, roomId }) => {
 	const { files } = message
 	if (files) {
 		files.forEach(file => {
-			storageService.deleteFile(store.uid, message._id, file)
+			storageService.deleteFile(currentUserId.value, message._id, file)
 		})
 	}
 }
@@ -445,7 +454,7 @@ const uploadFile = async ({ file, messageId, roomId }) => {
 			type = file.type
 		}
 		storageService.listenUploadImageProgress(
-			store.uid,
+			currentUserId.value,
 			messageId,
 			file,
 			type,
@@ -504,8 +513,8 @@ const openUserTag = async ({ user }) => {
 			const userId1 = room.users[0]._id
 			const userId2 = room.users[1]._id
 			if (
-				(userId1 === user._id || userId1 === store.uid) &&
-				(userId2 === user._id || userId2 === store.uid)
+				(userId1 === user._id || userId1 === currentUserId.value) &&
+				(userId2 === user._id || userId2 === currentUserId.value)
 			) {
 				roomId = room.roomId
 			}
@@ -516,7 +525,7 @@ const openUserTag = async ({ user }) => {
 		return
 	}
 	const query1 = await firestoreService.getUserRooms(
-		store.uid,
+		currentUserId.value,
 		user._id
 	)
 	if (query1.data.length) {
@@ -524,15 +533,15 @@ const openUserTag = async ({ user }) => {
 	}
 	const query2 = await firestoreService.getUserRooms(
 		user._id,
-		store.uid
+		currentUserId.value
 	)
 	if (query2.data.length) {
 		return loadRoom(query2)
 	}
 	const users =
-		user._id === store.uid
-			? [store.uid]
-			: [user._id, store.uid]
+		user._id === currentUserId.value
+			? [currentUserId.value]
+			: [user._id, currentUserId.value]
 	const room = await firestoreService.addRoom({
 		users: users,
 		lastUpdated: new Date()
@@ -570,7 +579,7 @@ const sendMessageReaction =  async ({ reaction, remove, messageId, roomId }) => 
 	firestoreService.updateMessageReactions(
 		roomId,
 		messageId,
-		store.uid,
+		currentUserId.value,
 		reaction.unicode,
 		remove ? 'remove' : 'add'
 	)
@@ -588,7 +597,7 @@ const typingMessage = ({ message, roomId }) => {
 		state.typingMessageCache = message
 		firestoreService.updateRoomTypingUsers(
 			roomId,
-			store.uid,
+			currentUserId.value,
 			message ? 'add' : 'remove'
 		)
 	}
@@ -639,7 +648,7 @@ const addRoom = () => {
 // 	})
 // 	await firestoreService.updateUser(id, { _id: id })
 // 	await firestoreService.addRoom({
-// 		users: [id, store.uid],
+// 		users: [id, currentUserId.value],
 // 		lastUpdated: new Date()
 // 	})
 // 	state.addNewRoom = false
@@ -684,7 +693,7 @@ const addRoom = () => {
 // 			firestoreService.deleteMessage(roomId, message.id)
 // 			if (message.files) {
 // 				message.files.forEach(file => {
-// 					storageService.deleteFile(store.uid, message.id, file)
+// 					storageService.deleteFile(currentUserId.value, message.id, file)
 // 				})
 // 			}
 // 		})
@@ -753,7 +762,7 @@ const resetForms = () => {
   			:height="screenHeight"
   			:theme="state.theme"
   			:styles="state.styles"
-  			:current-user-id="store.uid"
+  			:current-user-id="currentUserId"
   			:room-id="state.roomId"
   			:rooms="loadedRooms"
   			:loading-rooms="state.loadingRooms"
