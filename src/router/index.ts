@@ -21,6 +21,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/components/LogoutComponent.vue"),
   },
   {
+    path: "/yogacalendar",
+    name: "YogaCalendar",
+    component: () => import("@/components/yogacalendar/YogaCalendar.vue"),
+  },
+  {
     path: "/Admin",
     name: "Admin",
     meta: { requiresAuth: true },

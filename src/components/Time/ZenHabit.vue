@@ -25,12 +25,13 @@ const getNameFromHabit = (habit: number) => store.habitNames[habit];
 // const firstDayOfHabit = (hab: number) =>
 // new Date(gYear.value, 0, 1 + daysInHabit.value * state.habitNum);
 onMounted(() => {
-  state.dayOfHabit = state.dayOfYear - state.habitNum * daysInHabit.value;
+  state.dayOfHabit = state.dayOfYear - (state.habitNum * daysInHabit.value);
   store.setHabitNum(state.habitNum);
   store.setDayNum(state.dayOfHabit);
 });
 watchEffect(() => {
   state.startOfYear = new Date(gYear.value, 0, 1);
+  // add 1??
   state.dayOfYear =
     1 + Math.floor(new Date(coreDate.value - state.startOfYear) / 86400000);
   state.habitNum = Math.floor(state.dayOfYear / daysInHabit.value);
@@ -82,6 +83,6 @@ watchEffect(() => {
         </div>
       </div>
     </div>
-    <h2>Day Of Year: {{ state.dayOfYear + 1 }}</h2>
+    <h2>Day Of Year: {{ state.dayOfYear }}</h2>
   </section>
 </template>

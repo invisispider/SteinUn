@@ -9,7 +9,7 @@ import { sidebarWidth } from "@/components/sidebar/state";
 <template>
   <div id="app">
     <Sidebar />
-    <div :style="{ 'margin-left': sidebarWidth }">
+    <div id="body" :style="{ 'margin-left': sidebarWidth }">
       <router-view v-slot="{ Component }">
         <transition name="route" mode="out-in">
           <component :is="Component" />

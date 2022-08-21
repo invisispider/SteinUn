@@ -38,13 +38,6 @@ onUnmounted(() => {
 </script>
 <template>
   <div class="sidebar topnav" :style="{ width: sidebarWidth }">
-    <h1>
-      <span v-if="collapsed">
-        <div>S</div>
-        <div>U</div>
-      </span>
-      <span v-else>Stein Unlimited</span>
-    </h1>
     <template v-if="!collapsed">
       <transition-group
         name="fadeDown"
@@ -75,6 +68,9 @@ onUnmounted(() => {
         <SidebarLink to="/Teacher" key="5a" class="navItem">Music</SidebarLink>
         <SidebarLink to="/UnTimeMe" key="6a" class="navItem"
           >zenTime</SidebarLink
+        >
+        <SidebarLink to="/yogacalendar" key="12a" class="navItem"
+          >Classes</SidebarLink
         >
         <!-- <component :is="UnJamMeComponent" v-if="showJams" key="7a" class="navItem"
 					id="music-player" /> -->
@@ -108,5 +104,13 @@ onUnmounted(() => {
     >
       <i class="material-icons three-hundred-up">keyboard_double_arrow_left</i>
     </span>
+    <h1>
+      <!-- <span v-if="collapsed">
+        <div>S</div>
+        <div>U</div>
+      </span> -->
+      <!-- <span v-else>Stein Unlimited</span> -->
+      <span v-if="!collapsed">Stein Unlimited</span>
+    </h1>
   </div>
 </template>
