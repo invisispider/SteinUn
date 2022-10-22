@@ -27,6 +27,7 @@ const displayZenTime = computed(() => [
   " ",
   timezone,
 ]);
+
 const timePulse = async () => {
   let luxDate = DateTime.now().toLocal();
   let luxCalendar = luxDate.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY);

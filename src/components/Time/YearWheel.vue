@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { ref } from "vue";
+// import { ref } from "vue";
 import { useTime } from "@/stores/time";
 const store = useTime();
 const emit = defineEmits(["holiday", "solstice", "equinox", "habits"]);
 const BoxWidth = 500;
 const BoxHeight = 500;
 // const pi = Math.PI;
-const sTitleLogo = ref(true);
+// const sTitleLogo = ref(true);
 // const trigger = () => (sTitleLogo.value = !sTitleLogo.value);
 // const testHabit = (habit) => (habit == store.habitName ? "selected" : "");
 </script>

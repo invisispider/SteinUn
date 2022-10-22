@@ -23,6 +23,9 @@ import { parseTimestamp, formatTimestamp } from "@/components/Chat/utils/dates";
 // import { collection, where, query, onSnapshot } from "firebase/firestore";
 // import { firestoreDb } from "@/services/firebaseconfig";
 
+// UNUSED AVATAR STRINGS:
+// https://firebasestorage.googleapis.com/v0/b/stein-unlimited.appspot.com/o/avatars%2FR2-D2_Droid.png?alt=media&token=c0ce52f8-ba2b-4fd6-afaf-c8fa844dcac0
+
 import ChatWindow from "vue-advanced-chat";
 import "vue-advanced-chat/dist/vue-advanced-chat.css";
 
@@ -50,10 +53,11 @@ onAuthStateChanged(auth, async (user) => {
   }
   store.setAuthIsReady();
 });
+
 // get download links here:
 // console.info(storageService.getSoundUrl('unmaximize.mp3'))
-// console.info(storageService.getSoundUrl('notification.mp3'))
 // console.info(storageService.getAvatarUrl('nien_nunb.resized.png'))
+
 const currentUserId = ref(store.uid);
 const username = ref(store.username);
 
@@ -62,8 +66,8 @@ const state = reactive({
   theme: "dark",
   isDevice: false,
   showChat: true,
-  showDemoOptions: false,
   updatingData: false,
+  showDemoOptions: false,
   roomsPerPage: 15,
   rooms: [],
   roomId: "",
@@ -78,7 +82,6 @@ const state = reactive({
   messagesPerPage: 20,
   messages: [],
   messagesLoaded: false,
-  roomMessage: "",
   lastLoadedMessage: null,
   previousLastLoadedMessage: null,
   roomsListeners: [],
@@ -126,7 +129,7 @@ const loadedRooms = computed(() =>
   state.rooms.slice(0, state.roomsLoadedCount)
 );
 const screenHeight = computed(() =>
-  state.isDevice ? window.innerHeight + "px" : "calc(90vh - 80px)"
+  state.isDevice ? window.innerHeight + "px" : "calc(100vh - 40px)"
 );
 const unsub = watchEffect(() => {
   if (!currentUserId.value) {
@@ -139,10 +142,6 @@ onMounted(() => {
   if (!username.value) {
     router.push("/UnThinkMe");
   }
-  // state.showDemoOptions=false
-  // if (username.value=="Adam") {
-  //   state.showDemoOptions=true
-  // }
   // state.isDevice = window.innerWidth < 500
   firebaseService.updateUserOnlineStatus(currentUserId.value);
   fetchRooms();
@@ -227,21 +226,21 @@ const fetchMoreRooms = async () => {
     const roomContacts = room.users.filter(
       (user) => user._id !== currentUserId.value
     );
+
     // room.roomName = room.roomName
     // +' ~ '+
     // roomContacts.map(user => user.username).join(', ') || 'Myself')
-    // roomAvatar.value = room.avatar
     // let avatarUrl = storageService.getAvatarUrl(room.avatar).then((url)=>{
     // 	return JSON.stringify(url)
     // })
-    // console.log(fetchAvatarUrl.value)
-    // fetchAvatarUrl('nien_nunb.png').then((url)=>{
+
     formattedRooms.push({
       ...room,
       roomName: room.roomName,
       roomId: key,
       avatar: room.avatar,
       index: room.lastUpdated.seconds,
+      roomMessage: roomContacts,
       lastMessage: {
         content: "Room created",
         timestamp: formatTimestamp(
@@ -279,6 +278,7 @@ const listenLastMessage = (room) => {
         if (state.loadingLastMessageByRoom === state.rooms.length) {
           state.loadingRooms = false;
           state.roomsLoadedCount = state.rooms.length;
+          playSound("notification");
         }
       }
     }
@@ -323,7 +323,7 @@ const fetchMessages = ({ room, options = {} }) => {
     return;
   }
   state.selectedRoom = room.roomId;
-  playSound("notification");
+  // playSound("notification");
   firestoreService
     .getMessages(room.roomId, state.messagesPerPage, state.lastLoadedMessage)
     .then(({ data, docs }) => {
@@ -471,9 +471,9 @@ const uploadFile = async ({ file, messageId, roomId }) => {
       (progress) => {
         updateFileProgress(messageId, file.localUrl, progress);
       },
-      (_error) => {
-        resolve(false);
-      },
+      // (_error) => {
+      //   resolve(false);
+      // },
       async (url) => {
         const message = await firestoreService.getMessage(roomId, messageId);
         message.files.forEach((f) => {
@@ -651,52 +651,49 @@ const addRoom = () => {
   resetForms();
   state.addNewRoom = true;
 };
-// const createRoom =  async () => {
-// 	state.disableForm = true
-// 	const { id } = await firestoreService.addUser({
-// 		username: state.addRoomUsername
-// 	})
-// 	await firestoreService.updateUser(id, { _id: id })
-// 	await firestoreService.addRoom({
-// 		users: [id, currentUserId.value],
-// 		lastUpdated: new Date()
-// 	})
-// 	state.addNewRoom = false
-// 	state.addRoomUsername = ''
-// 	fetchRooms()
-// }
+const createRoom = async () => {
+  state.disableForm = true;
+  const { id } = await firestoreService.addUser({
+    username: state.addRoomUsername,
+  });
+  await firestoreService.updateUser(id, { _id: id });
+  await firestoreService.addRoom({
+    users: [id, currentUserId.value],
+    lastUpdated: new Date(),
+  });
+  state.addNewRoom = false;
+  state.addRoomUsername = "";
+  fetchRooms();
+};
 const inviteUser = (roomId) => {
   resetForms();
   state.inviteRoomId = roomId;
 };
-// const addRoomUser = async () => {
-// 	state.disableForm = true
-// 	const { id } = await firestoreService.addUser({
-// 		username: state.invitedUsername
-// 	})
-// 	await firestoreService.updateUser(id, { _id: id })
-// 	await firestoreService.addRoomUser(state.inviteRoomId, id)
-// 	state.inviteRoomId = null
-// 	state.invitedUsername = ''
-// 	fetchRooms()
-// }
+const addRoomUser = async () => {
+  state.disableForm = true;
+  const { id } = await firestoreService.addUser({
+    username: state.invitedUsername,
+  });
+  await firestoreService.updateUser(id, { _id: id });
+  await firestoreService.addRoomUser(state.inviteRoomId, id);
+  state.inviteRoomId = null;
+  state.invitedUsername = "";
+  fetchRooms();
+};
 const removeUser = (roomId) => {
   resetForms();
   state.removeRoomId = roomId;
   state.removeUsers = state.rooms.find((room) => room.roomId === roomId).users;
 };
-// const deleteRoomUser = async () => {
-// 	state.disableForm = true
-// 	await firestoreService.removeRoomUser(
-// 		state.removeRoomId,
-// 		state.removeUserId
-// 	)
-// 	state.removeRoomId = null
-// 	state.removeUserId = ''
-// 	fetchRooms()
-// }
+const deleteRoomUser = async () => {
+  state.disableForm = true;
+  await firestoreService.removeRoomUser(state.removeRoomId, state.removeUserId);
+  state.removeRoomId = null;
+  state.removeUserId = "";
+  fetchRooms();
+};
 const deleteRoom = async (roomId) => {
-  const room = state.rooms.find((r) => r.roomId === roomId);
+  // const room = state.rooms.find((r) => r.roomId === roomId);
   if (username.value !== "Adam") return alert("No peepee on your eyes");
   firestoreService.getMessages(roomId).then(({ data }) => {
     data.forEach((message) => {
@@ -721,68 +718,103 @@ const resetForms = () => {
   state.removeRoomId = null;
   state.removeUserId = "";
 };
+const toggleDemoOptions = () =>
+  (state.showDemoOptions = !state.showDemoOptions);
 </script>
 <template>
   <div>
     <!-- <div class="window-container" :class="{ 'window-mobile': state.isDevice }"> -->
 
-    <!-- <form v-if="state.addNewRoom" @submit.prevent="createRoom">
-  			<input v-model="state.addRoomUsername" type="text" placeholder="Add username" />
-  			<button type="submit" :disabled="state.disableForm || !state.addRoomUsername">
-  				Create Room
-  			</button>
-  			<button class="button-cancel" @click="state.addNewRoom = false">
-  				Cancel
-  			</button>
-  		</form>
+    <form v-if="state.addNewRoom" @submit.prevent="createRoom">
+      <input
+        v-model="state.addRoomUsername"
+        type="text"
+        placeholder="Add username"
+      />
+      <button
+        type="submit"
+        :disabled="state.disableForm || !state.addRoomUsername"
+      >
+        Create Room
+      </button>
+      <button class="button-cancel" @click="state.addNewRoom = false">
+        Cancel
+      </button>
+    </form>
 
-  		<form v-if="state.inviteRoomId" @submit.prevent="addRoomUser">
-  			<input v-model="state.invitedUsername" type="text" placeholder="Add username" />
-  			<button type="submit" :disabled="state.disableForm || !state.invitedUsername">
-  				Add User
-  			</button>
-  			<button class="button-cancel" @click="state.inviteRoomId = null">
-  				Cancel
-  			</button>
-  		</form>
+    <form v-if="state.inviteRoomId" @submit.prevent="addRoomUser">
+      <input
+        v-model="state.invitedUsername"
+        type="text"
+        placeholder="Add username"
+      />
+      <button
+        type="submit"
+        :disabled="state.disableForm || !state.invitedUsername"
+      >
+        Add User
+      </button>
+      <button class="button-cancel" @click="state.inviteRoomId = null">
+        Cancel
+      </button>
+    </form>
 
-  		<form v-if="state.removeRoomId" @submit.prevent="deleteRoomUser">
-  			<select v-model="state.removeUserId">
-  				<option default value="">
-  					Select User
-  				</option>
-  				<option v-for="user in state.removeUsers" :key="user._id" :value="user._id">
-  					{{ user.username }}
-  				</option>
-  			</select>
-  			<button type="submit" :disabled="state.disableForm || !state.removeUserId">
-  				Remove User
-  			</button>
-  			<button class="button-cancel" @click="state.removeRoomId = null">
-  				Cancel
-  			</button>
-  		</form> -->
+    <form v-if="state.removeRoomId" @submit.prevent="deleteRoomUser">
+      <select v-model="state.removeUserId">
+        <option default value="">Select User</option>
+        <option
+          v-for="user in state.removeUsers"
+          :key="user._id"
+          :value="user._id"
+        >
+          {{ user.username }}
+        </option>
+      </select>
+      <button
+        type="submit"
+        :disabled="state.disableForm || !state.removeUserId"
+      >
+        Remove User
+      </button>
+      <button class="button-cancel" @click="state.removeRoomId = null">
+        Cancel
+      </button>
+    </form>
 
     <ChatWindow
-      :messages="state.messages"
-      :show-emojis="false"
-      :emojis-suggestion-enabled="false"
-      :show-reaction-emojis="false"
-      :show-files="false"
       :height="screenHeight"
-      :theme="state.theme"
-      :styles="state.styles"
       :current-user-id="currentUserId"
-      :room-id="state.roomId"
       :rooms="loadedRooms"
+      :rooms-order="'desc'"
       :loading-rooms="state.loadingRooms"
-      :messages-loaded="state.messagesLoaded"
       :rooms-loaded="state.roomsLoaded"
+      :room-id="state.roomId"
+      :load-first-room="true"
+      :messages="state.messages"
+      :room-message="null"
+      :messages-loaded="state.messagesLoaded"
       :room-actions="state.roomActions"
       :menu-actions="state.menuActions"
       :message-selection-actions="state.messageSelectionActions"
-      :room-message="state.roomMessage"
       :templates-text="state.templatesText"
+      :show-search="true"
+      :show-add-room="false"
+      :show-send-icon="true"
+      :show-files="false"
+      :show-audio="false"
+      :show-emojis="false"
+      :show-reaction-emojis="false"
+      :show-new-messages-divider="true"
+      :show-footer="true"
+      :room-info-enabled="false"
+      :textarea-action-enabled="false"
+      :accepted-files="'image/png, image/jpeg, application/pdf'"
+      :user-tags-enabled="false"
+      :single-room="true"
+      :media-preview-enabled="false"
+      :emojis-suggestion-enabled="false"
+      :theme="state.theme"
+      :styles="state.styles"
       @fetch-more-rooms="fetchMoreRooms"
       @fetch-messages="fetchMessages"
       @send-message="sendMessage"
@@ -796,30 +828,60 @@ const resetForms = () => {
       @message-selection-action-handler="messageSelectionActionHandler"
       @send-message-reaction="sendMessageReaction"
       @typing-message="typingMessage"
-      @toggle-rooms-list="state.showDemoOptions = false"
     />
-    <!-- <div v-if="state.showDemoOptions" class="button-theme">
-        <button class="button-light" @click="state.theme='light'">
-          Light
-        </button>
-        <button class="button-dark" @click="state.theme='dark'">
-          Dark
-        </button>
-        <button class="button-github">
-          <i class="material-icons">cyclone</i>
-        </button>
-      </div> -->
-
+    <!-- @toggle-rooms-list="state.showDemoOptions = false" -->
+    <div class="ccksckr">
+      <button v-if="username == 'Adam'" @click="toggleDemoOptions">
+        <span class="material-icons">cyclone</span>
+      </button>
+      <button class="button-light" @click="state.theme = 'light'">Light</button>
+      <button class="button-dark" @click="state.theme = 'dark'">Dark</button>
+      <template v-if="loadedRooms[0]">
+        <div
+          v-for="user of loadedRooms[0].users"
+          :class="{
+            green:
+              user.status && user.status.state && user.status.state == 'online',
+          }"
+          class="nametag"
+          :key="user"
+        >
+          {{ user.username }}
+        </div>
+      </template>
+    </div>
     <audio
       ref="unmaximize"
       type="audio/mpeg"
+      muted="muted"
       src="https://firebasestorage.googleapis.com/v0/b/stein-unlimited.appspot.com/o/sounds%2Funmaximize.mp3?alt=media&token=5f31afe5-3f06-4e5b-912a-6c6e02b5f156"
     ></audio>
     <audio
       ref="notification"
       type="audio/mpeg"
+      muted="muted"
       src="https://firebasestorage.googleapis.com/v0/b/stein-unlimited.appspot.com/o/sounds%2Fnotification.mp3?alt=media&token=2b383dc8-019b-4975-885c-8bcb58734bc3"
     ></audio>
     <!-- </div> -->
   </div>
 </template>
+<style lang="sass">
+.ccksckr
+  display: inline-flex
+  background-color: #440033
+  color: black
+  padding: 0 1em
+  align-items: center
+  height: 40px
+  border-radius: 7px
+  box-shadow: 2px 2px #00FFFF, -2px -2px #00FFFF
+  button
+    background-color: #AA00EE
+  .green
+    background-color: #00FFFF
+    color: black
+    border-radius: 5px
+    box-shadow: 1px 1px #AA3300, -1px -1px #AA3300
+  div
+    padding: 0 1em
+</style>

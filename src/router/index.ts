@@ -21,9 +21,9 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/components/LogoutComponent.vue"),
   },
   {
-    path: "/yogacalendar",
+    path: "/YogaCalendar",
     name: "YogaCalendar",
-    component: () => import("@/components/yogacalendar/YogaCalendar.vue"),
+    component: () => import("@/components/YogaCalendar.vue"),
   },
   {
     path: "/Admin",

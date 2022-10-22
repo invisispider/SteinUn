@@ -25,7 +25,7 @@ const getNameFromHabit = (habit: number) => store.habitNames[habit];
 // const firstDayOfHabit = (hab: number) =>
 // new Date(gYear.value, 0, 1 + daysInHabit.value * state.habitNum);
 onMounted(() => {
-  state.dayOfHabit = state.dayOfYear - (state.habitNum * daysInHabit.value);
+  state.dayOfHabit = state.dayOfYear - state.habitNum * daysInHabit.value;
   store.setHabitNum(state.habitNum);
   store.setDayNum(state.dayOfHabit);
 });
@@ -42,7 +42,8 @@ watchEffect(() => {
   <section id="habits">
     <div class="above-cal">
       <h1>
-        {{ store.dayNames[(state.dayOfHabit - 1) % 5] }} {{ state.dayOfHabit }}
+        {{ store.dayNames[(state.dayOfHabit) % 5] }}{{", "}}
+        {{ state.dayOfHabit+1 }}
         {{ habitName }} {{ Number(String(store.forma).slice(-4)) + 10000 }}
       </h1>
     </div>
@@ -58,7 +59,7 @@ watchEffect(() => {
         <div
           class="uncell uncell-zen"
           v-for="d of daysInHabit"
-          :class="d == state.dayOfHabit ? 'selected-date' : ''"
+          :class="d == state.dayOfHabit+1 ? 'selected-date' : ''"
           :key="d"
         >
           <i v-if="d === 1" class="material-icons holiday">self_improvement</i>

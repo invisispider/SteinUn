@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, watchEffect, onUnmounted } from "vue";
+import { onMounted, watchEffect, onUnmounted } from "vue";
 // import { RouterLink } from "vue-router";
 // import UnJamMeComponent from "@/components/UnJamMeComponent.vue";
 import { useStore } from "@/stores/index.ts";
@@ -9,14 +9,14 @@ import { collapsed, toggleSidebar, sidebarWidth } from "./state";
 const store = useStore();
 const randGuy = Math.floor(Math.random() * 50 + 1);
 // 5 E + 13 M = 18 EM
-const showJams = ref(false);
+// const showJams = ref(false);
 const oneInTwoHundred = randGuy == 18 ? true : false;
-const doShowJams = () => {
-  setTimeout(() => {
-    showJams.value = false;
-  }, 2000);
-  showJams.value = true;
-};
+// const doShowJams = () => {
+//   setTimeout(() => {
+//     showJams.value = false;
+//   }, 2000);
+//   showJams.value = true;
+// };
 const carlBatman = watchEffect(() => {
   if (store.uid) localStorage.setItem("uid", JSON.stringify(store.uid));
   if (store.username)
@@ -69,7 +69,7 @@ onUnmounted(() => {
         <SidebarLink to="/UnTimeMe" key="6a" class="navItem"
           >zenTime</SidebarLink
         >
-        <SidebarLink to="/yogacalendar" key="12a" class="navItem"
+        <SidebarLink to="/YogaCalendar" key="12a" class="navItem"
           >Classes</SidebarLink
         >
         <!-- <component :is="UnJamMeComponent" v-if="showJams" key="7a" class="navItem"

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import TodoComponent from "@/components/TodoComponent.vue";
 import ScheduleComponent from "@/components/ScheduleComponent.vue";
-import MJBlog from "@/components/MJBlog.vue";
+// import MJBlog from "@/components/MJBlog.vue";
 import { ref, nextTick, onMounted } from "vue";
 import { useStore } from "@/stores/index";
 import { auth, firestoreDb } from "@/services/firebaseconfig";
@@ -15,19 +15,19 @@ const store = useStore();
 const router = useRouter();
 const doShowTodo = ref(false);
 const doShowSchedule = ref(false);
-const doShowMJ = ref(false);
+// const doShowMJ = ref(false);
 const collapseState = ref(false);
 const chooseWindow = (which: string) => {
   doShowTodo.value = false;
   doShowSchedule.value = false;
-  doShowMJ.value = false;
+  // doShowMJ.value = false;
   nextTick(() => {
     if (which === "todo") {
       doShowTodo.value = true;
     } else if (which === "schedule") {
       doShowSchedule.value = true;
-    } else if (which === "mjblog") {
-      doShowMJ.value = true;
+      // } else if (which === "mjblog") {
+      //   doShowMJ.value = true;
     }
   });
 };
@@ -71,7 +71,7 @@ onMounted(() => {
       <div>
         <component :is="TodoComponent" v-if="doShowTodo" />
         <component :is="ScheduleComponent" v-if="doShowSchedule" />
-        <component :is="MJBlog" v-if="doShowMJ" />
+        <!-- <component :is="MJBlog" v-if="doShowMJ" /> -->
       </div>
       <nav class="collapseNav" v-show="store.username">
         <button
@@ -88,13 +88,13 @@ onMounted(() => {
         >
           Habit
         </button>
-        <button
+        <!-- <button
           v-show="!collapseState"
           class="userButton"
           @click.prevent="chooseWindow('mjblog')"
         >
           MJ Blog
-        </button>
+        </button> -->
         <i
           class="material-icons christmas-icon green"
           @click.prevent="collapseState = !collapseState"
