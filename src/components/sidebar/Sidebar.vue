@@ -46,12 +46,11 @@ onUnmounted(() => {
         class="glow"
         mode="in-out"
       >
-        <SidebarLink to="/" v-if="!store.uid" key="2a" class="navItem"
+        <SidebarLink to="/" key="aa" class="navItem">Home</SidebarLink>
+        <!-- <SidebarLink to="/Login" v-if="!store.uid" key="2a" class="navItem"
           >Login</SidebarLink
-        >
-        <SidebarLink v-if="store.uid" key="0a" class="navItem" to="/Chat"
-          >Talk</SidebarLink
-        >
+        > -->
+
         <!-- <SidebarLink to="/Crossword" key="3a" class="navItem" icon="keyboard_double_arrow_left"
 				>Puzzle</SidebarLink> -->
         <SidebarLink
@@ -69,17 +68,26 @@ onUnmounted(() => {
         <SidebarLink to="/UnTimeMe" key="6a" class="navItem"
           >zenTime</SidebarLink
         >
-        <SidebarLink to="/YogaCalendar" key="12a" class="navItem"
+        <!-- <SidebarLink to="/YogaCalendar" key="12a" class="navItem"
           >Classes</SidebarLink
-        >
+        > -->
         <!-- <component :is="UnJamMeComponent" v-if="showJams" key="7a" class="navItem"
 					id="music-player" /> -->
         <!-- <a v-else id="songToggle" @click="doShowJams" -->
         <!-- >UnJamMe</a> -->
         <!-- <SidebarLink to="/UnReadMe" key="8a" class="navItem"
 				>unReadMe</SidebarLink> -->
+        <SidebarLink to="/Unwolfme" key="16a" class="navItem"
+          >Videos</SidebarLink
+        >
         <SidebarLink v-if="store.admin" key="11a" class="navItem" to="/Admin"
           >Admin</SidebarLink
+        >
+        <SidebarLink v-if="store.uid" key="0a" class="navItem" to="/Chat"
+          >PartyChat</SidebarLink
+        >
+        <SidebarLink v-if="!store.uid" key="21z" class="navItem" to="/Login"
+          >Login</SidebarLink
         >
         <SidebarLink v-if="store.uid" key="1a" class="navItem" to="/Logout"
           >Logout</SidebarLink

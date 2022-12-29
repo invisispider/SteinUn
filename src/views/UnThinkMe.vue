@@ -28,9 +28,9 @@ const getBlog = async () => {
   blogData.value = tempData;
 };
 
-// onMounted(() => {
-//   getBlog();
-// });
+onMounted(() => {
+  getBlog();
+});
 
 /* USE THIS TO GET IMAGE LINKS FOR NOW @TODO MAKE THIS EDITABLE IN ADMIN */
 // const listedStorageImages = ref([])

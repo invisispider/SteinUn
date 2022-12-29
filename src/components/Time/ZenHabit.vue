@@ -77,10 +77,10 @@ watchEffect(() => {
         <div
           class="uncell uncell-zen"
           v-for="(d, ind) of store.dayNames"
-          :class="ind + 1 == state.dayOfHabit ? 'selected-date' : ''"
+          :class="ind + 1 == state.dayOfHabit+1 ? 'selected-date' : ''"
           :key="ind"
         >
-          {{ ind + 1 }}
+          <i class="material-icons holiday">self_improvement</i>
         </div>
       </div>
     </div>

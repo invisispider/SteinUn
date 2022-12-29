@@ -49,12 +49,15 @@ const unmaximize = ref(null);
 const notification = ref(null);
 onAuthStateChanged(auth, async (user) => {
   if (!user) {
-    router.push("/");
+    router.push("/Home");
+  } else {
+    store.setIsIn();
   }
   store.setAuthIsReady();
 });
 
 // get download links here:
+// console.info(storageService.getSoundUrl(`PITCH_Everything_You_See_Is_Light.mp3`))
 // console.info(storageService.getSoundUrl('unmaximize.mp3'))
 // console.info(storageService.getAvatarUrl('nien_nunb.resized.png'))
 
@@ -135,7 +138,7 @@ const unsub = watchEffect(() => {
   if (!currentUserId.value) {
     // state.showChat = false
     setTimeout(() => (state.showChat = true), 10050);
-    setTimeout(() => router.push("/"), 20000);
+    setTimeout(() => router.push("/Login"), 20000);
   }
 });
 onMounted(() => {
@@ -278,7 +281,7 @@ const listenLastMessage = (room) => {
         if (state.loadingLastMessageByRoom === state.rooms.length) {
           state.loadingRooms = false;
           state.roomsLoadedCount = state.rooms.length;
-          playSound("notification");
+          playSound("unmaximize");
         }
       }
     }
@@ -323,7 +326,7 @@ const fetchMessages = ({ room, options = {} }) => {
     return;
   }
   state.selectedRoom = room.roomId;
-  // playSound("notification");
+  playSound("notification");
   firestoreService
     .getMessages(room.roomId, state.messagesPerPage, state.lastLoadedMessage)
     .then(({ data, docs }) => {
@@ -853,13 +856,11 @@ const toggleDemoOptions = () =>
     <audio
       ref="unmaximize"
       type="audio/mpeg"
-      muted="muted"
       src="https://firebasestorage.googleapis.com/v0/b/stein-unlimited.appspot.com/o/sounds%2Funmaximize.mp3?alt=media&token=5f31afe5-3f06-4e5b-912a-6c6e02b5f156"
     ></audio>
     <audio
       ref="notification"
       type="audio/mpeg"
-      muted="muted"
       src="https://firebasestorage.googleapis.com/v0/b/stein-unlimited.appspot.com/o/sounds%2Fnotification.mp3?alt=media&token=2b383dc8-019b-4975-885c-8bcb58734bc3"
     ></audio>
     <!-- </div> -->

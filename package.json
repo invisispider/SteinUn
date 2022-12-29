@@ -14,7 +14,7 @@
 		"@nuxt/devalue": "^2.0.0",
 		"axios": "^0.26.0",
 		"firebase": "^9.6.10",
-		"firebase-admin": "^10.0.2",
+		"firebase-admin": "^11.4.1",
 		"firebaseui": "^6.0.1",
 		"lamejs": "^1.2.1",
 		"luxon": "^2.3.1",

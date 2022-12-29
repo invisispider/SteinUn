@@ -10,6 +10,11 @@ const routes: Array<RouteRecordRaw> = [
     component: Home,
   },
   {
+    path: "/Login",
+    name: "Login",
+    component: () => import("@/components/Login.vue"),
+  },
+  {
     path: "/Chat",
     name: "ChatApp",
     meta: { requiresAuth: true },
@@ -58,6 +63,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/views/Teacher.vue"),
   },
   {
+    path: "/Unwolfme",
+    name: "Unwolfme",
+    component: () => import("@/components/Unwolfme.vue"),
+  },
+  {
     path: "/UnTimeMe",
     name: "UnTimeMe",
     component: () => import("@/views/UnTimeMe.vue"),
@@ -89,6 +99,6 @@ const router = createRouter({
 });
 router.beforeEach((to) => {
   const store = useStore(pinia);
-  if (to.meta.requiresAuth && !store.isIn) return "/";
+  if (to.meta.requiresAuth && !store.uid) return "/";
 });
 export default router;
