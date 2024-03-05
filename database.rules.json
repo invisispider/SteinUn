@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "status": {
+      ".read": "auth.uid != null",
+      ".write": "auth.uid != null"
+    },
+    "$any": {
+      ".read": "auth.uid != null && auth.token.admin == true",
+      ".write": "auth.uid != null && auth.token.admin == true"
+    }
+  }
+}

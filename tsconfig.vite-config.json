@@ -4,5 +4,7 @@
   "compilerOptions": {
     "composite": true,
     "types": ["node", "vitest"]
-  }
+  },
+  // added due to dep warning
+  "verbatimModuleSyntax": true
 }

@@ -5,5 +5,7 @@
     "composite": true,
     "lib": [],
     "types": ["node", "jsdom"]
-  }
+  },
+  // added due to dep warning
+  "verbatimModuleSyntax": true
 }

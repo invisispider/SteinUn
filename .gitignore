@@ -1,3 +1,10 @@
+# Directories
+_adam-notes_
+archive
+node_modules
+functions
+src/services
+
 # Logs
 logs
 *.log
@@ -6,31 +13,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
-*.rules
-*.indexes.json
-notepad.txt
-firebase.json
-
-archive
-node_modules
-.DS_Store
-dist
-dist-ssr
-coverage
-*.local
-.env
-*.env
-functions/*
-functions
-database.rules*
-src/logo.svg
-services
-src/views/NextView.vue
-public
-
-/cypress/videos/
-/cypress/screenshots/
 
 # Editor directories and files
 .vscode/*
@@ -42,10 +24,9 @@ public
 *.sln
 *.sw?
 
-.firebase
-MySnippets.txt
-firestore.rules
-firestore.indexes.json
-package-lock.json
-src/assets/*
-src/stores/*
+# Secret
+.DS_Store
+*.local
+.env
+*.env
+src/views/NextView.vue
