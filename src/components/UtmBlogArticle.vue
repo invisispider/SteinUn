@@ -10,22 +10,15 @@ const props = defineProps([
 </script>
 <template>
   <section class="utm-blog-article">
-    <h2 class="title-place">
-      {{ props.title }}
-    </h2>
-    <div class="article-place">
+    <h3 class="title-place">{{ props.title }}</h3>
+    <div class="tn-place">
       <a :href="props.ytlink" target="_blank">
         <div
           class="video-place"
           :style="{ 'background-image': `url(${props.tnurl})` }"
         ></div>
       </a>
-      <div class="text-place">
-        <h4 class="date-place">
-          {{ props.date }}
-        </h4>
-        {{ props.content }}
-      </div>
     </div>
+    <div class="desc-place">{{ props.content }}</div>
   </section>
 </template>

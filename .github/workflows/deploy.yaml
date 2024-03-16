@@ -28,3 +28,40 @@ jobs:
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_GITHUB_TOKEN }}
           
+
+# pulls (https://medium.com/js-dojo/ci-cd-with-vue-firebase-hosting-and-github-actions-3fb0afa81314)
+# <https://github.com/firebase/firebase-tools>
+# "If you want to prevent (which I think you should) merging pull requests with failing unit or e2e tests to master, you should add a Branch protection rule. For that, go to the Settings tab in your Github repository. Select Branches from the left-side menu. And under Branch protection rules header, select Add rule. "
+
+name: Deploy to Firebase Hosting on PR
+"on": pull_request
+jobs:
+  unit_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci && npm run test:unit
+  e2e_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm run serve
+          wait-on: <http://localhost:8080/>
+          config_file: cypress.json
+          spec: "tests/e2e/**/*"
+        env:
+          CYPRESS_baseUrl: <http://localhost:8080/>
+  build_and_preview:
+    needs: [unit_test, e2e_test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci && npm run build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: #REFERENCE TO FIREBASE SERVICE 

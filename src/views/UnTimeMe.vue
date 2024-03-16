@@ -26,6 +26,14 @@ const displayZenTime = computed(() => [
   store.instant,
   " ",
   timezone,
+  " ",
+  store.dayNames[(store.dayNum) % 5].slice(0,3),
+  ", ",
+  store.dayNum+1,
+  " ",
+  store.habitName,
+  " ",
+  Number(String(store.forma).slice(-4)) + 10000 
 ]);
 
 const timePulse = async () => {
@@ -85,7 +93,6 @@ const showChart = ref("date");
     </Transition>
     <div class="flex-me-center">
       <div class="zen-meters">
-        <h3>{{ store.forma }}</h3>
         <transition name="wiggle" appear>
           <div class="title-logo">
             <h1>zenCalendar</h1>
@@ -111,11 +118,12 @@ const showChart = ref("date");
                 v-html="smiley ? 'mood_bad' : 'mood'"
               ></i>
             </button>
-            <h2>by SteinUnlimited</h2>
+            <!-- <h2>by SteinUnlimited</h2> -->
             <!-- <h3>{{store.zenDate}}</h3> -->
           </div>
         </transition>
-        <h3>
+        <h3>ROMAN: {{ store.forma }}</h3>
+        <h3>ZEN:
           <span v-for="t of displayZenTime" :key="t">{{ t }}</span>
         </h3>
         <!-- <label for="Session">Session {{store.zsess+1}}</label>

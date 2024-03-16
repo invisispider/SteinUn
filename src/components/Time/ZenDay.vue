@@ -2,8 +2,8 @@
 import { useTime } from "@/stores/time.ts";
 import { computed } from "vue";
 const store = useTime();
-const svgHeight = 520;
-const svgWidth = 400;
+const svgHeight = 620;
+const svgWidth = 600;
 const halfWidth = svgWidth / 2;
 const gregWidth = svgWidth / 6;
 const rSpread = svgHeight / 24;

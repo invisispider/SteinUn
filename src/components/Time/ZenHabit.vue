@@ -31,9 +31,9 @@ onMounted(() => {
 });
 watchEffect(() => {
   state.startOfYear = new Date(gYear.value, 0, 1);
-  // add 1??
+  // add 1?? On Jan 17, it said 18 Struggles, so I took away the +1
   state.dayOfYear =
-    1 + Math.floor(new Date(coreDate.value - state.startOfYear) / 86400000);
+    Math.floor(new Date(coreDate.value - state.startOfYear) / 86400000);
   state.habitNum = Math.floor(state.dayOfYear / daysInHabit.value);
   habitName.value = getNameFromHabit(state.habitNum);
 });
@@ -84,6 +84,6 @@ watchEffect(() => {
         </div>
       </div>
     </div>
-    <h2>Day Of Year: {{ state.dayOfYear }}</h2>
+    <h2>Day Of Year: {{ state.dayOfYear+1 }}</h2>
   </section>
 </template>

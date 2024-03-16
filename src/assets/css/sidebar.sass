@@ -1,0 +1,230 @@
+@media (hover: hover)
+	a:hover
+		background-color: #00bd7e33
+
+// body
+	// margin: 0
+	// background-color: #150018
+	// font-family: Poppins, Roboto, verdana
+
+// #app
+// 	font-family: Avenir, Helvetica, Arial, sans-serif
+// 	-webkit-font-smoothing: antialiased
+// 	-moz-osx-font-smoothing: grayscale
+// 	text-align: center
+// 	color: #2c3e50
+#nav
+	padding: 30px
+#nav a
+	font-weight: bold
+	color: #2c3e50
+#nav a.router-link-exact-active
+	color: #42b983
+
+button, a, router-link, RouterLink, i
+	cursor: pointer
+	display: block
+	
+.sidebar
+	position: fixed
+	z-index: 1
+	top: 0
+	left: 0
+	padding: .5em .5em 6em .5em
+	transition: .3s ease
+.sidebar:has(.rotate-180)
+	padding: 0
+.sidebar:not(.sidebar:has(.rotate-180))
+	border-right: 2px solid #2c3e50
+.clock-wrapper
+	fill: red
+.collapse-icon
+	color: #92099e
+	transition: .2s linear
+	z-index: 540
+.collapse-icon:not(.rotate-180)
+	bottom: 10%
+	left: 41%
+
+.rotate-180
+	left: 0
+	transform: rotate(180deg)
+	transition: .2s linear
+.vac-col-messages
+	z-index: 0
+.vac-room-header
+	z-index: 0
+.vac-avatar
+	margin-left: 2%
+
+.topnav
+	background-image: url(@/assets/img/keys.jpg)
+	background-repeat: repeat-x
+	background-position: bottom
+	background-size: contain
+	max-height: 100vh
+	padding-inline: 1em
+	.christmas-icon
+		font-size: 1.6rem
+		list-style-type: none
+		display: flex
+		i
+			margin: auto
+			padding: 0.3em
+		span
+			margin: auto
+			padding: 0.3em
+	.navItem
+		font-size: 1.4em
+		box-shadow: 0 1px .1em #4e934f
+		border-radius: 10px
+		white-space: nowrap
+		cursor: pointer
+		list-style-type: none
+		justify-content: center
+	// .nav-item-dark
+	// 	box-shadow: 0 0 40px #f0cf6c
+	a, router-link
+		color: #fbf
+		border-radius: 6px
+	a:hover, router-link:hover
+		color: #fff
+
+.hidden
+	visibility: hidden
+
+// ANIMATIONS
+.grow-enter-from, .grow-leave-to
+	opacity: 0
+	transform: scale(0)
+.grow-enter-to, .grow-leave-from
+	opacity: 1
+	transform: scale(1)
+.grow-enter-active, .grow-leave-active
+	transition: all .8s
+
+.bounceInRight-enter-active, .bounceInRight-leave-active
+	transition: all 3s ease
+@keyframes bounceInRight
+	0%
+		opacity: 0
+		transform: translate(2000px)
+	60%
+		transform: translate(-20px)
+	80%
+		transform: translate(5px)
+	to
+		opacity: 1
+		transform: translate(0)
+
+.bounceInRight-enter-active
+	animation: bounceInRight 2s ease
+
+@keyframes bounceInLeft
+	0%
+		opacity: 0
+		transform: translate(-2000px)
+	60%
+		transform: translate(20px)
+	80%
+		transform: translate(-5px)
+	to
+		opacity: 1
+		transform: translate(0)
+
+.bounceInRight-enter-active
+	animation: bounceInLeft 2s ease
+
+@keyframes bounceIn
+	0%
+		opacity: 0
+		transform: scale(.3)
+	50%
+		transform: scale(1.05)
+	70%
+		transform: scale(.9)
+	to
+		opacity: 1
+		transform: scale(1)
+
+.bounceIn-enter-active
+	animation: bounceIn 2s ease
+
+@keyframes spang
+	0%
+		transform: rotate(0)
+	to
+		transform: rotate(360deg)
+
+.spinMe
+	animation: spang 15s linear
+	animation-iteration-count: infinite
+
+@keyframes bounce
+	0%
+		transform: scale(1)
+	50%
+		transform: scale(.9)
+	70%
+		transform: scale(1.15)
+	to
+		transform: scale(1)
+
+.bounceMe
+	animation: bounce 3s ease
+	animation-iteration-count: 20
+	animation-delay: 6s
+.fadeDown-enter-from, .fadeDown-leave-to
+	opacity: 0
+	transform: translateY(-500px)
+.fadeDown-enter-active, .fadeDown-leave-active
+	transition: all .6s ease
+.fade-enter-from, .fade-leave-to
+	opacity: 0
+.fade-enter-active, .fade-leave-active
+	transition: opacity .5s ease
+.fadeUp-enter-from, .fadeUp-leave-to
+	opacity: 0
+	transform: translateY(20px)
+.fadeUp-enter-to, .fadeUp-leave-from
+	opacity: 1
+	transform: translateY(0)
+.fadeUp-enter-active, .fadeInUp-leave-active
+	transition: all .5s ease
+.glow
+	animation: glow 1.5s ease-in-out infinite alternate
+
+@keyframes glow
+	0%
+		text-shadow: 0px 0px 8px #aaa, 3px 3px 13px #90d, 0px 0px 23px #e60073
+	to
+		text-shadow: 0px 0px 18px #50d, 3px 3px 3px #90d, 0px 0px 33px #ff4da6
+
+.pulse
+	animation: pulse 1s infinite alternate
+
+@keyframes pulse
+	0%
+		transform: scale(1)
+	to
+		transform: scale(1.2)
+
+.shrink-enter-from, .shrink-leave-to
+	scale: 0
+
+.shrink-enter-to, .shrink-leave-from
+	scale: 1
+
+.shrink-enter-active
+	transition: scale 5s ease
+
+.route-enter-from
+	opacity: 0
+	transform: translate(100px)
+.route-enter-active
+	transition: all .3s ease-out
+.route-leave-to
+	opacity: 0
+	transform: translate(-100px)
+.route-leave-active
+	transition: all .3s ease-in

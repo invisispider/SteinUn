@@ -2,10 +2,9 @@
 import { onMounted, watchEffect, onUnmounted } from "vue";
 // import { RouterLink } from "vue-router";
 // import UnJamMeComponent from "@/components/UnJamMeComponent.vue";
-import { useStore } from "@/stores/index.ts";
+import { useStore } from "@/stores/index";
 import SidebarLink from "@/components/sidebar/SidebarLink.vue";
 import { collapsed, toggleSidebar, sidebarWidth } from "./state";
-// import FooterComponent from "@/components/FooterComponent.vue";
 const store = useStore();
 const randGuy = Math.floor(Math.random() * 50 + 1);
 // 5 E + 13 M = 18 EM
@@ -25,10 +24,10 @@ const carlBatman = watchEffect(() => {
 onMounted(() => {
   if (localStorage) {
     if (localStorage.getItem("uid")) {
-      store.setUid(JSON.parse(localStorage.getItem("uid")));
+      store.setUid(JSON.stringify(localStorage.getItem("uid")));
     }
     if (localStorage.getItem("username")) {
-      store.setUsername(JSON.parse(localStorage.getItem("username")));
+      store.setUsername(JSON.stringify(localStorage.getItem("username")));
     }
   }
 });
@@ -38,7 +37,13 @@ onUnmounted(() => {
 </script>
 <template>
   <div class="sidebar topnav" :style="{ width: sidebarWidth }">
-    <template v-if="!collapsed">
+  <span
+      class="collapse-icon"
+      @click="toggleSidebar"
+    >
+    <i class="material-icons" :class="{ 'rotate-180': collapsed}">keyboard_double_arrow_left</i>
+  </span>
+  <template v-if="!collapsed">
       <transition-group
         name="fadeDown"
         key="banana"
@@ -46,7 +51,7 @@ onUnmounted(() => {
         class="glow"
         mode="in-out"
       >
-        <SidebarLink to="/" key="aa" class="navItem">Home</SidebarLink>
+        <SidebarLink to="/" key="aa" class="navItem" @click="toggleSidebar">Home</SidebarLink>
         <!-- <SidebarLink to="/Login" v-if="!store.uid" key="2a" class="navItem"
           >Login</SidebarLink
         > -->
@@ -58,14 +63,14 @@ onUnmounted(() => {
           v-if="oneInTwoHundred"
           key="em"
           class="navItem nav-item-dark"
-          icon="keyboard_double_arrow_left"
+          icon="keyboard_double_arrow_left" @click="toggleSidebar"
           >TEMP</SidebarLink
         >
-        <SidebarLink to="/UnThinkMe" key="9a" class="navItem"
+        <SidebarLink to="/UnThinkMe" key="9a" class="navItem" @click="toggleSidebar"
           >unThinkMe</SidebarLink
         >
-        <SidebarLink to="/Teacher" key="5a" class="navItem">Music</SidebarLink>
-        <SidebarLink to="/UnTimeMe" key="6a" class="navItem"
+        <SidebarLink to="/Teacher" key="5a" class="navItem" @click="toggleSidebar">Music</SidebarLink>
+        <SidebarLink to="/UnTimeMe" key="6a" class="navItem" @click="toggleSidebar"
           >zenTime</SidebarLink
         >
         <!-- <SidebarLink to="/YogaCalendar" key="12a" class="navItem"
@@ -77,19 +82,19 @@ onUnmounted(() => {
         <!-- >UnJamMe</a> -->
         <!-- <SidebarLink to="/UnReadMe" key="8a" class="navItem"
 				>unReadMe</SidebarLink> -->
-        <SidebarLink to="/Unwolfme" key="16a" class="navItem"
+        <SidebarLink to="/Unwolfme" key="16a" class="navItem" @click="toggleSidebar"
           >Videos</SidebarLink
         >
-        <SidebarLink v-if="store.admin" key="11a" class="navItem" to="/Admin"
+        <SidebarLink v-if="store.admin" key="11a" class="navItem" to="/Admin" @click="toggleSidebar"
           >Admin</SidebarLink
         >
-        <SidebarLink v-if="store.uid" key="0a" class="navItem" to="/Chat"
+        <SidebarLink v-if="store.uid" key="0a" class="navItem" to="/Chat" @click="toggleSidebar"
           >PartyChat</SidebarLink
         >
-        <SidebarLink v-if="!store.uid" key="21z" class="navItem" to="/Login"
+        <SidebarLink v-if="!store.uid" key="21z" class="navItem" to="/Login" @click="toggleSidebar"
           >Login</SidebarLink
         >
-        <SidebarLink v-if="store.uid" key="1a" class="navItem" to="/Logout"
+        <SidebarLink v-if="store.uid" key="1a" class="navItem" to="/Logout" @click="toggleSidebar"
           >Logout</SidebarLink
         >
       </transition-group>
@@ -105,20 +110,5 @@ onUnmounted(() => {
         </span>
       </div>
     </template>
-    <span
-      class="collapse-icon"
-      :class="{ 'rotate-180': collapsed }"
-      @click="toggleSidebar"
-    >
-      <i class="material-icons three-hundred-up">keyboard_double_arrow_left</i>
-    </span>
-    <h1>
-      <!-- <span v-if="collapsed">
-        <div>S</div>
-        <div>U</div>
-      </span> -->
-      <!-- <span v-else>Stein Unlimited</span> -->
-      <span v-if="!collapsed">Stein Unlimited</span>
-    </h1>
   </div>
 </template>

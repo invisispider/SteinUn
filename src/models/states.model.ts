@@ -1,7 +1,8 @@
 export type RootState = {
+  styleMode: string;
   isIn: boolean;
   authIsReady: boolean;
-  uid: string | null;
-  username: string | null;
+  uid: string;
+  username: string;
   admin: boolean;
 };

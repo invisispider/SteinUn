@@ -7,10 +7,10 @@ import randomVids from "@/components/videosunwolfme";
 import {ref} from "vue";
 const selector = ref('junkReviews');
 const buttons = [
-  {'select': 'junkReviews', 'display': 'Reviews'},
-  {'select': 'junkPlays', 'display': 'Plays'},
-  {'select': 'gwtfParts', 'display': 'Going With The Flow'},
   {'select': 'steinLive', 'display': 'Stein'},
+  {'select': 'junkReviews', 'display': 'Reviews'},
+  {'select': 'junkPlays', 'display': 'Lets Play'},
+  {'select': 'gwtfParts', 'display': 'Going With The Flow'},
   {'select': 'randomVids', 'display': 'Vlogs'}
 ];
 // @TODO upload stein Blue Room videos to unwolfme

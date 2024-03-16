@@ -1,6 +1,11 @@
 export default [
   {"title": "Accidance! The Stein Movie", "link": "https://www.youtube.com/watch?v=0SwR1plo_dc&list=PLdfr4Z30N-QNTIvITkgwpy14T_QXLq8jr"},
+  {"title": "Accidance! Stein Band Movie | Part 2", "link": "https://youtu.be/Nda7hp1aKF0"},
+  {"title": "Accidance! Stein Band Movie | Part 3", "link": "https://youtu.be/3HPJlsK-UqY"},
   {"title": "Accidance Trailer!", "link": "https://www.youtube.com/watch?v=ajWX223Ccck"},
+  {"title": "Hamburger Friends | Stein @ Blue Room PDX", "link": "https://www.youtube.com/watch?v=J46Gb-xvE0A"},
+  {"title": "Sweet Lovin Part 1 | Stein @ Blue Room PDX", "link": "https://youtu.be/c3vgdyAI_hw"},
+  {"title": "Sandpiper | Stein @ Ash Street Saloon", "link": "https://youtu.be/XMlf6cf-pRk"},
   {"title": "Catamaran - Stein - OFFICIAL MUSIC VIDEO - Accidance!", "link": "https://www.youtube.com/watch?v=QavqClki-jY"},
   {"title": "Tautology - Stein - OFFICIAL MUSIC VIDEO - Accidance!", "link": "https://www.youtube.com/watch?v=jpBvW1YZTWw"},
   {"title": "Accustomed - Stein - OFFICIAL MUSIC VIDEO - Accidance!", "link": "https://www.youtube.com/watch?v=upU2yp6RLD8"},

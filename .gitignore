@@ -25,6 +25,7 @@ lerna-debug.log*
 *.sw?
 
 # Secret
+*.bak
 .DS_Store
 *.local
 .env

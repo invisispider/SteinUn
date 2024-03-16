@@ -8,7 +8,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    // added due to dep warning
-    "verbatimModuleSyntax": true
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
   }
 }

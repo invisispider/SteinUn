@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import TodoComponent from "@/components/TodoComponent.vue";
-import ScheduleComponent from "@/components/ScheduleComponent.vue";
-// import MJBlog from "@/components/MJBlog.vue";
+import TodoComponent from "@/components/Admin/TodoComponent.vue";
+import ScheduleComponent from "@/components/Admin/ScheduleComponent.vue";
+// import MJBlog from "@/components/Admin/MJBlog.vue";
 import { ref, nextTick, onMounted } from "vue";
 import { useStore } from "@/stores/index";
 import { auth, firestoreDb } from "@/services/firebaseconfig";
@@ -37,7 +37,8 @@ onAuthStateChanged(auth, async (user) => {
       .getIdTokenResult()
       .then((idTokenResult) => {
         if (idTokenResult.claims.admin) {
-          console.info("you are a faggot");
+          console.info("~We create the Future~");
+          // @TODO This is terrible security. Find another way.
           store.setAdmin();
         }
       })
