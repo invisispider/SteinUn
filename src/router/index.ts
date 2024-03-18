@@ -3,11 +3,65 @@ import type { RouteRecordRaw } from "vue-router";
 import Home from "@/views/Home.vue";
 import { pinia } from "@/main";
 import { useStore } from "@/stores/index";
+import Greeting from "@/components/Landing/Greeting.vue";
+import Website from '@/components/Landing/Website.vue';
+import SteinunLimited from '@/components/Landing/SteinunLimited.vue';
+import IntegralTheory from '@/components/Landing/IntegralTheory.vue';
+import UnThinkMe from "@/components/Landing/UnThinkMe.vue";
+import SteinTime from '@/components/Landing/SteinTime.vue';
+import Beacon from '@/components/Landing/Beacon.vue';
+import Developer from '@/components/Landing/Developer.vue';
+import Artist from '@/components/Landing/Artist.vue';
+import Technomancy from '@/components/Landing/Technomancy.vue';
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
+    redirect: "/landing/greeting",
     name: "Home",
     component: Home,
+    children: [
+      {
+        path: 'landing/greeting',
+        component: Greeting,
+      },
+      {
+        path: 'landing/website',
+        component: Website,
+      },
+      {
+        path: 'landing/steinunlimited',
+        component: SteinunLimited,
+      },
+      {
+        path: 'landing/integraltheory',
+        component: IntegralTheory
+      },
+      {
+        path: 'landing/unthinkme',
+        component: UnThinkMe,
+      },
+      {
+        path: 'landing/steintime',
+        component: SteinTime,
+      },
+      {
+        path: 'landing/beacon',
+        component: Beacon,
+      },
+      {
+        path: 'landing/developer',
+        component: Developer,
+      },
+      {
+        path: 'landing/artist',
+        component: Artist,
+      },
+      {
+        path: 'landing/technomancy',
+        component: Technomancy,
+      }
+
+    ]
   },
   {
     path: "/Login",

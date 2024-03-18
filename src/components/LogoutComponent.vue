@@ -39,7 +39,7 @@ $mygreen: #31e833
   padding: 1em
   display: block
   position: absolute
-  z-index: 200
+  z-index: 0
   background-color: black
   width: 100vw
   height: 100vh

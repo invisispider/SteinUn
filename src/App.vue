@@ -6,9 +6,9 @@ import "@/assets/css/sidebar.sass";
 import { RouterView } from "vue-router";
 // import LoadingComponent from "@/components/LoadingComponent.vue"
 import Sidebar from "@/components/sidebar/Sidebar.vue";
-import { sidebarWidth } from "@/components/sidebar/state";
-import DevPane from "@/components/Admin/DevPane.vue";
-import StyleSelector from "@/components/Admin/StyleSelector.vue";
+// import { sidebarWidth } from "@/components/sidebar/state";
+// import DevPane from "@/components/Admin/DevPane.vue";
+import StyleSelector from "@/components/StyleSelector.vue";
 import { useStore } from '@/stores/index';
 import { useMonitorSize } from '@/composables/monitor-size';
 const sizes = useMonitorSize();

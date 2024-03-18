@@ -17,6 +17,7 @@ const signIn = () => {
       store.setUid(user.uid);
       store.setIsIn();
       store.setAuthIsReady();
+      if (auth.currentUser !== null) {
       auth.currentUser
         .getIdTokenResult()
         .then((idTokenResult) => {
@@ -28,7 +29,8 @@ const signIn = () => {
         .catch((error) => {
           console.log(error);
         });
-      router.push("/Chat");
+      }
+      // router.push("/");
     })
     .catch((error) => {
       console.error(error.code, error.message);
@@ -41,22 +43,27 @@ onAuthStateChanged(auth, async (user) => {
     const docRef = doc(firestoreDb, "users", user.uid);
     const docSnap = await getDoc(docRef);
     if (docSnap) {
-      store.setUsername(await docSnap.data().username);
+      let docData = await docSnap.data();
+      if (docData && docData.username) {
+        store.setUsername(docData.username);
+      }
     } else {
       console.error("No user listing in database!");
     }
     store.setAuthIsReady();
-    auth.currentUser
-      .getIdTokenResult()
-      .then((idTokenResult) => {
-        if (idTokenResult.claims.admin) {
-          console.info("Admin on state change");
-          store.setAdmin();
-        }
-      })
-      .catch((error) => {
-        console.error(error.code, error.message);
-      });
+    if (auth.currentUser){
+      auth.currentUser
+        .getIdTokenResult()
+        .then((idTokenResult) => {
+          if (idTokenResult.claims.admin) {
+            console.info("Admin on state change");
+            store.setAdmin();
+          }
+        })
+        .catch((error) => {
+          console.error(error.code, error.message);
+        });
+    }
     // router.push("/Chat");
   } else {
     store.setAuthIsReady();

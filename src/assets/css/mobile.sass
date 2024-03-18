@@ -2,20 +2,30 @@
     box-sizing: border-box
 html, body
     margin: 0
-.flex-column
-    display: flex
-    flex-direction: column
 .right
     align-self: flex-end
 #appWrapper
     display: flex
     flex-direction: column
     font-family: Poppins, Roboto, verdana
-    // height: 100vh
+    // height: 100dvh
+    height: 100vh
     text-align: center
-    justify-content: space-between
+    justify-content: flex-start
+.flex-column
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    flex-grow: 1
+.margin-1
+    margin-inline: 1em
+    margin-block: 0.4em
 .flex
     display: flex
+.flex-grow
+    flex-grow: 1
+
+// COLOR THEMES 
 .dark-purple
     background-color: #000000
     color: #aa64f1
@@ -24,7 +34,7 @@ html, body
     .navItem
         background-color: #0e031b
 .dark-green
-    background-color: #000000
+    background-color: #161616
     color: #68f78e
     .sidebar
         background-color: rgb(7, 57, 32)
@@ -37,23 +47,14 @@ html, body
         background-color: rgb(24, 21, 36)
     .navItem
         background-color: #000
-.hero-image
-    background: linear-gradient(to top, red, orange, yellow, green, blue, indigo, violet)
-    border-radius: 0.2em
-    padding: 1em 2em
-    display: flex
-    flex-direction: column
-.adam-med
-    margin: auto
-    border-radius: 0.2em
-    max-height: 50vh
-    max-width: 100%
-.home-content
-    padding-inline: 1.2em
+
+// .style-selector
+    // height: auto
 .btn-grp
     display: grid
     width: 100vw
     grid-template-columns: repeat(10, 10%)
+    justify-self: flex-end
     #dark-purple
         color: #92099e
         grid-column: 7 / 8
@@ -70,7 +71,72 @@ html, body
     background-color: #dad0d0
     padding: 0.3em
     justify-content: center
+    margin-inline: auto
     .social
         width: 1.9em
         margin-inline: 0.3em
 
+// HOME
+.home-content
+    padding-inline: 1.2em
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+
+.technomancy
+    justify-content: center
+    text-align: left
+    li
+        list-style: none
+.developer
+    display: flex
+    flex-direction: column
+    margin-block: auto
+    padding: 0 2em
+    // font-size: 0.94em
+    // text-align: left
+    list-style-type: none
+    h3
+        margin-block: 0.4em
+.artist
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    span
+        margin: 0 0.5em
+.hero-image
+    background: linear-gradient(to top, red, orange, yellow, green, blue, indigo, violet)
+    border-radius: 0.2em
+    padding: 1em 2em
+    opacity: 1
+    display: flex
+    flex-direction: column
+.adam-med
+    margin: auto
+    border-radius: 0.2em
+    max-height: 40vh
+    // max-width: 100%
+.beacon-image
+    background-image: url("@/assets/img/spiralstairs.jpeg")
+    background-repeat: no-repeat
+    background-size: contain
+    opacity: 0.2
+    min-width: 30vw
+    min-height: 30vh
+    position: fixed
+    left: 0.3em
+    top: 5em
+    z-index: 500
+.beacon-container 
+    p, h4
+        padding-left: 4em
+        text-align: right
+        // text-shadow: 5px 5px 0.1 white
+        // background-color: rgba(1, 1, 1, 1)
+.time-link
+    text-decoration: none
+ul.integral-theory
+    h4
+        margin-block: 0
+    li
+        list-style-type: none
