@@ -1,7 +1,6 @@
 <script setup lang="ts"></script>
 <template>
     <ul class="developer">
-        <h3>Developer Experience</h3>
         <li>Project management and workflow.</li>
         <li>Communication and troubleshooting.</li>
         <li>Linux Bash and CLI proficient.</li>

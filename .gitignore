@@ -31,3 +31,7 @@ lerna-debug.log*
 .env
 *.env
 src/views/NextView.vue
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

@@ -1,11 +1,10 @@
 <script setup lang="ts">
 // import "@/assets/css/base.sass";
 import { computed } from 'vue';
-import "@/assets/css/mobile.sass";
-import "@/assets/css/sidebar.sass";
+import "@/assets/css/controller.sass";
 import { RouterView } from "vue-router";
 // import LoadingComponent from "@/components/LoadingComponent.vue"
-import Sidebar from "@/components/sidebar/Sidebar.vue";
+import Sidebar from "@/components/Sidebar/Sidebar.vue";
 // import { sidebarWidth } from "@/components/sidebar/state";
 // import DevPane from "@/components/Admin/DevPane.vue";
 import StyleSelector from "@/components/StyleSelector.vue";
@@ -13,7 +12,7 @@ import { useStore } from '@/stores/index';
 import { useMonitorSize } from '@/composables/monitor-size';
 const sizes = useMonitorSize();
 const store = useStore();
-const isVertical = computed(()=>sizes.isVertical.value?'vertical':'')
+const isVertical = computed(()=>sizes.isVertical.value?'vertical':'horizontal')
 </script>
 <template>
     <div id="appWrapper" :class="[store.styleMode.split(' ').join('-'), isVertical]">

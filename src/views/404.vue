@@ -7,7 +7,7 @@ document.title = "Uh Oh Oh No";
 
 <template>
   <div class="fourohfour">
-    You have found the site root. The pants is in another castle.
+    The pants is in another castle.
   </div>
 </template>
 <style>

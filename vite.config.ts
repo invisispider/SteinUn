@@ -15,4 +15,8 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url))
     },
   },
+  test: {
+    include: ['__tests__/vitest/**/*.{test,spec}.?(c|m)[jt]s?(x)'],
+    exclude: ['__tests__/e2e/*'],
+  }
 });

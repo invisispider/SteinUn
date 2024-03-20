@@ -3,7 +3,7 @@ import { onMounted, watchEffect, onUnmounted } from "vue";
 // import { RouterLink } from "vue-router";
 // import UnJamMeComponent from "@/components/UnJamMeComponent.vue";
 import { useStore } from "@/stores/index";
-import SidebarLink from "@/components/sidebar/SidebarLink.vue";
+import SidebarLink from "@/components/Sidebar/SidebarLink.vue";
 import { collapsed, toggleSidebar, sidebarWidth } from "./state";
 const store = useStore();
 const randGuy = Math.floor(Math.random() * 50 + 1);
@@ -56,8 +56,8 @@ onUnmounted(() => {
           >Login</SidebarLink
         > -->
 
-        <!-- <SidebarLink to="/Crossword" key="3a" class="navItem" icon="keyboard_double_arrow_left"
-				>Puzzle</SidebarLink> -->
+        <SidebarLink to="/Crossword" key="3a" class="navItem" icon="keyboard_double_arrow_left"
+				>Puzzle</SidebarLink>
         <SidebarLink
           to="/Next"
           v-if="oneInTwoHundred"
@@ -66,8 +66,8 @@ onUnmounted(() => {
           icon="keyboard_double_arrow_left" @click="toggleSidebar"
           >TEMP</SidebarLink
         >
-        <SidebarLink to="/UnThinkMe" key="9a" class="navItem" @click="toggleSidebar"
-          >unThinkMe</SidebarLink
+        <SidebarLink to="/YouTube" key="9a" class="navItem" @click="toggleSidebar"
+          >YouTube</SidebarLink
         >
         <SidebarLink to="/Teacher" key="5a" class="navItem" @click="toggleSidebar">Music</SidebarLink>
         <SidebarLink to="/UnTimeMe" key="6a" class="navItem" @click="toggleSidebar"

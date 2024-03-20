@@ -40,32 +40,41 @@ const components: Record<string, any> = {
   Artist,
 };
 const selected = ref('Greeting')
-const toggleNextPage = () => {
-  let sel = selected.value;
-  let idx = pageSelections.indexOf(sel);
-  if (idx<pageSelections.length-1) {
-    selected.value = pageSelections[idx+1];
+const togglePage = (which: string) => {
+  let idx = pageSelections.indexOf(selected.value);
+  if (which==='next') {
+    if (idx<pageSelections.length-1) {
+      selected.value = pageSelections[idx+1];
+    } else {
+      selected.value = pageSelections[0];
+    }
   } else {
-    selected.value = pageSelections[0];
+    if (idx>0) {
+      selected.value = pageSelections[idx-1];
+    } else {
+      selected.value = pageSelections[pageSelections.length-1];
+    }
   }
   router.push('/landing/'+selected.value);
 }
+
 const routeChange = () => {
   router.push(selected.value);
 }
 </script>
 <template>
-  <div class="flex-column">
-    <!-- <i @click="changeWindow" class="material-icons right">start</i> -->
-    <div class="flex margin-1">
-      <select @change="routeChange" class="flex-grow" v-model="selected" name="page-selector">
-        <option v-for="selection in pageSelections" :key="selection">{{ selection }}</option>
-      </select>
-      <button @click="toggleNextPage">Next</button>
+  <div class="flex-column" data-test-id="flex-column">
+    <div class="home-changer">
+      <i class="material-icons" @click="togglePage('prev')" aria-label="prev">arrow_left</i>
+      <div @change="routeChange" class="flex-grow" name="page-selector">
+        <div v-for="selection in pageSelections" v-show="selection==selected" :key="selection">{{ selection }}</div>
+      </div>
+      <i class="material-icons" @click="togglePage('next')" aria-label="next">arrow_right</i>
     </div>
-    <!-- <component :is="greeting" /> -->
     <div class="home-content">
-      <component :is="components[selected]" />
+      <transition name="shrink2" appear mode="out-in">
+        <component :is="components[selected]" />
+      </transition>
     </div>
     <div class="social-grp">
       <template v-for="social in soc" :key="social.name">

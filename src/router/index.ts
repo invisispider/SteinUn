@@ -3,16 +3,16 @@ import type { RouteRecordRaw } from "vue-router";
 import Home from "@/views/Home.vue";
 import { pinia } from "@/main";
 import { useStore } from "@/stores/index";
-import Greeting from "@/components/Landing/Greeting.vue";
-import Website from '@/components/Landing/Website.vue';
-import SteinunLimited from '@/components/Landing/SteinunLimited.vue';
-import IntegralTheory from '@/components/Landing/IntegralTheory.vue';
-import UnThinkMe from "@/components/Landing/UnThinkMe.vue";
-import SteinTime from '@/components/Landing/SteinTime.vue';
-import Beacon from '@/components/Landing/Beacon.vue';
-import Developer from '@/components/Landing/Developer.vue';
-import Artist from '@/components/Landing/Artist.vue';
-import Technomancy from '@/components/Landing/Technomancy.vue';
+// import Greeting from "@/components/Landing/Greeting.vue";
+// import Website from '@/components/Landing/Website.vue';
+// import SteinunLimited from '@/components/Landing/SteinunLimited.vue';
+// import IntegralTheory from '@/components/Landing/IntegralTheory.vue';
+// import UnThinkMe from "@/components/Landing/UnThinkMe.vue";
+// import SteinTime from '@/components/Landing/SteinTime.vue';
+// import Beacon from '@/components/Landing/Beacon.vue';
+// import Developer from '@/components/Landing/Developer.vue';
+// import Artist from '@/components/Landing/Artist.vue';
+// import Technomancy from '@/components/Landing/Technomancy.vue';
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -22,43 +22,43 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: 'landing/greeting',
-        component: Greeting,
+        component: () => import("@/components/Landing/Greeting.vue"),
       },
       {
         path: 'landing/website',
-        component: Website,
+        component: () => import("@/components/Landing/Website.vue"),
       },
       {
         path: 'landing/steinunlimited',
-        component: SteinunLimited,
+        component: () => import("@/components/Landing/SteinunLimited.vue"),
       },
       {
         path: 'landing/integraltheory',
-        component: IntegralTheory
+        component: () => import("@/components/Landing/IntegralTheory.vue")
       },
       {
         path: 'landing/unthinkme',
-        component: UnThinkMe,
+        component: () => import("@/components/Landing/UnThinkMe.vue"),
       },
       {
         path: 'landing/steintime',
-        component: SteinTime,
+        component: () => import("@/components/Landing/SteinTime.vue"),
       },
       {
         path: 'landing/beacon',
-        component: Beacon,
+        component: () => import("@/components/Landing/Beacon.vue"),
       },
       {
         path: 'landing/developer',
-        component: Developer,
+        component: () => import("@/components/Landing/Developer.vue"),
       },
       {
         path: 'landing/artist',
-        component: Artist,
+        component: () => import("@/components/Landing/Artist.vue"),
       },
       {
         path: 'landing/technomancy',
-        component: Technomancy,
+        component: () => import("@/components/Landing/Technomancy.vue"),
       }
 
     ]
@@ -79,11 +79,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "LogoutComponent",
     component: () => import("@/components/LogoutComponent.vue"),
   },
-  {
-    path: "/YogaCalendar",
-    name: "YogaCalendar",
-    component: () => import("@/components/YogaCalendar.vue"),
-  },
+  // {
+  //   path: "/YogaCalendar",
+  //   name: "YogaCalendar",
+  //   component: () => import("@/components/YogaCalendar.vue"),
+  // },
   {
     path: "/Admin",
     name: "Admin",
@@ -97,9 +97,9 @@ const routes: Array<RouteRecordRaw> = [
     },
   },
   {
-    path: "/UnThinkMe",
-    name: "UnThinkMe",
-    component: () => import("@/views/UnThinkMe.vue"),
+    path: "/YouTube",
+    name: "YouTube",
+    component: () => import("@/views/YouTube.vue"),
   },
   {
     path: "/Next",

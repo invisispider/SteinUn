@@ -1,0 +1,163 @@
+@import "src/assets/css/theme.sass"
+@import "src/assets/css/desktop.sass"
+@import "src/assets/css/mobile.sass"
+@import "src/assets/css/sidebar.sass"
+@import "src/assets/css/vars.sass"
+*, *:before, *:after
+    box-sizing: border-box
+html, body
+    margin: 0
+.hidden
+    visibility: hidden
+#dark-purple
+    color: $dark-purple-icon
+#dark-green
+    color: $forest-green-icon
+#white
+    color: $mid-gray-icon
+// i
+    // font-size: 28px
+// .green
+//     color: #31e833
+// .red
+//     color: #da1a54
+button, a, router-link, RouterLink, i
+    cursor: pointer
+
+#appWrapper
+    display: flex
+    flex-direction: column
+    font-family: Poppins, Roboto, verdana
+    // height: 100dvh
+    min-height: 100vh
+    text-align: center
+    justify-content: flex-start
+.flex-column
+    display: grid
+    grid-auto-rows: min-content auto min-content
+    font-size: 1.4em
+    // display: flex
+    // flex-direction: column
+    // justify-content: space-around
+    flex-grow: 1
+.flex
+    display: flex
+.flex-grow
+    flex-grow: 1
+.home-content
+    padding-inline: 1.2em
+    display: flex
+    flex-direction: column
+    // font-size-adjust: 0.5
+    margin-inline: auto
+    max-width: 30em
+.social-grp
+    display: flex
+    width: inherit
+    background-color: $social-grp-color
+    // padding: 0.3em
+    justify-content: center
+    // margin-inline: auto
+    .social
+        width: 1.9em
+        margin-inline: 0.3em
+.btn-grp
+    // font-size: 24px
+    display: grid
+    width: 100vw
+    grid-template-columns: repeat(10, 10%)
+    // justify-self: flex-end
+    margin-block: 3px
+    i
+        justify-self: center
+    #dark-purple
+        grid-column: 7 / 8
+    #dark-green
+        grid-column: 8 / 9
+    #white
+        grid-column: 9 / 10
+        max-width: 10px
+
+.technomancy
+        justify-content: center
+        text-align: left
+        li
+            list-style: none
+.developer
+    display: flex
+    flex-direction: column
+    margin-block: auto
+    padding: 1em 2em
+    // font-size: 0.94em
+    // text-align: left
+    list-style-type: none
+    h3
+        margin-block: 0.4em
+.artist
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    span
+        margin: 0 0.5em
+.hero-image
+    background: linear-gradient(to top, red, orange, yellow, green, blue, indigo, violet)
+    border-radius: 0.2em
+    padding: 1em 2em
+    opacity: 1
+    display: flex
+    flex-direction: column
+.adam-med
+    margin: auto
+    border-radius: 0.2em
+    max-height: 40vh
+    // height: auto
+    opacity: 0.5
+    max-width: 100%
+.beacon-image
+    background-image: url("@/assets/img/spiralstairs.jpeg")
+    background-repeat: no-repeat
+    background-size: contain
+    opacity: 0.2
+    min-width: 30vw
+    min-height: 30vh
+    // display: flex
+    position: absolute
+    left: 20vw
+    top: 20vh
+    z-index: 5
+.beacon-container
+    justify-content: center
+    margin: auto
+    p
+        padding-left: 4em
+        padding-block: 0.8em
+        text-align: right
+        margin: auto
+        // text-shadow: 5px 5px 0.1 white
+        // background-color: rgba(1, 1, 1, 1)
+.time-link
+    text-decoration: none
+.integral-theory
+    padding: 0
+    h4
+        margin-block: 0
+    li
+        list-style-type: none
+.pitch-container
+    audio
+        max-width: 80vw
+.home-changer
+        display: flex
+        justify-content: space-around
+        align-items: center
+        // padding-block: 0.3em
+        font-size: 1.4em
+        max-width: 100vw
+        i
+            font-size: inherit
+            cursor: pointer
+        select
+            // font-size: inherit
+            color: inherit
+            background-color: inherit
+            text-align: center

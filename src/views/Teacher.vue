@@ -11,15 +11,15 @@ const showPlaylist = ref(true);
 <template>
   <div id="bodyMain">
     <div class="headban fadeInUp">
-      <div class="bounceInRight">
+      <transition name="bounceInRight" appear>
         <h1 class="glow" id="hometitle">MUSIC LESSONS</h1>
-      </div>
-      <div class="bounceInleft animationDelay">
+      </transition>
+      <transition name="bounceInLeft" class="animationDelay" appear>
         <h2>with Adam Loewen</h2>
-      </div>
-      <div class="bounceIn animationDelayMed">
+      </transition>
+      <transition name="bounceIn" class="animationDelayMed" appear>
         <h3>Piano | Guitar | Bass | Ukelele | Drums | Voice</h3>
-      </div>
+      </transition>
     </div>
     <div class="top-container">
       <div class="glow contdiv insert-into piano-div">

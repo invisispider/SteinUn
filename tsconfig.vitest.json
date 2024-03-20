@@ -1,6 +1,7 @@
 {
   "extends": "./tsconfig.app.json",
-  "exclude": [],
+  "include": ["__tests__/vitest/**/*.{spec.ts}"],
+  "exclude": ["__tests__/playwright/*"],
   "compilerOptions": {
     "composite": true,
     "lib": [],

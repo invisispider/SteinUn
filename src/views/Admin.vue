@@ -62,7 +62,7 @@ onAuthStateChanged(auth, async (user) => {
 });
 onMounted(() => {
   if (store.uid !== import.meta.env.VITE_UID) {
-    router.push("/UnThinkMe");
+    router.push("/YouTube");
   }
 });
 </script>

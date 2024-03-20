@@ -1,0 +1,131 @@
+// APP
+.route-enter-from
+	opacity: 0
+	transform: translate(100px)
+.route-enter-active
+	transition: all .3s ease-out
+.route-leave-to
+	opacity: 0
+	transform: translate(-100px)
+.route-leave-active
+	transition: all .3s ease-in
+// HOME
+.shrink2-enter-from, .shrink2-leave-to
+	scale: 0.3
+.shrink2-enter-to, .shrink2-leave-from
+	scale: 1
+.shrink2-enter-active, .shrink2-leave-active
+	transition: scale 0.3s
+// SIDEBAR
+.glow
+	animation: glow 1.5s ease-in-out infinite alternate
+@keyframes glow
+	0%
+		text-shadow: 0px 0px 8px #aaa, 3px 3px 13px #90d, 0px 0px 23px #e60073
+	to
+		text-shadow: 0px 0px 18px #50d, 3px 3px 3px #90d, 0px 0px 33px #ff4da6
+.fadeDown-enter-from, .fadeDown-leave-to
+	opacity: 0
+	transform: translateY(-500px)
+.fadeDown-enter-active, .fadeDown-leave-active
+	transition: all .6s ease
+.fade-enter-from, .fade-leave-to
+	opacity: 0
+.fade-enter-active, .fade-leave-active
+	transition: opacity .5s ease
+.fadeUp-enter-from, .fadeUp-leave-to
+	opacity: 0
+	transform: translateY(20px)
+.fadeUp-enter-to, .fadeUp-leave-from
+	opacity: 1
+	transform: translateY(0)
+.fadeUp-enter-active, .fadeInUp-leave-active
+	transition: all .5s ease
+// .shrink-enter-from, .shrink-leave-to
+// 	scale: 0
+// .shrink-enter-to, .shrink-leave-from
+// 	scale: 1
+// .shrink-enter-active
+// 	transition: scale 5s ease
+
+// CROSSWORD
+.grow-enter-from, .grow-leave-to
+	opacity: 0
+	transform: scale(0)
+.grow-enter-to, .grow-leave-from
+	opacity: 1
+	transform: scale(1)
+.grow-enter-active, .grow-leave-active
+	transition: all .8s
+// TEACHER
+.pulse
+	animation: pulse 1s infinite alternate
+@keyframes pulse
+	0%
+		transform: scale(1)
+	to
+		transform: scale(1.2)
+.bounceMe
+	animation: bounce 3s ease
+	animation-iteration-count: 20
+	animation-delay: 6s
+@keyframes bounce
+	0%
+		transform: scale(1)
+	50%
+		transform: scale(.9)
+	70%
+		transform: scale(1.15)
+	to
+		transform: scale(1)
+.bounceInRight-enter-active, .bounceInRight-leave-active
+	transition: all 3s ease
+.bounceInRight-enter-active
+	animation: bounceInRight 2s ease
+@keyframes bounceInRight
+	0%
+		opacity: 0
+		transform: translate(2000px)
+	60%
+		transform: translate(-20px)
+	80%
+		transform: translate(5px)
+	to
+		opacity: 1
+		transform: translate(0)
+.bounceInRight-enter-active
+	animation: bounceInLeft 2s ease
+@keyframes bounceInLeft
+	0%
+		opacity: 0
+		transform: translate(-2000px)
+	60%
+		transform: translate(20px)
+	80%
+		transform: translate(-5px)
+	to
+		opacity: 1
+		transform: translate(0)
+.bounceIn-enter-active
+	animation: bounceIn 2s ease
+@keyframes bounceIn
+	0%
+		opacity: 0
+		transform: scale(.3)
+	50%
+		transform: scale(1.05)
+	70%
+		transform: scale(.9)
+	to
+		opacity: 1
+		transform: scale(1)
+
+// .spinMe
+// 	animation: spang 15s linear
+// 	animation-iteration-count: infinite
+// @keyframes spang
+// 	0%
+// 		transform: rotate(0)
+// 	to
+// 		transform: rotate(360deg)
+
