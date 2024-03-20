@@ -80,7 +80,7 @@ onAuthStateChanged(auth, async (user) => {
     method="dialog"
   >
     <!-- <div class=image-style="{'background-image': '@/assets/img/steinun-logo1.png'}"> -->
-      <img src="@/assets/img/steinun-logo4.png" />
+      <!-- <img src="@/assets/img/steinun-logo4.png" /> -->
     <!-- </div> -->
     <h2>Kenny Logins</h2>
     <input

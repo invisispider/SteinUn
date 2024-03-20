@@ -1,0 +1,1 @@
+import{bG as e,c,o as t}from"./index.b76d7ea5.js";const r={};function a(o,n){return t(),c("p",null," We currently collect no data other than that which is collected by Firebase. ")}var s=e(r,[["render",a]]);export{s as default};

@@ -207,7 +207,7 @@ body
 	.piano-div
 		background-image: url(@/assets/img/paintpiano.jpg)
 	.sea-div
-		background-image: url(@/assets/img/seattle.jpg)
+		// background-image: url(@/assets/img/seattle.jpg)
 		h2
 			font-style: italic
 			cursor: pointer

@@ -1,1 +1,0 @@
-import{bt as e,c as o,o as t}from"./index.be1fd971.js";const r={name:"FourOhFour"};document.title="Uh Oh Oh No";const s={class:"fourohfour"};function a(n,_,c,u,h,i){return t(),o("div",s," You have found the site root. The pants is in another castle. ")}var d=e(r,[["render",a]]);export{d as default};
