@@ -6,7 +6,7 @@ import {getStorage} from "firebase/storage"
 import {getFunctions} from "firebase/functions"
 import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check"
 // import {getAnalytics} from "firebase/analytics"
-const appCToken = process.env.NODE_ENV==='development' ? import.meta.env.VITE_RECAPTCHA_DEBUG_TOKEN : ''; 
+// const appCToken = process.env.NODE_ENV==='development' ? import.meta.env.VITE_RECAPTCHA_DEBUG_TOKEN : ''; 
 const firebaseConfig = {
   projectId: "stein-unlimited",
   appId: import.meta.env.VITE_FB_APPID as string,
@@ -17,7 +17,7 @@ const firebaseConfig = {
   messagingSenderId: import.meta.env.VITE_FB_MESSAGINGSENDERID as string,
   measurementId: import.meta.env.VITE_FB_MEASUREMENTID as string,
   // DEV ONLY!
-  appCheckToken: appCToken
+  // appCheckToken: appCToken
 }
 const firebaseApp = initializeApp(firebaseConfig)
 const auth = getAuth(firebaseApp)
