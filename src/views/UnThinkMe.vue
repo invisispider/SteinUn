@@ -1,56 +1,67 @@
 <script setup>
-import { defineComponent, onMounted, ref } from "vue"
-const thisQuote = ref({ source: '', quote: ''})
-const getQuotes = async () => {
-  const PhilosophyQuotesLink = "https://philosophy-quotes-api.glitch.me/quotes"
-  let data = await fetch(PhilosophyQuotesLink, (error)=>console.error(error.message))
-  let json = await data.json()
-  // console.log(json)
-  let random = Math.floor(Math.random()*json.length)
-  let quo = await json[random]
-  thisQuote.value = await quo
-}
-onMounted(()=> {
-  getQuotes()
+import { ref, onMounted } from 'vue'
+document.title = "unThinkMe";
+import {firestoreDb} from "@/services/firebaseconfig";
+import { doc, getDoc } from "firebase/firestore";
+const Bojangles = ref({});
+const Toggled = ref([]);
+const isVisible = ref([]);
+const ToggleDiv = (i)=> isVisible.value[i]=!isVisible.value[i];
+const fromHtmlEntities = (str) => {
+  var doc = new DOMParser().parseFromString(str, "text/html");
+  return doc.documentElement.textContent;
+    // return (string+"").replace(/&#\d+;/gm,function(s) {
+        // return String.fromCharCode(s.match(/\d+/gm)[0]);
+    // })
+};
+onMounted(async ()=>{
+  const docRef = doc(firestoreDb, 'youtubechannel', 'latest');
+  const snapshot = await getDoc(docRef);
+  if (snapshot) {
+    // console.info(snapshot.data());
+    Bojangles.value = snapshot.data();
+  } 
 })
+// const snapshot = await youtubeRef.get();
+// youtubechannel/latest/items/#0-49/id/videoId
+                                //  /snippet/{title, description, thumbnails}
 </script>
 <template>
   <div class="unthinkme">
-    <h1>Placeholder Content</h1>
-    <i class="material-icons glow" @click="getQuotes">park</i>
-    <div v-if="thisQuote.quote">
-      <p v-text="thisQuote.quote"></p>
-      <h4>{{thisQuote.source}}</h4>
+    <div class="video-div" v-for="item, index of Bojangles.items" :key="item.etag">
+      <div v-if="item.id.kind=='youtube#video'">
+        <h2>{{ fromHtmlEntities(item.snippet.title) }}</h2>
+        <a @click="ToggleDiv(index)" ref="isVisible"> 
+          <img v-if="isVisible[index]" :src="item.snippet.thumbnails.default.url" />
+          <div v-else>
+            <iframe width="420" height="315"
+            :src="'https://www.youtube.com/embed/'+item.id.videoId">
+            </iframe>          
+          </div>
+        </a>
+        <p>{{ item.snippet.description }}</p>
+      </div>
+      <div class="playlist-div" v-else-if="item.id.kind=='youtube#playlist'">
+        <h2>Playlist: {{ item.snippet.title }}</h2>
+        <img :src="item.snippet.thumbnails.default.url" />
+      </div>
+      <div class="unknown-div" v-else><h2>{{ item.snippet.title }}</h2></div>
     </div>
-    <div v-else>
-      <p>Louie is thinking...</p>
-      <img alt="nien nunb"
-      src="https://firebasestorage.googleapis.com/v0/b/stein-unlimited.appspot.com/o/avatars%2Fnien_nunb.png?alt=media&token=b5fe8859-af90-4431-8ce4-00ae55fd1cda" />
-    </div>
+      <!-- <div v-if="Data.message"><h1>{{ Data.message }}</h1></div>
+      <div v-else-if="Data">
+        <div v-for="item in Data.items" :key="item.id.videoId||item.id.playlistId">
+          <div v-if="item.id && item.id.kind=='youtube#video'">
+            <h2>{{ item.snippet.title }}</h2>
+            <iframe width="420" height="315"
+            :src="'https://www.youtube.com/embed/'+item.id.videoId">
+            </iframe>
+          </div>
+          <div v-else-if="item.id && item.id.kind=='youtube#playlist'">
+            <h2>Playlist: {{ item.snippet.title }}</h2>
+            <img :src="item.snippet.thumbnails.default.url" :width="item.snippet.thumbnails.default.width" :height="item.snippet.thumbnails.default.height" /> -->
+            <!-- <pre>{{ item }}</pre> -->
+          <!-- </div>
+        </div>
+      </div> -->
   </div>
 </template>
-<style lang="sass" scoped>
-.unthinkme
-  color: white
-  text-align: center
-  background-color: rgb(16, 10, 28)
-  display: flex
-  flex-direction: column
-  // align-content: space-around
-  justify-content: space-around
-  align-items: space-between
-  min-height: 70vh
-  margin: auto
-  padding: 3rem
-  box-shadow: 1px 1px rgb(43, 27, 74), -1px -1px rgb(43, 27, 74)
-  h2
-    text-align: left
-    display: float-left
-    color: rgb(37, 180, 191)
-    font-size: 2rem
-    font-style: italic
-    max-width: 500px
-  h4
-    max-width: 500px
-    text-align: right
-</style>

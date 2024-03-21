@@ -6,10 +6,10 @@ import { useStore } from "@/stores/index";
 import SidebarLink from "@/components/Sidebar/SidebarLink.vue";
 import { collapsed, toggleSidebar, sidebarWidth } from "./state";
 const store = useStore();
-const randGuy = Math.floor(Math.random() * 50 + 1);
+// const randGuy = Math.floor(Math.random() * 50 + 1);
 // 5 E + 13 M = 18 EM
 // const showJams = ref(false);
-const oneInTwoHundred = randGuy == 18 ? true : false;
+// const oneInTwoHundred = randGuy == 18 ? true : false;
 // const doShowJams = () => {
 //   setTimeout(() => {
 //     showJams.value = false;
@@ -58,13 +58,13 @@ onUnmounted(() => {
 
         <SidebarLink to="/Crossword" key="3a" class="navItem" icon="keyboard_double_arrow_left"
 				>Puzzle</SidebarLink>
-        <SidebarLink
+        <!-- <SidebarLink
           to="/Next"
           v-if="oneInTwoHundred"
           key="em"
           class="navItem nav-item-dark"
           icon="keyboard_double_arrow_left" @click="toggleSidebar"
-          >TEMP</SidebarLink
+          >TEMP</SidebarLink -->
         >
         <SidebarLink to="/YouTube" key="9a" class="navItem" @click="toggleSidebar"
           >YouTube</SidebarLink

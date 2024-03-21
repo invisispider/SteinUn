@@ -127,9 +127,9 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/views/UnTimeMe.vue"),
   },
   {
-    path: "/UnReadMe",
-    name: "UnReadMe",
-    component: () => import("@/views/UnReadMe.vue"),
+    path: "/UnThinkMe",
+    name: "UnThinkMe",
+    component: () => import("@/views/UnThinkMe.vue"),
   },
   {
     path: "/PrivacyPolicy",
