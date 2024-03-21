@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [20.x]
 
     steps:
     - uses: actions/checkout@v3
@@ -48,6 +48,7 @@ jobs:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_STEIN_UNLIMITED }}"
           projectId: stein-unlimited
+          entryPoint: 'firebase.json'
         # run: |
           # firebase deploy --only hosting
         # env:
