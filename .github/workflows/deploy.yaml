@@ -24,7 +24,7 @@ jobs:
     - name: Installs app
       run: npm ci
     - name: 'unit test with vitest'
-      run: npm test:unit
+      run: npm run test:unit
     # - name: 'e2e test with playwright'
       # run: npm test:e2e
     - name: Build app to dist
