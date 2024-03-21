@@ -15,18 +15,20 @@ jobs:
 
     steps:
     - name: Gets software
-    - uses: actions/checkout@v4
+      uses: actions/checkout@v4
     - name: Sets up Node
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Installs app
-    - run: npm ci
-    # - run: npm test:unit
-    # - run: npm test:e2e
+      run: npm ci
+    - name: 'unit test with vitest'
+      run: npm test:unit
+    # - name: 'e2e test with playwright'
+      # run: npm test:e2e
     - name: Build app to dist
-    - run: npm run build
+      run: npm run build
     - name: Deploy to Firebase Hosting
       uses: FirebaseExtended/action-hosting-deploy@v0
       with:
