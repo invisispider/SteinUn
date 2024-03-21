@@ -19,14 +19,19 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+             npm run build
+            #  npm install -g firebase-tools
 
       - name: Build and deploy to Firebase Hosting
-        run: |
-          npm run build
-          npm install -g firebase-tools
-          firebase deploy --only hosting
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_GITHUB_TOKEN }}
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_STEIN_UNLIMITED }}"
+          projectId: stein-unlimited
+        # run: |
+          # firebase deploy --only hosting
+        # env:
+          # FIREBASE_TOKEN: ${{ secrets.FIREBASE_GITHUB_TOKEN }}
           
 
 # pulls (https://medium.com/js-dojo/ci-cd-with-vue-firebase-hosting-and-github-actions-3fb0afa81314)
