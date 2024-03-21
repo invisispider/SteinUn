@@ -22,7 +22,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Installs app
-      run: npm ci
+      run: npm ci && npm i firebase-tools@latest
     - name: 'unit test with vitest'
       run: npm run test:unit
     # - name: 'e2e test with playwright'
