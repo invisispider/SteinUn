@@ -10,16 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        # using: 'node20'
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
       - name: Install dependencies
         run: npm install
-             npm run build
+      - name: Build vite app to dist
+        run: npm run build
             #  npm install -g firebase-tools
 
       - name: Build and deploy to Firebase Hosting
