@@ -1,30 +1,30 @@
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, nextTick } from "vue";
-import { useCrossword } from "@/stores/crosswordvideogame.ts";
-import { storeToRefs } from "pinia";
+import useCrossword from "@/composables/Crosswords/crosswordvideogame";
 document.title = "Video Game Lore Crossword Puzzle";
 const titleRef = ref(document.title.split(/[, ]+/));
-const store = useCrossword();
-const { across, down } = storeToRefs(store);
+const across = ref(useCrossword.across)
+const down = ref(useCrossword.down)
 const collapseAcross = ref(false);
 const collapseDown = ref(true);
 const rowNum = 11;
 const colNum = 11;
-const toggle = (direc) => {
+const toggle = (direc: string) => {
   if (direc == "across") {
     collapseAcross.value = !collapseAcross.value;
   } else {
     collapseDown.value = !collapseDown.value;
   }
 };
-const enumerateCells = (pRef) => 11 * (pRef[0] - 1) + pRef[1];
-const getElement = (pRef) => {
+type pRef = [number, number]
+const enumerateCells = (pRef: pRef) => 11 * (pRef[0] - 1) + pRef[1];
+const getElement = (pRef: pRef) => {
   var refCell = document.querySelector(
     `tr[row='${pRef[0]}']>td[col='${pRef[1]}']`
   );
   return refCell;
 };
-const drawWord = (pRef, chars, direc) => {
+const drawWord = (pRef: [number, number], chars: string, direc: string) => {
   let i = 0;
   if (direc === "across") {
     while (i < chars.length) {
@@ -107,8 +107,10 @@ onMounted(() => {
   });
 });
 const selectMe = async (pRef) => {
-  let el = getElement(pRef);
-  await nextTick(() => el.lastChild.focus());
+  if (typeof pRef==='object') {
+    let el = getElement(pRef);
+    await nextTick(() => el.lastChild.focus());
+  }
 };
 const resetInputs = (warn) => {
   if (warn) {

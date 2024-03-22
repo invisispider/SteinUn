@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { AqalTypes } from "@/components/Integral/aqal-types.js";
+import { AqalTypes } from "@/composables/Integral/aqal-types";
 document.title="Integral Theory Abstract";
 const chosenModule = ref('levels');
 const chosenType = ref('jungian');
 const modeSelectorButtons = ['Map', 'Quadrants', 'Levels', 'Lines', 'Types', 'States'];
 const Selected = ref('Map');
-const SelectButton = (btn) => Selected.value=btn;
+const SelectButton = (btn: string) => Selected.value=btn;
 
 </script>
 <template>
@@ -151,4 +151,4 @@ const SelectButton = (btn) => Selected.value=btn;
     display: flex
 .btn-group button:active
     color: red
-</style>
+</style>@/composables/Integral/aqal-types.js

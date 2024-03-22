@@ -49,8 +49,7 @@ describe("App", () => {
     expect(homeComponent.exists()).toBe(true);
   })
   it("renders Greeting component", () => {
-    console.log(wrapper.vm.isVertical)
-    expect(wrapper.vm.isVertical).toBe('horizontal'||'vertical');
+    expect(wrapper.vm.isVertical).toBe('horizontal');
 
   })
 });

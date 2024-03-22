@@ -35,7 +35,6 @@ button, a, router-link, RouterLink, i
 .flex-column
     display: grid
     grid-auto-rows: min-content auto min-content
-    font-size: 1.4em
     // display: flex
     // flex-direction: column
     // justify-content: space-around
@@ -63,12 +62,17 @@ button, a, router-link, RouterLink, i
         margin-inline: 0.3em
 .btn-grp
     // font-size: 24px
-    display: grid
+    // display: grid
+    display: flex
+    flex-direction: row-reverse
+    // margin-right: 2em
     width: 100vw
     grid-template-columns: repeat(10, 10%)
     // justify-self: flex-end
     margin-block: 3px
+    padding-inline: 1em
     i
+        margin-inline: 0.3em
         justify-self: center
     #dark-purple
         grid-column: 7 / 8

@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue'
 document.title = "unThinkMe";
 import {firestoreDb} from "@/services/firebaseconfig";
 import { doc, getDoc } from "firebase/firestore";
-const Bojangles = ref({});
+const youTubeData = ref({});
 const Toggled = ref([]);
 const isVisible = ref([]);
 const ToggleDiv = (i)=> isVisible.value[i]=!isVisible.value[i];
@@ -19,7 +19,7 @@ onMounted(async ()=>{
   const snapshot = await getDoc(docRef);
   if (snapshot) {
     // console.info(snapshot.data());
-    Bojangles.value = snapshot.data();
+    youTubeData.value = snapshot.data();
   } 
 })
 // const snapshot = await youtubeRef.get();
@@ -28,7 +28,7 @@ onMounted(async ()=>{
 </script>
 <template>
   <div class="unthinkme">
-    <div class="video-div" v-for="item, index of Bojangles.items" :key="item.etag">
+    <div class="video-div" v-for="item, index of youTubeData.items" :key="item.etag">
       <div v-if="item.id.kind=='youtube#video'">
         <h2>{{ fromHtmlEntities(item.snippet.title) }}</h2>
         <a @click="ToggleDiv(index)" ref="isVisible"> 

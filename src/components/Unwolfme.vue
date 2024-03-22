@@ -1,9 +1,9 @@
 <script setup>
-import junkReviews from "@/components/videosjunkreviews";
-import junkPlays from "@/components/videosjunkplays";
-import gwtfParts from "@/components/videosgwtf";
-import steinLive from "@/components/videosstein";
-import randomVids from "@/components/videosunwolfme";
+import junkReviews from "@/composables/videosjunkreviews";
+import junkPlays from "@/composables/videosjunkplays";
+import gwtfParts from "@/composables/videosgwtf";
+import steinLive from "@/composables/videosstein";
+import randomVids from "@/composables/videosunwolfme";
 import {ref} from "vue";
 const selector = ref('junkReviews');
 const buttons = [
@@ -164,3 +164,4 @@ a:active
 .lg
   font-size: large
 </style>
+@/composables/videosgwtf@/composables/videosjunk@/composables/videosjunkreviews@/composables/videosunwolfme@/composables/videosstein

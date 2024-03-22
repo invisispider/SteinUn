@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import Greeting from '@/components/Landing/Greeting.vue';
+import Namaste from '@/components/Landing/Namaste.vue';
 import SteinunLimited from '@/components/Landing/SteinunLimited.vue';
 import UnThinkMe from '@/components/Landing/UnThinkMe.vue';
 import IntegralTheory from '@/components/Landing/IntegralTheory.vue';
 import SteinTime from '@/components/Landing/SteinTime.vue';
-import Website from '@/components/Landing/Website.vue';
 import Beacon from '@/components/Landing/Beacon.vue';
 import Developer from '@/components/Landing/Developer.vue';
 import Artist from '@/components/Landing/Artist.vue';
@@ -16,8 +15,7 @@ document.title = "Stein Unlimited";
 const soc = socials.value;
 const router = useRouter();
 const pageSelections = [
-  'Greeting', 
-  'Website', 
+  'Namaste', 
   'SteinunLimited', 
   'IntegralTheory', 
   'UnThinkMe',
@@ -28,8 +26,7 @@ const pageSelections = [
   'Artist', 
 ];
 const components: Record<string, any> = {
-  Greeting,
-  Website,
+  Namaste,
   SteinunLimited,
   IntegralTheory,
   UnThinkMe,
@@ -39,7 +36,7 @@ const components: Record<string, any> = {
   Developer,
   Artist,
 };
-const selected = ref('Greeting')
+const selected = ref('Namaste')
 const togglePage = (which: string) => {
   let idx = pageSelections.indexOf(selected.value);
   if (which==='next') {

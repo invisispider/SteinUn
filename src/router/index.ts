@@ -3,26 +3,16 @@ import type { RouteRecordRaw } from "vue-router";
 import Home from "@/views/Home.vue";
 import { pinia } from "@/main";
 import { useStore } from "@/stores/index";
-// import Greeting from "@/components/Landing/Greeting.vue";
-// import Website from '@/components/Landing/Website.vue';
-// import SteinunLimited from '@/components/Landing/SteinunLimited.vue';
-// import IntegralTheory from '@/components/Landing/IntegralTheory.vue';
-// import UnThinkMe from "@/components/Landing/UnThinkMe.vue";
-// import SteinTime from '@/components/Landing/SteinTime.vue';
-// import Beacon from '@/components/Landing/Beacon.vue';
-// import Developer from '@/components/Landing/Developer.vue';
-// import Artist from '@/components/Landing/Artist.vue';
-// import Technomancy from '@/components/Landing/Technomancy.vue';
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    redirect: "/landing/greeting",
+    redirect: "/landing/namaste",
     name: "Home",
     component: Home,
     children: [
       {
-        path: 'landing/greeting',
-        component: () => import("@/components/Landing/Greeting.vue"),
+        path: 'landing/namaste',
+        component: () => import("@/components/Landing/Namaste.vue"),
       },
       {
         path: 'landing/website',
@@ -79,11 +69,6 @@ const routes: Array<RouteRecordRaw> = [
     name: "LogoutComponent",
     component: () => import("@/components/LogoutComponent.vue"),
   },
-  // {
-  //   path: "/YogaCalendar",
-  //   name: "YogaCalendar",
-  //   component: () => import("@/components/YogaCalendar.vue"),
-  // },
   {
     path: "/Admin",
     name: "Admin",

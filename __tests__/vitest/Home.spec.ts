@@ -4,14 +4,14 @@ import { mount } from "@vue/test-utils";
 import Home from "@/views/Home.vue";
 import Greeting from "@/components/Landing/Greeting.vue";
 import Artist from "@/components/Landing/Artist.vue";
-import Website from "@/components/Landing/Website.vue";
+import SteinunLimited from "@/components/Landing/SteinunLimited.vue";
 import { createRouter, createWebHistory } from 'vue-router';
 
 describe('Home', () => {
     const routes = [
         { path: '/', name: 'Home', redirect: 'landing/Greeting', component: Home, children: [
             { path: '/landing/Greeting', name: 'Greeting', component: Greeting },
-            { path: '/landing/Website', name: 'Website', component: Website },
+            { path: '/landing/SteinunLimited', name: 'SteinunLimited', component: SteinunLimited },
             { path: '/landing/Artist', name: 'Artist', component: Artist }
         ]}
     ]
@@ -62,7 +62,7 @@ describe('Home', () => {
         expect(prevButton.exists()).toBe(true)
         await nextButton.trigger('click')
         const nextPage = await wrapper.find('.home-changer .flex-grow div').text();        
-        expect(wrapper.vm.selected).toBe('Website');
+        expect(wrapper.vm.selected).toBe('SteinunLimited');
         await prevButton.trigger('click');
         await prevButton.trigger('click');
         expect(wrapper.vm.selected).toBe('Artist');

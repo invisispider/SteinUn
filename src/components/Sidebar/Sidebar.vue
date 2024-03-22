@@ -51,30 +51,27 @@ onUnmounted(() => {
         class="glow"
         mode="in-out"
       >
-        <SidebarLink to="/" key="aa" class="navItem" @click="toggleSidebar">Home</SidebarLink>
+        <SidebarLink to="/" key="link1" class="navItem" @click="toggleSidebar">Home</SidebarLink>
         <!-- <SidebarLink to="/Login" v-if="!store.uid" key="2a" class="navItem"
           >Login</SidebarLink
         > -->
-
-        <SidebarLink to="/Crossword" key="3a" class="navItem" icon="keyboard_double_arrow_left"
+        
+        <SidebarLink to="/YouTube" key="link2" class="navItem" @click="toggleSidebar"
+          >YouTube</SidebarLink
+        >
+        <SidebarLink to="/UnTimeMe" key="link3" class="navItem" @click="toggleSidebar"
+          >zenTime</SidebarLink
+        >
+        <SidebarLink to="/Crossword" key="link4" class="navItem" icon="keyboard_double_arrow_left"
 				>Puzzle</SidebarLink>
+        <SidebarLink to="/Teacher" key="link5" class="navItem" @click="toggleSidebar">Music</SidebarLink>
         <!-- <SidebarLink
           to="/Next"
           v-if="oneInTwoHundred"
           key="em"
           class="navItem nav-item-dark"
           icon="keyboard_double_arrow_left" @click="toggleSidebar"
-          >TEMP</SidebarLink -->
-        >
-        <SidebarLink to="/YouTube" key="9a" class="navItem" @click="toggleSidebar"
-          >YouTube</SidebarLink
-        >
-        <SidebarLink to="/Teacher" key="5a" class="navItem" @click="toggleSidebar">Music</SidebarLink>
-        <SidebarLink to="/UnTimeMe" key="6a" class="navItem" @click="toggleSidebar"
-          >zenTime</SidebarLink
-        >
-        <!-- <SidebarLink to="/YogaCalendar" key="12a" class="navItem"
-          >Classes</SidebarLink
+          >TEMP</SidebarLink
         > -->
         <!-- <component :is="UnJamMeComponent" v-if="showJams" key="7a" class="navItem"
 					id="music-player" /> -->
@@ -82,25 +79,22 @@ onUnmounted(() => {
         <!-- >UnJamMe</a> -->
         <!-- <SidebarLink to="/UnReadMe" key="8a" class="navItem"
 				>unReadMe</SidebarLink> -->
-        <SidebarLink to="/Unwolfme" key="16a" class="navItem" @click="toggleSidebar"
+        <SidebarLink to="/Unwolfme" key="link6" class="navItem" @click="toggleSidebar"
           >Videos</SidebarLink
         >
-        <SidebarLink v-if="store.admin" key="11a" class="navItem" to="/Admin" @click="toggleSidebar"
-          >Admin</SidebarLink
-        >
-        <SidebarLink v-if="store.uid" key="0a" class="navItem" to="/Chat" @click="toggleSidebar"
+        <SidebarLink v-if="store.uid" key="link7" class="navItem" to="/Chat" @click="toggleSidebar"
           >PartyChat</SidebarLink
         >
-        <SidebarLink v-if="!store.uid" key="21z" class="navItem" to="/Login" @click="toggleSidebar"
+        <SidebarLink v-if="store.admin" key="link8" class="navItem" to="/Admin" @click="toggleSidebar"
+          >Admin</SidebarLink
+        >
+        <SidebarLink v-if="!store.uid" key="link9" class="navItem" to="/Login" @click="toggleSidebar"
           >Login</SidebarLink
         >
-        <SidebarLink v-if="store.uid" key="1a" class="navItem" to="/Logout" @click="toggleSidebar"
+        <SidebarLink v-if="store.uid" key="link10" class="navItem" to="/Logout" @click="toggleSidebar"
           >Logout</SidebarLink
         >
       </transition-group>
-      <!-- <transition name="shrink" appear>
-				<component :is="FooterComponent" />
-			</transition> -->
       <div class="glow" v-if="!collapsed" key="banano">
         <span v-if="store.username" class="christmas-icon center">
           <span class="green">{{ store.username }}</span>

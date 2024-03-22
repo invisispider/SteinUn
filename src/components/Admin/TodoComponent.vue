@@ -164,7 +164,7 @@ $section-gap: 160px
   .todo-item, .todo-title
     text-align: center
     margin: auto
-  .todo-list
+  // .todo-list
     // text-align: center
     // max-width: 100%
     // display: flex
