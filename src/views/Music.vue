@@ -39,8 +39,11 @@ const showPlaylist = ref(true);
           <h2 v-else class="bounceMe">Contact Me!</h2>
         </div>
       </div>
+	  <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=2892329347/size=large/bgcol=ffffff/linkcol=7137dc/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://thesteinsound.bandcamp.com/album/shades">Shades by Stein</a></iframe>
+	  <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=1494684139/size=large/bgcol=ffffff/linkcol=7137dc/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://thesteinsound.bandcamp.com/album/accidance-2">Accidance! by Stein</a></iframe> 
+	  <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=2566349416/size=large/bgcol=ffffff/linkcol=7137dc/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://thesteinsound.bandcamp.com/album/travels-reissue">Travels (Reissue) by Stein</a></iframe>
       <component v-if="showPlaylist" :is="ThousandPlusPlaylist" />
-    </div>
+	</div>
     <!-- <div class="double-width glow">
 			<h1>Testimonials</h1>
 		</div>

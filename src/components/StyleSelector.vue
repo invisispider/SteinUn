@@ -11,12 +11,13 @@ const switchStyle = (btn_txt: string) => {
 <template>
     <div id="style-selector">
         <div class="btn-grp">
-            <i @click="switchStyle('dark purple')"
-                id="dark-purple" class="material-icons">nightlight</i>
-            <i @click="switchStyle('dark green')"
-                id="dark-green" class="material-icons">bolt</i>
             <i @click="switchStyle('light black')"
-                id="light-black" class="material-icons">view_timeline</i>
+            id="light-black" class="material-icons">view_timeline</i>
+            <i @click="switchStyle('dark purple')"
+            id="dark-purple" class="material-icons">nightlight</i>
+            <i @click="switchStyle('dark green')"
+            id="dark-green" class="material-icons">bolt</i>
+            <span>style:</span>
         </div>
     </div>
 </template>

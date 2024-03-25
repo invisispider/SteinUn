@@ -6,9 +6,9 @@ import { useStore } from "@/stores/index";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    redirect: "/landing/namaste",
     name: "Home",
     component: Home,
+    redirect: "/landing/namaste",
     children: [
       {
         path: 'landing/namaste',
@@ -31,8 +31,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/components/Landing/UnThinkMe.vue"),
       },
       {
-        path: 'landing/steintime',
-        component: () => import("@/components/Landing/SteinTime.vue"),
+        path: 'landing/Calendar',
+        component: () => import("@/components/Landing/Calendar.vue"),
       },
       {
         path: 'landing/beacon',
@@ -82,9 +82,24 @@ const routes: Array<RouteRecordRaw> = [
     },
   },
   {
-    path: "/YouTube",
-    name: "YouTube",
-    component: () => import("@/views/YouTube.vue"),
+    path: "/UnThinkMe",
+    name: "UnThinkMe",
+    component: () => import("@/views/UnThinkMe.vue"),
+  },
+  {
+    path: "/Time",
+    name: "Time",
+    component: () => import("@/views/Time.vue"),
+  },
+  {
+    path: "/Integral",
+    name: "Integral",
+    component: () => import("@/views/Integral.vue"),
+  },
+  {
+    path: "/Beacon",
+    name: "Beacon",
+    component: () => import("@/views/Beacon.vue"),
   },
   {
     path: "/Next",
@@ -97,19 +112,14 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/views/Crossword.vue"),
   },
   {
-    path: "/Teacher",
-    name: "Teacher",
-    component: () => import("@/views/Teacher.vue"),
+    path: "/Music",
+    name: "Music",
+    component: () => import("@/views/Music.vue"),
   },
   {
-    path: "/Unwolfme",
-    name: "Unwolfme",
-    component: () => import("@/components/Unwolfme.vue"),
-  },
-  {
-    path: "/UnTimeMe",
-    name: "UnTimeMe",
-    component: () => import("@/views/UnTimeMe.vue"),
+    path: "/Videos",
+    name: "Videos",
+    component: () => import("@/views/Videos.vue"),
   },
   {
     path: "/UnThinkMe",
@@ -135,6 +145,10 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
+  scrollBehavior() {
+    return { top: 0 }
+    // document.getElementById('app').scrollIntoView({ behavior: 'smooth' });
+  }
 });
 router.beforeEach((to) => {
   const store = useStore(pinia);

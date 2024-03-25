@@ -32,34 +32,61 @@ button, a, router-link, RouterLink, i
     min-height: 100vh
     text-align: center
     justify-content: flex-start
+.sidebar
+    z-index: 100
 .flex-column
     display: grid
-    grid-auto-rows: min-content auto min-content
+    grid-auto-rows: min-content min-content auto min-content
     // display: flex
     // flex-direction: column
     // justify-content: space-around
     flex-grow: 1
 .flex
     display: flex
-.flex-grow
-    flex-grow: 1
+// .flex-grow
+//     flex-grow: 1
 .home-content
-    padding-inline: 1.2em
+    // padding-inline: 1.2em
     display: flex
     flex-direction: column
     // font-size-adjust: 0.5
     margin-inline: auto
-    max-width: 30em
+    max-width: 36em
+    line-height: 130%
+    // overflow-y: scroll
+    margin-block-end: 3em
+    a
+        display: inline
+        color: $active
+        text-decoration: none
+    p
+        padding-block: 0.2em
+.active-link
+    color: $active
 .social-grp
     display: flex
-    width: inherit
+    // width: inherit
     background-color: $social-grp-color
     // padding: 0.3em
     justify-content: center
-    // margin-inline: auto
+    position: fixed
+    bottom: 0
+    width: 100vw
+    justify-self: center
+    padding: 0.2em
+    // margin-block: auto
+    // align-self: flex-end
     .social
-        width: 1.9em
+        max-width: 1.9em
+        min-width: 12%
         margin-inline: 0.3em
+        // padding-inline: 0.3em
+#style-selector
+    position: fixed
+    z-index: 2
+    // display: flex
+    // flex-direction: row
+    width: 100vw
 .btn-grp
     // font-size: 24px
     // display: grid
@@ -71,9 +98,11 @@ button, a, router-link, RouterLink, i
     // justify-self: flex-end
     margin-block: 3px
     padding-inline: 1em
+    *
+        align-self: center
+        justify-self: center
     i
         margin-inline: 0.3em
-        justify-self: center
     #dark-purple
         grid-column: 7 / 8
     #dark-green
@@ -81,7 +110,23 @@ button, a, router-link, RouterLink, i
     #white
         grid-column: 9 / 10
         max-width: 10px
-
+.home-changer
+    position: fixed
+    top: 3%
+    display: flex
+    // flex-direction: row
+    z-index:1
+    justify-self: center
+    align-items: center
+    padding-block: 0.3em
+    font-size: 1.4em
+    width: 100vw
+    margin-block: 0.2em
+    // margin-inline: auto
+    i
+        font-size: inherit
+        cursor: pointer
+        margin-inline: auto
 .technomancy
         justify-content: center
         text-align: left
@@ -107,7 +152,7 @@ button, a, router-link, RouterLink, i
     background: linear-gradient(to top, red, orange, yellow, green, blue, indigo, violet)
     border-radius: 0.2em
     padding: 1em 2em
-    opacity: 1
+    opacity: 0.7
     display: flex
     flex-direction: column
 .adam-med
@@ -115,7 +160,7 @@ button, a, router-link, RouterLink, i
     border-radius: 0.2em
     max-height: 40vh
     // height: auto
-    opacity: 0.5
+    opacity: 1
     max-width: 100%
 .beacon-image
     background-image: url("@/assets/img/spiralstairs.jpeg")
@@ -132,8 +177,9 @@ button, a, router-link, RouterLink, i
 .beacon-container
     justify-content: center
     margin: auto
-    p
-        padding-left: 4em
+    padding-right: 1em
+    padding-left: 4em
+    *
         padding-block: 0.8em
         text-align: right
         margin: auto
@@ -150,18 +196,22 @@ button, a, router-link, RouterLink, i
 .pitch-container
     audio
         max-width: 80vw
-.home-changer
-        display: flex
-        justify-content: space-around
-        align-items: center
-        // padding-block: 0.3em
-        font-size: 1.4em
-        max-width: 100vw
-        i
-            font-size: inherit
-            cursor: pointer
-        select
-            // font-size: inherit
-            color: inherit
-            background-color: inherit
-            text-align: center
+.tinytext
+    justify-self: center
+    display: flex
+    // max-width: 650px
+    // margin-inline: 5vw
+    // font-size: 1.1em
+    div
+        cursor: pointer
+        margin: 0.2em
+    div:hover
+        color: red
+
+.stu-banner
+    display: inline-block
+    // width: 50%
+    height: auto
+    // min-width: 250px
+    max-width: 100%
+    border-radius: 10px

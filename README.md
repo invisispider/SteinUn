@@ -1,27 +1,25 @@
 ### A Vue 3 Firebase web porfolio.
 
-Adam Loewen does software development, multimedia art, and holistic private music lessons. Seeking remote work.
+Adam Loewen does software development, multimedia art, and holistic coaching. Seeking remote work.
 
 This is an open source website so feel welcome to help make it cooler. 🫶🏽
 
 # Stein Unlimited
 
-*Stein Unlimited is a Second Tier, decreasingly imaginary company (or network state) providing access to a product called Disconnectors. This is explained in The Future of Sales self help rock opera. ~We create The Future~*
+*Stein Unlimited is a Second Tier, decreasingly imaginary company (or network state) providing access to a product called Disconnectors. ~We create The Future~*
 
 **Contents:**
-- The official website of YouTube Integral Theory ([Ken Wilber](https://en.wikipedia.org/wiki/Ken_Wilber)) channel [unThinkMe](https://www.youtube.com/channel/UC6i8QNmPT1buzJqLZFS5aNQ). 
+- [unThinkMe](https://www.youtube.com/channel/UC6i8QNmPT1buzJqLZFS5aNQ): YouTube Integral Theory ([Ken Wilber](https://en.wikipedia.org/wiki/Ken_Wilber)) channel. 
 
 - zenTime: a clock and calendar designed to make time less stupid for humans. 
 
-- Home of web-based science fiction mystery fiction series "Beacon". 
+- Beacon: Web-based science fiction mystery fiction series "Beacon". 
 
 - An interactive representation of the Integral "AQAL" model.
 
 - Member chat service.
 
-- Disconnectors and unThinkMe store.
-
-- Links to archival video, comedy, and music projects.
+- Links to portfolio video, comedy, and music projects.
 
 # Developer Guide
 
@@ -35,7 +33,7 @@ This is an open source website so feel welcome to help make it cooler. 🫶🏽
 
 To create a fully functional version of this project, you would need to create your own Firebase project with hosting, storage, Firestore and realtime databases. I was aiming to explore all of the primary Firebase features.
 
-.env.example file contains your credentials. In order to use admin services, you would need to create an admin auth token (not covered here). Fortunately, that section is not visible to the public and most of it does not appear in this repo.
+.env.example file contains your credentials. In order to use admin services, you would need to create an admin auth token (not covered here). That section is not visible to the public and most of it does not appear in this repo.
 
 **Development:**
 

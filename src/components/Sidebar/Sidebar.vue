@@ -56,15 +56,12 @@ onUnmounted(() => {
           >Login</SidebarLink
         > -->
         
-        <SidebarLink to="/YouTube" key="link2" class="navItem" @click="toggleSidebar"
-          >YouTube</SidebarLink
+        <SidebarLink to="/UnThinkMe" key="link2" class="navItem" @click="toggleSidebar"
+          >Blog</SidebarLink
         >
-        <SidebarLink to="/UnTimeMe" key="link3" class="navItem" @click="toggleSidebar"
-          >zenTime</SidebarLink
+        <SidebarLink to="/Time" key="link3" class="navItem" @click="toggleSidebar"
+          >Time</SidebarLink
         >
-        <SidebarLink to="/Crossword" key="link4" class="navItem" icon="keyboard_double_arrow_left"
-				>Puzzle</SidebarLink>
-        <SidebarLink to="/Teacher" key="link5" class="navItem" @click="toggleSidebar">Music</SidebarLink>
         <!-- <SidebarLink
           to="/Next"
           v-if="oneInTwoHundred"
@@ -72,18 +69,23 @@ onUnmounted(() => {
           class="navItem nav-item-dark"
           icon="keyboard_double_arrow_left" @click="toggleSidebar"
           >TEMP</SidebarLink
-        > -->
-        <!-- <component :is="UnJamMeComponent" v-if="showJams" key="7a" class="navItem"
-					id="music-player" /> -->
-        <!-- <a v-else id="songToggle" @click="doShowJams" -->
-        <!-- >UnJamMe</a> -->
-        <!-- <SidebarLink to="/UnReadMe" key="8a" class="navItem"
-				>unReadMe</SidebarLink> -->
-        <SidebarLink to="/Unwolfme" key="link6" class="navItem" @click="toggleSidebar"
-          >Videos</SidebarLink
+          > -->
+          <!-- <component :is="UnJamMeComponent" v-if="showJams" key="7a" class="navItem"
+            id="music-player" /> -->
+            <!-- <a v-else id="songToggle" @click="doShowJams" -->
+              <!-- >UnJamMe</a> -->
+              <!-- <SidebarLink to="/UnReadMe" key="8a" class="navItem"
+                >unReadMe</SidebarLink> -->
+        <SidebarLink to="/Integral" key="link55" class="navItem" @click="toggleSidebar">Integral</SidebarLink>
+        <SidebarLink to="/Beacon" key="link56" class="navItem" @click="toggleSidebar">Beacon</SidebarLink>
+        <SidebarLink to="/Music" key="link5" class="navItem" @click="toggleSidebar">Music</SidebarLink>
+        <SidebarLink to="/Videos" key="link6" class="navItem" @click="toggleSidebar"
+        >Videos</SidebarLink
         >
+        <SidebarLink to="/Crossword" key="link4" class="navItem" icon="keyboard_double_arrow_left"
+        >Crossword</SidebarLink>
         <SidebarLink v-if="store.uid" key="link7" class="navItem" to="/Chat" @click="toggleSidebar"
-          >PartyChat</SidebarLink
+        >WallChat</SidebarLink
         >
         <SidebarLink v-if="store.admin" key="link8" class="navItem" to="/Admin" @click="toggleSidebar"
           >Admin</SidebarLink

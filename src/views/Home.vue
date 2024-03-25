@@ -1,40 +1,35 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch, onBeforeMount, onBeforeUnmount, onMounted } from "vue";
 import Namaste from '@/components/Landing/Namaste.vue';
 import SteinunLimited from '@/components/Landing/SteinunLimited.vue';
 import UnThinkMe from '@/components/Landing/UnThinkMe.vue';
 import IntegralTheory from '@/components/Landing/IntegralTheory.vue';
-import SteinTime from '@/components/Landing/SteinTime.vue';
+import Calendar from '@/components/Landing/Calendar.vue';
 import Beacon from '@/components/Landing/Beacon.vue';
-import Developer from '@/components/Landing/Developer.vue';
-import Artist from '@/components/Landing/Artist.vue';
 import Technomancy from '@/components/Landing/Technomancy.vue';
 import { socials } from "@/composables/socials";
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 document.title = "Stein Unlimited";
 const soc = socials.value;
 const router = useRouter();
+const route = useRoute();
 const pageSelections = [
   'Namaste', 
   'SteinunLimited', 
-  'IntegralTheory', 
   'UnThinkMe',
-  'SteinTime', 
+  'Calendar',
+  'IntegralTheory', 
   'Beacon', 
   'Technomancy',
-  'Developer', 
-  'Artist', 
 ];
 const components: Record<string, any> = {
   Namaste,
   SteinunLimited,
-  IntegralTheory,
   UnThinkMe,
-  SteinTime,
+  Calendar,
+  IntegralTheory,
   Beacon,
   Technomancy,
-  Developer,
-  Artist,
 };
 const selected = ref('Namaste')
 const togglePage = (which: string) => {
@@ -45,29 +40,59 @@ const togglePage = (which: string) => {
     } else {
       selected.value = pageSelections[0];
     }
-  } else {
+  } else if (which==='prev') {
     if (idx>0) {
       selected.value = pageSelections[idx-1];
     } else {
       selected.value = pageSelections[pageSelections.length-1];
-    }
+    } 
+  } else {
+    selected.value = which
   }
   router.push('/landing/'+selected.value);
 }
 
-const routeChange = () => {
-  router.push(selected.value);
+// const changeRoute = () => {
+//   router.push(selected.value);
+// }
+watch(() => route.path, (newPath) => {
+  // console.log(selected.value, newPath)
+  selected.value = newPath.slice(9);
+  // router.push(selected.value);
+})
+const handleKeydown = (e) => {
+  switch (e.keyCode) {
+    case 37:
+      togglePage('prev');
+      break;
+    case 39:
+      togglePage('next');
+      break;
+  }
 }
+onBeforeMount(() => {
+  window.addEventListener('keydown', handleKeydown);
+})
+onMounted(() => {
+  if(route.path) {
+    togglePage(route.path[9].toUpperCase()+route.path.slice(10))
+  // console.log(route.path) 
+  }
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('keydown', handleKeydown);
+})
 </script>
 <template>
   <div class="flex-column" data-test-id="flex-column">
     <div class="home-changer">
-      <i class="material-icons" @click="togglePage('prev')" aria-label="prev">arrow_left</i>
-      <div @change="routeChange" class="flex-grow" name="page-selector">
-        <div v-for="selection in pageSelections" v-show="selection==selected" :key="selection">{{ selection }}</div>
+      <i class="material-icons" style="transform: rotate(180deg);" @click="togglePage('prev')" aria-label="prev">arrow_right_alt</i>
+      <div class="tinytext">
+        <div v-for="selection in pageSelections" @click="togglePage(selection)" :class="selection==selected&&'active-link'":key="'icon'+selection">{{selection.slice(0,1)}}</div>
       </div>
-      <i class="material-icons" @click="togglePage('next')" aria-label="next">arrow_right</i>
+      <i class="material-icons" @click="togglePage('next')" aria-label="next">arrow_right_alt</i>
     </div>
+    <h1 id="landing-title">{{ selected }}</h1>
     <div class="home-content">
       <transition name="shrink2" appear mode="out-in">
         <component :is="components[selected]" />

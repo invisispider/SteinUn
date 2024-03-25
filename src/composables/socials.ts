@@ -19,5 +19,15 @@ export const socials = ref([
       "name": "gh",
       "link": "../src/assets/img/social_gh.png",
       "url": "https://github.com/invisispider",
+    },
+    {
+      "name": "vn",
+      "link": "../src/assets/img/social_vn.png",
+      "url": "https://venmo.com/u/Adam-Loewen-1",
+    },
+    {
+      "name": "li",
+      "link": "../src/assets/img/social_li.png",
+      "url": "https://www.linkedin.com/in/adam-loewen-3218ab48/"
     }
 ]);
