@@ -3,6 +3,7 @@ import "@/assets/css/time.sass";
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import { useTime } from "@/stores/time";
 import { DateTime } from "luxon";
+// import ZenTime from "@/components/Time/ZenTime.vue";
 import YearWheel from "@/components/Time/YearWheel.vue";
 import ZenDay from "@/components/Time/ZenDay.vue";
 import ZenHabit from "@/components/Time/ZenHabit.vue";
@@ -17,23 +18,23 @@ const timezone = new Date()
   .toLocaleTimeString("en-us", { timeZoneName: "short" })
   .split(" ")[2];
 const displayZenTime = computed(() => [
-  // store.zsessionNames.filter((all, id) => id == store.zsess).pop(),
-  // " ",
+  store.zsessionNames.filter((all, id) => id == store.zsess).pop(),
+  " ",
   store.zsess + 1,
   ".",
   String(store.zmoment).padStart(2, "0"),
   "`",
   store.instant,
   " ",
-  // timezone,
-  // " ",
+  timezone,
+  " ",
   store.dayNames[(store.dayNum) % 5].slice(0, 3),
   ", ",
   store.dayNum + 1,
   " ",
   store.habitName,
-  " ",
-  Number(String(store.forma).slice(-4)) + 10000
+  ", ",
+  Number(String(store.forma).slice(-4)) + 10000 - 12000
 ]);
 
 const timePulse = async () => {
@@ -63,7 +64,7 @@ const timePulse = async () => {
   store.zsess = sess;
   return () => clearInterval(timerID);
 };
-let timerID;
+let timerID: NodeJS.Timeout;
 onMounted(() => {
   timerID = setInterval(timePulse, 1000);
 });
@@ -83,14 +84,18 @@ const showChart = ref("date");
 </script>
 <template>
   <div class="zen-wrapper">
+    <!-- <ZenTime /> -->
     <Transition name="phase">
       <div class="info-panel" 
-        v-if="showInfo" v-html="infoTemplate" @click="toggle()" key="apple"
+      v-if="showInfo" v-html="infoTemplate" @click="toggle()" key="apple"
       >
-      </div>
+    </div>
     </Transition>
     <div class="title-logo">
       <h1>unLimited Time</h1>
+      <h2>{{ displayZenTime.slice(0,9).reduce((acc, cv)=>acc+cv) }}<br>
+        {{ displayZenTime.slice(9).reduce((acc, cv)=>acc+cv) }}</h2>
+      <h3>ROMAN:<br>{{ store.forma }}</h3>
       <p>click around for information</p>
       <transition name="wiggle" appear>
         <div class="smiley time-border">
@@ -104,8 +109,6 @@ const showChart = ref("date");
           <i @click.prevent="smiley = !smiley" class="material-icons" v-html="smiley ? 'mood_bad' : 'mood'"></i>
         </div>
       </transition>
-      <h3>ROMAN:<br>{{ store.forma }}</h3>
-      <h3>unLimited:<br>{{ displayZenTime.toString().split(',').join('') }}</h3>
     </div>
     <component :is="OGSvgs" @zentime="toggleShow('zentime')" />
     <component :is="YearWheel" @zendate="toggleShow('zendate')" @holiday="toggleShow('holiday')"

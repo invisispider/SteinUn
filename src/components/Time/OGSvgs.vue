@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue';
 import { useTime } from "@/stores/time.ts";
 import { useMonitorSize } from '@/composables/monitor-size';
@@ -25,6 +25,7 @@ const emit = defineEmits(["zentime"]);
   <div class="zenclock-container time-border" @click="emit('zentime')">
     <div class="clock">
       <h2>Clock</h2>
+      <p>This is</p>
       <svg :width="svgW" :height="svgH"
         :viewBox="`0 0 ${svgW+3} ${svgH+3}`"
       >
@@ -37,7 +38,7 @@ const emit = defineEmits(["zentime"]);
           />
         </g>
         <text x="4" y="16" fill="white">
-          Session: {{ Number(1 + store.zsess) % 11 }}
+          Session: {{ Number(1 + store.zsess) % 11 }} {{ store.zhabitNames }}
         </text>
       </svg>
       <svg :width="svgW" :height="svgH"

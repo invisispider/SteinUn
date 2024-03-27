@@ -16,7 +16,7 @@ const hou_height = computed(() => svgHeight - (svgHeight / 24) * store.zhour);
 // const sess = computed(() => Math.floor(100*(1+(store.zhour/store.hou_in_sess)))/100)
 </script>
 <template>
-  <div style="textAlign: center, float: right, padding: 0.9em">
+  <div style="text-align: center; float: right; padding: 0.9em;">
     <svg :width="svgWidth" :height="svgHeight">
       <g fill="none">
         <template v-for="i in 25" :key="i">
@@ -99,7 +99,7 @@ const hou_height = computed(() => svgHeight - (svgHeight / 24) * store.zhour);
           :y1="hou_height"
           :x2="svgWidth"
           :y2="hou_height"
-          style="stroke: OrangeRed, strokeWidth: 0.2rem"
+          style="stroke: OrangeRed; stroke-width: 0.2rem;"
         />
         <circle
           @click.prevent="changeView"

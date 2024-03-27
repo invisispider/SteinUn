@@ -13,25 +13,26 @@
 .zen-wrapper
 	font-family: HK Grotesk
 	overflow: hidden
+	max-width: 100vw
+	display: flex
+	flex-direction: column
+	align-items: center
+	padding: 0px 5px
+	max-width: 100vw
+	// margin: 0 auto
 	// font-size: 1em
 	// max-width: 1970px
 	// width: 100vw
-	// max-width: 100vw
-	// display: flex
-	// flex-direction: column
-	display: grid
-	justify-content: space-evenly
+	// display: grid
+	// grid-auto-rows: 320px
+	// justify-content: space-evenly
 	// min-height: 100vh
-	padding: 10px 5px
-	margin: 0 auto
-	grid-gap: 10px
-	@media screen and (min-width: 1440px)
-		grid-template: auto / 1fr 1fr
-	@media screen and (max-width: 425px)
-		display: flex
-		flex-direction: column
-		max-width: 100vw
-		align-items: center
+	// grid-gap: 10px
+	// @media screen and (min-width: 1440px)
+		// grid-template: auto / 1fr 1fr
+	// @media screen and (max-width: 425px)
+		// display: flex
+		// flex-direction: column
 		// overflow-x: hidden
 		// margin: 0
 		// svg
@@ -62,9 +63,11 @@
 	a:hover
 		text-decoration: none
 
-.time-border
-	border: 1px solid $greg-light
-	border-radius: 5px
+// .time-border
+	// padding: 0
+	// margin: 0
+	// border: 1px solid $greg-light
+	// border-radius: 5px
 
 .info-panel
 	display: flex
@@ -179,6 +182,8 @@
 	svg
 		margin: 4px
 #habits
+	display: flex
+	flex-direction: column
 	@media screen and (min-width: 799px)
 		grid-gap: 30px
 		display: grid

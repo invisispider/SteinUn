@@ -1,5 +1,4 @@
-import { ref } from 'vue';
-export const socials = ref([
+export const socials = [
     {
       "name": "gm",
       "link": "../src/assets/img/social_gm.png",
@@ -30,4 +29,4 @@ export const socials = ref([
       "link": "../src/assets/img/social_li.png",
       "url": "https://www.linkedin.com/in/adam-loewen-3218ab48/"
     }
-]);
+];
