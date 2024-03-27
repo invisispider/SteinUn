@@ -39,13 +39,13 @@ watchEffect(() => {
 });
 </script>
 <template>
-  <section id="habits">
+  <section id="habits" class="time-border">
     <div class="above-cal">
-      <h1>
+      <h2>
         {{ store.dayNames[(state.dayOfHabit) % 5] }}{{", "}}
         {{ state.dayOfHabit+1 }}
         {{ habitName }} {{ Number(String(store.forma).slice(-4)) + 10000 }}
-      </h1>
+      </h2>
     </div>
     <div class="zen-calendar">
       <div class="unchunk" v-if="habitName !== '~newZen~'">

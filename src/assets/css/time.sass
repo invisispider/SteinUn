@@ -1,35 +1,4 @@
-$primary-dark: #192
-$primary: #4F7
-$stein-green: #4f4
-$slime-green: #3f3
-$stein-lightgreen: #9f9
-$primary-light: #AFA
-$safe-light: #DFD
-$stein-lumenwhite: #d0fff1
-$teal: teal
-$light-teal: #4fa
-$stein-blue: #2800ff
-$greg-dark: rgb(29, 34, 154)
-$greg-light: rgb(56, 107, 221)
-$midnight: #000202
-$midnight-cream: #101
-$midnight-deluxe: #323
-$midnight-light: #FDC
-$secondary-dark: #204
-$contrast-light: #F84
-$contrast: #C40
-$contrast-dark: #810
-$secondary-light: #D9F
-$secondary: #A5D
-$stein-magenta: rgb(105, 92, 233)
-$stein-lightpurple: rgb(71, 53, 240)
-$medium-orchid: rgb(70, 34, 153)
-$stein-purple: rgb(49, 14, 132)
-$stein-dark-purple: rgb(42, 4, 109)
-$darker-purple: rgb(25, 0, 51)
-$hot-purple: rgb(131, 33, 255)
-$box-midnight-cream: 0 0 0 1px $midnight-cream
-$box-midnight-light: 0 0 0 1px $midnight-light
+@import "src/assets/css/vars.sass"
 @font-face
 	font-family: HK Grotesk
 	src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
@@ -38,48 +7,129 @@ $box-midnight-light: 0 0 0 1px $midnight-light
 	font-weight: bold
 	src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
 
-@keyframes woggle
-	0%
-		transform: scale(1)
-	50%
-		transform: scale(0.7)
-	70%
-		transform: scale(1.2)
-	100%
-		transform: scale(0)
-.wiggle-enter-active
-	animation: woggle 0.5s reverse
-.wiggle-leave-active
-	animation: woggle 0.5s ease
-.time-nav
+// HMTL -> body -> div#app -> div#appWrapper -> sidebar, style-selector, .zen-wrapper ->
+	// .title-logo, .zen-meters, .zenwheel.time-borders, .day-container.time-borders, section#habits
+
+.zen-wrapper
+	font-family: HK Grotesk
+	overflow: hidden
+	// font-size: 1em
+	// max-width: 1970px
+	// width: 100vw
+	// max-width: 100vw
+	// display: flex
+	// flex-direction: column
 	display: grid
-	margin: 0
-	position: fixed
-	bottom: .2em
-	left: 200px
-.time-nav-item
-	background: $hot-purple
-	color: $slime-green
-	max-width: 200px
-.title-logo
-	display: grid
-	font-size: 4rem
-	button
-		margin: 1em 13em
-		background-image: linear-gradient(to right, $stein-lumenwhite, white, $stein-lumenwhite)
-		i
-			color: $midnight
-.holiday
-	// color: $slime-green
-	display: block
-// zenTime
-.zen-meters
+	justify-content: space-evenly
+	// min-height: 100vh
+	padding: 10px 5px
+	margin: 0 auto
+	grid-gap: 10px
+	@media screen and (min-width: 1440px)
+		grid-template: auto / 1fr 1fr
+	@media screen and (max-width: 425px)
+		display: flex
+		flex-direction: column
+		max-width: 100vw
+		align-items: center
+		// overflow-x: hidden
+		// margin: 0
+		// svg
+			// transform: scaleX(60%)
+		// overflow-x: scroll
+	// @media screen and (max-width: 800px)
+		// min-width: 100%
+		// grid-template: 1fr / auto
+	// color: $stein-lumenwhite
+	// background-color: $midnight
+		// line-height: 105%
+	h1
+		font-size: 2.7rem
+	// h2
+	// 	margin: 0 0 .4em
+	// 	color: $hot-purple
+	// 	font-size: 2rem
+	// h3
+		// margin: 0 0 .1em
+		// font-size: 1.31em
+		// color: $teal
+	.selected
+		background-color: $stein-purple
+		color: white
+		list-style: none
+		font-size: 1.3em
+		color: $safe-light
+	a:hover
+		text-decoration: none
+
+.time-border
+	border: 1px solid $greg-light
+	border-radius: 5px
+
+.info-panel
 	display: flex
 	flex-direction: column
-	justify-content: space-around
+	position: fixed
+	align-items: center
+	z-index: 3
+	bottom: 0
+	right: 0
+	color: $stein-lumenwhite
+	background: rgba(44, 7, 78, 0.95)
+	height: 100vh
+	width: 100vw
+	padding: 10%
+	overflow: scroll
+	h1
+		margin: 1em 10%
+		text-shadow: 1px 1px 10px black
+
+.title-logo
+	display: flex
+	flex-direction: column
+	// display: grid
+	.holiday
+		color: $slime-green
+		display: block
+	.smiley
+		min-width: 200px
+		margin: 1em auto
+		padding: 0.6em 0 0.2em 0
+		border-radius: 6px
+		background-image: linear-gradient(to right, $stein-lumenwhite, white, $stein-lumenwhite)
+		.table-modal
+			i
+				border-radius: 50%
+				padding: 0.2em 1em
+				font-size: 3em
+			i.active
+				color: lime
+// TimeConversions
+.conversion-table
+	border-radius: 5px
+	max-width: 80vw
+	display: grid
+	background-color: #151515
+	align-items: stretch
+	margin: 0.4rem
+	padding: 0.6em
+	grid-gap: 2rem
+	table
+		color: lavender
+		box-shadow: 0 0 8px 1px lightblue
+		font-size: 1.2rem
+		th
+			padding: 0.5rem 0.8rem
+		.th
+			border: 1px solid darkmagenta
+		.th-blue
+			border: 1px solid lightskyblue
+
+
 .greg-dark, .greg-light, .zen-borders
 	rx: 5px
 	ry: 5px
+
 .greg-dark
 	stroke: $stein-lumenwhite
 	fill: $greg-dark
@@ -106,101 +156,33 @@ $box-midnight-light: 0 0 0 1px $midnight-light
 .clock-hand
 	// stroke: $contrast-light
 	stroke: rgba(91, 246, 65, 0.7)
-	stroke-width: 4
+	stroke-width: 2
 .zen-rect
-	// stroke: $stein-lumenwhite
+	stroke: $stein-lumenwhite
 .zen-mint
-	fill: $slime-green
+	fill: $stein-lumenwhite
 .zen-borders
-	fill: none
-	fill: rgba(40, 0, 100, 0.2)
+	// fill: $slime-green
+	fill: $stein-lilac
 	stroke: $stein-lumenwhite
 
-// TimeConversions
-.conversionTable
-	max-width: 80vw
-	display: grid
-	background-color: black
-	align-items: stretch
-	margin: 2rem
-	padding: 2em
-	grid-gap: 2rem
-	table
-		color: lavender
-		box-shadow: 0 0 8px 1px lightblue
-		font-size: 1.2rem
-		th
-			padding: 0.5rem 0.8rem
-		.th
-			border: 1px solid darkmagenta
-		.th-blue
-			border: 1px solid lightskyblue
+
 
 .flex-me
 	display: flex
-	@media screen and (max-width: 800px)
-		margin: 0
-		flex-direction: column
-.zen-wrapper
-	// max-width: 1970px
-	// width: 100vw
-	font-family: HK Grotesk
-	display: grid
-	@media screen and (min-width: 1440px)
-		grid-template: auto / 1fr 1fr
-	@media screen and (max-width: 425px)
-		display: flex
-		flex-direction: column
-		width: 425px
-		align-items: center
-		overflow-x: hidden
-		svg
-			// transform: scaleX(60%)
-		// overflow-x: scroll
-	@media screen and (max-width: 800px)
-		min-width: 100%
-		grid-template: 1fr / auto
-	color: $stein-lumenwhite
-	background-color: $midnight
-	justify-content: space-evenly
-	min-height: 100vh
-	padding: 10px 5px
-	margin: 0 auto
-	grid-gap: 10px
-	h1
-		font-size: 46px
-		color: $stein-lumenwhite
-		font-size: 3rem
-		line-height: 105%
-		margin: .1em 0
-	@media screen and (max-width: 800px) 
-		h1
-			font-size: 32px
-	h2
-		margin: 0 0 .4em
-		color: $hot-purple
-		font-size: 2rem
-	h3
-		font-size: 1.31em
-		margin: 0 0 .1em
-		color: $teal
-	.flex-me-center
-		display: flex
-		justify-content: space-around
-		// grid-row: 1 / 3
-	.selected
-		background-color: $stein-purple
-		color: white
-		list-style: none
-		font-size: 1.3em
-		color: $safe-light
-	a:hover
-		text-decoration: none
+	// @media screen and (max-width: 800px)
+		// margin: 0
+		// flex-direction: column
+.clock
+	display: flex
+	flex-direction: column
+	svg
+		margin: 4px
 #habits
 	@media screen and (min-width: 799px)
 		grid-gap: 30px
 		display: grid
-		box-shadow: 0 0 2px $midnight-light
+		// box-shadow: 0 0 2px $midnight-light
 		margin: 1em
 		align-items: space-around
 .baheader
@@ -230,38 +212,10 @@ $box-midnight-light: 0 0 0 1px $midnight-light
 	font-weight: bolder
 	background-color: $stein-purple
 	color: $primary
-.phase-enter-from, .phase-leave-to
-	opacity: 0
-.phase-leave-from, .phase-enter-to
-	opacity: 1
-.phase-enter-active, .phase-leave-active
-	transition: opacity 0.5s ease
 
-.table-modal
-	i
-		border-radius: 50%
-		padding: 0.2em 1em
-		font-size: 3em
-	i.active
-		color: lime
 
-.info-panel
-	display: flex
-	flex-direction: column
-	position: fixed
-	align-items: center
-	z-index: 3
-	bottom: 0
-	right: 0
-	background: rgba(60, 60, 160, 0.85)
-	height: 100vh
-	width: 100vw
-	padding: 10%
-	h1
-		margin: 1em 10%
-		text-shadow: 1px 1px 10px black
-.zenwheel text
-	cursor: pointer
+
+
 .dayname
 	color: lime
 .dayname-active
@@ -272,20 +226,29 @@ $box-midnight-light: 0 0 0 1px $midnight-light
 	text-align: left
 .active
 	background-color: darkViolet
-.zentime-container
-	margin: 0.2em 6em
-	@media screen and (max-width: 800px)
-		padding: 1em 4em
-		margin: 1em
-	border-radius: 60px
-	background-color: $stein-dark-purple
-	div
-		padding: 5px 0
-		.stroke-me
-			stroke: chartreuse
+.zenclock-container
+	margin: 0.4em 6em
+	// background-color: $stein-dark-purple
+	cursor: pointer
+	padding: 1em 0
+	max-width: 100vw
+	// div
+		// padding: 1px 0
+	.stroke-me
+		stroke: $stein-lumenwhite
 .zenwheel
+	display: flex
+	flex-direction: column
+	align-items: center
+	// margin: auto
+	// justify-self: center
+	text
+		cursor: pointer
+		// fill: white
 	text.active
 		fill: white
+	.pie-chart
+		fill: $light-teal
 .above-cal
 	@media screen and (max-width: 799px)
 		// grid-template: auto / auto
@@ -297,17 +260,41 @@ $box-midnight-light: 0 0 0 1px $midnight-light
 		justify-content: center
 		align-items: flex-end
 .zen-calendar
-	margin: 1em
+	display: flex
+	flex-direction: column
+	max-width: 100vw
+	margin-inline: 1em
 .day-container
-	justify-content: space-around
-	align-items: center
-	align-content: center
+	justify-self: center
+	// justify-content: center
+	display: flex
+	flex-direction: column
+	max-width: 100vw
+	padding: 10px
 	svg
-		align-self: flex-end
-		display: block
-		transform: translateX(6rem)
-		@media screen and (min-width: 800px)
-			transform: translateX(3em)
-		@media screen and (min-width: 1440px)
-			transform: translateX(3rem)
+		border-radius: 5px
 
+	
+
+
+// ANIMATIONS
+@keyframes woggle
+	0%
+		transform: scale(1)
+	50%
+		transform: scale(0.7)
+	70%
+		transform: scale(1.2)
+	100%
+		transform: scale(0)
+.wiggle-enter-active
+	animation: woggle 0.5s reverse
+.wiggle-leave-active
+	animation: woggle 0.5s ease
+
+.phase-enter-from, .phase-leave-to
+	opacity: 0
+.phase-leave-from, .phase-enter-to
+	opacity: 1
+.phase-enter-active, .phase-leave-active
+	transition: opacity 0.5s ease

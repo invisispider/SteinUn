@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // import "@/assets/css/base.sass";
-import { computed } from 'vue';
+import { computed, nextTick } from 'vue';
 import "@/assets/css/controller.sass";
 import { RouterView } from "vue-router";
 // import LoadingComponent from "@/components/LoadingComponent.vue"
@@ -10,9 +10,17 @@ import Sidebar from "@/components/Sidebar/Sidebar.vue";
 import StyleSelector from "@/components/StyleSelector.vue";
 import { useStore } from '@/stores/index';
 import { useMonitorSize } from '@/composables/monitor-size';
+import { toggleSidebar, collapsed } from "@/components/Sidebar/state";
 const sizes = useMonitorSize();
 const store = useStore();
 const isVertical = computed(()=>sizes.isVertical.value?'vertical':'horizontal')
+const toggleSidebarNow = () => {
+    nextTick()
+    if (collapsed.value===false) {
+        toggleSidebar()
+    }
+}
+
 </script>
 <template>
     <div id="appWrapper" :class="[store.styleMode.split(' ').join('-'), isVertical]">
@@ -21,7 +29,7 @@ const isVertical = computed(()=>sizes.isVertical.value?'vertical':'horizontal')
         <StyleSelector />
         <router-view v-slot="{ Component }">
             <transition name="route" mode="out-in">
-                <component :is="Component" />
+                <component @click="toggleSidebarNow" :is="Component" />
             </transition>
         </router-view>
     </div>

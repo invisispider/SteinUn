@@ -19,9 +19,13 @@ export const toggleInfoView = (infoView: string) => {
     `;
   } else if (infoView === "zentime") {
     return `
-      <h1>A day begins around sunrise (not midnight) and is divided into 11 portions called Sessions.</h1>
-      <h1>The Sessions have names which reference time of day.</h1>
-      <h1>Session time is a decimal, with the dimes and pennies being Whiles and Moments.</h1>
+      <h1>Days begin and end before sunrise (not midnight).
+      <h1>Each day has 11 Sessions.</h1>
+      <h1>Sessions are named what we generally call that time of day.
+      You can coordinate activities around Sessions.</h1>
+      <h1>Whiles and Moments are the dimes and pennies of a Session.</h1>
+      <h1>An Instant is equal to a second.</h1>
+      <h1>There are 80 instants in a Moment.</h1>
     `;
   } else if (infoView === "habits") {
     return `
@@ -48,9 +52,9 @@ export const toggleInfoView = (infoView: string) => {
     `;
   } else {
     return `
-      <h1>zenCalendar System</h1>
-      <h1>A complete personal time and date system.</h1>
-      <h1>A lightweight re-thinking of the Gregorian Calendar.</h1>
+      <h1>unLimited Time</h1>
+      <h1>A complete time and date system.</h1>
+      <h1>A light, open-source re-thinking of standards.</h1>
       <h1>Designed for simplicity and productivity with human mind and body.</h1>
     `;
   }

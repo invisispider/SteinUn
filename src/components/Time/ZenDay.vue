@@ -1,22 +1,28 @@
 <script setup lang="ts">
-import { useTime } from "@/stores/time.ts";
+import { useTime } from "@/stores/time";
 import { computed } from "vue";
+// import { useMonitorSize } from '@/composables/monitor-size';
+// const sizes = useMonitorSize();
 const store = useTime();
-const svgHeight = 620;
-const svgWidth = 600;
-const halfWidth = svgWidth / 2;
-const gregWidth = svgWidth / 6;
+const svgWidth = 220
+
+// computed(() => sizes.browserWidth.value<600 ? sizes.browserWidth.value : 600);
+const svgHeight = 500;
+
+const gregWidth = svgWidth / 5;
+const halfWidth = svgWidth - gregWidth;
 const rSpread = svgHeight / 24;
 const zSpread = svgHeight / 10.8;
 const zenSpread = svgHeight / 13.5;
 const hou_height = computed(() =>
   Math.floor(svgHeight - (svgHeight / 24) * store.zhour)
 );
-const rotateOrigin = (h_h) =>
+const rotateOrigin = (h_h: number) =>
   "transform-origin: " + gregWidth + "px " + h_h + "px";
 </script>
 <template>
-  <div class="day-container">
+  <div class="day-container time-border">
+    <h2>Day</h2>
     <svg :width="svgWidth" :height="svgHeight">
       <g id="gregMeter" fill="none">
         <template v-for="(num, i) in 25" :key="num + 100">
@@ -48,14 +54,9 @@ const rotateOrigin = (h_h) =>
           :y="0"
           :width="halfWidth"
           :height="10 * zSpread + zenSpread"
-          class="zen-borders"
         />
         <text :x="svgWidth / 1.6" :y="0.6 * zenSpread" v-text="`~zen~`" />
         <template v-for="(zses, j) in store.zsessionNames" :key="j + 200">
-          <!-- <template v-for="k in 10" :key="k"> -->
-          <!-- <rect :x="gregWidth" :y="(svgHeight/10.8)*(j)+(svgHeight/108)*(7+k)"
-            :width="halfWidth" :height="svgHeight/108" class="zen-dark"
-            /> -->
           <rect
             :x="gregWidth"
             :y="zenSpread + zSpread * j - zSpread"

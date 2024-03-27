@@ -8,26 +8,22 @@ const routes: Array<RouteRecordRaw> = [
     path: "/",
     name: "Home",
     component: Home,
-    redirect: "/landing/namaste",
+    redirect: "/landing/Namaste",
     children: [
       {
-        path: 'landing/namaste',
+        path: 'landing/Namaste',
         component: () => import("@/components/Landing/Namaste.vue"),
       },
       {
-        path: 'landing/website',
-        component: () => import("@/components/Landing/Website.vue"),
-      },
-      {
-        path: 'landing/steinunlimited',
+        path: 'landing/Steinunlimited',
         component: () => import("@/components/Landing/SteinunLimited.vue"),
       },
       {
-        path: 'landing/integraltheory',
+        path: 'landing/Integraltheory',
         component: () => import("@/components/Landing/IntegralTheory.vue")
       },
       {
-        path: 'landing/unthinkme',
+        path: 'landing/Unthinkme',
         component: () => import("@/components/Landing/UnThinkMe.vue"),
       },
       {
@@ -35,19 +31,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/components/Landing/Calendar.vue"),
       },
       {
-        path: 'landing/beacon',
+        path: 'landing/Beacon',
         component: () => import("@/components/Landing/Beacon.vue"),
       },
       {
-        path: 'landing/developer',
-        component: () => import("@/components/Landing/Developer.vue"),
-      },
-      {
-        path: 'landing/artist',
-        component: () => import("@/components/Landing/Artist.vue"),
-      },
-      {
-        path: 'landing/technomancy',
+        path: 'landing/Technomancy',
         component: () => import("@/components/Landing/Technomancy.vue"),
       }
 

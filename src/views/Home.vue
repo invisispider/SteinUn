@@ -60,12 +60,12 @@ watch(() => route.path, (newPath) => {
   selected.value = newPath.slice(9);
   // router.push(selected.value);
 })
-const handleKeydown = (e) => {
-  switch (e.keyCode) {
-    case 37:
+const handleKeydown = (e: KeyboardEvent) => {
+  switch (e.code) {
+    case "ArrowLeft":
       togglePage('prev');
       break;
-    case 39:
+    case "ArrowRight":
       togglePage('next');
       break;
   }
@@ -75,7 +75,7 @@ onBeforeMount(() => {
 })
 onMounted(() => {
   if(route.path) {
-    togglePage(route.path[9].toUpperCase()+route.path.slice(10))
+    togglePage(route.path.slice(9))
   // console.log(route.path) 
   }
 })
@@ -94,7 +94,7 @@ onBeforeUnmount(() => {
     </div>
     <h1 id="landing-title">{{ selected }}</h1>
     <div class="home-content">
-      <transition name="shrink2" appear mode="out-in">
+      <transition name="route" appear mode="out-in">
         <component :is="components[selected]" />
       </transition>
     </div>

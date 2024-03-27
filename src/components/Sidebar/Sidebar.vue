@@ -4,7 +4,7 @@ import { onMounted, watchEffect, onUnmounted } from "vue";
 // import UnJamMeComponent from "@/components/UnJamMeComponent.vue";
 import { useStore } from "@/stores/index";
 import SidebarLink from "@/components/Sidebar/SidebarLink.vue";
-import { collapsed, toggleSidebar, sidebarWidth } from "./state";
+import { collapsed, toggleSidebar, sidebarWidth } from "@/components/Sidebar/state";
 const store = useStore();
 // const randGuy = Math.floor(Math.random() * 50 + 1);
 // 5 E + 13 M = 18 EM
@@ -36,7 +36,8 @@ onUnmounted(() => {
 });
 </script>
 <template>
-  <div class="sidebar topnav" :style="{ width: sidebarWidth }">
+  <div class="sidebar topnav" :style="{ width: sidebarWidth }"
+  >
   <span
       class="collapse-icon"
       @click="toggleSidebar"
@@ -45,19 +46,17 @@ onUnmounted(() => {
   </span>
   <template v-if="!collapsed">
       <transition-group
-        name="fadeDown"
+        name="shrink2"
         key="banana"
         tag="div"
         class="glow"
-        mode="in-out"
-      >
+        mode="out-in"
+        appear
+        >
         <SidebarLink to="/" key="link1" class="navItem" @click="toggleSidebar">Home</SidebarLink>
-        <!-- <SidebarLink to="/Login" v-if="!store.uid" key="2a" class="navItem"
-          >Login</SidebarLink
-        > -->
         
         <SidebarLink to="/UnThinkMe" key="link2" class="navItem" @click="toggleSidebar"
-          >Blog</SidebarLink
+          >unThinkMe</SidebarLink
         >
         <SidebarLink to="/Time" key="link3" class="navItem" @click="toggleSidebar"
           >Time</SidebarLink
@@ -94,7 +93,7 @@ onUnmounted(() => {
           >Login</SidebarLink
         >
         <SidebarLink v-if="store.uid" key="link10" class="navItem" to="/Logout" @click="toggleSidebar"
-          >Logout</SidebarLink
+        >Logout</SidebarLink
         >
       </transition-group>
       <div class="glow" v-if="!collapsed" key="banano">

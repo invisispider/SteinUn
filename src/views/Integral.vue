@@ -10,18 +10,20 @@ const SelectButton = (btn: string) => Selected.value=btn;
 
 </script>
 <template>
-    <div class="integral-theory-div">
-        <div class="btn-group">
-            <button @click="SelectButton(btn)" v-for="btn in modeSelectorButtons" :key="btn">{{ btn }}</button>
+    <div class="home-content">
+        <div class="home-changer">
+            <div @click="SelectButton(btn)" v-for="btn in modeSelectorButtons" :key="btn">{{ btn }}</div>
         </div>
         <h1>{{ Selected }}</h1>
         <template v-if="Selected=='Map'">
             <h1>Integral Theory</h1>
-            <h3>It is a conceit of Stein unLimited that we are an authentic second tier holistic Turquoise enterprise.</h3>
-            <p>To clarify the meaning of these words, please expore unThinkMe's visual guide to the AQALATAS Map,
+            <!-- <h3>It is a conceit of Stein unLimited that we are an authentic second tier holistic Turquoise enterprise.</h3> -->
+            <p>
+                <!-- To clarify the meaning of these words,  -->
+                please expore unThinkMe's visual guide to the AQALATAS Map,
                 largely adapted from the theory, work, and visuals of author Ken Wilber.
             </p>
-            <h3>What is the starting point of your beliefs?</h3>
+            <!-- <h3>What is the starting point of your beliefs?</h3>
             <p>Seriously, why do you think you know what you know? What are the sources that inform what you think?
                If we consider this very carefully, and let's say the goal is to include as much of absolutely everything as possible but 
                to also keep it as simple as possible, we see that reality, as you experience it right now, 
@@ -42,11 +44,13 @@ const SelectButton = (btn: string) => Selected.value=btn;
             <p>
                 When you go off script, you break patterns. I can tell you what the script says. I can suggest better
                 versions of the script.
-            </p>
+            </p> -->
+            <h1>AQALALATAS:</h1>
+            <h5>(pronounced "ah-kwel-alot-as" or just "Ah-kwel")</h5> 
+            <h2>The Five Modules of the Integral Map</h2>
             <p>
-            These factors, or Five Modules of the Integral Map,
-               explain why I'm saying <b>AQALALATAS: <br/>All Quadrants<br/>All Levels<br/>All Lines<br/>All Types<br/>All States<br/></b> 
-               The experience of reality is the simultaneous expression of these factors. 
+                <b><br/>All Quadrants<br/>All Levels<br/>All Lines<br/>All Types<br/>All States<br/> 
+                Consciousness is the simultaneous expression of these factors.</b>
             </p>
             <p>One thing that might be seen as revolutionary or really cool about this perspective is that it includes you. While we tend to 
                 explain reality in terms of the physical, here you are. It would be silly if there was thought to 
@@ -145,10 +149,10 @@ const SelectButton = (btn: string) => Selected.value=btn;
 </template>
 <style lang="sass">
 .integral-theory-div
-    background-color: black
-    color: white
+    // background-color: black
+    // color: white
 .btn-group
     display: flex
 .btn-group button:active
     color: red
-</style>@/composables/Integral/aqal-types.js
+</style>

@@ -2,7 +2,7 @@
 const props = defineProps(["showChart"]);
 </script>
 <template>
-  <div class="conversionTable">
+  <div class="conversion-table">
     <table v-if="props.showChart == 'time'">
       <tr>
         <th colSpan="4">zenTime</th>

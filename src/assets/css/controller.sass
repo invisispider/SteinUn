@@ -1,8 +1,10 @@
 @import "src/assets/css/theme.sass"
 @import "src/assets/css/desktop.sass"
-@import "src/assets/css/mobile.sass"
 @import "src/assets/css/sidebar.sass"
 @import "src/assets/css/vars.sass"
+@import "src/assets/css/animations.sass"
+@import "src/assets/css/unthinkme.sass"
+@import "src/assets/css/landing.sass"
 *, *:before, *:after
     box-sizing: border-box
 html, body
@@ -17,10 +19,10 @@ html, body
     color: $mid-gray-icon
 // i
     // font-size: 28px
-// .green
-//     color: #31e833
-// .red
-//     color: #da1a54
+.green
+    color: #31e833
+.red
+    color: #da1a54
 button, a, router-link, RouterLink, i
     cursor: pointer
 
@@ -32,11 +34,32 @@ button, a, router-link, RouterLink, i
     min-height: 100vh
     text-align: center
     justify-content: flex-start
-.sidebar
-    z-index: 100
+    // max-width: 100vw
+// MOBILE VERTICAL STYLE
+#appWrapper.vertical
+    .flex-column
+        font-size: 1.5em
+    .home-content
+        font-family: Poppins
+        padding-inline: 0.4em
+    .tinytext
+        // justify-self: center
+        // display: flex
+        // max-width: 650px
+        // margin-inline: 5vw
+        font-size: 0.6em
+    #landing-title
+        margin-block-start: 25%
+    .social
+        max-width: 1.5em
+        // min-width: 12%
+        margin-inline: 0
+        // padding-inline: 0.3em
+
 .flex-column
     display: grid
     grid-auto-rows: min-content min-content auto min-content
+    margin-block-start: 1em
     // display: flex
     // flex-direction: column
     // justify-content: space-around
@@ -55,6 +78,7 @@ button, a, router-link, RouterLink, i
     line-height: 130%
     // overflow-y: scroll
     margin-block-end: 3em
+    // margin-block: 3em
     a
         display: inline
         color: $active
@@ -110,103 +134,6 @@ button, a, router-link, RouterLink, i
     #white
         grid-column: 9 / 10
         max-width: 10px
-.home-changer
-    position: fixed
-    top: 3%
-    display: flex
-    // flex-direction: row
-    z-index:1
-    justify-self: center
-    align-items: center
-    padding-block: 0.3em
-    font-size: 1.4em
-    width: 100vw
-    margin-block: 0.2em
-    // margin-inline: auto
-    i
-        font-size: inherit
-        cursor: pointer
-        margin-inline: auto
-.technomancy
-        justify-content: center
-        text-align: left
-        li
-            list-style: none
-.developer
-    display: flex
-    flex-direction: column
-    margin-block: auto
-    padding: 1em 2em
-    // font-size: 0.94em
-    // text-align: left
-    list-style-type: none
-    h3
-        margin-block: 0.4em
-.artist
-    display: flex
-    flex-wrap: wrap
-    justify-content: center
-    span
-        margin: 0 0.5em
-.hero-image
-    background: linear-gradient(to top, red, orange, yellow, green, blue, indigo, violet)
-    border-radius: 0.2em
-    padding: 1em 2em
-    opacity: 0.7
-    display: flex
-    flex-direction: column
-.adam-med
-    margin: auto
-    border-radius: 0.2em
-    max-height: 40vh
-    // height: auto
-    opacity: 1
-    max-width: 100%
-.beacon-image
-    background-image: url("@/assets/img/spiralstairs.jpeg")
-    background-repeat: no-repeat
-    background-size: contain
-    opacity: 0.2
-    min-width: 30vw
-    min-height: 30vh
-    // display: flex
-    position: absolute
-    left: 20vw
-    top: 20vh
-    z-index: 5
-.beacon-container
-    justify-content: center
-    margin: auto
-    padding-right: 1em
-    padding-left: 4em
-    *
-        padding-block: 0.8em
-        text-align: right
-        margin: auto
-        // text-shadow: 5px 5px 0.1 white
-        // background-color: rgba(1, 1, 1, 1)
-.time-link
-    text-decoration: none
-.integral-theory
-    padding: 0
-    h4
-        margin-block: 0
-    li
-        list-style-type: none
-.pitch-container
-    audio
-        max-width: 80vw
-.tinytext
-    justify-self: center
-    display: flex
-    // max-width: 650px
-    // margin-inline: 5vw
-    // font-size: 1.1em
-    div
-        cursor: pointer
-        margin: 0.2em
-    div:hover
-        color: red
 
 .stu-banner
     display: inline-block
@@ -215,3 +142,93 @@ button, a, router-link, RouterLink, i
     // min-width: 250px
     max-width: 100%
     border-radius: 10px
+.sidebar
+    color: #fff
+    display: flex
+    flex-direction: column
+    background-color: #2f855a
+    // background-color: rgba(47, 133, 90, 0.3)
+    // background-color: rgb(30, 15, 88)
+    // float: left
+    position: fixed
+    z-index: 100
+    top: 0
+    left: 0
+    // min-height: 60%
+    // width: 100vw
+    // height: 100%
+    padding: .5em
+    transition: .3s ease
+    font-family: Poppins
+    // font-family: Roboto
+.sidebar:has(.rotate-180)
+    padding: 0
+.sidebar:not(.sidebar:has(.rotate-180))
+    border-right: 2px solid #18222c
+// .sidebar h1
+    // height: 2.5em
+.topnav
+    // background-image: url(@/assets/img/keys.jpg)
+    // background-repeat: repeat-x
+    // background-position: top
+    // background-size: contain
+    .christmas-icon
+        color: #31e833
+        font-size: 1.8rem
+        list-style-type: none
+        justify-content: center
+    .navItem
+        // font-size: 1.6em
+        box-shadow: 0 0 5px #31e833
+        // background-color: #000c
+        border-radius: 7px
+        margin-block: 0.4em
+        white-space: nowrap
+        cursor: pointer
+        border: solid 1px white
+        list-style-type: none
+        justify-content: center
+    .nav-item-dark
+        box-shadow: 0 0 40px #f0cf6c
+    a, router-link
+        color: #fbf
+        border-radius: 6px
+    a:hover, router-link:hover
+        color: #fff
+    // h3
+        // text-shadow: 2px 2px 5px #000
+        // font-size: 26px
+        // font-family: mistral
+        // vertical-align: middle
+        // text-align: center
+        // color: #fff
+        // margin: 5px 0
+
+@media screen and (min-width: 430px)
+    .topnav
+        // padding-top: 0
+        // margin-top: 0
+        // position: fixed
+        // left: 0
+        // background-size: 11em
+        // display: flex
+        max-width: 100vw
+        // min-width: 30vw
+        // background-position: bottom
+        ul
+            min-height: 2rem
+            // display: flex
+            // grid-template-columns: auto
+            max-width: 100vw
+            justify-content: flex-start
+            align-items: center
+            list-style-type: none
+            // margin-top: 1.2rem
+            flex-wrap: nowrap
+            // width: 100vw
+        ul li
+            font-size: 1.2rem
+            min-width: 10vw
+            padding: .2rem
+#player
+    max-width: 100vw
