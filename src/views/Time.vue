@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import "@/assets/css/time.sass";
+import ZenDocs from "@/components/Time/ZenDocs.vue";
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import { useTime } from "@/stores/time";
 import { DateTime } from "luxon";
@@ -71,27 +72,41 @@ onMounted(() => {
 onUnmounted(() => {
   timePulse();
 });
-const infoTemplate = ref(`<h1>unLimited Time</h1>`);
+const infoTemplate = ref(``);
 // const todayName = ref(null);
 const showInfo = ref(false);
-const toggle = () => (showInfo.value = !showInfo.value);
+const toggle = () => {
+  showInfo.value = !showInfo.value
+  showBase.value = false
+};
 const toggleShow = (a: string) => {
+  showBase.value = false
   showInfo.value = true;
   infoTemplate.value = toggleInfoView(a);
 };
+const showBase = ref(false);
+const toggleBase = () => {
+  showInfo.value = true;
+  showBase.value = true;
+  infoTemplate.value = ref(``);
+}
 const smiley = ref(false);
-const showChart = ref("date");
+const showChart = ref("time");
 </script>
 <template>
   <div class="zen-wrapper">
     <!-- <ZenTime /> -->
     <Transition name="phase">
-      <div class="info-panel" 
-      v-if="showInfo" v-html="infoTemplate" @click="toggle()" key="apple"
-      >
-    </div>
+      <div class="info-panel" v-if="showInfo" @click="toggle" key="apple">
+        <template v-if="showBase">
+          <ZenDocs />
+        </template>
+        <template v-else>
+          <div v-html="infoTemplate"></div>
+        </template>
+      </div>
     </Transition>
-    <div class="title-logo">
+    <div class="title-logo" @click="toggleBase">
       <h1>unLimited Time</h1>
       <h2>{{ displayZenTime.slice(0,9).reduce((acc, cv)=>acc+cv) }}<br>
         {{ displayZenTime.slice(9).reduce((acc, cv)=>acc+cv) }}</h2>

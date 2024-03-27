@@ -5,7 +5,7 @@ const props = defineProps(["showChart"]);
   <div class="conversion-table">
     <table v-if="props.showChart == 'time'">
       <tr>
-        <th colSpan="4">zenTime</th>
+        <th colSpan="4">unLimited Time</th>
       </tr>
       <tr>
         <th class="th">10.8 Sessions</th>

@@ -1,5 +1,5 @@
 export const toggleInfoView = (infoView: string) => {
-  if (infoView === "zendate") {
+if (infoView === "zendate") {
     return `
       <h1>This is the current date in zen calendar</h1>
     `;
@@ -47,8 +47,20 @@ export const toggleInfoView = (infoView: string) => {
     `;
   } else if (infoView === "newzen") {
     return `
-      <h1>The newZen is the end and beginning of the year lasting five or six days, depending on leap year.</h1>
-      <h1>This extra Cycle allows Habits to be symmetrical and equal length.</h1>
+      <h1>This period is called newZen.</h1>
+      <h2>This extra Cycle allows Habits to be symmetrical and equal length.</h2>
+      <p>
+        The newZen is the end and beginning of the year lasting five or six days, depending on leap year. 
+        It can be thought of as a holiday week, as many 
+        cultures already do at the new year. In this system, it is encouraged to use 
+        this time to clear yourself of the baggage of the preceding year, to gear 
+        yourself towards the new year, to evolve forward and come into the future yourself. 
+        This is the purpose of newZen. While this idea may sound exotic, 
+        it is actually the basis of the Egyptian calendar, which preceded the Gregorian 
+        Calendar and was influential to it. They chose 360 days with a Festival period because 
+        it seemed logical. In my own personal journey, I arrived at exactly the same solution 
+        before I even knew this was so.
+      </p>
     `;
   } else {
     return `

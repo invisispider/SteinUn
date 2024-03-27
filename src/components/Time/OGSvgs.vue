@@ -25,7 +25,7 @@ const emit = defineEmits(["zentime"]);
   <div class="zenclock-container time-border" @click="emit('zentime')">
     <div class="clock">
       <h2>Clock</h2>
-      <p>This is</p>
+      <p>Not going round a circle. Making progress towards outcomes.</p>
       <svg :width="svgW" :height="svgH"
         :viewBox="`0 0 ${svgW+3} ${svgH+3}`"
       >

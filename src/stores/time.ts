@@ -54,9 +54,6 @@ export const useTime = defineStore("time", {
     habitName: (state) => state.habitNames[state.habitNum],
     dayName: (state) => state.dayNames[(state.dayNum-1)%5],
     dayOfWeekZen: (state) => (state.dayNum-1)%5,
-    // zenDate(state): string {
-    //   return ''+this.dayName+' '+state.dayNum+' '+this.habitName+''+10000+new Date().getFullYear();
-    // }
   },
   actions: {
     setHabitNum(habit: number) {
