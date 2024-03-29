@@ -19,14 +19,16 @@ const svgW = computed(()=> {
 //   unSet();
 // })
 const svgH = 22;
-const emit = defineEmits(["zentime"]);
+const emit = defineEmits(["clock", "session", "while", "instant"]);
 </script>
 <template>
-  <div class="zenclock-container time-border" @click="emit('zentime')">
+  <div class="zenclock-container time-border">
     <div class="clock">
+      <div @click="emit('clock')">
       <h2>Clock</h2>
       <p>Not going round a circle. Making progress towards outcomes.</p>
-      <svg :width="svgW" :height="svgH"
+      </div>
+      <svg @click="emit('session')" :width="svgW" :height="svgH"
         :viewBox="`0 0 ${svgW+3} ${svgH+3}`"
       >
         <g>
@@ -41,7 +43,7 @@ const emit = defineEmits(["zentime"]);
           Session: {{ Number(1 + store.zsess) % 11 }} {{ store.zhabitNames }}
         </text>
       </svg>
-      <svg :width="svgW" :height="svgH"
+      <svg @click="emit('while')" :width="svgW" :height="svgH"
       :viewBox="`0 0 ${svgW+3} ${svgH+3}`"
       >
         <g>
@@ -61,7 +63,7 @@ const emit = defineEmits(["zentime"]);
           While & Moment: {{ store.zmoment }}
         </text>
       </svg>
-      <svg :width="svgW" :height="svgH"
+      <svg @click="emit('instant')" :width="svgW" :height="svgH"
       :viewBox="`0 0 ${svgW+3} ${svgH+3}`"
       >
         <g>

@@ -19,9 +19,11 @@ const hou_height = computed(() =>
 );
 const rotateOrigin = (h_h: number) =>
   "transform-origin: " + gregWidth + "px " + h_h + "px";
+const emit = defineEmits(['dayschedule'])
 </script>
 <template>
-  <div class="day-container time-border">
+  <div @click="emit('dayschedule')" style="cursor: pointer;" 
+    class="day-container time-border">
     <h2>Day</h2>
     <svg :width="svgWidth" :height="svgHeight">
       <g id="gregMeter" fill="none">

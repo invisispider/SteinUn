@@ -57,51 +57,51 @@ export const AqalTypes = {
         'description': 'Based on birthday, commonly used in Magenta and Red.',
         'types': {
             1: {
-                'type': 'aries',
+                'type': 'Aries',
                 'desc': 'Competetive but insecure.',
             },
             2: {
-                'type': 'taurus',
+                'type': 'Taurus',
                 'desc': 'Loyal but stubborn.',
             },
             3: {
-                'type': 'gemini',
+                'type': 'Gemini',
                 'desc': 'Versatile but impatient.',
             },
             4: {
-                'type': 'cancer',
+                'type': 'Cancer',
                 'desc': 'Passionate but uncommunicative.',
             },
             5: {
-                'type': 'leo',
+                'type': 'Leo',
                 'desc': 'Confident but dominating.',
             },
             6: {
-                'type': 'virgo',
+                'type': 'Virgo',
                 'desc': 'Perfectionist but self-critical.',
             },
             7: {
-                'type': 'libra',
+                'type': 'Libra',
                 'desc': 'Empathetic but indecisive.',
             },
             8: {
-                'type': 'scorpio',
+                'type': 'Scorpio',
                 'desc': 'Intense but secretive.',
             },
             9: {
-                'type': 'sagittarius',
+                'type': 'Sagittarius',
                 'desc': 'Spontaneous but flighty.',
             },
             10: {
-                'type': 'capricorn',
+                'type': 'Capricorn',
                 'desc': 'Goal-oriented but forgiving.',
             },
             11: {
-                'type': 'aquarius',
+                'type': 'Aquarius',
                 'desc': 'Philosophical but detatched.',
             },
             12: {
-                'type': 'picses',
+                'type': 'Pisces',
                 'desc': 'Whimsical but over-sensitive.',
             },
         },

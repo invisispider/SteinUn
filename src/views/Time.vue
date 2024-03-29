@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import "@/assets/css/time.sass";
-import ZenDocs from "@/components/Time/ZenDocs.vue";
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import { useTime } from "@/stores/time";
 import { DateTime } from "luxon";
@@ -12,7 +11,6 @@ import OGSvgs from "@/components/Time/OGSvgs.vue";
 import { toggleInfoView } from "@/components/Time/toggleInfoView";
 // import ZenCalendar from "@/components/Time/ZenCalendar.vue"
 import TimeConversions from "@/components/Time/TimeConversions.vue";
-// import ZenDocs from "@/components/Time/ZenDocs.vue"
 document.title = "Stein Unlimited Calendar System";
 const store = useTime();
 const timezone = new Date()
@@ -77,19 +75,11 @@ const infoTemplate = ref(``);
 const showInfo = ref(false);
 const toggle = () => {
   showInfo.value = !showInfo.value
-  showBase.value = false
 };
 const toggleShow = (a: string) => {
-  showBase.value = false
   showInfo.value = true;
   infoTemplate.value = toggleInfoView(a);
 };
-const showBase = ref(false);
-const toggleBase = () => {
-  showInfo.value = true;
-  showBase.value = true;
-  infoTemplate.value = ref(``);
-}
 const smiley = ref(false);
 const showChart = ref("time");
 </script>
@@ -97,20 +87,15 @@ const showChart = ref("time");
   <div class="zen-wrapper">
     <!-- <ZenTime /> -->
     <Transition name="phase">
-      <div class="info-panel" v-if="showInfo" @click="toggle" key="apple">
-        <template v-if="showBase">
-          <ZenDocs />
-        </template>
-        <template v-else>
-          <div v-html="infoTemplate"></div>
-        </template>
+      <div class="info-panel" v-if="showInfo" @click="toggle" key="apple"
+          v-html="infoTemplate">
       </div>
     </Transition>
-    <div class="title-logo" @click="toggleBase">
-      <h1>unLimited Time</h1>
-      <h2>{{ displayZenTime.slice(0,9).reduce((acc, cv)=>acc+cv) }}<br>
+    <div class="title-logo">
+      <h1 @click="toggleShow('base')" style="cursor: pointer;">unLimited Time</h1>
+      <h2 @click="toggleShow('unlimited')" style="cursor: pointer;">{{ displayZenTime.slice(0,9).reduce((acc, cv)=>acc+cv) }}<br>
         {{ displayZenTime.slice(9).reduce((acc, cv)=>acc+cv) }}</h2>
-      <h3>ROMAN:<br>{{ store.forma }}</h3>
+      <h3 @click="toggleShow('roman')" style="cursor: pointer;">ROMAN:<br>{{ store.forma }}</h3>
       <p>click around for information</p>
       <transition name="wiggle" appear>
         <div class="smiley time-border">
@@ -125,11 +110,12 @@ const showChart = ref("time");
         </div>
       </transition>
     </div>
-    <component :is="OGSvgs" @zentime="toggleShow('zentime')" />
-    <component :is="YearWheel" @zendate="toggleShow('zendate')" @holiday="toggleShow('holiday')"
-      @solstice="toggleShow('solstice')" @equinox="toggleShow('equinox')" @habits="toggleShow('habits')"
+    <OGSvgs @clock="toggleShow('clock')" @session="toggleShow('session')"
+    @while="toggleShow('while')" @instant="toggleShow('instant')"/>
+    <ZenDay @dayschedule="toggleShow('dayschedule')" />
+    <ZenHabit @habit="toggleShow('habit')" />
+    <YearWheel @zendate="toggleShow('zendate')" @holiday="toggleShow('holiday')"
+      @solstice="toggleShow('solstice')" @habits="toggleShow('habits')"
       @newzen="toggleShow('newzen')" />
-    <component :is="ZenDay" />
-    <component :is="ZenHabit" />
   </div>
 </template>

@@ -2,19 +2,19 @@
 import { ref, computed } from "vue";
 import { useTime } from "@/stores/time";
 const store = useTime();
-const emit = defineEmits(["holiday", "solstice", "equinox", "habits", "newzen"]);
+const emit = defineEmits(["zendate", "holiday", "solstice", "habits", "newzen"]);
 const BoxWidth = ref(350);
 const BoxHeight = ref(300);
 const resizeRef = (num: number) => num; 
 </script>
 <template>
   <div class="zenwheel time-border">
-    <h2>The Year</h2>
+    <h2 @click="emit('zendate')" style="cursor: pointer;">Year</h2>
     <svg 
       :viewBox="`-55 55 ${BoxWidth+180} ${BoxHeight+140}`"
       :width="BoxWidth" :height="BoxHeight"
     >
-      <title>The Zen Year</title>
+      <title>unLimited Year</title>
       <circle :r="resizeRef(150)" :cx="resizeRef(200)" :cy="resizeRef(300)" class="pie-chart" />
       <circle
         :r="resizeRef(75)"
@@ -108,7 +108,7 @@ const resizeRef = (num: number) => num;
         Solstice
       </text>
       <path :d="`M${resizeRef(24)} ${resizeRef(296)} l${resizeRef(350)} ${resizeRef(6)} z`" stroke="white" stroke-width="2" />
-      <text :x="resizeRef(375)" :y="resizeRef(307)" fill="white" @click="emit('equinox')">Equinox</text>
+      <text :x="resizeRef(375)" :y="resizeRef(307)" fill="white" @click="emit('solstice')">Equinox</text>
       <text :x="resizeRef(173)" :y="resizeRef(162)" fill="indigo">WINTER</text>
       <text :x="resizeRef(284)" :y="resizeRef(298)" fill="indigo">SPRING</text>
       <text :x="resizeRef(164)" :y="resizeRef(440)" fill="indigo">SUMMER</text>

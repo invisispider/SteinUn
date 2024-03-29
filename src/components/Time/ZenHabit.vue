@@ -37,14 +37,15 @@ watchEffect(() => {
   state.habitNum = Math.floor(state.dayOfYear / daysInHabit.value);
   habitName.value = getNameFromHabit(state.habitNum);
 });
+const emit = defineEmits(["habit"])
 </script>
 <template>
-  <section id="habits" class="time-border">
-    <div class="above-cal">
+  <section @click="emit('habit')" id="habits" class="time-border">
+    <div style="cursor: pointer;" class="above-cal">
       <h2>
-        {{ store.dayNames[(state.dayOfHabit) % 5] }}{{", "}}
-        {{ state.dayOfHabit+1 }}
-        {{ habitName }} {{ Number(String(store.forma).slice(-4)) + 10000 }}
+        <!-- {{ store.dayNames[(state.dayOfHabit) % 5] }}{{", "}} -->
+        <!-- {{ state.dayOfHabit+1 }} -->
+        Habit: {{ habitName }} {{ Number(String(store.forma).slice(-4)) + 10000 }}
       </h2>
     </div>
     <div class="zen-calendar">
