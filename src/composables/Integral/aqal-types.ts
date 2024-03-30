@@ -1,6 +1,6 @@
 export const AqalTypes = {
     'jungian': {
-        'description': 'Our personnae are dictated by story roles that we play.',
+        'description': 'Jung\'s notion of archetypes uses a nascent sort of memetics to approach the psyche itself. The psyche recognizes and generates story to help us make sense of our world. Thus, our reality resembles the most basic stories that we tell. Underneath the hood of everything, we are pattern recognition. The patterns which emerge are the ones we keep coming back to. The Type system arising from this is a collection of common and recognizable story roles that we keep doing. They are ways of characterizing people in terms of what they think, feel, and do, so it is a wonderful Type system.',
         'types': {
             1: {
                 'type': 'innocent',
@@ -152,7 +152,7 @@ export const AqalTypes = {
         'setbacks': 'Deprecated. Reductionistic.',
     },
     'myers-briggs': {
-        'description': 'Supported in business environments based on complicated factor relationships.',
+        'description': 'Supported in business environments. Based on complicated factor relationships. This system is preferred because it assumes no judgment or superiority. The testing methods are quite good. The deeper theory to it is extremely compelling - though people hardly ever care about what these Types actually say about a person.',
         'types': {
             1: {
                 'type': 'Extraversion/Introversion',
@@ -171,7 +171,7 @@ export const AqalTypes = {
                 'desc': 'Preference between becoming aware or coming to conclusions.',
             },
         },
-        'setbacks': 'Ignores AQAL factors, difficult to use and comprehend.',
+        'setbacks': 'Ignores AQAL factors, difficult to use and comprehend. One of the best, unfortunately.',
     },
     'enneagram': {
         'description': 'Unique system of roughly equal-represented personality archetypes.',

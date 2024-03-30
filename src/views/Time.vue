@@ -3,15 +3,15 @@ import "@/assets/css/time.sass";
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import { useTime } from "@/stores/time";
 import { DateTime } from "luxon";
-// import ZenTime from "@/components/Time/ZenTime.vue";
 import YearWheel from "@/components/Time/YearWheel.vue";
 import ZenDay from "@/components/Time/ZenDay.vue";
 import ZenHabit from "@/components/Time/ZenHabit.vue";
 import OGSvgs from "@/components/Time/OGSvgs.vue";
 import { toggleInfoView } from "@/components/Time/toggleInfoView";
-// import ZenCalendar from "@/components/Time/ZenCalendar.vue"
 import TimeConversions from "@/components/Time/TimeConversions.vue";
 document.title = "Stein Unlimited Calendar System";
+// import ZenTime from "@/components/Time/ZenTime.vue";
+// import ZenCalendar from "@/components/Time/ZenCalendar.vue"
 const store = useTime();
 const timezone = new Date()
   .toLocaleTimeString("en-us", { timeZoneName: "short" })

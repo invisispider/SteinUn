@@ -1,6 +1,6 @@
 export const AqalLines = [
     {
-        'name': 'Stages',
+        'name': '',
         'line': 'Worldview',
         'author': 'Jean Gebser',
         'description': 'A Swiss philosopher, introduced a developmental model in his influential work "The Ever-Present Origin."',
@@ -33,7 +33,7 @@ export const AqalLines = [
         'line': 'Values',
         'author': 'Don Beck and Christopher Cowan',
         'description': 'Spiral Dynamics is a theory of human development and cultural evolution that emphasizes the dynamic interaction between individual and collective values and worldviews. Developed by Clare W. Graves and further popularized by Don Beck and Christopher Cowan, Spiral Dynamics describes a series of stages or "memes" through which both individuals and societies evolve.',
-        'notes': 'Spiral Dynamics suggests that individuals and societies may move through these stages of development in response to changing environmental, social, and existential challenges. Additionally, different stages may coexist within a society or individual, with dominant memes influencing behavior and values. The theory emphasizes the importance of understanding and respecting the diversity of human perspectives and values.',
+        'notes': 'Spiral Dynamics suggests that individuals and societies develop in response to environmental, social, and existential challenges. Different stages may coexist within a society or individual, with dominant memes influencing behavior and values. The theory emphasizes the importance of understanding and respecting the diversity of human perspectives and values.',
         'stages': {
             '1': {
                 'title': 'Beige Meme (Survival Sense)',
@@ -70,11 +70,11 @@ export const AqalLines = [
         }
     },
     {
-        'name': 'Piaget',
+        'name': '',
         'line': 'Cognitive',
-        'author': 'Piaget',
-        'description': 'Jean Piaget, a pioneering psychologist, proposed a theory of cognitive development that outlines distinct stages of intellectual growth in children.',
-        'notes': 'Piaget\'s theory suggests that children progress through these stages in a fixed order, with each stage building upon the achievements of the previous ones. However, individual differences and cultural factors can influence the pace and extent of development within each stage.',
+        'author': 'Jean Piaget',
+        'description': 'Pioneering psychologist Jean Piaget proposed a theory that outlines distinct stages of intellectual growth in children. His is often the most commonly recognized developmental stage theory.',
+        'notes': 'Children progress through these stages in a fixed order, each stage building upon the achievements of the previous. Individual differences and cultural factors influence the pace and extent of development within each stage.',
         'stages': {
             '1': {
                 'title': 'Sensorimotor Stage (Birth to 2 years)',

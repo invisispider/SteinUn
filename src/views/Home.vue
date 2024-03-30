@@ -86,11 +86,15 @@ onBeforeUnmount(() => {
 <template>
   <div class="flex-column" data-test-id="flex-column">
     <div class="home-changer">
-      <i class="material-icons" style="transform: rotate(180deg);" @click="togglePage('prev')" aria-label="prev">arrow_right_alt</i>
+      <i class="material-icons" style="transform: rotate(180deg);" 
+        @click="togglePage('prev')" aria-label="prev">arrow_right_alt</i>
       <div class="tinytext">
-        <div v-for="selection in pageSelections" @click="togglePage(selection)" :class="selection==selected&&'active-link'":key="'icon'+selection">{{selection.slice(0,1)}}</div>
+        <div v-for="selection in pageSelections" @click="togglePage(selection)" 
+          :class="selection==selected&&'active-link'" 
+          :key="'icon'+selection">{{selection.slice(0,1)}}</div>
       </div>
-      <i class="material-icons" @click="togglePage('next')" aria-label="next">arrow_right_alt</i>
+      <i class="material-icons" @click="togglePage('next')" 
+        aria-label="next">arrow_right_alt</i>
     </div>
     <h1 id="landing-title">{{ selected }}</h1>
     <div class="home-content">
