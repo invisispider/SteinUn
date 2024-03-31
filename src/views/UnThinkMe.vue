@@ -75,8 +75,8 @@ onMounted(async ()=>{
     <!-- <h1 class="glow">unThinkMe</h1> -->
     <h2 class="glow">Visit our <a href="https://discord.gg/jZrS3GVXsS" target="_blank">Discord community!<img class="utm-social" src="@/assets/img/social_dc.png" /></a></h2>
     <h3>Discussing Integral Theory and Altitudes in our ordinary lives as ordinary weird people.</h3>
-    <h2 class="glow">Latest Videos:</h2>
     <img src="@/assets/img/unthinkme.png" style="margin-block: 1em;" class="stu-banner" />
+    <h2 class="glow">Latest Videos:</h2>
     <div class="video-container">
     <div class="video-div" v-for="(item, index) of youTubeData?.items" v-show="index<12" :key="item.etag">
       <div v-if="item.id.kind=='youtube#video'">

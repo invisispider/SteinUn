@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, nextTick } from "vue";
 import useCrossword from "@/composables/Crosswords/crosswordvideogame";
-document.title = "Video Game Lore Crossword Puzzle";
-const titleRef = ref(document.title.split(/[, ]+/));
+document.title = "Integral Crossword Puzzle";
+// const titleRef = ref(document.title.split(/[, ]+/));
 const across = ref(useCrossword.across)
 const down = ref(useCrossword.down)
 const collapseAcross = ref(false);
@@ -172,7 +172,7 @@ const moveMe = (keyPress, row, col) => {
 <template>
   <div id="puzzle-body">
     <div class="main-title">
-      <h1>{{ titleRef[0] }} {{ titleRef[1] }} {{ titleRef[2] }}</h1>
+      <h1>Integral Crossword</h1>
     </div>
     <div id="puzzle-wrapper">
       <table id="puzzle">
@@ -196,25 +196,6 @@ const moveMe = (keyPress, row, col) => {
       </table>
     </div>
     <div id="puzzle-clues">
-      <div class="buttons">
-        <span
-          ><i id="solve" @click="infoMe" class="material-icons">quiz</i>
-          info</span
-        >
-        <span
-          ><i id="other" @click="clueMe" class="material-icons">visibility</i>
-          clueMe</span
-        >
-        <span
-          ><i
-            id="clear"
-            @click="resetInputs((warn = true))"
-            class="material-icons"
-            >delete_outline</i
-          >
-          resetBoard</span
-        >
-      </div>
       <div id="acrossDiv">
         <h2 @click="toggle('across')">Across</h2>
         <transition-group name="grow" tag="ul" id="across">
@@ -243,7 +224,27 @@ const moveMe = (keyPress, row, col) => {
           </li>
         </transition-group>
       </div>
-    </div>
+      <div class="buttons">
+        <span>
+          <i id="solve" @click="infoMe" class="material-icons">quiz</i>
+          info
+        </span>
+        <span> 
+          <i id="other" @click="clueMe" class="material-icons">visibility</i>
+           clueMe
+        </span>
+        <span>
+          <i
+          id="clear"
+          @click="resetInputs((warn = true))"
+          class="material-icons"
+          >delete_outline</i
+          >
+          resetBoard
+          </span
+        >
+      </div>
+		</div>
   </div>
 </template>
 <style scoped lang="sass">
@@ -263,10 +264,10 @@ $thalmon: rgb(249, 194, 159)
 	color: black
 .actionJackson
 	background-color: red
-	color: white
+	// color: white
 .blackMe
 	background-color: black
-	color: white
+	// color: white
 .active, .clues-active
 	background-color: #ddd
 .clue-done
@@ -274,122 +275,128 @@ $thalmon: rgb(249, 194, 159)
 	text-decoration: line-through
 #puzzle-body
 	font: 62.5%/1.3em Helvetica, sans-serif
+	overflow-y: scroll
+	margin-block: 3em
 	// background-color: rgb(16, 9, 54)
 	// height: 100%
-	overflow-y: scroll
 	.main-title
 		text-align: center
 		font-size: 0.8rem
 		padding: 0.3rem
 		margin: 2px auto
-		color: lightBlue
+		// color: lightBlue
 	.buttons
+		position: fixed
+		bottom: 0
+		min-width: 300px
+		max-width: 100vw
 		display: flex
 		flex-direction: row
-		span
-			font-size: 0.8rem
-			text-align: center
-			// right: 0.3em
-			// margin: 12px
-			font-size: 2.6rem
-			right: 0.3em
-			margin: 12px
-			box-shadow: 0 0 12px 1px #53e6cb
+		justify-content: center
+		// margin: auto
+	.buttons span
+		display: flex
+		background-color: white
+		justify-content: center
+		align-items: center
+		align-content: center
+		// align-content: center
+		padding-right: 10px
+		// margin: 4px
+		border-radius: 5px
+		i
+			margin: 4px
+	span
+		font-size: 0.8rem
+		text-align: center
+		// right: 0.3em
+		// margin: 12px
+		font-size: 2.6rem
+		right: 0.3em
+		margin: 12px
+		box-shadow: 0 0 5px 1px #53e6cb
 	#other
-		color: white
+		// color: white
 	#solve
 		transform: rotate(180deg)
-		color: $thalmon
+		// color: $thalmon
 	#clear
 		// left: 1em
-		color: lightBlue
+		// color: lightBlue
 	#puzzle-clues
-		font-size: 1rem
-		color: white
+		// color: white
 		span
-			float: left
+			font-size: 1em
+			// float: left
 			margin-right: 0.4em
-			color: $thalmon
+			// color: $thalmon
 			// z-index: 2
 		h2
 			text-align: center
-			color: orange
-			font-size: 2.3rem
+			// color: orange
+			font-size: 2rem
 			cursor: pointer
 		h2:hover
 			color: lighten(orange, 20%)
+		ul
+			display: flex
+			flex-direction: column
+			align-items: flex-start
 		li
-			color: lightBlue
+			font-size: 2em
+			// color: lightBlue
 			margin: 0 .2rem
 			line-height: 1.6em
 			list-style-type: none
-			span
-				cursor: pointer
-	#puzzle-wrapper
-		display: grid
-		/* float: left; */
-		/* width: 54%; */
-		padding: 1px
-		/* margin-right: 3%; */
+		span
+			cursor: pointer
+#puzzle-wrapper
+	display: grid
+	/* float: left; */
+	/* width: 54%; */
+	padding: 1px
+	/* margin-right: 3%; */
+	width: 100%
+	table#puzzle
+		border-collapse: collapse
+		border-spacing: 0
 		width: 100%
-		table#puzzle
-			border-collapse: collapse
-			border-spacing: 0
+		background-color: #333
+		tr
 			width: 100%
-			background-color: #333
-			tr
-				width: 100%
-			td
-				width: 5em
-				height: 3em
-				border: 1px solid #cdcdcd
-				padding: 0
-				margin: 0
-				position: relative
-				input
-					width: 100%
-					height: 100%
-					padding: 0em
-					border: none
-					text-align: center
-					font-size: 3em
-					color: #666
-					background-color: #f4f4f4
-					text-transform: uppercase
-				input.done
-					font-weight: bold
-					color: green
-				input:focus
-					background-color: #fff
-				span
-					color: #444
-					font-size: 0.8em
-					// position: absolute
-					top: -1px
-					left: 1px
-					display: block
-@media screen and (min-width: 430px)
-	#puzzle-body
-		width: 100vw
-		height: 100vh
-		margin: 0
-		padding: 0
-		display: flex
-		// grid-template-columns: 1fr 1fr
-		#puzzle-wrapper
-			/* display: grid; */
-			/* float: left; */
-			// width: 54%
-			padding: 3rem 3rem 0 3rem
+		td
+			color: black
+			width: 5em
+			height: 3em
+			border: 1px solid #cdcdcd
+			padding: 0
 			margin: 0
-			width: 1000px
-			max-width: 95vw
-			height: 1000px
-			max-height: 90vh
-		#puzzle-clues
-			/* float: left; */
-			// width: 100vw
-			margin: 4rem auto
-			// display: grid
-			// grid-template-rows: 1fr 1fr
+			position: relative
+			input
+				width: 100%
+				height: 100%
+				padding: 0em
+				border: none
+				text-align: center
+				font-size: 3em
+				// color: #666
+				background-color: #f4f4f4
+				text-transform: uppercase
+			input.done
+				font-weight: bold
+				color: green
+			input:focus
+				background-color: #fff
+			span
+				color: #444
+				font-size: 0.8em
+				// position: absolute
+				top: -1px
+				left: 1px
+				display: block
+#acrossDiv h2, #downDiv h2
+	box-shadow: 0 0 5px 1px #53e6cb
+	padding: 1em
+	margin: 0.2em 1em
+	border-radius: 5px
 </style>
