@@ -10,7 +10,7 @@ import Technomancy from '@/components/Landing/Technomancy.vue';
 import { socials } from "@/composables/socials";
 import { useRouter, useRoute } from 'vue-router';
 document.title = "Stein Unlimited";
-const soc = socials.value;
+// const soc = socials.value;
 const router = useRouter();
 const route = useRoute();
 const pageSelections = [
@@ -73,12 +73,12 @@ const handleKeydown = (e: KeyboardEvent) => {
 onBeforeMount(() => {
   window.addEventListener('keydown', handleKeydown);
 })
-onMounted(() => {
-  if(route.path) {
-    togglePage(route.path.slice(9))
-  // console.log(route.path) 
-  }
-})
+// onMounted(() => {
+//   if(route.path) {
+//     togglePage(route.path.slice(9))
+//   // console.log(route.path) 
+//   }
+// })
 onBeforeUnmount(() => {
   window.removeEventListener('keydown', handleKeydown);
 })
@@ -103,7 +103,7 @@ onBeforeUnmount(() => {
       </transition>
     </div>
     <div class="social-grp">
-      <template v-for="social in soc" :key="social.name">
+      <template v-for="social in socials" :key="social.name">
         <a :href="social.url" target="_blank">
           <img :src="social.link" class="social">
         </a>

@@ -3,7 +3,7 @@ import type { RootState } from "@/models/states.model"
 export const useStore = defineStore("main", {
   state: () =>
   ({
-    styleMode: 'dark purple',
+    styleMode: 'light black',
     isIn: false,
     authIsReady: false,
     uid: '',

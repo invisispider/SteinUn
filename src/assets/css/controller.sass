@@ -11,12 +11,7 @@ html, body
     margin: 0
 .hidden
     visibility: hidden
-#dark-purple
-    color: $dark-purple-icon
-#dark-green
-    color: $forest-green-icon
-#white
-    color: $mid-gray-icon
+
 // i
     // font-size: 28px
 .green
@@ -59,7 +54,7 @@ button, a, router-link, RouterLink, i
 .flex-column
     display: grid
     grid-auto-rows: min-content min-content auto min-content
-    margin-block-start: 1em
+    margin-block-start: 50px
     // display: flex
     // flex-direction: column
     // justify-content: space-around
@@ -126,20 +121,13 @@ button, a, router-link, RouterLink, i
         align-self: center
         justify-self: center
     i
+        border-radius: 20%
+        padding: 0.1em
         margin-inline: 0.3em
-    #dark-purple
-        grid-column: 7 / 8
-    #dark-green
-        grid-column: 8 / 9
-    #white
-        grid-column: 9 / 10
-        max-width: 10px
-
+    
 .stu-banner
     display: inline-block
-    // width: 50%
     height: auto
-    // min-width: 250px
     max-width: 100%
     border-radius: 10px
 .sidebar
@@ -167,6 +155,7 @@ button, a, router-link, RouterLink, i
     border-right: 2px solid #18222c
 // .sidebar h1
     // height: 2.5em
+    
 .topnav
     // background-image: url(@/assets/img/keys.jpg)
     // background-repeat: repeat-x

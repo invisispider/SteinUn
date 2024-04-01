@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, nextTick } from "vue";
-import useCrossword from "@/composables/Crosswords/crosswordvideogame";
+import useCrossword from "@/composables/Crosswords/integralcrossword";
 document.title = "Integral Crossword Puzzle";
-// const titleRef = ref(document.title.split(/[, ]+/));
 const across = ref(useCrossword.across)
 const down = ref(useCrossword.down)
 const collapseAcross = ref(false);
@@ -21,44 +20,53 @@ const enumerateCells = (pRef: pRef) => 11 * (pRef[0] - 1) + pRef[1];
 const getElement = (pRef: pRef) => {
   var refCell = document.querySelector(
     `tr[row='${pRef[0]}']>td[col='${pRef[1]}']`
-  );
-  return refCell;
+	) as HTMLElement | null;
+
+	return refCell;
 };
-const drawWord = (pRef: [number, number], chars: string, direc: string) => {
+const drawWord = (pRef: pRef, chars: string, direc: string) => {
   let i = 0;
-  if (direc === "across") {
-    while (i < chars.length) {
-      let selectedEl = getElement([pRef[0], pRef[1] + i]);
-      selectedEl.lastChild.value = chars.charAt(i);
+	while (i < chars.length) {
+		if (direc === "across") {
+			const selectedEl = getElement([pRef[0] + i, pRef[1]]);
+			if (selectedEl) {
+				const input = selectedEl.lastElementChild as HTMLInputElement | null;
+				if (input) {
+					input.value = chars.charAt(i)
+				}
+			}
+			i++;
+		} else if (direc === "down") {
+			const selectedEl = getElement([pRef[0], pRef[1] + i]);
+			if (selectedEl) {
+				const input = selectedEl.lastElementChild as HTMLInputElement | null;
+				if (input) {
+					input.value = chars.charAt(i);
+				}
+			}
       i++;
     }
-  } else if (direc === "down") {
-    while (i < chars.length) {
-      let selectedEl = getElement([pRef[0] + i, pRef[1]]);
-      selectedEl.lastChild.value = chars.charAt(i);
-      i++;
-    }
-  }
+	}
 };
 const renderChars = () => {
-  across.value.forEach((datum) => drawWord(datum.pos, datum.answer, "across"));
-  down.value.forEach((datum) => drawWord(datum.pos, datum.answer, "down"));
+  across.value.forEach((datum) => drawWord(datum.pos as pRef, datum.answer, "across"));
+  down.value.forEach((datum) => drawWord(datum.pos as pRef, datum.answer, "down"));
 };
 onMounted(() => {
   const renderMatrix = () => {
-    let m = [];
+    const m: [string[]] = [['','']];
     for (let i = 0; i < 11; i++) {
       m[i] = [];
       for (let j = 0; j < 11; j++) {
-        m[i][j] = 0;
+        m[i][j] = '';
       }
     }
     return m;
   };
-  const assignMatrix = (mat) => {
+  const assignMatrix = (mat: [string[]]) => {
     across.value.forEach((acr) => {
       let ans = acr.answer;
-      let pos = acr.pos;
+      let pos = acr.pos as pRef;
       for (let k = 0; k < ans.length; k++) {
         mat[pos[0] - 1][pos[1] + k - 1] = ans[k];
       }
@@ -74,12 +82,13 @@ onMounted(() => {
   };
   let matrix = renderMatrix();
   matrix = assignMatrix(matrix);
+	// console.log(matrix)
   let startMap = across.value
     .map((index) => index.pos)
     .concat(down.value.map((index) => index.pos));
   matrix.forEach((row, i) => {
     row.forEach((cell, j) => {
-      let pair = [i + 1, j + 1];
+      let pair: pRef = [i + 1, j + 1];
       if (!cell) {
         let el = getElement(pair);
         if (el) {
@@ -93,34 +102,34 @@ onMounted(() => {
             let el = getElement(pair);
             let newDiv = document.createElement("div");
             newDiv.className = "head-label";
-            newDiv.style.backgroundColor = "#f4f4f4";
             newDiv.style.height = "1em";
-            newDiv.style.zIndex = "2";
+            newDiv.style.zIndex = "1";
             newDiv.style.fontSize = "1em";
             newDiv.style.position = "absolute";
-            newDiv.innerHTML = enumerateCells(pair);
-            el.prepend(newDiv);
+            newDiv.innerHTML = enumerateCells(pair).toString();
+            el?.prepend(newDiv);
           }
         });
       }
     });
   });
 });
-const selectMe = async (pRef) => {
+const selectMe = async (pRef: pRef) => {
   if (typeof pRef==='object') {
-    let el = getElement(pRef);
-    await nextTick(() => el.lastChild.focus());
+    let el = getElement(pRef) as Element;
+		let child = el?.lastChild as HTMLInputElement;
+		await nextTick(() => child?.focus());
   }
 };
-const resetInputs = (warn) => {
+const resetInputs = (warn: boolean) => {
   if (warn) {
     if (confirm("Really want to CLEAR all your progresst?")) {
-      let inputs = [...document.getElementsByClassName("clearme")];
-      inputs.forEach((input) => (input.value = ""));
+      let inputs = document.getElementsByClassName("clearme") as HTMLCollectionOf<HTMLInputElement>;
+			Array.from(inputs).forEach((input) => (input.value = ""))
     }
   } else {
-    let inputs = [...document.getElementsByClassName("clearme")];
-    inputs.forEach((input) => (input.value = ""));
+    let inputs = document.getElementsByClassName("clearme") as HTMLCollectionOf<HTMLInputElement>;
+		Array.from(inputs).forEach((input) => (input.value = ""))
   }
 };
 const clueMe = () => {
@@ -143,28 +152,31 @@ const infoMe = () => {
     "Clue Button will briefly display answers and reset board.\nGet good.\n";
   alert(instructions);
 };
-const moveMe = (keyPress, row, col) => {
-  if (keyPress === "left") {
-    let el = getElement([row, col]);
-    if (el.lastChild) {
-      el.lastChild.focus();
-    }
-  } else if (keyPress === "right") {
-    let el = getElement([row, col]);
-    if (el.lastChild) {
-      el.lastChild.focus();
-    }
-  } else if (keyPress === "down") {
-    let el = getElement([row, col]);
-    if (el.lastChild) {
-      el.lastChild.focus();
-    }
-  } else if (keyPress === "up") {
-    let el = getElement([row, col]);
-    if (el.lastChild) {
-      el.lastChild.focus();
-    }
-  }
+// function isFocusable(element: HTMLElement): element is HTMLInputElement {
+//     return element instanceof HTMLInputElement && typeof (element as HTMLInputElement).focus === 'function';
+// }
+const moveMe = (keyPress: string, row: number, col: number) => {
+	let el = getElement([row, col]) as Element;
+	let child = el?.lastChild as HTMLInputElement;
+	if (child instanceof HTMLInputElement && typeof (child as HTMLInputElement).focus === 'function') {
+		child.focus();
+  } 
+	// else if (keyPress === "right") {
+  //   let el = getElement([row, col]) as Element;
+  //   let child = el?.lastChild as HTMLInputElement;
+	// 	el.lastChild.focus();
+	// child.focus();
+  // } else if (keyPress === "down") {
+  //   let el = getElement([row, col]) as Element;
+  //   let child = el?.lastChild as HTMLInputElement;
+	// 	el.lastChild.focus();
+	// child.focus();
+  // } else if (keyPress === "up") {
+  //   let el = getElement([row, col]) as Element;
+  //   let child = el?.lastChild as HTMLInputElement;
+	// 	el.lastChild.focus();
+	// child.focus();
+  // }
 };
 // so, in the render, check if querySelectorAll("input[value='']"), setTimeout, change values,
 // then instead of refresh all function, use those stored input refs to clear.
@@ -174,117 +186,104 @@ const moveMe = (keyPress, row, col) => {
     <div class="main-title">
       <h1>Integral Crossword</h1>
     </div>
-    <div id="puzzle-wrapper">
-      <table id="puzzle">
-        <tbody :ref="(el) => (tbodyRows = el)">
-          <tr v-for="(row, row_ind) in rowNum" :row="row" :key="row_ind">
-            <td v-for="(col, col_ind) in colNum" :col="col" :key="col_ind">
-              <input
-                class="clearme"
-                @keyup.left="moveMe('left', row, col - 1)"
-                @keyup.right="moveMe('right', row, col + 1)"
-                @keyup.down="moveMe('down', row + 1, col)"
-                @keyup.up="moveMe('up', row - 1, col)"
-                maxlength="1"
-                val=""
-                type="text"
-                tabindex="-1"
-              />
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div id="puzzle-clues">
-      <div id="acrossDiv">
-        <h2 @click="toggle('across')">Across</h2>
-        <transition-group name="grow" tag="ul" id="across">
-          <li
-            v-for="ac in across"
-            v-show="!collapseAcross"
-            tabindex="1"
-            :key="ac.answer"
-          >
-            <span class="material-icons" @click="selectMe(ac.pos)">chair</span>
-            {{ enumerateCells(ac.pos) }}. {{ ac.question }}
-          </li>
-        </transition-group>
-      </div>
-      <div id="downDiv">
-        <h2 @click="toggle('down')">Down</h2>
-        <transition-group name="grow" tag="ul" id="down">
-          <li
-            v-for="dow in down"
-            v-show="!collapseDown"
-            tabindex="1"
-            :key="dow.answer"
-          >
-            <span class="material-icons" @click="selectMe(dow.pos)">chair</span>
-            {{ enumerateCells(dow.pos) }}. {{ dow.question }}
-          </li>
-        </transition-group>
-      </div>
-      <div class="buttons">
-        <span>
-          <i id="solve" @click="infoMe" class="material-icons">quiz</i>
-          info
-        </span>
-        <span> 
-          <i id="other" @click="clueMe" class="material-icons">visibility</i>
-           clueMe
-        </span>
-        <span>
-          <i
-          id="clear"
-          @click="resetInputs((warn = true))"
-          class="material-icons"
-          >delete_outline</i
-          >
-          resetBoard
-          </span
-        >
-      </div>
+		<div class="crossword-body">
+			<div id="puzzle-wrapper">
+				<table id="puzzle">
+					<!-- <tbody :ref="(el) => (tbodyRows = el)"> -->
+					<tbody>
+						<tr v-for="(row, row_ind) in rowNum" :row="row" :key="row_ind">
+							<td v-for="(col, col_ind) in colNum" :col="col" :key="col_ind">
+								<input
+									class="clearme"
+									@keyup.left="moveMe('left', row, col - 1)"
+									@keyup.right="moveMe('right', row, col + 1)"
+									@keyup.down="moveMe('down', row + 1, col)"
+									@keyup.up="moveMe('up', row - 1, col)"
+									maxlength="1"
+									val=""
+									type="text"
+									tabindex="-1"
+									name="`'${row}+${col}'`"
+								/>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="puzzle-clues">
+				<div id="acrossDiv">
+					<h2 @click="toggle('across')">Across</h2>
+					<transition-group name="grow" tag="ul" id="across">
+						<li class="couch"
+							v-for="ac in across"
+							v-show="!collapseAcross"
+							tabindex="1"
+							:key="ac.answer"
+						>
+							<span class="material-icons" @click="selectMe(ac.pos as pRef)">chair</span>
+							{{ enumerateCells(ac.pos as pRef) }}. {{ ac.question }}
+						</li>
+					</transition-group>
+				</div>
+				<div id="downDiv">
+					<h2 @click="toggle('down')">Down</h2>
+					<transition-group name="grow" tag="ul" id="down">
+						<li class="couch"
+							v-for="dow in down"
+							v-show="!collapseDown"
+							tabindex="1"
+							:key="dow.answer"
+						>
+							<span class="material-icons" @click="selectMe(dow.pos as pRef)">chair</span>
+							{{ enumerateCells(dow.pos as pRef) }}: {{ dow.question }}
+						</li>
+					</transition-group>
+				</div>
+				<div class="buttons">
+					<span id="solve" @click="infoMe">
+						<i class="material-icons">quiz</i>
+						info
+					</span>
+					<span id="other" @click="clueMe"> 
+						<i class="material-icons">visibility</i>
+						clueMe
+					</span>
+					<span id="clear" @click="resetInputs(true)">
+						<i
+						class="material-icons"
+						>delete_outline</i
+						>
+						resetBoard
+						</span
+					>
+				</div>
+			</div>
 		</div>
   </div>
 </template>
 <style scoped lang="sass">
 $thalmon: rgb(249, 194, 159)
-.head-label
-	// margin-right: 0.4em
-	// background-color: #333
-	background-color: #f4f4f4
-	height: 1em
-	// width: 100%
-	// display: flex
-	// opacity: 0
-	z-index: 2
-	font-size: 1em
-	position: absolute
-	// float: left
-	color: black
-.actionJackson
-	background-color: red
-	// color: white
-.blackMe
-	background-color: black
-	// color: white
-.active, .clues-active
-	background-color: #ddd
-.clue-done
-	color: #999
-	text-decoration: line-through
+$orange-hover: #666
+// $thalmon
+$span-box-shadow: 0 0 5px 1px #53e6cb
+$button-text: lighten(orange, 20%)
+$button-color: #333
+$icon-color: #333
+
+// $glow: #555
+// $clue-done: #555
+// $icon-text
+
 #puzzle-body
+	margin-block: 2.4em
+.main-title
+	text-align: center
+	font-size: 0.8rem
+	padding: 0.3rem
+	margin: 2px auto
+	width: 100vw
+.crossword-body
 	font: 62.5%/1.3em Helvetica, sans-serif
-	overflow-y: scroll
-	margin-block: 3em
-	// background-color: rgb(16, 9, 54)
-	// height: 100%
-	.main-title
-		text-align: center
-		font-size: 0.8rem
-		padding: 0.3rem
-		margin: 2px auto
-		// color: lightBlue
 	.buttons
 		position: fixed
 		bottom: 0
@@ -296,107 +295,107 @@ $thalmon: rgb(249, 194, 159)
 		// margin: auto
 	.buttons span
 		display: flex
-		background-color: white
+		background-color: $button-color
 		justify-content: center
 		align-items: center
-		align-content: center
-		// align-content: center
 		padding-right: 10px
-		// margin: 4px
 		border-radius: 5px
+		color: $button-text
 		i
-			margin: 4px
+			margin: 2px
 	span
-		font-size: 0.8rem
-		text-align: center
+		// font-size: 0.8rem
+		// text-align: center
 		// right: 0.3em
 		// margin: 12px
-		font-size: 2.6rem
-		right: 0.3em
-		margin: 12px
-		box-shadow: 0 0 5px 1px #53e6cb
-	#other
-		// color: white
-	#solve
-		transform: rotate(180deg)
-		// color: $thalmon
-	#clear
-		// left: 1em
-		// color: lightBlue
+		// font-size: 2.6rem
+		// right: 0.3em
+		// margin: 12px
+		box-shadow: $span-box-shadow
 	#puzzle-clues
-		// color: white
+		max-width: max-content
 		span
-			font-size: 1em
-			// float: left
-			margin-right: 0.4em
-			// color: $thalmon
-			// z-index: 2
+			font-size: 1.1em
+			margin: auto
+		span:hover
+			background-color: $orange-hover
 		h2
+			margin: auto
 			text-align: center
-			// color: orange
-			font-size: 2rem
+			color: $button-text
+			max-width: min-content
+			background-color: $button-color
+			font-size: 1.5rem
 			cursor: pointer
 		h2:hover
-			color: lighten(orange, 20%)
+			background-color: $orange-hover
 		ul
 			display: flex
 			flex-direction: column
-			align-items: flex-start
+			// align-items: flex-start
 		li
-			font-size: 2em
+			justify-content: center
+			align-items: center
+			font-size: 1.5em
 			// color: lightBlue
-			margin: 0 .2rem
+			margin: 0 0 0.1em 0
 			line-height: 1.6em
 			list-style-type: none
+			text-align: left
 		span
 			cursor: pointer
 #puzzle-wrapper
-	display: grid
-	/* float: left; */
-	/* width: 54%; */
+	margin: auto
+	min-width: 54%
 	padding: 1px
-	/* margin-right: 3%; */
-	width: 100%
-	table#puzzle
-		border-collapse: collapse
-		border-spacing: 0
+	justify-content: center
+	max-width: 400px
+.head-label
+	z-index: 1
+table#puzzle
+	border-collapse: collapse
+	border-spacing: 0
+	tr
 		width: 100%
-		background-color: #333
-		tr
-			width: 100%
-		td
-			color: black
-			width: 5em
-			height: 3em
-			border: 1px solid #cdcdcd
-			padding: 0
-			margin: 0
-			position: relative
-			input
-				width: 100%
-				height: 100%
-				padding: 0em
-				border: none
-				text-align: center
-				font-size: 3em
-				// color: #666
-				background-color: #f4f4f4
-				text-transform: uppercase
-			input.done
-				font-weight: bold
-				color: green
-			input:focus
-				background-color: #fff
-			span
-				color: #444
-				font-size: 0.8em
-				// position: absolute
-				top: -1px
-				left: 1px
-				display: block
-#acrossDiv h2, #downDiv h2
-	box-shadow: 0 0 5px 1px #53e6cb
-	padding: 1em
-	margin: 0.2em 1em
-	border-radius: 5px
+	td
+		// color: black
+		width: 5em
+		height: 3em
+		border: 1px solid #999
+		padding: 0
+		margin: 0
+		position: relative
+	input
+		width: 100%
+		height: 100%
+		padding: 0em
+		border: none
+		text-align: center
+		font-size: 3em
+		// color: #666
+		// background-color: #f4f4f4
+		text-transform: uppercase
+	// input.done
+	// 	font-weight: bold
+	// 	color: green
+	// input:focus
+	// 	background-color: #fff
+	span
+		// color: #444
+		font-size: 0.8em
+		// position: absolute
+		top: -1px
+		left: 1px
+		display: block
+
+#acrossDiv, #downDiv
+	margin-top: 10px
+	h2
+		box-shadow: $span-box-shadow
+		padding: 0.4em
+		border-radius: 5px
+.couch
+	padding-inline: 4px
+	color: $thalmon
+	background-color: $icon-color
 </style>

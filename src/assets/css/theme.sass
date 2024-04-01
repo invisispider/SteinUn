@@ -1,46 +1,47 @@
-#appWrapper.dark-green
-    background-color: #161616
-    color: #68f78e
-    .home-changer
-        background-color: #161616
-    #style-selector
-        background-color: #161616
-    .sidebar
-        background-color: #0a270a
-    .navItem
-        background-color: #2f855a
-    .video-div
-        background-color: #070708
-        border-color: #68f78e  
-#appWrapper.light-black
-    background-color: #dad0d0
-    color: #000000
-    .home-changer
-        background-color: #dad0d0
-    #style-selector
-        background-color: #dad0d0
-    a
-        // color: #5c1769
-    .sidebar
-        // background-color: rgb(24, 21, 36)
-    .navItem
-        // background-color: #5a5a5a
-        background-color: rgb(24, 21, 36)
-    .video-div
-        background: #addeec
-        border-color: #5a5a5a
-#appWrapper.dark-purple
-    background-color: #000000
-    color: #aa64f1
-    .home-changer
-        background-color: #000000
-    #style-selector
-        background-color: #000000
-    .sidebar
-        // background-color: #92099e
-        background-color: #340a40
-    .navItem
-        background-color: #0e031b
-    .video-div
-        background: #040007
-        border-color: #92099e
+.rotate-180
+    top: 5px
+    margin: 0 12px
+.home-changer i, .tinytext, .rotate-180
+    padding: 0.1em
+    border-radius: 30%
+.tinytext div:hover, .material-icons:hover
+    color: red
+
+$dark-purple: #92099e
+$dark-green: #2f855a
+$light-black: #5a5a5a
+$medium-thalmon: rgb(245, 120, 89)
+
+@mixin style-icons($name, $color)
+    ##{$name}
+        color: $color
+
+@include style-icons("dark-purple", $dark-purple)
+@include style-icons("dark-green", $dark-green)
+@include style-icons("light-black", $light-black)
+@include style-icons("medium-thalmon", $medium-thalmon)
+@mixin unThemeMe($theme-name, $style-changer-color, $wrapper-bg, $wrapper-tx, $mod-bg, $sidebar-bg, $smooth-bg, $vid-div, $spice)
+    #appWrapper.#{$theme-name}
+        background-color: $wrapper-bg
+        color: $wrapper-tx
+        .home-changer, #style-selector, .rotate-180
+            // background-color: $wrapper-bg
+            background-color: $mod-bg
+            i, .tinytext
+                background-color: $mod-bg
+        #style-selector
+            background-color: $wrapper-bg
+        .sidebar
+            background-color: $sidebar-bg
+        #puzzle-body:not(.clearme)
+            color: $spice
+        .navItem, #puzzle-body .clearme
+            background-color: $smooth-bg
+        .video-div
+            background-color: $vid-div
+            border-color: $spice
+
+@include unThemeMe(medium-thalmon, $medium-thalmon, #333, rgb(249, 194, 159), #1b0c10, #555, #2f1b14, #444, $medium-thalmon)
+@include unThemeMe(dark-green, $dark-green, #161616, #68f78e, #100a14, #0a270a, #2f855a, #070708, #68f78e)
+@include unThemeMe(light-black, $light-black, #faf0f0, #001010, #c4acd4, #aa64f1, #dad0d0, #5a5a5a, rgb(24, 21, 36))
+@include unThemeMe(dark-purple, $dark-purple, #000000, #aa64f1, #1e0127, #0e031b, #750ab7, #040007, #92099e)
