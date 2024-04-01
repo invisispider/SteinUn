@@ -27,25 +27,16 @@ const getElement = (pRef: pRef) => {
 const drawWord = (pRef: pRef, chars: string, direc: string) => {
   let i = 0;
 	while (i < chars.length) {
-		if (direc === "across") {
-			const selectedEl = getElement([pRef[0] + i, pRef[1]]);
-			if (selectedEl) {
-				const input = selectedEl.lastElementChild as HTMLInputElement | null;
-				if (input) {
-					input.value = chars.charAt(i)
-				}
+		const selectedEl = (direc==="across")
+			? getElement([pRef[0], pRef[1]+i])
+			: getElement([pRef[0] + i, pRef[1]]);
+		if (selectedEl) {
+			const input = selectedEl.lastElementChild as HTMLInputElement | null;	
+			if (input) {
+				input.value = chars.charAt(i)
 			}
-			i++;
-		} else if (direc === "down") {
-			const selectedEl = getElement([pRef[0], pRef[1] + i]);
-			if (selectedEl) {
-				const input = selectedEl.lastElementChild as HTMLInputElement | null;
-				if (input) {
-					input.value = chars.charAt(i);
-				}
-			}
-      i++;
-    }
+		}
+		i++;
 	}
 };
 const renderChars = () => {
