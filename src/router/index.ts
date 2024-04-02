@@ -46,12 +46,12 @@ const routes: Array<RouteRecordRaw> = [
     name: "Login",
     component: () => import("@/components/Login.vue"),
   },
-  {
-    path: "/Chat",
-    name: "ChatApp",
-    meta: { requiresAuth: true },
-    component: () => import("@/components/Chat/ChatApp.vue"),
-  },
+  // {
+  //   path: "/Chat",
+  //   name: "ChatApp",
+  //   meta: { requiresAuth: true },
+  //   component: () => import("@/components/Chat/ChatApp.vue"),
+  // },
   {
     path: "/Logout",
     name: "LogoutComponent",

@@ -17,17 +17,25 @@ const store = useStore();
 //   showJams.value = true;
 // };
 const carlBatman = watchEffect(() => {
-  if (store.uid) localStorage.setItem("uid", JSON.stringify(store.uid));
-  if (store.username)
-    localStorage.setItem("username", JSON.stringify(store.username));
+  try {
+    if (store.uid) localStorage.setItem("uid", JSON.stringify(store.uid));
+    if (store.username)
+      localStorage.setItem("username", JSON.stringify(store.username));
+  } catch (err) {
+    console.error(err);
+  }
 });
 onMounted(() => {
   if (localStorage) {
-    if (localStorage.getItem("uid")) {
-      store.setUid(JSON.stringify(localStorage.getItem("uid")));
-    }
-    if (localStorage.getItem("username")) {
-      store.setUsername(JSON.stringify(localStorage.getItem("username")));
+    try {
+      if (localStorage.getItem("uid")) {
+        store.setUid(JSON.stringify(localStorage.getItem("uid")));
+      }
+      if (localStorage.getItem("username")) {
+        store.setUsername(JSON.stringify(localStorage.getItem("username")));
+      }
+    } catch(err) {
+      console.error(err)
     }
   }
 });
@@ -83,9 +91,9 @@ onUnmounted(() => {
         >
         <SidebarLink to="/Crossword" key="link4" class="navItem" icon="keyboard_double_arrow_left"
         >Crossword</SidebarLink>
-        <SidebarLink v-if="store.uid" key="link7" class="navItem" to="/Chat" @click="toggleSidebar"
+        <!-- <SidebarLink v-if="store.uid" key="link7" class="navItem" to="/Chat" @click="toggleSidebar"
         >WallChat</SidebarLink
-        >
+        > -->
         <SidebarLink v-if="store.admin" key="link8" class="navItem" to="/Admin" @click="toggleSidebar"
           >Admin</SidebarLink
         >
@@ -98,11 +106,15 @@ onUnmounted(() => {
       </transition-group>
       <div class="glow" v-if="!collapsed" key="banano">
         <span v-if="store.username" class="christmas-icon center">
-          <span class="green">{{ store.username }}</span>
+          <span class="green"><SidebarLink to="/Login" key="link97" class="" 
+          icon="keyboard_double_arrow_left"
+        >{{ store.username }}</SidebarLink></span>
         </span>
-        <span v-else class="red christmas-icon">
-          <i class="material-icons">vpn_key</i>
-        </span>
+        <!-- <span v-else> -->
+        <SidebarLink v-else to="/Login" key="link97" class="red christmas-icon" 
+        icon="keyboard_double_arrow_left"
+      ><i class="material-icons">vpn_key</i></SidebarLink>
+        <!-- </span> -->
       </div>
     </template>
   </div>

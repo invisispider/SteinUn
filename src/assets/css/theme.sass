@@ -6,7 +6,7 @@
     border-radius: 30%
 .tinytext div:hover, .material-icons:hover
     color: red
-
+$mygreen: #31e833
 $dark-purple: #92099e
 $dark-green: #2f855a
 $light-black: #5a5a5a
@@ -40,6 +40,37 @@ $medium-thalmon: rgb(245, 120, 89)
         .video-div
             background-color: $vid-div
             border-color: $spice
+        .login-page
+            background-color: $mod-bg
+            box-shadow: 1px 1px 5px 1px $spice
+            border-radius: 8px
+            h2
+                // background-color: $sidebar-bg
+                color: $spice
+            input
+                background-color: $wrapper-bg
+                border: 1px solid $vid-div
+                color: $wrapper-tx
+                &[name="submit"]
+                    border-radius: 8px
+                    color: $style-changer-color
+            i
+                color: $wrapper-bg
+                text-shadow: -1px -2px $spice
+            a, router-link
+                color: $wrapper-tx
+                padding-block: 3px
+            button, .login-submit-button
+                cursor: pointer
+                background-color: $smooth-bg
+                margin: 3em
+                padding: 1rem
+                margin: 1rem auto
+                color: $wrapper-tx
+                border-radius: 8px
+                border: 1px solid $wrapper-tx
+                padding: 0.6rem 1rem
+
 
 @include unThemeMe(medium-thalmon, $medium-thalmon, #333, rgb(249, 194, 159), #1b0c10, #555, #2f1b14, #444, $medium-thalmon)
 @include unThemeMe(dark-green, $dark-green, #161616, #68f78e, #100a14, #0a270a, #2f855a, #070708, #68f78e)

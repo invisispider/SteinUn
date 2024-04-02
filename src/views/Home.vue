@@ -103,6 +103,9 @@ onBeforeUnmount(() => {
       </transition>
     </div>
     <div class="social-grp">
+      <RouterLink to="TermsOfService">Terms</RouterLink>
+      <RouterLink to="PrivacyPolicy">Privacy</RouterLink>
+
       <template v-for="social in socials" :key="social.name">
         <a :href="social.url" target="_blank">
           <img :src="social.link" class="social">
@@ -111,3 +114,21 @@ onBeforeUnmount(() => {
     </div>
   </div>
 </template>
+<style lang="sass" scoped>
+a, router-link
+  text-decoration: none
+  align-items: flex-end
+  justify-content: flex-end
+  margin-block: auto
+  margin-inline: 1em
+  font-size: 0.4em
+  padding: 0
+.social
+  margin-inline: 0
+  margin-block: 0.5em
+// @media screen and (min-width: 425px)
+  // a, router-link
+    // font-size: 1em
+  // .social
+    // font-size: 1em
+</style>

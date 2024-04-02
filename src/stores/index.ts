@@ -24,10 +24,10 @@ export const useStore = defineStore("main", {
       this.isIn = false;
     },
     setUid(uid: string) {
-      this.uid = uid
+      this.uid = uid.trim()
     },
     setUsername(username: string) {
-      this.username = username
+      this.username = username.trim()
     },
     setAdmin() {
       this.admin = true
