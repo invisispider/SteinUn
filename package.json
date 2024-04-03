@@ -1,6 +1,6 @@
 {
   "name": "stein-unlimited",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
