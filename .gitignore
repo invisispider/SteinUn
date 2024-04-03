@@ -25,6 +25,7 @@ lerna-debug.log*
 *.sw?
 
 # Secret
+.git-credentials
 *.bak
 .DS_Store
 *.local
