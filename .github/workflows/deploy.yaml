@@ -36,7 +36,7 @@ jobs:
         path: playwright-report/
         retention-days: 30
     - name: Deploy to Firebase
-      uses: w9jds/firebase-action@latest
+      uses: w9jds/firebase-action@v1.11.0
       with:
         arg: deploy --only hosting
       env:
