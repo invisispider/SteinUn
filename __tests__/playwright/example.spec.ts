@@ -1,40 +1,18 @@
-// tests/e2e/example.spec.ts
-import { beforeAll, afterAll, beforeEach, afterEach, test, expect } from '@playwright/test';
-import { chromium, Browser, Page } from 'playwright';
+import { test, expect } from '@playwright/test';
 
-// test('Example E2E Test', () => {
-let browser: Browser;
-let page: Page;
+test('has title', async ({ page }) => {
+  await page.goto('/');
 
-beforeAll(async () => {
-  // Launch a browser instance before running the tests
-  browser = await chromium.launch();
+  // Expect a title "to contain" a substring.
+  await expect(page).toHaveTitle(/Stein unLimited/);
 });
 
-afterAll(async () => {
-  // Close the browser instance after all tests are completed
-  await browser.close();
+test('get started link', async ({ page }) => {
+  await page.goto('https://playwright.dev/');
+
+  // Click the get started link.
+  await page.getByRole('link', { name: 'Get started' }).click();
+
+  // Expects page to have a heading with the name of Installation.
+  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
-
-beforeEach(async () => {
-  // Open a new browser page before each test
-  page = await browser.newPage();
-});
-
-afterEach(async () => {
-  // Close the browser page after each test
-  await page.close();
-});
-
-test('should navigate to the homepage', async () => {
-  // Navigate to the homepage of the Vue 3 application
-  await page.goto('http://localhost:3000');
-
-  // Assert that the page title is correct
-  const title = await page.title();
-  expect(title).toBe('Stein Unlimited');
-
-  // You can add more assertions and interactions here
-});
-
-// });

@@ -9,7 +9,7 @@ import Beacon from '@/components/Landing/Beacon.vue';
 import Technomancy from '@/components/Landing/Technomancy.vue';
 import { socials } from "@/composables/socials";
 import { useRouter, useRoute } from 'vue-router';
-document.title = "Stein Unlimited";
+document.title = "Stein unLimited";
 // const soc = socials.value;
 const router = useRouter();
 const route = useRoute();
@@ -85,7 +85,7 @@ onBeforeUnmount(() => {
 </script>
 <template>
   <div class="flex-column" data-test-id="flex-column">
-    <div class="home-changer">
+    <div class="home-changer" name="page-selector">
       <i class="material-icons" style="transform: rotate(180deg);" 
         @click="togglePage('prev')" aria-label="prev">arrow_right_alt</i>
       <div class="tinytext">

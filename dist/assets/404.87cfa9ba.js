@@ -1,1 +1,0 @@
-import{bG as e,c as o,o as t}from"./index.b76d7ea5.js";const r={name:"FourOhFour"};document.title="Uh Oh Oh No";const s={class:"fourohfour"};function _(a,n,c,u,i,p){return t(),o("div",s," The pants is in another castle. ")}var l=e(r,[["render",_]]);export{l as default};

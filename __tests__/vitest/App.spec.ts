@@ -4,13 +4,13 @@ import { mount } from "@vue/test-utils";
 import App from "@/App.vue";
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from "@/views/Home.vue";
-import Greeting from "@/components/Landing/Greeting.vue";
+import Namaste from "@/components/Landing/Namaste.vue";
 import { useMonitorSize } from '@/composables/monitor-size';
 describe("App", () => {
   const size = useMonitorSize();
   const routes = [
-    { path: '/', name: 'Home', redirect: 'landing/Greeting', component: Home, children: [
-        { path: '/landing/Greeting', name: 'Greeting', component: Greeting },
+    { path: '/', name: 'Home', redirect: 'landing/Namaste', component: Home, children: [
+        { path: '/landing/Namaste', name: 'Namaste', component: Namaste },
       ]
     }
   ]
@@ -48,7 +48,7 @@ describe("App", () => {
     const homeComponent = wrapper.findComponent( { name: 'Home' });
     expect(homeComponent.exists()).toBe(true);
   })
-  it("renders Greeting component", () => {
+  it("renders Namaste component", () => {
     expect(wrapper.vm.isVertical).toBe('horizontal');
 
   })

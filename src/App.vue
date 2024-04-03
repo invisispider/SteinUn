@@ -20,8 +20,9 @@ const toggleSidebarNow = () => {
 }
 const isLoading = ref(true);
 onMounted(()=>{
-    isLoading.value = false;
+    toggleLoading();
 });
+const toggleLoading = ()=> isLoading.value = !isLoading.value
 </script>
 <template>
     <div id="appWrapper" :class="[store.styleMode.split(' ').join('-'), isVertical]">

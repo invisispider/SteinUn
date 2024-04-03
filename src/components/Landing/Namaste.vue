@@ -3,7 +3,7 @@
     <div>
         <!-- <h5>Repeat: Love Is Okay</h5> -->
         <h4>🙏🏿 Thank you for being with me. 🙏🏿</h4><p> <RouterLink to="/landing/SteinunLimited">Stein unLimited</RouterLink> is the "doing business 
-            as" of integral/holistic coder, multimedia artist, yoga guy, and music teacher Adam Loewen. While enjoying a cute town and beautiful outdoor recreation in Western Montana, Adam 💚s to learn, earn, sing, dance, and code.</p>
+            as" of integral/holistic coder, multimedia artist, yoga guy, and music teacher Adam Loewen. While enjoying a cute town and beautiful outdoor recreation in Western Montana, Adam 💚s to learn, teach, sing, dance, and code.</p>
         <p><b>Instructions:</b><br>
             Letters at the top (or keyboard arrows) navigate this info section.<br>
             Top left arrow drops down a menu of site features.<br>

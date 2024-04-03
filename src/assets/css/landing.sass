@@ -7,7 +7,7 @@
     justify-self: center
     align-items: center
     padding-block: 5px
-    font-size: 36px
+    font-size: 22px
     width: 100vw
     margin-block: 0.2em
     // margin-inline: auto
@@ -87,10 +87,12 @@
 .tinytext
     justify-self: center
     display: flex
+    // min-height: 10px
     // max-width: 650px
     // margin-inline: 5vw
-    // font-size: 1.1em
     div
         cursor: pointer
         margin: 0.2em
+        @media screen and (max-width: 800px)
+            font-size: 22px
 

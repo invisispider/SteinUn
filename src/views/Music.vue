@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import ThousandPlusPlaylist from "@/components/ThousandPlusPlaylist.vue";
+// import ThousandPlusPlaylist from "@/components/ThousandPlusPlaylist.vue";
 document.title = "Music Lessons with Adam";
 const showPlaylist = ref(true);
 const steinPlayers = ref(false);

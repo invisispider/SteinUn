@@ -18,9 +18,9 @@ const store = useStore();
 // };
 const carlBatman = watchEffect(() => {
   try {
-    if (store.uid) localStorage.setItem("uid", JSON.stringify(store.uid));
+    if (store.uid) localStorage.setItem("uid", JSON.stringify(store.uid).trim());
     if (store.username)
-      localStorage.setItem("username", JSON.stringify(store.username));
+      localStorage.setItem("username", JSON.stringify(store.username).trim());
   } catch (err) {
     console.error(err);
   }
@@ -29,10 +29,10 @@ onMounted(() => {
   if (localStorage) {
     try {
       if (localStorage.getItem("uid")) {
-        store.setUid(JSON.stringify(localStorage.getItem("uid")));
+        store.setUid(JSON.stringify(localStorage.getItem("uid")).trim());
       }
       if (localStorage.getItem("username")) {
-        store.setUsername(JSON.stringify(localStorage.getItem("username")));
+        store.setUsername(JSON.stringify(localStorage.getItem("username")).trim());
       }
     } catch(err) {
       console.error(err)

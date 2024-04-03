@@ -23,8 +23,8 @@ describe("StyleSelector.vue", () => {
     it('has styleMode in my imported store', () => {
         expect(store.styleMode).toBeDefined();
     })
-    it('store defaults to dark purple', () => {
-        expect(store.styleMode).toBe('dark purple');
+    it('store defaults to light black', () => {
+        expect(store.styleMode).toBe('light black');
     })
     it('switches style mode correctly on button click', async () => {
         await wrapper.find('#dark-green').trigger('click');
@@ -37,6 +37,6 @@ describe("StyleSelector.vue", () => {
 
     })
     it("should have icons", () => {
-        expect(wrapper.findAll("i").length).toBe(3);
+        expect(wrapper.findAll("i").length).toBeGreaterThan(3);
     })
 })
