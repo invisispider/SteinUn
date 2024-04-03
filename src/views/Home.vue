@@ -7,10 +7,12 @@ import IntegralTheory from '@/components/Landing/IntegralTheory.vue';
 import Calendar from '@/components/Landing/Calendar.vue';
 import Beacon from '@/components/Landing/Beacon.vue';
 import Technomancy from '@/components/Landing/Technomancy.vue';
-import { socials } from "@/composables/socials";
+import { useSocials } from "@/composables/socials";
+import type { Social } from "@/composables/socials";
 import { useRouter, useRoute } from 'vue-router';
 document.title = "Stein unLimited";
-// const soc = socials.value;
+const { socials } = useSocials();
+// Asynchronously fetch image URLs
 const router = useRouter();
 const route = useRoute();
 const pageSelections = [
@@ -73,12 +75,6 @@ const handleKeydown = (e: KeyboardEvent) => {
 onBeforeMount(() => {
   window.addEventListener('keydown', handleKeydown);
 })
-// onMounted(() => {
-//   if(route.path) {
-//     togglePage(route.path.slice(9))
-//   // console.log(route.path) 
-//   }
-// })
 onBeforeUnmount(() => {
   window.removeEventListener('keydown', handleKeydown);
 })
