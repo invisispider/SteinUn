@@ -25,7 +25,10 @@ onMounted(()=>{
 const toggleLoading = ()=> isLoading.value = !isLoading.value
 </script>
 <template>
-    <div id="appWrapper" :class="[store.styleMode.split(' ').join('-'), isVertical]">
+    <div id="appWrapper" 
+        :class="[store.styleMode.split(' ').join('-'), isVertical]"
+        data-testid="app-wrapper"    
+    >
         <!-- <DevPane /> -->
         <LoadingComponent v-if="isLoading" />
         <template v-else>

@@ -89,7 +89,7 @@ onAuthStateChanged(auth, async (user) => {
       <!-- </div> -->
       <h2>Kenny Logins</h2>
       <div>{{ errorMessage }}</div>
-      <label for="username">account</label>
+      <label for="username">account
       <br>
       <input
       type="email"
@@ -97,9 +97,10 @@ onAuthStateChanged(auth, async (user) => {
       autocomplete="username email"
       v-model="inputUsername"
       />
+      </label>
       <i class="material-icons">supervisor_account</i>
       <br>
-      <label for="password">password</label>
+      <label for="password">password
       <br>
       <input
       type="password"
@@ -107,6 +108,7 @@ onAuthStateChanged(auth, async (user) => {
       autocomplete="current-password"
       v-model="inputPassword"
       />
+      </label>
       <i class="material-icons">password</i>
       <br>
       <input class="login-submit-button" type="submit" name="submit" />

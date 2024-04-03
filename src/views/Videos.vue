@@ -6,7 +6,7 @@ import steinLive from "@/composables/videosstein";
 import randomVids from "@/composables/videosunwolfme";
 import { ref } from "vue";
 // unWolfMe
-const selector = ref('junkReviews');
+const selector = ref('steinLive');
 const buttons = [
   { 'select': 'steinLive', 'display': 'Stein' },
   { 'select': 'junkReviews', 'display': 'Reviews' },
@@ -188,13 +188,15 @@ const gParts = gwtfParts.reverse();
         tricks. Eventually, we were playing shows, and became worthy of interest for local musicians.
       </h4>
       <!-- <h2>Travels</h2> -->
-      <img class="stu-banner" alt="travels" src="@/assets/img/stein1travels.jpg" />
+      <a href="https://thesteinsound.bandcamp.com/album/shades" target="_blank">
+        <img class="stu-banner" alt="travels" src="@/assets/img/stein1travels.jpg" />
+      </a>
       <h2>Travels (2010)</h2>
       <h4>The first set of material written for Stein. 
         It is a concept album that attempts to evoke the tone of the
         psyche as it progresses throughout the day from morning to night. </h4>
-      <h4>
-        Rough around the edges, trying too hard, and often silly, the album nevertheless
+        <h4>
+          Rough around the edges, trying too hard, and often silly, the album nevertheless
         delivers some surprisingly mature riffs and cerebral lyrics, and is undergirded with an
         an insecure but genuinely loving vibe.
       </h4>
@@ -204,7 +206,9 @@ const gParts = gwtfParts.reverse();
         Adam played in other bands and continued making demos under the name "Junk Tracks".
       </p>
       <h3>A new chapter developed when Adam moved into an art house, with a basement.</h3>
-      <img class="stu-banner" alt="accidance" src="@/assets/img/stein2accidance.jpg" />
+      <a href="https://thesteinsound.bandcamp.com/album/accidance-2" target="_blank">
+        <img class="stu-banner" alt="accidance" src="@/assets/img/stein2accidance.jpg" />
+      </a>
       <h2>Accidance! (2015)</h2>
       <h4>The Flophouse was an environment of inclusion and social experimentation. Multiple
         bands of many genres rehearsed and performed in the basement, there were elaborate
@@ -217,24 +221,26 @@ const gParts = gwtfParts.reverse();
         who liked to joke around and talk about deep stuff. We felt an incredible freedom to
         be our own weird selves, like we were not alone.
       </h4>
-      <img class="stu-banner" alt="movies" src="@/assets/img/Accustomed2.png" />
+        <img class="stu-banner" alt="movies" src="@/assets/img/Accustomed2.png" />
       <h4>
         The Accidance! project was a movie on VHS and DVD, with videos for every song, each
         directed by a different person. We had raised money on kickstarter promising
         to "swede" donator suggested movies. So, we did Jurrasic Park, Northern
         Exposure, and Twin Peaks. It was a very weird idea.
       </h4>
-      <img class="stu-banner" alt="shades" src="@/assets/img/stein3shades.jpg" />
+      <a href="https://thesteinsound.bandcamp.com/album/shades" target="_blank">
+        <img class="stu-banner" alt="shades" src="@/assets/img/stein3shades.jpg" />
+      </a>
       <h2>Shades (2016)</h2>
       <h4>Stein likes to move in opposite directions, and so for the follow-up to the DIY
         everything goes basement party project, Adam wanted to do something more personally
         challenging and heartfelt.</h4>
         <h4>Shades was a collection of "black sheep" songs, demos that seemed like compelling
           deep cuts from non-existing bands, that all shared a sort of dreamy sarcasm. It created
-        conflict to introduce a disciplined, high concept set with several ballads to a party
-        dance band.
-      </h4>
-      <h4>Nevertheless, what shines through is feminine, vulnerable, and thought-provoking, with
+          conflict to introduce a disciplined, high concept set with several ballads to a party
+          dance band.
+        </h4>
+        <h4>Nevertheless, what shines through is feminine, vulnerable, and thought-provoking, with
         moments of fist-pumping beauty, and the production and musicianship is generally competent.
         Shades is a mirror companion to Travels, the course of the psyche over the landscape of
         sleep, and the reintegration of that into the complexity of self.

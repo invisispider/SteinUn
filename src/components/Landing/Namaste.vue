@@ -2,7 +2,9 @@
 <template>
     <div>
         <!-- <h5>Repeat: Love Is Okay</h5> -->
-        <h4>🙏🏿 Thank you for being with me. 🙏🏿</h4><p> <RouterLink to="/landing/SteinunLimited">Stein unLimited</RouterLink> is the "doing business 
+        <h4>🙏🏿 Thank you for being with me. 🙏🏿</h4>
+        <h3>This website is a software developer portfolio project revolving around the Stein unLimited brand.</h3>
+        <p> <RouterLink to="/landing/SteinunLimited">Stein unLimited</RouterLink> is the "doing business 
             as" of integral/holistic coder, multimedia artist, yoga guy, and music teacher Adam Loewen. While enjoying a cute town and beautiful outdoor recreation in Western Montana, Adam 💚s to learn, teach, sing, dance, and code.</p>
         <p><b>Instructions:</b><br>
             Letters at the top (or keyboard arrows) navigate this info section.<br>
@@ -14,7 +16,7 @@
         <div class="hero-image">
             <img src="@/assets/img/adam_med.png" class="adam-med">
         </div>
-        <h4>Yes, this is a portfolio website. Let's kill a few birds:</h4>
+        <h4>Let's kill a few birds:</h4>
         <!-- <p>My primary motive was to prove I can build and host a decent modern web app all by myself. This app could serve as a starter template for mildly complicated setups.</p> -->
         <p><RouterLink to="/landing/SteinunLimited">SteinunLimited</RouterLink></p>
         <p><RouterLink to="/landing/UnThinkMe">UnThinkMe</RouterLink></p>

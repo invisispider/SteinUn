@@ -14,7 +14,7 @@ const routeBack = () => {
 }
 </script>
 <template>
-    <div id="style-selector">
+    <div id="style-selector" data-testid="style-selector">
         <div class="btn-grp">
             <i class="material-icons" style="color: #EEE; background-color: #000;" 
                 @click="routeBack">fast_rewind</i>
@@ -22,7 +22,7 @@ const routeBack = () => {
             id="medium-thalmon" class="material-icons">set_meal</i>
             <i @click="switchStyle('light black')"
             id="light-black" class="material-icons">view_timeline</i>
-            <i @click="switchStyle('dark purple')"
+            <i @click="switchStyle('dark purple')" data-testid="dark-purple"
             id="dark-purple" class="material-icons">nightlight</i>
             <i @click="switchStyle('dark green')"
             id="dark-green" class="material-icons">bolt</i>
