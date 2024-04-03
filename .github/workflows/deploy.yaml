@@ -35,12 +35,20 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
-    - name: Deploy to firebase preview channel
-      uses: FirebaseExtended/action-hosting-deploy@v0
+    - name: Deploy to Firebase
+      uses: w9jds/firebase-action@v1
       with:
-        repoToken: "${{ secrets.GITHUB_TOKEN }}"
-        firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_STEIN_UNLIMITED }}"
-        projectId: stein-unlimited
-        channelId: preview
+        arg: deploy --only hosting
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
+
+    # - name: Deploy to firebase preview channel
+    #   uses: FirebaseExtended/action-hosting-deploy@v0
+    #   with:
+    #     repoToken: "${{ secrets.GITHUB_TOKEN }}"
+    #     firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_STEIN_UNLIMITED }}"
+    #     projectId: stein-unlimited
+    #     channelId: preview
         # channelId: production
 
