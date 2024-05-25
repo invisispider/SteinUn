@@ -3,34 +3,42 @@ const props = defineProps(["showChart"]);
 </script>
 <template>
   <div class="conversion-table">
-    <table v-if="props.showChart == 'time'">
+    <table v-if="props.showChart == 'clock'">
       <tr>
-        <th colSpan="4">unLimited Time</th>
+        <th colSpan="4">Clock Time</th>
       </tr>
       <tr>
-        <th class="th">Day</th>
-        <th class="th">10 Sessions</th>
-      </tr>
-      <tr>
-        <th class="th">Session</th>
-        <th class="th">100 Moments</th>
-      </tr>
-      <tr>
-        <th class="th">While</th>
-        <th class="th">10 Moments</th>
+        <th class="th-blue">Instant</th>
+        <th class="th-blue">1 Second</th>
       </tr>
       <tr>
         <th class="th">Moment</th>
         <th class="th">80 Instants</th>
       </tr>
       <tr>
-        <th class="th-blue">Second</th>
-        <th class="th-blue">1 Instant</th>
+        <th class="th">While</th>
+        <th class="th">10 Moments</th>
       </tr>
+        <tr>
+          <th class="th">Session</th>
+          <th class="th">100 Moments</th>
+        </tr>
+        <tr>
+          <th class="th">Day</th>
+          <th class="th">10 Sessions</th>
+        </tr>
+        <tr>
+          <th class="th">zen</th>
+          <th class="th">0.8 Sessions</th>
+        </tr>
     </table>
-    <table v-if="props.showChart == 'date'">
+    <table v-if="props.showChart == 'habit'">
       <tr>
-        <th colSpan="4">unLimited Date</th>
+        <th colSpan="4">Calendar Date</th>
+      </tr>
+      <tr>
+        <th class="th">newZen</th>
+        <th class="th">~5 Days</th>
       </tr>
       <tr>
         <th class="th">Historical Era</th>

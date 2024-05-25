@@ -1,32 +1,46 @@
 <script setup lang="ts">
-import { useRouter } from "vue-router"
 import { useStore } from "@/stores/index";
-const router = useRouter();
+import { onMounted, watch } from "vue";
+type styleName = "light"|"thalmon"|"dark"|"green"
 const store = useStore();
-const switchStyle = (btn_txt: string) => {
-    let mode_map = btn_txt.split(' ');
-    let mode_bg = mode_map[0];
-    let mode_tx = mode_map[1];
-    store.setStyleMode(mode_bg, mode_tx);
+const switchStyle = (sty: styleName) => {
+    store.setStyleMode(sty);
 }
-const routeBack = () => {
-    router.go(-1)
+const storeStyle = (sty: styleName) => {
+    // console.log(sty)
+    localStorage.setItem('stylemode', JSON.stringify(sty));
 }
+watch(()=>store.styleMode, (sty) => {
+    if (sty==="light"||sty==="thalmon"||sty==="dark"||sty==="green") {
+        // console.log('watchStore', sty, sty.length)
+        storeStyle(sty);
+    }
+});
+
+onMounted(()=>{
+    if (localStorage.getItem('stylemode')) {
+        let sty = localStorage.getItem('stylemode')?.replaceAll('"','');
+        // console.log('storageGet', sty, sty.length, sty?.charAt(0));
+        if (sty==="light"||sty==="thalmon"||sty==="dark"||sty==="green") {
+            // console.log('mounted in mem style:', sty);
+            switchStyle(sty);
+        }
+    } else {
+        switchStyle('light');
+    }
+})
 </script>
 <template>
     <div id="style-selector" data-testid="style-selector">
         <div class="btn-grp">
-            <i class="material-icons" style="color: #EEE; background-color: #000;" 
-                @click="routeBack">fast_rewind</i>
-            <i @click="switchStyle('medium thalmon')"
-            id="medium-thalmon" class="material-icons">set_meal</i>
-            <i @click="switchStyle('light black')"
-            id="light-black" class="material-icons">view_timeline</i>
-            <i @click="switchStyle('dark purple')" data-testid="dark-purple"
-            id="dark-purple" class="material-icons">nightlight</i>
-            <i @click="switchStyle('dark green')"
-            id="dark-green" class="material-icons">bolt</i>
-            <!-- <span>style:</span> -->
+            <i @click="switchStyle('green')"
+                id="dark-green" class="material-icons">bolt</i>
+            <i @click="switchStyle('dark')" data-testid="dark-purple"
+                id="dark-purple" class="material-icons">nightlight</i>
+            <i @click="switchStyle('thalmon')"
+                id="medium-thalmon" class="material-icons">set_meal</i>
+            <i @click="switchStyle('light')"
+                id="light-black" class="material-icons">view_timeline</i>
         </div>
     </div>
 </template>

@@ -26,7 +26,7 @@ const toggleLoading = ()=> isLoading.value = !isLoading.value
 </script>
 <template>
     <div id="appWrapper" 
-        :class="[store.styleMode.split(' ').join('-'), isVertical]"
+        :class="[store.styleMode, isVertical]"
         data-testid="app-wrapper"    
     >
         <!-- <DevPane /> -->

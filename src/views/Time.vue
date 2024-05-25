@@ -1,40 +1,21 @@
 <script setup lang="ts">
 import "@/assets/css/time.sass";
-import { ref, computed, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { useTime } from "@/stores/time";
 import { DateTime } from "luxon";
 import YearWheel from "@/components/Time/YearWheel.vue";
 import ZenDay from "@/components/Time/ZenDay.vue";
 import ZenHabit from "@/components/Time/ZenHabit.vue";
-import OGSvgs from "@/components/Time/OGSvgs.vue";
 import { toggleInfoView } from "@/components/Time/toggleInfoView";
 import TimeConversions from "@/components/Time/TimeConversions.vue";
-document.title = "Stein Unlimited Calendar System";
-// import ZenTime from "@/components/Time/ZenTime.vue";
-// import ZenCalendar from "@/components/Time/ZenCalendar.vue"
+document.title = "unLimited Time";
 const store = useTime();
 const timezone = new Date()
   .toLocaleTimeString("en-us", { timeZoneName: "short" })
   .split(" ")[2];
-const displayZenTime = computed(() => [
-  store.zsessionNames.filter((all, id) => id == store.zsess).pop(),
-  " ",
-  store.zsess + 1,
-  ".",
-  String(store.zmoment).padStart(2, "0"),
-  "`",
-  store.instant,
-  " ",
-  timezone,
-  " ",
-  store.dayNames[(store.dayNum) % 5].slice(0, 3),
-  ", ",
-  store.dayNum + 1,
-  " ",
-  store.habitName,
-  ", ",
-  Number(String(store.forma).slice(-4)) + 10000 - 12000
-]);
+const displayZenDate = store.displayZenDate;
+
+const displayZenTime = store.displayZenTime+timezone;
 
 const timePulse = async () => {
   let luxDate = DateTime.now().toLocal();
@@ -71,7 +52,6 @@ onUnmounted(() => {
   timePulse();
 });
 const infoTemplate = ref(``);
-// const todayName = ref(null);
 const showInfo = ref(false);
 const toggle = () => {
   showInfo.value = !showInfo.value
@@ -80,42 +60,43 @@ const toggleShow = (a: string) => {
   showInfo.value = true;
   infoTemplate.value = toggleInfoView(a);
 };
-const smiley = ref(false);
-const showChart = ref("time");
+const showChart = ref("year");
+
 </script>
 <template>
   <div class="zen-wrapper">
-    <!-- <ZenTime /> -->
     <Transition name="phase">
       <div class="info-panel" v-if="showInfo" @click="toggle" key="apple"
-          v-html="infoTemplate">
-      </div>
+        v-html="infoTemplate">
+     </div>
     </Transition>
     <div class="title-logo">
-      <h1 @click="toggleShow('base')" style="cursor: pointer;">unLimited Time</h1>
-      <h2 @click="toggleShow('unlimited')" style="cursor: pointer;">{{ displayZenTime.slice(0,9).reduce((acc, cv)=>acc+cv) }}<br>
-        {{ displayZenTime.slice(9).reduce((acc, cv)=>acc+cv) }}</h2>
-      <h3 @click="toggleShow('roman')" style="cursor: pointer;">ROMAN:<br>{{ store.forma }}</h3>
-      <p>click around for information</p>
+      <h1 @click="toggleShow('base')" style="cursor: pointer;">unLimited<img src="@/assets/icons/favicon-32x32.png" />Time</h1>
+      <h2 class="readout" @click="toggleShow('unlimited')" style="cursor: pointer;">
+        {{ store.displayZenTime }}
+        <br>
+        {{ store.displayZenDate }}
+      </h2>
+        <!-- <h3 @click="toggleShow('roman')" style="cursor: pointer;">ROMAN:<br>{{ store.forma }}</h3> -->
       <transition name="wiggle" appear>
-        <div class="smiley time-border">
-          <div class="table-modal" v-if="smiley">
-            <i class="material-icons" :class="showChart == 'time' ? 'active' : ''"
-              @click="showChart = 'time'">coffee</i>
-            <i class="material-icons" :class="showChart == 'date' ? 'active' : ''"
-              @click="showChart = 'date'">sports_martial_arts</i>
-            <TimeConversions :showChart="showChart" />
-          </div>
-          <i @click.prevent="smiley = !smiley" class="material-icons" v-html="smiley ? 'mood_bad' : 'mood'"></i>
+        <div class="smiley">
+          <!-- <div class="table-modal"> -->
+          <i class="material-icons" :class="showChart == 'clock' ? 'active' : ''"
+          @click="showChart = 'clock'">watch_later</i>
+          <i @click="showChart='year'" class="material-icons" :class="showChart == 'year' ? 'active' : ''" v-html="'face'"></i>
+            <!-- coffee sports_martial_arts -->
+          <i class="material-icons" :class="showChart == 'habit' ? 'active' : ''"
+            @click="showChart = 'habit'">insert_invitation</i>
+          <TimeConversions v-if="showChart!='year'" :showChart="showChart" />
+          <!-- </div> -->
+          <YearWheel v-else-if="showChart=='year'" @zendate="toggleShow('zendate')" @holiday="toggleShow('holiday')"
+            @solstice="toggleShow('solstice')" @habits="toggleShow('habits')"
+            @newzen="toggleShow('newzen')" />
         </div>
       </transition>
     </div>
-    <OGSvgs @clock="toggleShow('clock')" @session="toggleShow('session')"
-    @while="toggleShow('while')" @instant="toggleShow('instant')"/>
-    <ZenDay @dayschedule="toggleShow('dayschedule')" />
+    <ZenDay @dayschedule="toggleShow('dayschedule')" @clock="toggleShow('clock')" @session="toggleShow('session')"
+      @while="toggleShow('while')" @instant="toggleShow('instant')" />
     <ZenHabit @habit="toggleShow('habit')" />
-    <YearWheel @zendate="toggleShow('zendate')" @holiday="toggleShow('holiday')"
-      @solstice="toggleShow('solstice')" @habits="toggleShow('habits')"
-      @newzen="toggleShow('newzen')" />
   </div>
 </template>

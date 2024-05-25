@@ -49,8 +49,7 @@ onUnmounted(() => {
   <span
       class="collapse-icon"
       @click="toggleSidebar"
-    >
-    <i class="material-icons" :class="{ 'rotate-180': collapsed}">keyboard_double_arrow_left</i>
+    ><i class="material-icons" :class="{ 'rotate-180': collapsed}">keyboard_double_arrow_left</i>
   </span>
   <template v-if="!collapsed">
       <transition-group

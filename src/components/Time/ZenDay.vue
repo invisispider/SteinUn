@@ -1,15 +1,17 @@
 <script setup lang="ts">
 import { useTime } from "@/stores/time";
 import { computed } from "vue";
-// import { useMonitorSize } from '@/composables/monitor-size';
-// const sizes = useMonitorSize();
+import { useMonitorSize } from '@/composables/monitor-size';
+const sizes = useMonitorSize();
 const store = useTime();
-const svgWidth = 220
+const emit = defineEmits(["dayschedule", "clock", "session", "while", "instant"]);
 
-// computed(() => sizes.browserWidth.value<600 ? sizes.browserWidth.value : 600);
-const svgHeight = 500;
-
-const gregWidth = svgWidth / 5;
+const svgWidth = 240
+const svgHeight = svgWidth*400/svgWidth;
+// const svgWidth = computed(()=> { 
+//   return sizes.browserWidth.value<400?sizes.browserWidth.value:400;
+// });
+const gregWidth = svgWidth / 8;
 const halfWidth = svgWidth - gregWidth;
 const rSpread = svgHeight / 24;
 const zSpread = svgHeight / 10.8;
@@ -17,14 +19,53 @@ const zenSpread = svgHeight / 13.5;
 const hou_height = computed(() =>
   Math.floor(svgHeight - (svgHeight / 24) * store.zhour)
 );
-const rotateOrigin = (h_h: number) =>
-  "transform-origin: " + gregWidth + "px " + h_h + "px";
-const emit = defineEmits(['dayschedule'])
+// const rotateOrigin = (h_h: number) =>
+  // "transform-origin: " + gregWidth + "px " + h_h + "px";
+const svgH = 22;
 </script>
 <template>
   <div @click="emit('dayschedule')" style="cursor: pointer;" 
-    class="day-container time-border">
-    <h2>Day</h2>
+    class="day-container">
+    <!-- <div class="zenclock-container"> -->
+      <!-- <div class="clock"> -->
+      <!-- <div @click="emit('clock')"> -->
+        <!-- <h2>Clock</h2> -->
+        <!-- <p>Not going round a circle. Making progress towards outcomes.</p> -->
+      <!-- </div> -->
+    <!-- </div> -->
+    <svg :width="svgWidth" :height="74" class="zen-borders">
+      <g>
+        <rect :width="svgWidth"
+              :height="30" class="daytop-bg">
+            </rect>
+        <text @click="emit('session')" :height="30" x="50%" y="20" 
+          text-anchor="middle" :textLength="svgWidth-100" 
+          v-text="'Sessions Clock'" class="greg-text" 
+        />
+      </g>
+      <g @click="emit('while')">
+        <rect :y="30" :width="svgWidth" :height="svgH" class="daytop-bg" />
+        <rect :width="(svgWidth / 100) * store.zmoment"
+          :height="svgH" :y="30"
+          class="alt-fill"
+        />
+        <rect :width="(svgWidth / 10) * store.zwhile"
+          :height="svgH" :y="30" class="inner-rect"
+        />
+        <text x="4" :y="16+30" class="daytop-tx">
+          Moment: {{ store.zmoment }}
+        </text>
+      </g>
+      <g @click="emit('instant')">
+        <rect :y="52" :width="svgWidth" :height="svgH" class="daytop-bg" />
+        <rect :y="52" class="inner-rect"
+          :width="(svgWidth / store.ins_in_mom) * store.instant" 
+          :height="svgH"
+          />
+        <text x="4" :y="30+22+16" class="daytop-tx">Instant: {{ store.instant }}</text>
+      </g>
+    </svg>
+
     <svg :width="svgWidth" :height="svgHeight">
       <g id="gregMeter" fill="none">
         <template v-for="(num, i) in 25" :key="num + 100">
@@ -65,17 +106,20 @@ const emit = defineEmits(['dayschedule'])
             :width="halfWidth"
             :height="zSpread"
             class="zen-borders"
-          />
+            :class="(10-j)<=store.zsess?'session-before':'session-after'"
+            />
           <text
             :x="svgWidth / 4"
             :y="j * zSpread + zSpread / 2"
             class="zen-mint"
+            :class="{ sessionActive: (10-j)==store.zsess} "
           >
-            {{ store.zsessionNames[10 - j] }}{{ " | " }}{{ 11 - j }}
+          {{ j!=0?11 - j:'' }} {{ store.zsessionNames[10 - j] }}
           </text>
-          <!-- </template> -->
         </template>
       </g>
+
+
       <g id="clockHand" fill="none">
         <line
           x1="0"
@@ -84,14 +128,15 @@ const emit = defineEmits(['dayschedule'])
           :y2="hou_height"
           class="clock-hand"
         />
-        <circle
+        <!--<circle
           :cx="gregWidth"
           :cy="hou_height"
           r="20"
           class="center-circle tick-pulse"
           :style="rotateOrigin(hou_height)"
-        />
+        />-->
       </g>
+
     </svg>
   </div>
 </template>

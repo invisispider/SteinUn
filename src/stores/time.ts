@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 export const useTime = defineStore("time", {
   state: () => ({
+    dayOfYear: 0,
     zsessionNames: [
       "Dawn",
       "Breakfast",
@@ -26,7 +27,7 @@ export const useTime = defineStore("time", {
       "~newZen~",
     ],
     dayNames: [
-      "Sunday", "Tuesday", "Thursday", "Friday", "Saturday"
+      "Sun", "Tues", "Thurs", "Fri", "Satur"
     ],
     ins_in_mom: 80,
     mom_in_whi: 10,
@@ -48,14 +49,33 @@ export const useTime = defineStore("time", {
     zsess: 0,
     true_h: 0,
     habitNum: 0,
-    dayNum: 0,
+    dayNum: 0
   }),
   getters: {
     habitName: (state) => state.habitNames[state.habitNum],
     dayName: (state) => state.dayNames[(state.dayNum-1)%5],
     dayOfWeekZen: (state) => (state.dayNum-1)%5,
+    displayZenDate: (state) => {
+      return String(state.habitNames[state.habitNum])+" "+
+        String(state.dayNum + 1)+" "+
+        state.dayNames[(state.dayNum) % 5]+" "+
+        String(Number(state.forma.slice(-4)) + 10000)
+    },
+    displayZenTime: (state) => {
+      return String(state.zsessionNames.filter((all, id) => id == state.zsess).pop())+
+        " "+
+        String(state.zsess + 1)+
+        "."+
+        String(state.zmoment).padStart(2, "0")+
+        "`"+
+        String(state.instant)+
+        " "
+    }
   },
   actions: {
+    setDayOfYear(day: number) {
+      this.dayOfYear = day
+    },
     setHabitNum(habit: number) {
       this.habitNum = habit
     },

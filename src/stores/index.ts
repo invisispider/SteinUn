@@ -3,7 +3,7 @@ import type { RootState } from "@/models/states.model"
 export const useStore = defineStore("main", {
   state: () =>
   ({
-    styleMode: 'light black',
+    styleMode: '',
     isIn: false,
     authIsReady: false,
     uid: '',
@@ -11,8 +11,8 @@ export const useStore = defineStore("main", {
     admin: false,
   } as RootState),
   actions: {
-    setStyleMode(mode: string, text: string) {
-      this.styleMode = mode+' '+text;
+    setStyleMode(name: string) {
+      this.styleMode = name;
     },
     setAuthIsReady() {
       this.authIsReady = true;

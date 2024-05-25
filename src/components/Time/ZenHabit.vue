@@ -2,54 +2,35 @@
 import { ref, reactive, watchEffect, onMounted } from "vue";
 import { useTime } from "@/stores/time";
 const store = useTime();
-const coreDate = ref(new Date());
-const habitName = ref("");
-const gYear = ref(new Date().getFullYear());
 const daysInHabit = ref(45);
-const state = reactive({
-  monthNum: 0,
-  gregDate: 0,
-  startOfYear: 0,
-  dayOfYear: 0,
-  firstDayOfCurrentMonth: 0,
-  startingDateName: "",
-  daysInCurrentMonth: 0,
-  romanFancy: "",
-  monthName: "",
-  dayOfHabit: 0,
-  dayStartOffset: 0,
-});
-// const getHabitFromName = (hName: string) => store.habitNames.indexOf(hName);
-const getNameFromHabit = (habit: number) => store.habitNames[habit];
-// const getHabitFromDay = (doy: number) => Math.floor(doy / daysInHabit.value);
-// const firstDayOfHabit = (hab: number) =>
-// new Date(gYear.value, 0, 1 + daysInHabit.value * state.habitNum);
-onMounted(() => {
-  state.dayOfHabit = state.dayOfYear - state.habitNum * daysInHabit.value;
-  store.setHabitNum(state.habitNum);
-  store.setDayNum(state.dayOfHabit);
-});
+const dayOfHabit = ref(0);
 watchEffect(() => {
-  state.startOfYear = new Date(gYear.value, 0, 1);
+  let startOfYear = Number(new Date(new Date().getFullYear(), 0, 1));
+  let dayOfYear = Math.floor(Number(new Date(Number(new Date()) - startOfYear)) / 86400000);
   // add 1?? On Jan 17, it said 18 Struggles, so I took away the +1
-  state.dayOfYear =
-    Math.floor(new Date(coreDate.value - state.startOfYear) / 86400000);
-  state.habitNum = Math.floor(state.dayOfYear / daysInHabit.value);
-  habitName.value = getNameFromHabit(state.habitNum);
+  store.setDayOfYear(dayOfYear);
+  dayOfHabit.value = store.dayOfYear - store.habitNum * daysInHabit.value;
+  store.setDayNum(dayOfHabit.value);
+  store.setHabitNum(Math.floor(store.dayOfYear / daysInHabit.value));
 });
-const emit = defineEmits(["habit"])
+const emit = defineEmits(["habit"]);
 </script>
 <template>
-  <section @click="emit('habit')" id="habits" class="time-border">
-    <div style="cursor: pointer;" class="above-cal">
-      <h2>
-        <!-- {{ store.dayNames[(state.dayOfHabit) % 5] }}{{", "}} -->
-        <!-- {{ state.dayOfHabit+1 }} -->
-        Habit: {{ habitName }} {{ Number(String(store.forma).slice(-4)) + 10000 }}
-      </h2>
-    </div>
+  <section @click="emit('habit')" id="habits">
+    <!-- <div style="cursor: pointer;" class="above-cal"> -->
+      <!-- <h2> -->
+        <!-- {{ store.dayNames[(dayOfHabit) % 5] }}{{", "}} -->
+        <!-- {{ dayOfHabit+1 }} -->
+        
+        <!-- Habit  -->
+        <!-- {{ Number(String(store.forma).slice(-4)) + 10000 }} -->
+      <!-- </h2> -->
+    <!-- </div> -->
     <div class="zen-calendar">
-      <div class="unchunk" v-if="habitName !== '~newZen~'">
+      <!-- <div class="baheader"> -->
+        <h2>{{store.habitName}} Habit</h2>
+      <!-- </div> -->
+      <div class="unchunk" v-if="store.habitName !== '~newZen~'">
         <div
           class="baheader baheader-zen"
           v-for="day of store.dayNames"
@@ -60,7 +41,7 @@ const emit = defineEmits(["habit"])
         <div
           class="uncell uncell-zen"
           v-for="d of daysInHabit"
-          :class="d == state.dayOfHabit+1 ? 'selected-date' : ''"
+          :class="d == dayOfHabit+1 ? 'selected-date' : ''"
           :key="d"
         >
           <i v-if="d === 1" class="material-icons holiday">self_improvement</i>
@@ -78,13 +59,12 @@ const emit = defineEmits(["habit"])
         <div
           class="uncell uncell-zen"
           v-for="(d, ind) of store.dayNames"
-          :class="ind + 1 == state.dayOfHabit+1 ? 'selected-date' : ''"
+          :class="ind + 1 == dayOfHabit+1 ? 'selected-date' : ''"
           :key="ind"
         >
           <i class="material-icons holiday">self_improvement</i>
         </div>
       </div>
     </div>
-    <h2>Day Of Year: {{ state.dayOfYear+1 }}</h2>
   </section>
 </template>

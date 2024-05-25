@@ -29,6 +29,10 @@ button, a, router-link, RouterLink, i
     min-height: 100vh
     text-align: center
     justify-content: flex-start
+    @media screen and (min-width: 999px)
+        .flex-column p, .info-panel p
+            text-align: left
+            text-indent: 3em
     // max-width: 100vw
 // MOBILE VERTICAL STYLE
 #appWrapper.vertical
@@ -43,6 +47,9 @@ button, a, router-link, RouterLink, i
         // max-width: 650px
         // margin-inline: 5vw
         font-size: 0.6em
+        .landing-icons
+            margin: 0
+            // max-width: 1%
     #landing-title
         margin-block-start: 25%
 .flex-column
@@ -143,8 +150,8 @@ button, a, router-link, RouterLink, i
     transition: .3s ease
     font-family: Poppins
     // font-family: Roboto
-.sidebar:has(.rotate-180)
-    padding: 0
+// .sidebar:has(.rotate-180)
+    // padding: 0
 .sidebar:not(.sidebar:has(.rotate-180))
     border-right: 2px solid #18222c
 // .sidebar h1
@@ -215,3 +222,8 @@ button, a, router-link, RouterLink, i
             padding: .2rem
 #player
     max-width: 100vw
+
+
+// UTILITY CLASSES
+.pointer
+    cursor: pointer

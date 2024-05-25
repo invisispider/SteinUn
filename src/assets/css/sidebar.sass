@@ -18,12 +18,14 @@ button, a, router-link, RouterLink, i
 .sidebar
 	position: fixed
 	z-index: 1
-	top: 1%
-	left: 1%
+	// top: 1%
+	// left: 1%
 	padding: .5em .5em 6em .5em
 	transition: .3s ease
 .sidebar:has(.rotate-180)
+	// position: relative
 	padding: 0
+	// border: 2px solid #2c3e50
 .sidebar:not(.sidebar:has(.rotate-180))
 	border-right: 2px solid #2c3e50
 .clock-wrapper
@@ -32,12 +34,14 @@ button, a, router-link, RouterLink, i
 	color: #92099e
 	transition: .2s linear
 	z-index: 540
+	// border-radius: 0
+	min-width: 100px
 .collapse-icon:not(.rotate-180)
-	bottom: 10%
-	left: 41%
+	// bottom: 10%
+	// left: 41%
 
 .rotate-180
-	left: 7px
+	// left: 7px
 	transform: rotate(180deg)
 	transition: .2s linear
 .vac-col-messages
