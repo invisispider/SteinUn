@@ -32,7 +32,16 @@ describe('Home', () => {
         expect(wrapper.find('div.flex-column').exists()).toBe(true);
     })
     it("contains sub-page names", () => {
-        expect(wrapper.vm.pageSelections).toContain('Namaste')
+        // console.log(wrapper.vm.pageSelections)
+        expect(wrapper.vm.pageSelections).toEqual([
+            { name: 'Namaste', icon: 'flood' },
+            { name: 'UnThinkMe', icon: 'transcribe' },
+            { name: 'Calendar', icon: 'query_builder' },
+            { name: 'IntegralTheory', icon: 'psychology' },
+            { name: 'Beacon', icon: 'settings_input_antenna' },
+            { name: 'SteinunLimited', icon: 'work_outline' },
+            { name: 'Technomancy', icon: 'terminal' }
+          ])
     })
     it('shows page selector component', async () => {
         expect(wrapper.find('div[name="page-selector"]').isVisible()).toBe(true);
@@ -62,7 +71,7 @@ describe('Home', () => {
         expect(prevButton.exists()).toBe(true)
         await nextButton.trigger('click')
         const nextPage = wrapper.find('h1#landing-title').text();
-        expect(nextPage).toBe('SteinunLimited');
+        expect(nextPage).toBe('UnThinkMe');
         await prevButton.trigger('click');
         await prevButton.trigger('click');
         expect(wrapper.vm.selected).toBe('Technomancy');

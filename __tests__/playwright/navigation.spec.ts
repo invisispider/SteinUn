@@ -9,12 +9,13 @@ test('has title', async ({ page }) => {
 test('style selector and navigation', async ({ page }) => {
   await page.goto('/');
   // Check the default theme is light.
-  const el = await page.$('.light-black');
+  const el = await page.$('.light');
   
   const computedStyle = await el?.evaluate(el => {
     const style = window.getComputedStyle(el);
     return style.backgroundColor;
   });
+  console.log(computedStyle)
   expect(computedStyle).toBe('rgb(250, 240, 240)')
 
   // change the theme to dark purple
@@ -37,7 +38,7 @@ test('style selector and navigation', async ({ page }) => {
   await expect(page.locator('div.sidebar.topnav')).toHaveText(/Music/);
 
   await page.goto('/Time');
-  await expect(page.locator('div.title-logo > h1')).toHaveText(/unLimited Time/);
+  await expect(page.locator('div.title-logo > h1')).toHaveText(/unLimitedTime/);
 
   await page.goto('/Admin');
   await expect(page).toHaveURL('/');

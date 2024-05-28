@@ -24,16 +24,16 @@ describe("StyleSelector.vue", () => {
         expect(store.styleMode).toBeDefined();
     })
     it('store defaults to light black', () => {
-        expect(store.styleMode).toBe('light black');
+        expect(store.styleMode).toBe('light');
     })
     it('switches style mode correctly on button click', async () => {
         await wrapper.find('#dark-green').trigger('click');
         nextTick()
-        expect(store.styleMode).toBe('dark green');
+        expect(store.styleMode).toBe('green');
     })
     it('switches style with function', async () => {
-        await wrapper.vm.switchStyle('light black');
-        expect(store.styleMode).toBe('light black');
+        await wrapper.vm.switchStyle('light');
+        expect(store.styleMode).toBe('light');
 
     })
     it("should have icons", () => {

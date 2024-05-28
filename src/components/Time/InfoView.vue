@@ -243,19 +243,40 @@ const props = defineProps(['infoview']);
             different in terms of how the world looks and what people are usually up to, with an 
             extra 0.8x-length zenSession considered "outside" of the day. 
         </p>
-        <h3>A typical day:</h3>             
-        <p><br><b>1 Dawn:</b> Early birds rise, light appears.<br>
-            <b>2 Breakfast:</b> Wake up, prepare, commute, show up.<br>
-            <b>3 Morning:</b> First chunk of work day.<br>
-            <b>4 Lunch:</b> Middle period and work break.<br>
-            <b>5 Afternoon:</b> End chunk of work day.<br>
-            <b>6 Dinner:</b> Home life and duties.<br>
-            <b>7 Evening:</b> Nightlife and mellow time.<br>
-            <b>8 Night:</b> Common bedtime range.<br>
-            <b>9 Midnight:</b> Middle section of sleep time.<br>
-            <b>10 Dead:</b> The "dead of night".<br>
-            <b>~zen~:</b> Reserved generic sacred timeslot.
-            </p>        
+        <h3>A typical day:</h3>          
+        <div class="holiday-flex">
+        <h3>1 Dawn:</h3><p></p>Early birds rise, light appears.
+        </div>
+        <div class="holiday-flex">
+        <h3>2 Breakfast:</h3><p>Wake up, prepare, commute, show up.</p>
+        </div>
+        <div class="holiday-flex">
+        <h3>3 Morning:</h3><p>First chunk of work day.</p>
+        </div>
+        <div class="holiday-flex">
+        <h3>4 Lunch:</h3><p>Middle period and work break.</p>
+        </div>
+        <div class="holiday-flex">
+        <h3>5 Afternoon:</h3><p>End chunk of work day.</p>
+        </div>
+        <div class="holiday-flex">
+        <h3>6 Dinner:</h3><p>Home life and duties.</p>
+        </div>
+        <div class="holiday-flex">
+        <h3>7 Evening:</h3><p>Nightlife and mellow time.</p>
+        </div>
+        <div class="holiday-flex">
+        <h3>8 Night:</h3><p>Common bedtime range.</p>
+        </div>
+        <div class="holiday-flex">
+        <h3>9 Midnight:</h3><p>Middle section of sleep time.</p>
+        </div>
+        <div class="holiday-flex">
+        <h3>10 Dead:</h3><p>The "dead of night".</p>
+        </div>
+        <div class="holiday-flex">
+        <h3>~zen~:</h3><p>Reserved generic sacred timeslot.</p>
+        </div>
 
         <h2>Sessions</h2>
             <p>A <b>Session</b> is about how long an activity reasonably takes (about 2.2 hours), and is
@@ -569,6 +590,8 @@ const props = defineProps(['infoview']);
     flex-wrap: nowrap
     align-items: center
     justify-content: space-between
+    @media screen and (min-width: 1000px)
+        margin-inline: 15%
     h3
         color: #0F0
         text-wrap: nowrap
