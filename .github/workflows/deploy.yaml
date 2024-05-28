@@ -51,6 +51,5 @@ jobs:
         repoToken: "${{ secrets.GITHUB_TOKEN }}"
         firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_STEIN_UNLIMITED }}"
         projectId: stein-unlimited
-        channelId: preview
         channelId: production
 
