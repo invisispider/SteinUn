@@ -8,6 +8,7 @@ const collapseAcross = ref(false);
 const collapseDown = ref(true);
 const rowNum = 11;
 const colNum = 11;
+const cheating = ref(false);
 const toggle = (direc: string) => {
   if (direc == "across") {
     collapseAcross.value = !collapseAcross.value;
@@ -43,7 +44,16 @@ const renderChars = () => {
   across.value.forEach((datum) => drawWord(datum.pos as pRef, datum.answer, "across"));
   down.value.forEach((datum) => drawWord(datum.pos as pRef, datum.answer, "down"));
 };
+const answerCode = ref('');
 onMounted(() => {
+	// prepare for answer check
+	across.value.forEach((ans)=> {
+		answerCode.value += ans.answer;
+	})
+	down.value.forEach((ans)=> {
+		answerCode.value += ans.answer;
+	})
+
   const renderMatrix = () => {
     const m: [string[]] = [['','']];
     for (let i = 0; i < 11; i++) {
@@ -129,8 +139,10 @@ const clueMe = () => {
       "This will erase your porgoresst! Are you REALLY sure? If you are, you can keep mashing it btw."
     )
   ) {
+	cheating.value=true
     setTimeout(() => {
       resetInputs(false);
+	  cheating.value=false
     }, 3000);
     renderChars();
   }
@@ -169,6 +181,46 @@ const moveMe = (keyPress: string, row: number, col: number) => {
 	// child.focus();
   // }
 };
+
+const checkAnswer = () => {
+	if (cheating.value) {
+		return false
+	}
+	const checkAcross = () => {
+		let tentativeSuccess = true
+		across.value.forEach((entry)=>{
+			let ans = entry.answer
+			let pos = entry.pos
+			for (let i=0; i<ans.length; i++) {
+				let testCell = document.querySelector(`#puzzle input[name='${pos[0]}x${pos[1]+i}']`)
+				if (testCell.value.toUpperCase()!=ans[i]) {
+					console.info(testCell.value, ans, i, ans[i])
+					tentativeSuccess = false
+					break
+				}
+			}
+		})
+		down.value.forEach((entry)=>{
+			let ans = entry.answer
+			let pos = entry.pos
+			for (let i=0; i<ans.length; i++) {
+				let testCell = document.querySelector(`#puzzle input[name='${pos[0]+i}x${pos[1]}']`)
+				if (testCell.value.toUpperCase()!=ans[i]) {
+					console.info(testCell.value, ans, i, ans[i])
+					tentativeSuccess = false
+					break
+				}
+			}
+		})
+		return tentativeSuccess
+	}
+	let test = checkAcross();
+	if (test) {
+		alert('my god you made all the ppporgus!');
+	} else {
+		alert('Hmm. Not quite.')
+	}
+}
 // so, in the render, check if querySelectorAll("input[value='']"), setTimeout, change values,
 // then instead of refresh all function, use those stored input refs to clear.
 </script>
@@ -191,10 +243,9 @@ const moveMe = (keyPress: string, row: number, col: number) => {
 									@keyup.down="moveMe('down', row + 1, col)"
 									@keyup.up="moveMe('up', row - 1, col)"
 									maxlength="1"
-									val=""
 									type="text"
 									tabindex="-1"
-									name="`'${row}+${col}'`"
+									:name="`${row}x${col}`"
 								/>
 							</td>
 						</tr>
@@ -237,14 +288,18 @@ const moveMe = (keyPress: string, row: number, col: number) => {
 					</span>
 					<span id="other" @click="clueMe"> 
 						<i class="material-icons">visibility</i>
-						clueMe
+						clue
+					</span>
+					<span id="check" @click="checkAnswer">
+						<i class="material-icons">mood</i>
+						solve
 					</span>
 					<span id="clear" @click="resetInputs(true)">
 						<i
 						class="material-icons"
 						>delete_outline</i
 						>
-						resetBoard
+						reset
 						</span
 					>
 				</div>
@@ -255,15 +310,10 @@ const moveMe = (keyPress: string, row: number, col: number) => {
 <style scoped lang="sass">
 $thalmon: rgb(249, 194, 159)
 $orange-hover: #666
-// $thalmon
 $span-box-shadow: 0 0 5px 1px #53e6cb
 $button-text: lighten(orange, 20%)
 $button-color: #333
 $icon-color: #333
-
-// $glow: #555
-// $clue-done: #555
-// $icon-text
 
 #puzzle-body
 	margin-block: 2.4em
