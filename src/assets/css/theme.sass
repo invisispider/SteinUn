@@ -1,16 +1,3 @@
-.rotate-180
-    top: 0
-    padding: 6px 50px
-    margin: 0
-    border-radius: 5%
-.home-changer i
-    // padding: 0.3em
-    // border-radius: 30%
-.tinytext
-    padding: 0.3em
-    border-radius: 30%
-.tinytext div:hover, .material-icons:hover
-    color: red
 $mygreen: #31e833
 $dark-purple: #92099e
 $dark-green: #2f855a
@@ -29,14 +16,15 @@ $medium-thalmon: rgb(245, 120, 89)
     #appWrapper.#{""+$theme-name}
         background-color: $wrapper-bg
         color: $wrapper-tx
-
         .rotate-180
             background-color: $sidebar-bg
         .home-changer, #style-selector
-            // background-color: $wrapper-bg
             background-color: $mod-bg
             i, .tinytext
                 background-color: $mod-bg
+            i:hover, .tinytext:hover
+                background-color: $sidebar-bg
+
         #style-selector
             background-color: $wrapper-bg
         .sidebar
@@ -110,31 +98,29 @@ $medium-thalmon: rgb(245, 120, 89)
             color: $spice
 
         .clock-hand
-            stroke: $spice
+            stroke: $schleem
             stroke-width: 2
-        .greg-dark, .greg-light, .greg-text, .zen-rect, .zen-borders
+        .greg-dark, .greg-light, .greg-text
             stroke: $wrapper-tx
+        .zen-borders
+            stroke: $style-changer-color
+            stroke: $wrapper-tx
+            stroke: $smooth-bg
         .greg-dark
             fill: $smooth-bg
         .greg-light
-            // stroke: $wrapper-tx
             fill: $vid-div
         .greg-text
-            // stroke: $wrapper-tx
             fill: $wrapper-tx
-        // .zen-rect
-            // stroke: $wrapper-tx
         .zen-mint
             fill: $wrapper-tx
-        .zen-borders
-            fill: $mod-bg
-            // stroke: $wrapper-tx	
         .inner-rect
             fill: $spice
         .daytop-bg
             fill: $smooth-bg
         .daytop-tx
             fill: $wrapper-tx
+            stroke: $wrapper-tx
         .alt-fill
             fill: $mod-bg
         .black-fill
@@ -157,14 +143,16 @@ $medium-thalmon: rgb(245, 120, 89)
             color: $schleem
         .uncell
             background-color: $sidebar-bg
+        
         .selected-date
             background-color: $mod-bg
-            color: $wrapper-bg
+            color: $spice
         .uncell-zen
             border: 1px solid $mod-bg
         .uncell-zen:hover
-            // border: 1px solid $smooth-bg
             background-color: $smooth-bg
+        .zen-borders:hover
+            fill: $smooth-bg
         .conversion-table
             background-color: $wrapper-bg
             table
@@ -174,10 +162,23 @@ $medium-thalmon: rgb(245, 120, 89)
                     border: 1px solid $style-changer-color
                 .th-blue
                     border: 1px solid $sidebar-bg
+        .info-panel
+            z-index: 6000
+            .btn-grp
+                background-color: $mod-bg
+                // color: red
+                a:hover
+                    color: green
+                .active
+                    color: blue
 
+            i, .tinytext
+                background-color: $mod-bg
+            i:hover, .tinytext:hover
+                background-color: $sidebar-bg
 // $style-changer-color, $wrapper-bg, $wrapper-tx, $mod-bg, 
 // $sidebar-bg, $smooth-bg, $vid-div, $spice
 @include unThemeMe(thalmon, $medium-thalmon, #333, rgb(249, 194, 159), #1b0c10, #555, #2f1b14, #444, $medium-thalmon, #704433)
-@include unThemeMe(green, $dark-green, #161616, #68f78e, #100a14, #0a270a, rgb(106, 73, 155), #070708, #2f855a, rgb(31, 237, 55))
+@include unThemeMe(green, $dark-green, #161616, #68f78e, #100a14, #0a270a, rgb(0, 0, 0), #070708, #2f855a, rgb(31, 237, 55))
 @include unThemeMe(light, $light-black, #faf0f0, #012121, #c4acd4, #957fc8, #dad0d0, #5a5a5a, rgb(139, 107, 228), #022326)
 @include unThemeMe(dark, $dark-purple, #000000, #cfb0ef, #1e0127, #0e031b, #750ab7, #040007, #92099e, #6f8d7d)

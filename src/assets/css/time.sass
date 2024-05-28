@@ -21,14 +21,18 @@
 	flex-direction: column
 	padding: 20px 5px
 	// max-width: 100vw
+	@media screen and (min-width: 700px)
+		display: grid
+		grid-template-columns: 1fr 1fr
+		grid-template-areas: "dayContainer titleLogo" "habitsDiv habitsDiv"
+		#habits
+			justify-content: center
 	@media screen and (min-width: 1000px)
 		display: grid
 		grid-template-columns: 1fr 2fr 2fr
 		// grid-template-rows: 1fr max-content
 		grid-template-areas: "dayContainer titleLogo habitsDiv"
 		height: 100vh
-		#habits
-			justify-content: center
 	// margin: 0 auto
 	// font-size: 1em
 	// max-width: 1970px
@@ -102,9 +106,25 @@
 	color: $stein-lumenwhite
 	background: rgba(11, 6, 14, 0.96)
 	height: 100vh
-	width: 100vw
-	padding: 0 10%
-	overflow: scroll
+	overflow-y: scroll
+	.info-template
+		width: 100vw
+		padding-inline: 15%
+		@media screen and (min-width: 600px)
+			p
+				text-align: left
+				text-indent: 3em
+	.btn-grp
+		padding: 0 3%
+		display: flex
+		width: auto
+		flex-wrap: wrap
+		justify-content: space-evenly
+		flex-direction: row
+		a
+			padding: 5px
+
+
 	h1
 		margin: 1em 10%
 		text-shadow: 1px 1px 10px black
@@ -182,6 +202,7 @@
 	flex-direction: column
 	max-width: 95vw
 	padding: 0.2em
+	cursor: pointer
 	// @media screen and (max-width: 999px)
 	h2
 		margin-block-start: 1.8em

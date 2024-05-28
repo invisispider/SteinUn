@@ -1,9 +1,11 @@
 <script setup>
 const props = defineProps(["showChart"]);
+const emit = defineEmits(["clock", "calendar"]);
 </script>
 <template>
   <div class="conversion-table">
-    <table v-if="props.showChart == 'clock'">
+    <table v-if="props.showChart == 'clock'" @click="emit('clock')" 
+      style="cursor: pointer;">
       <tr>
         <th colSpan="4">Clock Time</th>
       </tr>
@@ -32,7 +34,7 @@ const props = defineProps(["showChart"]);
           <th class="th">0.8 Sessions</th>
         </tr>
     </table>
-    <table v-if="props.showChart == 'habit'">
+    <table v-if="props.showChart == 'habit'" @click="emit('calendar')" style="cursor: pointer;">
       <tr>
         <th colSpan="4">Calendar Date</th>
       </tr>

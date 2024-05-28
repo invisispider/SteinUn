@@ -4,7 +4,7 @@ import { computed } from "vue";
 import { useMonitorSize } from '@/composables/monitor-size';
 const sizes = useMonitorSize();
 const store = useTime();
-const emit = defineEmits(["dayschedule", "clock", "session", "while", "instant"]);
+const emit = defineEmits(["clock", "moment", "instant"]);
 
 const svgWidth = 240
 const svgHeight = svgWidth*400/svgWidth;
@@ -24,7 +24,7 @@ const hou_height = computed(() =>
 const svgH = 22;
 </script>
 <template>
-  <div @click="emit('dayschedule')" style="cursor: pointer;" 
+  <div 
     class="day-container">
     <!-- <div class="zenclock-container"> -->
       <!-- <div class="clock"> -->
@@ -34,16 +34,16 @@ const svgH = 22;
       <!-- </div> -->
     <!-- </div> -->
     <svg :width="svgWidth" :height="74" class="zen-borders">
-      <g>
+      <g @click="emit('clock')" style="cursor: pointer;">
         <rect :width="svgWidth"
               :height="30" class="daytop-bg">
             </rect>
-        <text @click="emit('session')" :height="30" x="50%" y="20" 
-          text-anchor="middle" :textLength="svgWidth-100" 
+        <text :height="30" x="50%" y="20" 
+          text-anchor="middle" :textLength="svgWidth-100"
           v-text="'Sessions Clock'" class="greg-text" 
         />
       </g>
-      <g @click="emit('while')">
+      <g @click="emit('moment')">
         <rect :y="30" :width="svgWidth" :height="svgH" class="daytop-bg" />
         <rect :width="(svgWidth / 100) * store.zmoment"
           :height="svgH" :y="30"
@@ -66,7 +66,7 @@ const svgH = 22;
       </g>
     </svg>
 
-    <svg :width="svgWidth" :height="svgHeight">
+    <svg :width="svgWidth" :height="svgHeight" @click="emit('clock')" style="cursor: pointer;">
       <g id="gregMeter" fill="none">
         <template v-for="(num, i) in 25" :key="num + 100">
           <rect

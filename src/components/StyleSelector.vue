@@ -33,6 +33,7 @@ onMounted(()=>{
 <template>
     <div id="style-selector" data-testid="style-selector">
         <div class="btn-grp">
+            <span class="tinytext">{{ store.styleMode }}</span>
             <i @click="switchStyle('green')"
                 id="dark-green" class="material-icons">bolt</i>
             <i @click="switchStyle('dark')" data-testid="dark-purple"

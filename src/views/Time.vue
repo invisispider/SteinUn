@@ -1,21 +1,19 @@
 <script setup lang="ts">
 import "@/assets/css/time.sass";
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted, nextTick } from "vue";
 import { useTime } from "@/stores/time";
 import { DateTime } from "luxon";
 import YearWheel from "@/components/Time/YearWheel.vue";
 import ZenDay from "@/components/Time/ZenDay.vue";
 import ZenHabit from "@/components/Time/ZenHabit.vue";
-import { toggleInfoView } from "@/components/Time/toggleInfoView";
+import InfoView from "@/components/Time/InfoView.vue";
 import TimeConversions from "@/components/Time/TimeConversions.vue";
 document.title = "unLimited Time";
 const store = useTime();
-const timezone = new Date()
-  .toLocaleTimeString("en-us", { timeZoneName: "short" })
-  .split(" ")[2];
-const displayZenDate = store.displayZenDate;
-
-const displayZenTime = store.displayZenTime+timezone;
+const activePanel = ref('');
+const panelList = ["namaste", "unlimited",
+  "year", "clock", "moment", "instant",
+  "calendar"];
 
 const timePulse = async () => {
   let luxDate = DateTime.now().toLocal();
@@ -51,52 +49,66 @@ onMounted(() => {
 onUnmounted(() => {
   timePulse();
 });
-const infoTemplate = ref(``);
+// const infoTemplate = ref(``);
 const showInfo = ref(false);
 const toggle = () => {
-  showInfo.value = !showInfo.value
+  showInfo.value = !showInfo.value;
+  document.documentElement.style.overflowY = "scroll";
+  document.body.focus();
 };
-const toggleShow = (a: string) => {
+const toggleShow = async (a: string) => {
+  activePanel.value = a;
   showInfo.value = true;
-  infoTemplate.value = toggleInfoView(a);
+  document.documentElement.style.overflowY = "hidden";
+  await nextTick()
+  let it = document.getElementById('info-panel')
+  if (it) {
+    it.scrollTo(0, 0);
+  }
+  // infoTemplate.value = toggleInfoView(a);
 };
 const showChart = ref("year");
 
 </script>
 <template>
-  <div class="zen-wrapper">
+  <div class="zen-wrapper" id="zen-wrapper" data-test-id="zen-wrapper">
     <Transition name="phase">
-      <div class="info-panel" v-if="showInfo" @click="toggle" key="apple"
-        v-html="infoTemplate">
-     </div>
+      <div class="info-panel" id="info-panel" v-show="showInfo" key="apple">
+        <div class="btn-grp">
+          <a @click="toggleShow(panel)" v-for="panel of panelList" :class="{ active: panel === activePanel }">{{ panel
+            }}</a>
+        </div>
+        <InfoView @click="toggle" :infoview="activePanel" />
+        <!-- <div v-html="infoTemplate"></div> -->
+      </div>
     </Transition>
     <div class="title-logo">
-      <h1 @click="toggleShow('base')" style="cursor: pointer;">unLimited<img src="@/assets/icons/favicon-32x32.png" />Time</h1>
+      <h1 @click="toggleShow('namaste')" style="cursor: pointer;">unLimited<img
+          src="@/assets/icons/favicon-32x32.png" />Time</h1>
       <h2 class="readout" @click="toggleShow('unlimited')" style="cursor: pointer;">
         {{ store.displayZenTime }}
         <br>
         {{ store.displayZenDate }}
       </h2>
-        <!-- <h3 @click="toggleShow('roman')" style="cursor: pointer;">ROMAN:<br>{{ store.forma }}</h3> -->
+      <!-- <h3 @click="toggleShow('roman')" style="cursor: pointer;">ROMAN:<br>{{ store.forma }}</h3> -->
       <transition name="wiggle" appear>
         <div class="smiley">
           <!-- <div class="table-modal"> -->
           <i class="material-icons" :class="showChart == 'clock' ? 'active' : ''"
-          @click="showChart = 'clock'">watch_later</i>
-          <i @click="showChart='year'" class="material-icons" :class="showChart == 'year' ? 'active' : ''" v-html="'face'"></i>
-            <!-- coffee sports_martial_arts -->
+            @click="showChart = 'clock'">watch_later</i>
+          <i @click="showChart = 'year'" class="material-icons" :class="showChart == 'year' ? 'active' : ''"
+            v-html="'face'"></i>
+          <!-- coffee sports_martial_arts -->
           <i class="material-icons" :class="showChart == 'habit' ? 'active' : ''"
             @click="showChart = 'habit'">insert_invitation</i>
-          <TimeConversions v-if="showChart!='year'" :showChart="showChart" />
+          <TimeConversions @calendar="toggleShow('calendar')" @clock="toggleShow('clock')" v-if="showChart != 'year'"
+            :showChart="showChart" />
           <!-- </div> -->
-          <YearWheel v-else-if="showChart=='year'" @zendate="toggleShow('zendate')" @holiday="toggleShow('holiday')"
-            @solstice="toggleShow('solstice')" @habits="toggleShow('habits')"
-            @newzen="toggleShow('newzen')" />
+          <YearWheel v-else-if="showChart == 'year'" @year="toggleShow('year')" />
         </div>
       </transition>
     </div>
-    <ZenDay @dayschedule="toggleShow('dayschedule')" @clock="toggleShow('clock')" @session="toggleShow('session')"
-      @while="toggleShow('while')" @instant="toggleShow('instant')" />
-    <ZenHabit @habit="toggleShow('habit')" />
+    <ZenDay @clock="toggleShow('clock')" @moment="toggleShow('moment')" @instant="toggleShow('instant')" />
+    <ZenHabit @calendar="toggleShow('calendar')" />
   </div>
 </template>
