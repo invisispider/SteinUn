@@ -11,13 +11,19 @@ import Map from "@/components/Integral/Map.vue";
 import States from "@/components/Integral/States.vue";
 
 document.title = "Integral Theory Abstract";
-const chosenModule = ref('levels');
+// const chosenModule = ref('levels');
 const chosenType = ref('jungian');
 const modeSelectorButtons = ['Map', 'Quadrants', 'Levels', 'Lines', 'Types', 'States'];
 const Selected = ref('Map');
 const SelectButton = (btn: string) => Selected.value = btn;
 const quadInfo = ref({});
-const levelInfo = ref({});
+const levelInfo = ref({
+    number: '', 
+    color: '', 
+    desc: '', 
+    values: '', 
+    nickname: ''
+});
 const lineInfo = ref({});
 const selState = ref('')
 const stateInfo = ref({});
@@ -25,15 +31,16 @@ const showInfo = ref(false);
 const toggle = () => {
     showInfo.value = !showInfo.value
 };
-const toggleBase = () => {
-    if (Selected.value !== 'Map' | 'Lines') {
-        quadInfo.value = {};
-        levelInfo.value = {};
-        showInfo.value = true;
-        lineInfo.value = {};
-    }
-}
-const selectQuad = (sel) => {
+// const toggleBase = () => {
+//     if (Selected.value !== 'Map' | 'Lines') {
+//         quadInfo.value = {};
+//         levelInfo.value = {};
+//         showInfo.value = true;
+//         lineInfo.value = {};
+//     }
+// }
+type Quad = 'upper-left'|'lower-right'|'lower-left'|'upper-right'|'base'
+const selectQuad = (sel: Quad) => {
     if (sel === 'base') {
         quadInfo.value = {};
         showInfo.value = true;
@@ -42,9 +49,16 @@ const selectQuad = (sel) => {
         showInfo.value = true;
     }
 }
-const toggleLevel = (sel) => {
+type Level = 'infrared'|'magenta'|'red'|'amber'|'orange'|'green'|'teal'|'turquoise'|'indigo'|'violet'|'ultraviolet'|'clearlight'|'base';
+const toggleLevel = (sel: Level) => {
     if (sel === 'base') {
-        levelInfo.value = {};
+        levelInfo.value = {
+            number: '', 
+            color: '', 
+            desc: '', 
+            values: '', 
+            nickname: ''
+        };
         showInfo.value = true;
     } else {
         levelInfo.value = AqalLevels.filter((obj) => obj.color == sel).pop();
