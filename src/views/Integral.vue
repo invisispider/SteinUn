@@ -10,7 +10,7 @@ import Levels from "@/components/Integral/Levels.vue";
 import Map from "@/components/Integral/Map.vue";
 import States from "@/components/Integral/States.vue";
 
-document.title = "Integral Theory Abstract";
+document.title = "Integral Theory Map";
 // const chosenModule = ref('levels');
 const chosenType = ref('jungian');
 const modeSelectorButtons = ['Map', 'Quadrants', 'Levels', 'Lines', 'Types', 'States'];
@@ -317,4 +317,15 @@ const toggleState = (sel) => {
 .module-name
     margin-top: 2.3em
     margin-bottom: 0.5em
+
+.integral-map 
+    p
+        text-align: left
+        text-indent: 3em
+        margin-inline: 1em
+    .center-text
+        text-align: center
+    .modules
+        text-transform: uppercase
+
 </style>

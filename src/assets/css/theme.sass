@@ -116,7 +116,7 @@ $medium-thalmon: rgb(245, 120, 89)
             fill: $spice
             color: $wrapper-bg
         .zenwheel
-            text
+            text:not(.year-markers)
                 // cursor: pointer
                 fill: $wrapper-tx
                 stroke: $wrapper-tx
@@ -210,6 +210,22 @@ $medium-thalmon: rgb(245, 120, 89)
                 background-color: $mod-bg
             i:hover, .tinytext:hover
                 background-color: $sidebar-bg
+
+        // INTEGRAL
+        .hilight
+            color: $spice
+
+        .bisque
+            stroke: $style-changer-color
+            fill: $mod-bg
+        #arrow path
+            fill: $schleem
+        .year-markers
+            fill: $wrapper-bg
+            stroke: $spice
+            opacity: 1
+            // fill: bisque
+            // stroke: tomato
 // $style-changer-color, $wrapper-bg, $wrapper-tx, $mod-bg, 
 // $sidebar-bg, $smooth-bg, $vid-div, $spice
 @include unThemeMe(thalmon, $medium-thalmon, #333, rgb(249, 194, 159), #1b0c10, #555, #2f1b14, #444, $medium-thalmon, #704433, lighten(orange, 20%))

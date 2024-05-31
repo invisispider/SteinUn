@@ -20,9 +20,10 @@
             <em>more</em> concerned with what it's all about than we are. 
         </p> -->
         <!-- <h3>I'd love to share something personal with you.</h3> -->
+        <h3>Ethical business for an Integral kosmos.</h3>
         <h3>Mission: to make consciousness sustainable with disConnectors.</h3>
         <p>Imagine a unique product that instantly makes a person whole, free, healthy, 
-            and fulfilled. Now stop. We did it already.
+            and fulfilled. Now stop. We did it already. The product is the light and the way.
         </p>
         <h3>Pitch: Everything You See Is Light.</h3>
         <div class="pitch-container">

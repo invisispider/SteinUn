@@ -1,22 +1,116 @@
 <script setup lang="ts"></script>
 <template>
     <div class="integral-map">
-        <h2>AQALALATAS: The Integral Map</h2>
-        <p>("ah-kwel-alot-as" or just "Ah-kwel")</p> 
-        <p><b>FIVE MODULES:<br>
-            All Quadrants<br/>
-            All Levels<br/>
-            All Lines<br/>
-            All Types<br/>
-            All States<br/> 
-        </b><br>
-        Consciousness and reality are expressions of these factors.
+        <h1>Modeling Everything</h1>
+        <h3>Imagine trying to explain all of reality in a very small space 😜</h3>
+        <!-- <h2>The 5 Modules</h2> -->
+        <h3>1 Quadrants</h3>
+        <p>The way that we conjugate language says a lot about how we perceive reality. Reality can be 
+            described as an "I", a "We", an "It", or a system of "Its". What is real? I: this experience you're 
+            having right now? We: all the 
+            experiences of all people are real? It: this room I'm in right now is real? Its:, the universe that generates
+            this room and me is real? The Four Quadrants illustrate
+            how a singular "holonic" source unfolds in and expresses all four dimensions simultaneously, rendering all 
+            four quadrants equally and entirely real. A holon, reflexively, is anything that expresses in all four Quadrants 
+            - and since reality is the four Quadrants, this means that everything real exists in all four Quadrants and is 
+            a holon. Everything not real, by any standard, exists in some Quadrants, but not all. 
+            <!-- People understand reality to be the <b>interior subjective</b> experience of "I",
+            in relation to an <b>external objective</b> reality "It". A human is both a physical body with 
+            a brain emitting waves,
+            and the ongoing story of a self having awareness, thoughts, friends and enemies, and dreams. These can be considered 
+            the "two sides" of reality, or interior and exterior dimensions. Reality is the interaction between them.
+            
+            The "It" realm is composed
+            of systems and groups of "Its." A human is both an individual, and a member
+            of <b>collective external</b> civilization. Both are correct. Every human is an example of a human, and this is true
+            of everything. Instances are produced by systems, and arise as groups. No person 
+            could exist without the civilization that produced and raised them. Returning to the 
+            internal, we recognize that nearly everything we know was taught to us. We speak, and 
+            think, in a language that we learned as toddlers. There is also a "we" nature to reality, 
+            for example, consider the difference between what "I" know and what I can look up on the 
+            internet. The knowledge, thoughts, opinions, perspectives of others is a large part of reality 
+            for everyone, and so we consider this the <b>collective internal</b> part of reality, the "we." -->
+        
         </p>
+        <h3>2 Levels</h3>
+        <h3>3 Lines</h3>
+        <h3>4 Types</h3>
+        <h3>5 States</h3>
+
+        <p>If there is some existing reality, some objective factual truth, then really, 
+            we are limited from knowing only by our awareness. Being human 
+            imposes enormous limits on what we can know about reality. 
+            
+            There are probably aspects 
+            of reality that a human cannot know, and so, our knowledge of reality can only ever be 
+            an expanding work in progress. Rather than speculate on the nature of that great, given, 
+            objectively factual pure reality, the Integral model traces the developmental course 
+            of human thinking, both in individual human lives, and in the history of civilization, and 
+            finds the same core stages 
+            the nature of reality, it makes more sense to focus on how exactly a perspective 
+            may be limited.
+        </p>
+        <h3>The Integral Map</h3>
+        <!-- <h3>Is it possible to be wrong?</h3>
+        <p>In common speech, we say, "you're wrong," all the time. We don't mean to say that the 
+            person themself is intrinsically wrong, we mean to say that an idea in their mind does 
+            not match with our consensus about objective reality.  -->
+
+            <!-- This example, and numerous others,
+            point out that the way we understand reality is that there is an objective reality which 
+            is true but unknown, and there is a subjective reality which differs from person to person 
+            and is only ever partially correct about anything, and there is a collective, intersubjective 
+            consensus which serves to mediate between the two. The individual was never "wrong." They
+            were correct based on all the information available to their perspective. That is why 
+            they hate being told they're wrong so much. They were certainly correct before you came along
+            with your collective consensus truth. That consensus itself is partially wrong, 
+            and will develop.   -->
+        <!-- <p>And let us just hypothesize, for the moment, that this everyday observation about 
+            how people comprehend reality might actually apply to philosophy. A person's 
+            philosophy tells them what they think reality is, and they get this from the 
+            collective cultural history of philosophy. 
+        </p> -->
+        <!-- <p>
+            You can misrepresent, but how can you believe something that is not correct?
+        </p> -->
+        <h2>AQALALATAS: "ah-kewl-a-lot-is"</h2>
+        <h3 class="modules"><!-- FIVE MODULES: -->
+            <span class="hilight">A</span>ll <span class="hilight">Q</span>uadrants
+            <br><span class="hilight">A</span>ll <span class="hilight">L</span>evels
+            <br><span class="hilight">A</span>ll <span class="hilight">L</span>ines
+            <br><span class="hilight">A</span>ll <span class="hilight">T</span>ypes
+            <br><span class="hilight">A</span>ll <span class="hilight">S</span>tates
+        </h3>
+            <p>        
+            Consciousness and reality are expressions of these factors.
+        </p>
+        <!-- <h4>This experience is happening</h4> 
         <p>
-        please expore this visual guide to the AQAL Map,
+            You can accept that whatever objective reality is, it's a given, common to all of
+            us, yes? No matter what you think or believe or know, it's the same material reality 
+            we are all here relating to. 
+        </p> -->
+        <p>Please explore, share, and enjoy this visual guide to Integral,
         adapted from the theory, work, and visuals of author Ken Wilber.
         </p>
         <h1>Integral Theory</h1>
+        <p>Integral Theory is a vast topic, and author Ken Wilber has an outstanding career 
+            writing excellent and accessible books covering the skeleton
+            and broad strokes of a mind-expanding approach to 
+            thinking which exposes the system of thought of thinking itself.
+            Presenting a meta-theory that is relevant to everyone and includes all fields, all realities, all 
+            perspectives, where do you even begin?
+        </p>
+        <h3>🍀 Luckily, the work has been done.</h3>
+        <p>Stein unLimited presents a system of visual maps which orient your perspective 
+            to the generalizations which, if properly understood, encapsulate and express 
+            Integral. These are not original creations.
+            They are closely adapted from Wilber's diagrams. We consider these universalizing truths, and we
+            are proud to use the terms of the leading expert, as we express 
+            Integral in our own voice. We hope that promoting and teaching Integral is received 
+            with a blessing. We consider it a blessing 🫶🏿. We consider this work important.
+        </p> 
+
         <h3>Stein unLimited is a Second Tier Turquoise enterprise.</h3>
         <h3>What is the starting point of your beliefs?</h3>
         <p>Why do you know what you know? 

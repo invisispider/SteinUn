@@ -106,8 +106,8 @@ const props = defineProps(['infoview']);
             </p>
             <h2>Reading unLimited Date:</h2>
             <div class="holiday-flex">
-                <h3>Memo 12 Tues 12024</h3>
-                <p>"Memo twelve, twenty-four."</p>
+                <h3>Vivid 12 Tues 12024</h3>
+                <p>"Vivid twelve, twenty-four."</p>
             </div>
             <p>
             The last four digits of the year are the same, so in common speech,
@@ -497,8 +497,8 @@ const props = defineProps(['infoview']);
             <p>🏵️ Honor seniors, ancestors, past origins.</p>
         </div>
         <div class="holiday-flex">
-            <h3>Memo</h3>
-            <p>🎗️ See the reflections of history.</p>
+            <h3>Vivid</h3>
+            <p>🌻 Shine in the light.</p>
         </div>
         <div class="holiday-flex">
             <h3>Peace</h3>

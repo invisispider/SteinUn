@@ -19,7 +19,7 @@ export const useTime = defineStore("time", {
       "Struggles",
       "Flowers",
       "Elders",
-      "Memo",
+      "Vivid",
       "Peace",
       "Harvests",
       "Hallows",

@@ -1,23 +1,32 @@
 <script setup lang="ts">
 import { useTime } from "@/stores/time";
-import { computed } from "vue";
-import { useMonitorSize } from '@/composables/monitor-size';
-const sizes = useMonitorSize();
+import { computed, watch, ref } from "vue";
+// import { useMonitorSize } from '@/composables/monitor-size';
+// const sizes = useMonitorSize();
 const store = useTime();
 const emit = defineEmits(["clock", "moment", "instant"]);
-
-const svgWidth = 240
-const svgHeight = svgWidth*400/svgWidth;
+const svgWidth = ref(270);
+const svgHeight = ref(470);
+// const mult = 470/270
+// watch(sizes.browserWidth, (wid) => {
+  // console.log(wid)
+  // if (wid>1300) {
+  //   let newWid = wid*0.24
+  //   svgWidth.value = wid*0.24
+  //   svgHeight.value = 600
+  // }
+  // sizes.
+// });
 // const svgWidth = computed(()=> { 
 //   return sizes.browserWidth.value<400?sizes.browserWidth.value:400;
 // });
-const gregWidth = svgWidth / 8;
-const halfWidth = svgWidth - gregWidth;
-const rSpread = svgHeight / 24;
-const zSpread = svgHeight / 10.8;
-const zenSpread = svgHeight / 13.5;
+const gregWidth = svgWidth.value / 8;
+const halfWidth = svgWidth.value - gregWidth;
+const rSpread = svgHeight.value / 24;
+const zSpread = svgHeight.value / 10.8;
+const zenSpread = svgHeight.value / 13.5;
 const hou_height = computed(() =>
-  Math.floor(svgHeight - (svgHeight / 24) * store.zhour)
+  Math.floor(svgHeight.value - (svgHeight.value / 24) * store.zhour)
 );
 // const rotateOrigin = (h_h: number) =>
   // "transform-origin: " + gregWidth + "px " + h_h + "px";
@@ -33,8 +42,10 @@ const svgH = 22;
         <!-- <p>Not going round a circle. Making progress towards outcomes.</p> -->
       <!-- </div> -->
     <!-- </div> -->
+    
     <svg :width="svgWidth" :height="74" class="zen-borders">
       <g @click="emit('clock')" style="cursor: pointer;">
+        <title>This chart shows what time of day it is now.</title>
         <rect :width="svgWidth"
               :height="30" class="daytop-bg">
             </rect>
@@ -44,6 +55,7 @@ const svgH = 22;
         />
       </g>
       <g @click="emit('moment')">
+        <title>Our version of Minutes</title>
         <rect :y="30" :width="svgWidth" :height="svgH" class="daytop-bg" />
         <rect :width="(svgWidth / 100) * store.zmoment"
           :height="svgH" :y="30"
@@ -57,6 +69,7 @@ const svgH = 22;
         </text>
       </g>
       <g @click="emit('instant')">
+        <title>Our version of Seconds</title>
         <rect :y="52" :width="svgWidth" :height="svgH" class="daytop-bg" />
         <rect :y="52" class="inner-rect"
           :width="(svgWidth / store.ins_in_mom) * store.instant" 
@@ -68,6 +81,7 @@ const svgH = 22;
 
     <svg :width="svgWidth" :height="svgHeight" @click="emit('clock')" style="cursor: pointer;">
       <g id="gregMeter" fill="none">
+        <title>Hours compared to Sessions</title>
         <template v-for="(num, i) in 25" :key="num + 100">
           <rect
             v-if="i < 6 || i > 17"
@@ -92,6 +106,7 @@ const svgH = 22;
         </template>
       </g>
       <g id="zenMeter" fill="none">
+        <title>Our version of Hours dividing the day into Sessions</title>
         <rect
           :x="gregWidth"
           :y="0"
@@ -112,9 +127,9 @@ const svgH = 22;
             :x="svgWidth / 4"
             :y="j * zSpread + zSpread / 2"
             class="zen-mint"
-            :class="{ sessionActive: (10-j)==store.zsess} "
+            :class="{ sessionActive: (10-j)==store.zsess}"
           >
-          {{ j!=0?11 - j:'' }} {{ store.zsessionNames[10 - j] }}
+          {{ j!=0 ? 11-j : '' }} {{ store.zsessionNames[10 - j] }}
           </text>
         </template>
       </g>
@@ -128,13 +143,6 @@ const svgH = 22;
           :y2="hou_height"
           class="clock-hand"
         />
-        <!--<circle
-          :cx="gregWidth"
-          :cy="hou_height"
-          r="20"
-          class="center-circle tick-pulse"
-          :style="rotateOrigin(hou_height)"
-        />-->
       </g>
 
     </svg>

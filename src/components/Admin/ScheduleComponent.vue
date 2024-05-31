@@ -17,7 +17,7 @@ const daynames = ref(["Sunday", "Tuesday", "Thursday", "Friday", "Saturday"]);
       <div class="baheader" v-for="day of daynames" :key="day">{{ day }}</div>
       <div class="uncell" v-for="d of mockData" :key="d">{{ d }}</div>
     </div>
-    <h2 class="unheader">Memorial</h2>
+    <h2 class="unheader">Vivid</h2>
     <div class="unchunk">
       <div class="baheader" v-for="day of daynames" :key="day">{{ day }}</div>
       <div class="uncell" v-for="d of mockData" :key="d">{{ d }}</div>
