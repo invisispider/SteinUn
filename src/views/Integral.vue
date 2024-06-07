@@ -9,14 +9,32 @@ import Quadrants from "@/components/Integral/Quadrants.vue";
 import Levels from "@/components/Integral/Levels.vue";
 import Map from "@/components/Integral/Map.vue";
 import States from "@/components/Integral/States.vue";
-
+// import type { Ref } from "vue";
 document.title = "Integral Theory Map";
 // const chosenModule = ref('levels');
 const chosenType = ref('jungian');
 const modeSelectorButtons = ['Map', 'Quadrants', 'Levels', 'Lines', 'Types', 'States'];
 const Selected = ref('Map');
 const SelectButton = (btn: string) => Selected.value = btn;
-const quadInfo = ref({});
+// interface QuadInfo {
+//     x: string,
+//     y: string,
+//     description: string,
+//     fields: string,
+//     strengths: string,
+//     pathology: string
+// }
+const quadInfo = ref({
+    x: "", 
+    y: "", 
+    description: "", 
+    fields: "", 
+    strengths: "", 
+    pathology: "" 
+});
+// interface LevelInfo {
+//     number: string, color: string, desc: string, values: string, nickname: string
+// }
 const levelInfo = ref({
     number: '', 
     color: '', 
@@ -24,7 +42,22 @@ const levelInfo = ref({
     values: '', 
     nickname: ''
 });
-const lineInfo = ref({});
+// interface LineInfo {
+//     line: string,
+//     name: string,
+//     description: string,
+//     author: string,
+//     stages: string,
+//     notes: string,
+// }
+const lineInfo = ref({
+    line: "",
+    name: "",
+    description: "",
+    author: "",
+    stages: "",
+    notes: "",
+});
 const selState = ref('')
 const stateInfo = ref({});
 const showInfo = ref(false);
@@ -42,7 +75,14 @@ const toggle = () => {
 type Quad = 'upper-left'|'lower-right'|'lower-left'|'upper-right'|'base'
 const selectQuad = (sel: Quad) => {
     if (sel === 'base') {
-        quadInfo.value = {};
+        quadInfo.value = {
+    x: "", 
+    y: "", 
+    description: "", 
+    fields: "", 
+    strengths: "", 
+    pathology: "" 
+};
         showInfo.value = true;
     } else {
         quadInfo.value = AqalQuadrants[sel]
@@ -65,10 +105,10 @@ const toggleLevel = (sel: Level) => {
         showInfo.value = true;
     }
 }
-const toggleLine = (sel) => {
+const toggleLine = (sel: string) => {
     lineInfo.value = AqalLines.filter((line) => line.name == sel).pop();
 }
-const toggleState = (sel) => {
+const toggleState = (sel: string) => {
     selState.value = sel[0].toUpperCase()+sel.slice(1);
     stateInfo.value = AqalStates[sel];
     showInfo.value = true;
@@ -317,12 +357,14 @@ const toggleState = (sel) => {
 .module-name
     margin-top: 2.3em
     margin-bottom: 0.5em
-
 .integral-map 
     p
         text-align: left
         text-indent: 3em
         margin-inline: 1em
+    @media screen and (min-width: 1000px)
+        p
+            margin-inline: 12%    
     .center-text
         text-align: center
     .modules

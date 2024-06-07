@@ -4,7 +4,7 @@ import { pageSelections } from '@/composables/landing-pages';
 <template>
     <div>
         <!-- <h5>Repeat: Love Is Okay</h5> -->
-        <p>🙏🏿 Thank you for Being with me. 🙏🏿 This is the entrance to Stein unLimited.
+        <p>🙏🏿 Thank you for Being with us. 🙏🏿 This is Stein unLimited now.
             The top panels allow you to open a menu of site features, change the color
             theme, and browse this information section. 
         </p>
@@ -13,7 +13,7 @@ import { pageSelections } from '@/composables/landing-pages';
             storyteller, and integral theory speaker currently residing in Missoula, MT. Every person has a unique 
             signature or fingerprint of skills, passions, and abilities.
             Stein unLimited is an attempt to showcase the overlap of my diverse 
-            offerings and unite them under a single brand.         
+            offerings and unite them in a single brand.         
         </p>
         <p><RouterLink to="/landing/Technomancy">Software Opportunities:</RouterLink> Please contact via <a href="mailto:adam.loewen@gmail.com">email</a> or <a href="https://www.linkedin.com/in/adam-loewen-3218ab48/">LinkedIn</a>
             <!-- collaborate on <a href="https://github.com/invisispider" target="_blank">my github</a> -->
