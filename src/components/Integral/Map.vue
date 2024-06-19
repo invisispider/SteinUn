@@ -3,19 +3,17 @@
     <div class="integral-map">
         <img class="integral-banner" src="@/assets/img/aqalalatas.png" />
         <h2>A Map Of Everything</h2>
-        <p>This page provides a <b>Visual Map</b> of Integral Theory as presented by 
-        <b>Stein unLimited.</b> 
+        <p><b>Stein unLimited</b> presents a <b>Visual Map</b> of <b>Integral Theory</b>. 
             Top buttons allow you to browse the <b>5 Modules: Quadrants, Levels, Lines, 
             Types,</b> and <b>States.</b>
         </p>
         <h3>Our Level of Consciousness</h3>
         <p>
-        This is a diagram of reality attempting to encapsulate and 
-        express a <b>Second Tier,</b> or Integral, perspective, which is considered the 
-        highest stage of consciousness widely available today. Wilber 
-        offers a complete Second Tier philosophical system, and so Integral synonymously 
-        refers to Wilber's work, the Integral stages of consciousness, and any expression 
-        of those. 
+        This diagram of reality attempts to encapsulate and 
+        define a <b>Second Tier,</b> or Integral, perspective, which is the 
+        highest recognized <b>Level</b> of consciousness widely available today. Integral 
+        Theory is a tentatively complete Second Tier philosophical system, so Integral synonymously 
+        refers to Ken Wilber's work, as well as any expression of those stages. 
         </p>
         <h3>Reality = 
             <span class="hilight">A</span>ll { <span class="hilight">Q</span>uadrants,
@@ -28,6 +26,7 @@
             <!-- <span class="hilight">A</span>ll  -->
             <span class="hilight">S</span>tates } 
         </h3>
+        <h3><span class="hilight">AQALALATAS</span>: "ah-kewl-a-lot-is" 🤣</h3>
         <!-- <p>It looks like things you've seen before, and that's not a coincidence, but 
             the scope of this is broader. This includes that.            
             It's uncommon to appreciate the need for a reality map, how 
@@ -36,20 +35,16 @@
             can do.
         </p> -->
         <p>
-            This is a five-factor Theory of Everything. 
+            The five factors of this Theory of Everything 
             <!-- Ah, but what do you mean by reality? Ah hah! Exactly. So, what this is, is it
             explains precisely and entirely what I mean by reality, also what you mean by 
             reality, also it agrees with everything you think, but also includes what 
             everyone else thinks. -->
-            The 
-            modules will be familiar and self-evident. They can be thought of as "lenses," 
-            or the primary factors generating the reality that we each experience,
-            as well as the structural dynamics of the known kosmos.       
+            will be familiar and self-evident. They are not secrets but
+            core patterns of nature. They can be thought of as "lenses," 
+            or primary factors generating the reality that we experience,
+            and the structural dynamics of the known kosmos.
         </p>            
-        <h2><span class="hilight">AQALALATAS</span>: "ah-kewl-a-lot-is" 🤣</h2>
-        <p>The Modules will be familiar and self-evident. These are not secrets but universal
-            core patterns of nature.
-        </p>
         <h1>Integral Theory</h1>
         <p>Philosophy author Ken Wilber has 
             made a career out of writing sophisticated and accessible books covering the 
@@ -58,10 +53,10 @@
             a delivery method. 
         </p>
         <!-- These should actually be video presentations -->
-        <h3>What does integral mean?</h3>
+        <h3>What does Integral mean?</h3>
 
-        <p>Commonly, integral implies something is an important part,
-            or a necessary aspect of the whole. Integral Theory is 
+        <p>Commonly, integral implies something is an important part
+            or necessary aspect of a whole. Integral Theory is 
             entirely focused on parts and wholes, claiming that the most fundamental 
             "part" of reality is something which is simultaneously a whole and a part, 
             termed a Holon.
@@ -73,24 +68,27 @@
             using inductive reasoning, finding the core connecting patterns from the 
             functions given. 
         </p>       
-        <p>Integral theory or philosophy means the same thing. It is a style of thinking 
-            that attempts to reach the most basic and deep structural truths, or the nature 
-            of reality itself, via an exhaustive process of laying out all of the existing 
-            answers or truths or philosophies out side by side, and attempting to organize 
-            them logically. This has been done, to produce the concept of Five Modules 
-            (AQALALATAS). As we return to the more ordinary deductive and procedural realities
-            that we mostly face, we now have a map of the infinite other possibilities and 
-            perspectives available at all times.
+        <p>Integral Theory is a style of thinking 
+            that attempts to reach the most basic and deep structural truths via an 
+            exhaustive process of laying out all existing 
+            answers, truths, and philosophies side by side, and organizing 
+            them logically. In the search for ultimate truth, 
+            the place to start is history. Truly novel individual progress is unlikely
+            vis a vis the greatest and most earnest thinkers who ever lived. Wilber 
+            organized the history of thought into the Five 
+            Modules (AQALALATAS). As we return to the more ordinary deductive and procedural 
+            realities that we mostly face, we now have a map of the infinite 
+            possibilities and perspectives available at all times.
         </p>
         <h3>Physics and A Theory of Everything</h3>
         <p>
             Integral challenges the common 
-            conception that the fundamental particles of physics are in fact the building 
+            conception that fundamental particles in physics are in fact the building 
             blocks of reality, or that a theory in physics that unites relativity and 
             quantum mechanics should be considered a "Theory of Everything". This is 
             a narrow view. Since Integral Theory includes consciousness and culture, 
-            which are real but do not have mass, electrical charge, volume, or 
-            spin, Integral is the better contender for the title Theory of Everything, as 
+            which are real but do not have mass, charge, volume, or 
+            spin, Integral is the better contender for the Theory of Everything title, as 
             it also includes the physics of material reality. 
         </p>
         <h3>Reality is a 4D stack of Levels</h3>
@@ -158,11 +156,10 @@
             The influential theoretical 
             advances of eastern mystic Sri Aurobindo also self-referred as Integral Yoga.
 
-
-            and so didn't coin the term per se, certainly 
+            <!-- and so didn't coin the term per se, certainly 
             his philosophy moves to identify as Integral as an expression of the philosophical 
             meta-meme, or meta-paradigm, of this emergent stage of human consciousness termed 
-            Integral.
+            Integral. -->
         </p>
         <!-- <h3>This is the 12 Stages Of Consciousness thing From YouTube?</h3>
         <p>Same people. We do a YouTube channel 
@@ -178,7 +175,7 @@
             This presentation should be for everybody, for a kid, for an alien, for grandma, 
             for someone exactly like me. 
         </p>
-        <h3>Sounds Impossible</h3>
+        <!-- <h3>Sounds Impossible</h3>
         <p>
             But each day, we are expected 
             to go about life as though we are morally responsible for comprehending reality. 
@@ -195,7 +192,7 @@
             notice I wasn't asking, "What does everyone in the world think?" I asked, "What is the nature of 
             reality?" Not... 😡 big dense books. This. Reality. What is it? Why would AI not know what 
             reality is?
-        </p>
+        </p> -->
         <h3>The Mental Prison's Blueprints</h3>
         <p>
             The Integral framework is a global put-in point, a most-zoomed-out view possible: 
