@@ -1,20 +1,14 @@
 <script setup lang="ts"></script>
 <template>
     <div class="integral-map">
-        <img class="integral-banner" src="@/assets/img/aqalalatas.png" />
-        <h2>A Map Of Everything</h2>
-        <p><b>Stein unLimited</b> presents a <b>Visual Map</b> of <b>Integral Theory</b>. 
+        <h1>Map</h1>
+        <p><b>Stein unLimited</b> presents a visual model of <b>Integral Theory</b>. 
             Top buttons allow you to browse the <b>5 Modules: Quadrants, Levels, Lines, 
-            Types,</b> and <b>States.</b>
-        </p>
-        <h3>Our Level of Consciousness</h3>
-        <p>
-        This diagram of reality attempts to encapsulate and 
-        define a <b>Second Tier,</b> or Integral, perspective, which is the 
-        highest recognized <b>Level</b> of consciousness widely available today. Integral 
-        Theory is a tentatively complete Second Tier philosophical system, so Integral synonymously 
-        refers to Ken Wilber's work, as well as any expression of those stages. 
-        </p>
+                Types,</b> and <b>States.</b>
+                The five factors of this Theory of Everything should feel familiar and 
+                largely intuitive as we go along. 
+            </p>
+        <h2>Consciousness in Five Words</h2>
         <h3>Reality = 
             <span class="hilight">A</span>ll { <span class="hilight">Q</span>uadrants,
             <!-- <span class="hilight">A</span>ll  -->
@@ -26,97 +20,228 @@
             <!-- <span class="hilight">A</span>ll  -->
             <span class="hilight">S</span>tates } 
         </h3>
-        <h3><span class="hilight">AQALALATAS</span>: "ah-kewl-a-lot-is" 🤣</h3>
-        <!-- <p>It looks like things you've seen before, and that's not a coincidence, but 
-            the scope of this is broader. This includes that.            
-            It's uncommon to appreciate the need for a reality map, how 
-            literal this is meant; to get at a glance, or even a deeper look, 
-            what this model actually accomplishes and means, what it implies, and what it 
-            can do.
-        </p> -->
-        <p>
-            The five factors of this Theory of Everything 
+        <!-- <h3><span class="hilight">AQALALATAS!</span> -->
+            <!-- : "ah-kewl-a-lot-is" 🤣 -->
+        <!-- </h3> -->
+        
             <!-- Ah, but what do you mean by reality? Ah hah! Exactly. So, what this is, is it
             explains precisely and entirely what I mean by reality, also what you mean by 
             reality, also it agrees with everything you think, but also includes what 
             everyone else thinks. -->
-            will be familiar and self-evident. They are not secrets but
-            core patterns of nature. They can be thought of as "lenses," 
-            or primary factors generating the reality that we experience,
-            and the structural dynamics of the known kosmos.
-        </p>            
-        <h1>Integral Theory</h1>
-        <p>Philosophy author Ken Wilber has 
-            made a career out of writing sophisticated and accessible books covering the 
-            vast reaches of this mind-expanding approach to thought. His various institutes
-            and academic programs offer superior resources. We consider ourselves
-            a delivery method. 
+        <img class="integral-banner" src="@/assets/img/aqalalatas.png" />
+        <p>
+            
         </p>
-        <!-- These should actually be video presentations -->
-        <h3>What does Integral mean?</h3>
-
-        <p>Commonly, integral implies something is an important part
-            or necessary aspect of a whole. Integral Theory is 
-            entirely focused on parts and wholes, claiming that the most fundamental 
-            "part" of reality is something which is simultaneously a whole and a part, 
-            termed a Holon.
+        <h3>The Nature of Integral Theory (what is this?)</h3>
+        <p>
+            This is not trademarked guru secrets, but a free map of extremely popular, accepted, and well-known ideas. They 
+            make no falsifiable, ontological claims, other than suggesting a categorization framework. 
+            This is not an ideology. There is no belief. There is no guru. There is hardly any social movement. 
+            It's just an extremely useful categorization schema for humans today, quite commonsense. We prefer 
+            to use Integral, in the absense of alternatives.
+        </p>
+        <p> 
+            Like the profound works of Freud, Jung, Einstein, Neitzche, and Marx, this should best be considered 
+            exploratory, adapatable, incomplete, open-ended, and interpretive. 
+            It is not pop psychology, nor is it new age 
+            spiritualism or occultism. It is not pseudo-science. It just isn't science. It's not religion, though 
+            it includes <em>all of these</em>, as it is a complete philosophy of reality and consciousness. 
+            The colorful little words in the diagram can be thought of as "lenses," 
+            or primary factors generating the reality that we experience,
+            and the structural dynamics of the kosmos.
+        </p>            
+        <h2>Second Tier Reality</h2>
+        <p>
+        Integral 
+        Theory is a tentatively complete philosophical system, so Integral synonymously 
+        refers to Wilber's work, any similar methodology, as well 
+        as any expression of the integral Level. Pretty much anything can be Integral.
+        A <a href="https://www.stuartdavis.com/blog/creating-language" style="display: inline; text-decoration: none; color: teal;" target="_blank">language</a> 
+        can be Integral. Even 
+        a <a href="/time" target="_blank" style="display: inline; text-decoration: none; color: teal;">clock</a> can be Integral.
         </p>
         <p>
-            Some of us know the term from calculus,
-            where the integral is a sort of function that generalizes the other 
-            functions under consideration. In integral calculus, you are 
-            using inductive reasoning, finding the core connecting patterns from the 
-            functions given. 
-        </p>       
-        <p>Integral Theory is a style of thinking 
-            that attempts to reach the most basic and deep structural truths via an 
-            exhaustive process of laying out all existing 
-            answers, truths, and philosophies side by side, and organizing 
-            them logically. In the search for ultimate truth, 
-            the place to start is history. Truly novel individual progress is unlikely
+            The complicated AQALALATAS diagram attempts to encapsulate and 
+        define an Integral, or Second Tier, perspective, which is the 
+        most advanced <b>Level</b> of consciousness recognized today
+        by a general survey of developmental psychology literature focusing on overall 
+        stage trends. And there it is, the Teal map of reality, totally naked and complicated
+        because that's how Teal likes to do things.  
+        Are you as excited as I am? 😃 
+        </p>
+        <h1>Integral Theory</h1>
+        <p>Author Ken Wilber has 
+            made a career out of writing sophisticated and accessible books covering the 
+            vast reaches of this mind-expanding approach to philosophy, and continues in advanced age to appear 
+            in various podcasts and talks, continuing to develop new ways of expressing these ideas. His various institutes
+            and academic programs offer superior resources. Stein unLimited has found this theory
+            so useful, helpful, profound, and unnoticed, that a large part of our mission is 
+            teaching these ideas in our own way, because we felt like it would be cool of us. 
+        </p>
+        <h3>Integral Thinking</h3>       
+        <p>Integral is not just the presentation of these concepts, or even usage of them, it is properly 
+            the process of arriving at them. This is not the place for a biography of Ken Wilber, but he arrived 
+            somewhat decisively at a basic integral theory through intense research, spiritual practice, and an 
+            exhaustive process of trying to organize all existing and accepted or just influential fundamental notions 
+            of philosophy. 
+        </p>
+        <h3>The Ken Wilber Process</h3>
+        <p>
+            In the case of developmental psychology, this was achieved by laying out all existing models (some 
+            interpretation necessary) and observing that they all trace different aspects of a person, and for different 
+            purposes, but the overlap is unmistakable. The overlap itself generates a stage model, which is Altitudes.
+            And then you see that the Altitudes not only apply to individuals, the same general patterns characterize 
+            civilization, history, the way society is structured, everything everyone creates, everything everyone does,
+            the reasons that we do what we do, and the relative nature of our own current perspective in the grand scope 
+            of available perspectives.   
+
+        </p>
+        <p>
+            side by side, and organizing 
+            them logically. Truly novel individual progress is unlikely
             vis a vis the greatest and most earnest thinkers who ever lived. Wilber 
-            organized the history of thought into the Five 
-            Modules (AQALALATAS). As we return to the more ordinary deductive and procedural 
+            organized his own research on consciousness, reality, and the mind, into the Five 
+            Modules (AQALALATAS). As we return to the more ordinary deductive, social, and procedural 
             realities that we mostly face, we now have a map of the infinite 
             possibilities and perspectives available at all times.
         </p>
+        <!-- These should actually be video presentations -->
+        <h3>What Does the Word Integral Actually Mean?</h3>
+        <p>Commonly, integral indicates something is an important part
+            or necessary aspect of a whole. Integral Theory asks, what are the important parts or
+            necessary aspects of reality? What are the important parts or necessary aspects of 
+            answering that question, about anything? How can I tell whether anyone can answer 
+            that question? Relationships between whole and part characterize the 
+            entire conceptual mechanic and operational fulcrum of the theory (as explored in the 
+            Quadrants section), which is why Wilber and notable others have converged on the 
+            term Integral. 
+        </p>
+        <h3>Calculus</h3>
+        <p>In mathematics, the integral is a sort of function which generalizes other 
+            functions under consideration, enabling another level of insights and enhanced calculation potential. 
+            As with Integral Theory, generalizing here does not so much suggest omitting detail or diversity, 
+            but more suggests including the abstraction of commonality 
+            and trends from a transcendent meta or collective perspective. This sort of inductive meta-path
+            yields archetypal patterns, dynamics, and mechanics which comprise an astoundingly 
+            elegant and comprehensive model of reality. It includes the material universe, this experience, 
+            consciousness, perspectives, the unconscious, and the unknown. 
+        </p>
+        
         <h3>Physics and A Theory of Everything</h3>
         <p>
-            Integral challenges the common 
-            conception that fundamental particles in physics are in fact the building 
-            blocks of reality, or that a theory in physics that unites relativity and 
-            quantum mechanics should be considered a "Theory of Everything". This is 
-            a narrow view. Since Integral Theory includes consciousness and culture, 
+            There is a common 
+            conception that fundamental particles, waves, or field concepts in physics, as the building 
+            blocks, or structural essence, of reality, perhaps even the thoughts of God,  
+            should reveal everything we need to know about the nature of reality. 
+            "Theory of Everything" historically refers to a theory uniting relativity and 
+            quantum mechanics. This is a conservative appraisal of "everything". Since Integral Theory
+            includes material reality as the Right Quadrants and Levels beneath 
+            Altitudes, and also 
+            includes consciousness and culture, 
             which are real but do not have mass, charge, volume, or 
-            spin, Integral is the better contender for the Theory of Everything title, as 
-            it also includes the physics of material reality. 
+            spin, Integral is a better contender for Theory of Everything, if anyone still cares.
         </p>
-        <h3>Reality is a 4D stack of Levels</h3>
+        <h3>Integral Particle Physics</h3>
         <p>
-            And not talking about spacial dimensions, but Quadrants.  
-            We see reality is not a massive mound of fundamental particles, but those 
-            particles stack and arrange into various levels with unique dynamics and 
-            mechanics, all flexing and flowing with one another. The nature of  
-            particles is of great interest to technology,
-            but not particularly meaningful philosophically. More importantly, at every scale 
+            <!-- And not talking about spacial dimensions, but Quadrants.   -->
+            Reality is not merely a massive heap of protons, neutrinos, leptons, etc., but those 
+            particles stack and organize at various Levels, atoms, molecules, cells, tissues, and 
+            each Level has unique dynamics and 
+            mechanics, all flexing and flowing operationally with one another, moving together. The nature of  
+            particles is of great interest to technology and philosophy. At every scale 
             of size, the "building blocks" of that Level have their own novel, emergent structure 
-            and dynamics. The cells of my body 
-            "integrate" into a body. We discovered cells, and 
+            and dynamics. The cells of my body each do their own thing, they all have their function, 
+            but also they "integrate" into my body. We discovered cells, and 
             this opened up a new world of comprehending biology and medicine. We discovered 
-            genes. Then you take the derivative of cells, you step in one holonic 
-            scale level, and you find that cells are integrals of molecules.
-            And the rest is chemistry. Of course, molecules are made of atoms, are made of subatomic
-            particles, are made of quarks. We'll get there, just keep digging.
-            But what we can say about reality, at every Level - atoms, molecules, cells, people, etc. 
-            Is that these are holons, 
-            because whole atoms are parts of whole molecules, which are parts of whole cells. It is 
-            more true to say of your physical body that it is a stack of holonic Levels, than it is 
+            genetics. The derivative of cells, step down one Level, and you find that cells are integral 
+            molecules. The periodic table yields the substance of reality. Of course, molecules are integral 
+            atoms, are integral subatomic particles, are integral quarks. We'll find reality, 👍🏿 just keep digging.
+        </p>
+        <h3>A Thing Made Out Of Things That Makes A Thing</h3>
+        <p> 
+            It's okay to talk about physics. 
+            Material reality is composed of Levels of holons, or whole entities which are whole unto themselves, but exist as 
+            a part of another entity, as far up and as far down as we have ever been able to see. These are holons, 
+            because whole atoms are parts of whole molecules, which are parts of whole cells. 
+        </p>
+        <h3>The Most Interesting Thing Anywhere</h3>
+        <p>
+            And I see you looking up towards the top of the stack of atoms and molecules and thinking, what's the top Level? Is it the Universe?
+            The Meta-Versity? An embryo floating in space? Closer. You see, the Universe is very very big, 
+            and so I see how, after looking at very very small, you might think the other extreme. What is the Universe?
+            It's not a bunch of this, far as we know. There's not a bunch of people in it. Nah, it's pretty much just tons and 
+            tons of lower Levels: particles, waves, molecules. These low Levels take up all of the physical 
+            space in the Universe. Low Levels exist everywhere, with extreme amounts of space between them, and 
+            they collectively form galaxies, stars, and planets. The very little compose the very big, not intelligent or 
+            self-aware or alive, just big, relatively empty. It's very impressive, very 
+            vast, and as far as we know, there is nothing out there, in any of that, doing what's going on right here.
+            It's you, my love. You are a higher Level than the galaxy. Molecules and stars aren't alive.  
+        </p>
+        <h3>Middle Way ftw</h3>
+        <p>Big and small are elusive frontiers, but normal-sized, or every-sized, is where you'll find 
+            higher Levels. Because, 
+            look at reality right now. The atoms, the molecules, they are being you and this environment, aren't they, and they are being 
+            experienced because You are here. Now, this is very relevant to you, being at your scale. You, too, are a holon.
+            When I say You, what do I mean? I mean a concept (meme) that your body (brain(chemisty(waves))) generates. That self concept 
+            is a holon which could potentially form a higher self concept holon by integrating with other holons, but it is itself 
+            made of holons 
+            made of holons made of holons until you get to instinct, and here we see that over the natural history on Earth,
+            life itself underwent a sort of memetic transformation, or evolution, or we can say phylogeny. 
+        </p>
+        <h3>The Entire Stack Is Evolving</h3>
+        <p>
+            Inevitably, the self concept must have arisen from instinct. What is 
+            this thing we call instinct? It must be a form of consciousness that we share with the animals, but it 
+            is a lower Level of consciousness, because they are not self aware. If we want to know how what instinct 
+            is made of, or what it is, we can look at how it comes to be as a human sperm and egg transform into any old 
+            human baby, or we can look at how our structure evolved biologically as we were shaped from the primate meme 
+            from the mammal meme from the vertebrate meme from the animal meme from the life meme. 
+            These memes have developed from the trial and error of reproduction and death, 
+            but as you can see, the laboratory of life shows us, though it is abstract, that life evolves just like self 
+            concepts, by integrating more primitive structural concepts into higher-Level structural concepts, because 
+            higher Levels, though more fragile, offer enormous survival advantages under ideal conditions (higher Levels 
+            are less stable and happen faster).
+        </p>
+        <h3>The Spectrum is One Process</h3>
+        <p> 
+            Oh boy, we're like, all 
+            the way back now. To the microbial. This is the boundary where evolution goes from 
+            biological to physical material. What's the difference in this case? <em>Exactly</em>. Where chemicals become life, 
+            you find things very similar to the DNA creating our structures, and just like our self concept, and our knowledge 
+            quest, the biological organisms have been adapting to their environment, but the DNA, as a collective, as itself 
+            an evolutionary system,
+            driven by the simple concrete reality of self-preservation to organize itself into more and more intelligent 
+            creatures. Not on purpose, but just because it works better. Every Level of reality is implicated in evolutionary 
+            processes, making evolution perhaps the primary dynamic of reality.
+        </p>
+        <p>
+            All Levels of holons, possibly. You don't exist, except as holons. Cells form your tissues, like plants have. 
+            These tissues form your organs, like animals have. Ah, so the higher Levels are life? Well, duh. So, then what, 
+            grandpa. All right, all right, you settle down. One more and then it's off to sleepy land for you. There's Levels 
+            of matter which, in some rare, very special circumstances, can form higher Level, transcendent things, called life.
+
+        </p>
+        <p>
+            It is 
+            more true to say your physical body is a stack of holonic Levels, than 
             to say that it is a collection of organs, a story of a woman named "Stevie," or the vibrations
-            of eleventh dimensional super-strings. But wait... while you weren't 
-            looking, we've 
-            gotten so small, that ideas of "seeing something 
-            happen" and "which direction it is going" appear to stop making the same kind of 
-            sense that they do in the scale of reality that we are familiar with. Thus, the startling
+            of eleventh dimensional super-strings. 
+            These entities are so small that ideas of "seeing something happen" and "which direction it moved" stop 
+            making the same kind of sense that they do in our personal scale of reality that we are familiar with.
+            You can't look at light the same way you can look at something else, because light is the medium of vision.
+            Everything you see is light. To look at light, you just look. There's no other way to do it. 
+        </p>
+        <p>
+            Science, philosophically, methodologically, can only rely on detected sense data. Thus, when we reach the 
+            range of sense detection, we begin to use metaphors and mathematical models and talk like philosophers. Because 
+            that which is outside of the range of science can only be comprehended through abstraction by a sensual being, 
+            and that's all wonderful, I'm sure we'll make a super huge bomb. For some reason, we thought this would tell 
+            us something about the meaning of life.
+        </p>
+        <p>
+            By the way, I get that we're four dimensions of pointless heat 
+            death falling, but where would I go if I wanted to understand the meaning of life? 
+            Thus, the startling
             answer, if one can be derived from this, is <em>not</em> that one day, we will find 
             the tiniest thing that makes up everything but is utterly incomprehensible because it 
             exists in basically a different reality, but rather, our reality has always appeared to 
@@ -242,33 +367,14 @@
         </p> -->
         <h3>How does all of this relate to the Map?</h3>
         <p>All of what is being conveyed here, Integral Theory and all, is Level 7, typical Teal Meme. It couldn't 
-            be more on the nose. This is our message. The 
-            expression of a Second Tier culture is a genuine, personal call to Wake Up, Grow Up, and Clean Up. 
+            be more on the nose. The 
+            message of a Second Tier culture is a genuine, personal call to Wake Up, Grow Up, and Clean Up. 
             Spirituality, Development, and Integrity. It is a call to Transcend and Include - to take a step back 
-            into the abstract and hold the apparent as sacred treasure. AQALALATAS is the Level 7 map of reality.
-            Most people don't have it. Level 7 wants everyone to have it, and to use it.
+            into abstraction and hold the apparent as sacred treasure. 
+            <!-- AQALALATAS is the Level 7 map of reality.
+            Most people don't have it. Level 7 wants everyone to have it, and to use it. -->
         </p>
-        <!-- <p><b>Quadrants:</b> People generally and correctly describe reality as:<br><br>
-            <b>1 UL "I"</b> My present consciousness, memories, stories, sensations, feelings, thoughts.
-        <br><b>2 UR "It"</b> This present environment, my brain and physical senses, things we perceive.
-        <br><b>3 LL "We"</b> Cultural wisdom and lore, the news, the nature of morality, the meaning 
-        of life.
-        <br><b>4 LR "Its"</b> The Universe, the world, the system, civilization, evolution.
-        </p>
-        <p>Thus, in explaining reality in commonsense words, we must say that the nature of reality 
-            is that it occurs simultaneously to us as these four Quadrants. Language is structured very 
-            close to perception, so not surprising that we conjugate our language into "I," "We", 
-            "It", "Its" - 
-            first, second, and third person, singular and plural, the way we experience reality.
-        </p>
-        <p>
-            This also means that the four common answers above are incomplete, unconsciously 
-            partial and limiting views of reality, and a full answer would include all four 
-            perspectives. 
-            Integral is not making up the Quadrants and trying to convince you they exist, we are 
-            revealing that we experience the Quadrants already, and suggesting that they actually 
-            don't exist.😉
-        </p>
+        <!-- 
         <p><b>Levels:</b> consider the maturity, cognitive aptitude, and education of the 
             person responding.
         <br><br>
@@ -298,38 +404,7 @@
             is a partial view. In order to describe the way that humans understand the nature of reality,
             I had to explain the Quadrants. 
         </p> -->
-        <!-- <h2>Who Integral Is For</h2>
-        <p>You may be tempted to believe that Integral is one thing, only to find that you  
-            are taking a narrow view. Again, we can use the Quadrants to explain what Integral is.
-        </p> 
-        <p><b>Upper-Left "I":</b> Integral is a map for self help and personal development.
-            It explains how to improve one's moods, relationships, and lifestyle, how transcendental
-            states of consciousness work, what they reveal, and massively helps in the development 
-            of personal insight and mature self-concept.
-        </p>
-        <p><b>Lower-Left "We":</b> Integral is a subculture, a values paradigm, a worldview, aimed 
-            at reconcilliation and inclusion of those extant. According 
-        to Integral's own map of reality, Integral is a Level, which 
-        can also be called Second Tier or Teal according to the Altitudes system. If all of
-        this makes sense to you, to precisely that extent, you are Integral.
-        Truly, no Kool-Aid to drink. If a map of the way humankind understands reality is 
-        recognizable to you, you are part of the Integral "We."</p>    
-        <p><b>Upper-Right "It":</b> Integral is a relatively simple, comprehensive philosophical theory of reality, bringing
-            new solutions to age-old questions, and showing how the history of 
-            thought all fits together. Ken Wilber's writing, in particular, applies very 
-            directly and progressively to the following fields, often simultaneously, 
-            to name some major ones: psychology, religion, spirituality, economics, 
-            sociology, anthropology, philosophy, literature, politics, gender studies, 
-            death and grief, humor, poetry, history, metaphysics, art. Integral applies to every 
-            aspect of reality, so in explaining Integral, you end up covering most topics. 
-        </p>    
-        <p><b>Lower-Right "Its":</b> Integral is a tool for seeing how fields and systems are inter-related
-            in a grander scope. Thus, it applies to every field of endeavor, and is best used as a universal 
-            translater, a way of applying one field to another, a way of checking in with every aspect of the big picture.
-            At a deeper level, the Integral post-metaphysics suggests that one of the best generalizations
-            that can be made about reality is that it's a developmental system appearing to occur 
-            in four dimensions (Quadrants.)
-        </p>    
+        <!--    
         <h3>It really isn't a weird new age cult thing?</h3>
         <p>Here is the deal. We have a map of reality. According to the map, human 
             individuals and human civilization, at the second, third, and fourth Levels,
@@ -368,76 +443,13 @@
         <p>Another thing happens at Level 7. We see that Levels exist, and there are more than 7. We 
             are about in the middle, here.
         </p> -->
-        <!-- <h3>Transrationality</h3>
-        <h3>What is Reality?</h3>
-        <p><b>Upper Left Quadrant:</b> I am this mind, aware of my thoughts and sensations, my story,
-        and all the things I know of. This room, and this world, all exist in my mind, as 
-        information that I am aware of. I am reality.
-        </p>
-        <p><b>Lower Left Quadrant:</b> I am a name and an address and I am a citizen of places,
-        with a reputation and social credit. We are all just people, trying to do our best to 
-        make the world a better place, or at least just get by. That's our reality.</p>
-        <p><b>Lower Right Quadrant:</b> The universe exploded into being billions of years before years existed,
-            ultimately forming our planet, which had the ingredients for intelligent life. You 
-            can read the rest in the history books, and here we are on the internet.
-            That's reality.
-        </p>
-        <p><b>Upper Right Quadrant:</b> My body is in this environment here,
-            with all the colors and sounds my brain experiences. Everything I 
-            can directly sense, everything I'm aware of. This is reality.
-        </p> -->
-
+ 
         <!-- <p>Each of the <b>Five Modules</b> presented here is <em>one aspect</em> of the answer 
             to this question. This isn't a made up thing, our Map actually is a way of organizing all of the truths 
             available to us. If you ask anyone, what they will tell you will essentially <em>be</em>
             one of the Levels, or two of the States, or two of the Quadrants, or a "there's two Types
             of people in this world, Bimmy," that we all love so much.
         </p> -->
-        <!-- <h3>Quadrants example</h3>
-        <p>What is reality?</p> -->
-            <!-- <p> 
-            nature of reality, as understood by humankind right now.</p> -->
-        <!-- <p>Ask this question, and people might describe the structure and origins 
-            of the physical universe, they might describe "the world" and history, they might describe 
-            their own personal understanding and experience, or they might talk about universal truths 
-            and values. Right? What we reveal here is twofold 1) that people answer a question firmly 
-            with one quarter of a common knowledge understanding 2) that we understand reality to 
-            be four-dimensional from our own perspective. Reality always includes an individual with 
-            an interior and exterior, who belongs to a collective which also has an interior and exterior.
-            This description of the Quadrants Module may seem exotic at first, but keep it simple:
-            what reality is, is that reality has an inside and outside, and it occurs at an individual 
-            and collective level. When we conjugate our language, "I", "We", "It", and "Its", we again 
-            show that we know the Quadrants intuitively, if not explicitly. Those conjugated pronouns 
-            refer to the subject of each Quadrant. 
-        </p> -->
-        <!-- <h3>Explain reality in a very small space 😜</h3> -->
-        <!-- <h2>The 5 Modules</h2> -->
-        <!-- <h3>1 Quadrants</h3>
-        <p>The way that we conjugate language says a lot about how we perceive reality. Reality can be 
-            described as an "I", a "We", an "It", or a system of "Its". What is real? I: this experience you're 
-            having right now? We: all the 
-            experiences of all people are real? It: this room I'm in right now is real? Its:, the universe that generates
-            this room and me is real? The Four Quadrants illustrate
-            how a singular "holonic" source unfolds in and expresses all four dimensions simultaneously, rendering all 
-            four quadrants equally and entirely real. A holon, reflexively, is anything that expresses in all four Quadrants 
-            - and since reality is the four Quadrants, this means that everything real exists in all four Quadrants and is 
-            a holon. Everything not real, by any standard, exists in some Quadrants, but not all.  -->
-            <!-- People understand reality to be the <b>interior subjective</b> experience of "I",
-                in relation to an <b>external objective</b> reality "It". A human is both a physical body with 
-            a brain emitting waves,
-            and the ongoing story of a self having awareness, thoughts, friends and enemies, and dreams. These can be considered 
-            the "two sides" of reality, or interior and exterior dimensions. Reality is the interaction between them.
-            
-            The "It" realm is composed
-            of systems and groups of "Its." A human is both an individual, and a member
-            of <b>collective external</b> civilization. Both are correct. Every human is an example of a human, and this is true
-            of everything. Instances are produced by systems, and arise as groups. No person 
-            could exist without the civilization that produced and raised them. Returning to the 
-            internal, we recognize that nearly everything we know was taught to us. We speak, and 
-            think, in a language that we learned as toddlers. There is also a "we" nature to reality, 
-            for example, consider the difference between what "I" know and what I can look up on the 
-            internet. The knowledge, thoughts, opinions, perspectives of others is a large part of reality 
-            for everyone, and so we consider this the <b>collective internal</b> part of reality, the "we." -->
             <!--         
             </p>
             <h3>2 Levels</h3>

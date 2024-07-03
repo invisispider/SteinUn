@@ -1,6 +1,12 @@
 export const AqalTypes = {
-    'jungian': {
-        'description': 'Jung\'s notion of archetypes uses a nascent sort of memetics to approach the psyche itself. The psyche recognizes and generates story to help us make sense of our world. Thus, our reality resembles the most basic stories that we tell. Underneath the hood of everything, we are pattern recognition. The patterns which emerge are the ones we keep coming back to. The Type system arising from this is a collection of common and recognizable story roles that we keep doing. They are ways of characterizing people in terms of what they think, feel, and do, so it is a wonderful Type system.',
+    'archetypes': {
+        'description': 'Jung\'s notion of people playing collective story roles as personnae uses a nascent\
+         sort of memetics to approach the psyche itself. The psyche recognizes and generates story to help \
+         us make sense of our world. Thus, our reality resembles the most basic stories that we tell. Underneath \
+         the hood of everything, we are pattern recognition. The patterns which emerge are the ones we keep coming \
+         back to. The Type system arising from this is a collection of common and recognizable story roles that we \
+         keep doing. They are ways of characterizing people in terms of what they think, feel, and do, so it is a \
+         wonderful Type system.',
         'types': {
             1: {
                 'type': 'innocent',
@@ -51,7 +57,7 @@ export const AqalTypes = {
                 'desc': 'Committed to helping the world gain deeper insight and wisdom, the Sage serves as the thoughtful mentor or advisor.',
             },
         },
-        'drawbacks': 'Refers to story character analogy often without reference to the depth dimension of the observation.'
+        'setbacks': 'Refers to story character analogy often without reference to the depth dimension of the observation.'
     },
     'astrology': {
         'description': 'Based on birthday, commonly used in Magenta and Red.',
@@ -105,7 +111,7 @@ export const AqalTypes = {
                 'desc': 'Whimsical but over-sensitive.',
             },
         },
-        'drawbacks': 'Anti-scientific and probably untrue.',
+        'setbacks': 'Anti-scientific and probably untrue.',
     },
     'bigfive': {
         'description': 'Based on five somewhat independent personality factors.',
@@ -127,32 +133,18 @@ export const AqalTypes = {
                 'desc': 'Thoughtfulness, impulse control, goal-directed behavior.',
             }
         },
-        'drawbacks': 'Widely tested and accepted, but limited in usefulness.',
-    },
-    'elemental': {
-        'description': 'Common in New Age and magic, based on medieval mysticism.',
-        'types': {
-            1: {
-                'type': 'Air/Wands',
-                'desc': '',
-            },
-            2: {
-                'type': 'Fire/Swords',
-                'desc': '',
-            },
-            3: {
-                'type': 'Water/Cups',
-                'desc': '',
-            },
-            4: {
-                'type': 'Earth/Pentacles',
-                'desc': '',
-            },
-        },
-        'setbacks': 'Deprecated. Reductionistic.',
+        'setbacks': 'Widely tested and accepted, but limited in usefulness.',
     },
     'myers-briggs': {
-        'description': 'Supported in business environments. Based on complicated factor relationships. This system is preferred because it assumes no judgment or superiority. The testing methods are quite good. The deeper theory to it is extremely compelling - though people hardly ever care about what these Types actually say about a person.',
+        'description': 'Supported in business environments. Based on complicated factor relationships. This system is preferred \
+        because it assumes no Levels. The deeper theory to it is \
+        compelling - though people hardly ever care about what these Types actually say about a person. The section on Jungian \
+        cognitive functions explains basics. Your J/P tells you whether S/N (Perceiving functions) or T/F (Judging functions) \
+        will be extraverted, while the other is introverted. If your E/I was E, then the extraverted function is your dominant. \
+        If it was I, then the term that J/P did not select is your dominant. In either case, the other middle term is your auxilliary, \
+        the two middle terms not indicated by your type comprise your tertiary and inferior functions. These are the four main things \
+        your brain tends to do by habit. \
+        ',
         'types': {
             1: {
                 'type': 'Extraversion/Introversion',
@@ -171,10 +163,18 @@ export const AqalTypes = {
                 'desc': 'Preference between becoming aware or coming to conclusions.',
             },
         },
-        'setbacks': 'Ignores AQAL factors, difficult to use and comprehend. One of the best, unfortunately.',
+        'setbacks': 'Highly disputed scientific integrity. Very Integral and Jungian compatible. \
+        Ignores thus correlates with Levels. Difficult to use and comprehend. One of the best, unfortunately. \
+        Possibly does not apply to Second Tier, as Second Tier often expresses preference to deliberately use \
+        most of the cognitive functions in introverted and extraverted ways. Somewhat begs the question of \
+        how much this truly describes a personality.',
     },
     'enneagram': {
-        'description': 'Unique system of roughly equal-represented personality archetypes.',
+        'description': 'Unique system of roughly equal-represented personality archetypes. Originally \
+        and traditionally based on the observance of monk behavior, this model nevertheless is widely used, \
+        helping people to conceptualize their self, others, and relationships. The various meta-types of this \
+        model resemble the dynamics of other models, but features are split into units of three, rather than \
+        two or four.',
         'types': {
             1: {
                 'type': 'reformer',
@@ -213,20 +213,8 @@ export const AqalTypes = {
                 'desc': 'Easygoing, self-effacing. Receptive, reassuring, agreeable, complacent.',
             },
         },
-        'setbacks': 'Vertical confusion. Possibly redundant.',
+        'setbacks': 'Major vertical confusion. Type names vary widely. Complicated, or detailed. \
+        Can be used for personal development in interesting ways, though methodologies vary and \
+        efficacy is disputed.',
     },
-    'gender': {
-        'description': 'Behavioral patterns created by the biological and social expressions of gender and sexuality.',
-        'types': {
-            1: {
-                'type': 'male',
-                'description': 'Preference for agency, rules, and independence.',
-            },
-            2: {
-                'type': 'female',
-                'description': 'Preference for communion, care, and relatedness.',
-            },
-        },
-        'setbacks': 'Affected by all four Quadrants. Nature is disputed.',
-    }
 }

@@ -24,7 +24,6 @@ $medium-thalmon: rgb(245, 120, 89)
                 background-color: $mod-bg
             i:hover, .tinytext:hover
                 background-color: $sidebar-bg
-
         #style-selector
             background-color: $wrapper-bg
         .sidebar
@@ -127,6 +126,12 @@ $medium-thalmon: rgb(245, 120, 89)
                 fill: $mod-bg
                 // stroke: $mod-bg
                 // stroke-width: 10px
+            .zen-cycle-arm
+                stroke: $smooth-bg
+            .habit-divider
+                fill: $wrapper-bg
+                stroke: $smooth-bg
+
         #habits
             h2
                 box-shadow: 0 0 1px $sidebar-bg
@@ -212,10 +217,28 @@ $medium-thalmon: rgb(245, 120, 89)
                 background-color: $mod-bg
             i:hover, .tinytext:hover
                 background-color: $sidebar-bg
-
         // INTEGRAL
         .hilight
             color: $spice
+        .btn-group
+            :hover
+                background-color: $sidebar-bg
+            button
+                // background-color: #08F
+                // background-color: #101
+                background-color: $smooth-bg
+                color: $wrapper-tx
+                :hover
+                    background-color: $vid-div
+            .darken
+                background-color: darken($smooth-bg, 30%)
+        .home-changer a
+            background-color: $sidebar-bg
+            color: $wrapper-tx
+            // box-shadow: 2px 2px rgb(74 32 126), -2px -2px rgb(126 220 74)
+            box-shadow: 2px 2px #0088ff56, -2px -2px $spice
+        .home-changer a:hover
+                background-color: $spice
 
         .bisque
             stroke: $style-changer-color

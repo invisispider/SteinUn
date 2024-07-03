@@ -86,22 +86,17 @@ watch(()=>store.dayOfYear, (day)=>{
 
     <circle :r="160" :cx="200" :cy="300" class="pie-chart" />
 
-    <circle
+    <circle class="zen-cycle-arm"
       :r="75"
       :cx="200"
       :cy="300"
-      stroke="red"
-      fill="red"
       stroke-width="170"
-      stroke-dasharray="6 360"
+      stroke-dasharray="0 350 9 85"
       />
-
     <circle class="habit-divider"
       :r="75"
       :cx="200"
       :cy="300"
-      fill="white"
-      stroke="white"
       stroke-width="170"
       stroke-dasharray="2 57"
       />
@@ -207,10 +202,10 @@ watch(()=>store.dayOfYear, (day)=>{
         stroke-width="32"
         stroke-dasharray="1 1"
       />
-      <!-- <g>
+      <g>
         <title>Five-day Holiday festival Cycle considered off the calendar.</title>
-        <text class="habit-names" :x="163" :y="160">~newZen~</text>
-      </g> -->
+        <text x="198" y="160" style="z-index: 200;">~</text>
+      </g>
       <g>
         <title>We are this many days into the year and degrees around the wheel.</title>
         <text x="200" y="300" class="habit-names"
@@ -231,13 +226,13 @@ watch(()=>store.dayOfYear, (day)=>{
   </div>
 </template>
 <style lang="sass">
-.season-icon
-  position: absolute
-  opacity: 0.5
-  fill: #888
-  stroke: #888
-  width: 90px
-  height: 90px
+// .season-icon
+//   position: absolute
+//   opacity: 0.5
+//   fill: #888
+//   stroke: #888
+//   width: 90px
+//   height: 90px
 .spring
   left: 57%
   top: 75%

@@ -2,13 +2,16 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="1366"
-   height="768"
-   viewBox="0 0 1366 768"
+   width="757.66882"
+   height="766.45337"
+   viewBox="0 0 757.66882 766.45337"
    version="1.1"
    id="svg1"
    inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
-   sodipodi:docname="QuadrantsModel.svg"
+   sodipodi:docname="QuadrantsModel2.svg"
+   inkscape:export-filename="../../../../../Videos/QuadrantsModel2.png"
+   inkscape:export-xdpi="200"
+   inkscape:export-ydpi="200"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,14 +26,14 @@
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
-     inkscape:zoom="0.64395376"
-     inkscape:cx="711.23119"
-     inkscape:cy="350.18042"
+     inkscape:zoom="0.49014329"
+     inkscape:cx="265.22856"
+     inkscape:cy="264.20845"
      inkscape:window-width="1280"
-     inkscape:window-height="688"
+     inkscape:window-height="720"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="1"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
      showguides="true" />
   <defs
@@ -38,7 +41,9 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-340.40192,0.39228249)"
+     style="display:inline">
     <rect
        style="fill:#000000"
        id="rect1"
@@ -47,152 +52,280 @@
        x="342.59808"
        y="-0.39228249"
        sodipodi:insensitive="true" />
+    <g
+       class="circles"
+       id="g8"
+       sodipodi:insensitive="true">
+      <circle
+         opacity="0.7"
+         cx="720"
+         cy="377"
+         r="320"
+         fill="#ffffff"
+         id="circle1"
+         style="fill:#ffffff;fill-opacity:0.6" />
+      <circle
+         opacity="0.7"
+         cx="720"
+         cy="377"
+         r="280"
+         fill="#800080"
+         id="circle2"
+         style="fill:#800080;fill-opacity:0.6" />
+      <circle
+         opacity="0.7"
+         cx="720"
+         cy="377"
+         r="240"
+         fill="#4b0082"
+         id="circle3"
+         style="fill:#4b0082;fill-opacity:0.6" />
+      <circle
+         opacity="0.7"
+         cx="720"
+         cy="377"
+         r="200"
+         fill="#008080"
+         id="circle4"
+         style="fill:#008080;fill-opacity:0.6" />
+      <circle
+         opacity="0.7"
+         cx="720"
+         cy="377"
+         r="160"
+         fill="#008000"
+         id="circle5"
+         style="fill:#008000;fill-opacity:0.6" />
+      <circle
+         opacity="0.7"
+         cx="720"
+         cy="377"
+         r="120"
+         fill="#ffa500"
+         id="circle6"
+         style="fill:#ffa500;fill-opacity:0.6" />
+      <circle
+         opacity="0.7"
+         cx="720"
+         cy="377"
+         r="80"
+         fill="#ff0000"
+         id="circle7"
+         style="fill:#ff0000;fill-opacity:0.6" />
+      <circle
+         opacity="0.7"
+         cx="720"
+         cy="377"
+         r="40"
+         fill="#808080"
+         id="circle8"
+         style="fill:#808080;fill-opacity:0.598715" />
+    </g>
     <rect
-       style="fill:#002525;fill-opacity:1"
+       style="fill:#002525;fill-opacity:1;stroke-width:0.919193"
        id="rect2"
-       width="757.66882"
+       width="640.1665"
        height="17.569132"
-       x="340.40192"
+       x="399.7363"
        y="366.75562"
        sodipodi:insensitive="true" />
     <rect
-       style="fill:#002525;fill-opacity:1"
+       style="fill:#001c1c;fill-opacity:0.60766423;stroke-width:0.919017"
        id="rect3"
-       width="757.66882"
+       width="639.92004"
        height="17.569132"
-       x="-762.37457"
+       x="-697.06543"
        y="710.45178"
-       transform="rotate(-90)"
-       sodipodi:insensitive="true" />
+       transform="rotate(-90)" />
     <text
        xml:space="preserve"
-       style="font-size:37.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill:#00ffff"
+       style="font-size:37.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill:#ffffff;fill-opacity:1"
        x="614.91962"
        y="740.09967"
        id="text4"
        sodipodi:insensitive="true"><tspan
+         class="quadrant-text"
          sodipodi:role="line"
          id="tspan4"
          x="614.91962"
          y="740.09967"
-         style="font-size:37.3333px;fill:#ffffff">COLLECTIVE</tspan></text>
+         style="font-size:37.3333px;fill:#ffffff;fill-opacity:1">COLLECTIVE</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:37.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill:#00ffff"
+       style="font-size:37.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill:#ffffff;fill-opacity:1"
        x="-469.67712"
        y="390.17166"
        id="text5"
        transform="rotate(-90)"
        sodipodi:insensitive="true"><tspan
+         class="quadrant-text"
          sodipodi:role="line"
          id="tspan5"
          x="-469.67712"
          y="390.17166"
-         style="font-size:37.3333px;fill:#ffffff">INTERNAL</tspan></text>
+         style="font-size:37.3333px;fill:#ffffff;fill-opacity:1">INTERNAL</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:37.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill:#00ffff"
+       style="font-size:37.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill:#ffffff;fill-opacity:1"
        x="289.78571"
        y="-1050.3049"
        id="text6"
        transform="rotate(90)"
        sodipodi:insensitive="true"><tspan
+         class="quadrant-text"
          sodipodi:role="line"
          id="tspan6"
          x="289.78571"
          y="-1050.3049"
-         style="font-size:37.3333px;fill:#ffffff">EXTERNAL</tspan></text>
+         style="font-size:37.3333px;fill:#ffffff;fill-opacity:1">EXTERNAL</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:37.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill:#ffffff"
+       style="font-size:37.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;display:inline;fill:#ffffff;fill-opacity:1"
        x="614.91962"
        y="50.51125"
        id="text3"
        sodipodi:insensitive="true"><tspan
+         class="quadrant-text"
          sodipodi:role="line"
          id="tspan3"
          x="614.91962"
          y="50.51125"
-         style="font-size:37.3333px">INDIVIDUAL</tspan></text>
+         style="font-size:37.3333px;fill:#ffffff;fill-opacity:1">INDIVIDUAL</tspan></text>
+    <rect
+       x="380"
+       y="100"
+       width="300"
+       height="160"
+       rx="20"
+       ry="20"
+       fill="#008080"
+       opacity="0.8"
+       class="shadow-box"
+       id="rect8"
+       style="display:inline;opacity:0.899441;fill:#008080;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none" />
+    <rect
+       x="380"
+       y="510"
+       width="300"
+       height="160"
+       rx="20"
+       ry="20"
+       fill="#008080"
+       opacity="0.8"
+       class="shadow-box"
+       id="rect9"
+       style="opacity:0.899441;fill:#008080;fill-opacity:1" />
+    <rect
+       x="755"
+       y="100"
+       width="300"
+       height="160"
+       rx="20"
+       ry="20"
+       fill="#008080"
+       opacity="0.8"
+       class="shadow-box"
+       id="rect10"
+       style="opacity:0.899441;fill:#008080;fill-opacity:1" />
+    <rect
+       x="755"
+       y="510"
+       width="300"
+       height="160"
+       rx="20"
+       ry="20"
+       fill="#008080"
+       opacity="0.8"
+       class="shadow-box"
+       id="rect11"
+       style="opacity:0.899441;fill:#008080;fill-opacity:1" />
     <text
+       class="fill-text"
        xml:space="preserve"
-       style="font-size:29.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill:#008080;fill-opacity:1"
-       x="390.09003"
-       y="645.66559"
+       style="font-size:29.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill-opacity:1"
+       x="423.10818"
+       y="639.66559"
        id="text13"><tspan
          sodipodi:role="line"
          id="tspan13"
-         x="390.09003"
-         y="645.66559">2-p plural: &quot;Us/We&quot;</tspan></text>
+         x="423.10818"
+         y="639.66559">2-p plural &quot;We&quot;</tspan></text>
     <text
+       class="fill-text"
        xml:space="preserve"
-       style="font-size:29.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill:#008080;fill-opacity:1"
-       x="799.39545"
-       y="645.66559"
+       style="font-size:29.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill-opacity:1"
+       x="803.23615"
+       y="639.66559"
        id="text14"><tspan
          sodipodi:role="line"
          id="tspan14"
-         x="799.39545"
-         y="645.66559">3-p plural: &quot;Its&quot;</tspan></text>
+         x="803.23615"
+         y="639.66559">3-p plural &quot;Its&quot;</tspan></text>
     <text
+       class="fill-text"
        xml:space="preserve"
-       style="font-size:85.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill:#008080;fill-opacity:1"
-       x="861.47589"
-       y="594.21222"
+       style="font-size:85.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill-opacity:1"
+       x="853.68134"
+       y="600.21222"
        id="text9"><tspan
          sodipodi:role="line"
          id="tspan9"
-         x="861.47589"
-         y="594.21222">LR</tspan></text>
+         x="853.68134"
+         y="600.21222">LR</tspan></text>
     <text
+       class="fill-text"
        xml:space="preserve"
-       style="font-size:85.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill:#008080;fill-opacity:1"
-       x="479.93567"
-       y="592.01611"
+       style="font-size:85.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill-opacity:1"
+       x="483.28934"
+       y="598.01611"
        id="text10"><tspan
          sodipodi:role="line"
          id="tspan10"
-         x="479.93567"
-         y="592.01611">LL</tspan></text>
+         x="483.28934"
+         y="598.01611">LL</tspan></text>
     <text
+       class="fill-text"
        xml:space="preserve"
-       style="font-size:85.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill:#008080;fill-opacity:1"
-       x="477.93567"
-       y="182.27974"
+       style="font-size:85.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;display:inline;fill-opacity:1"
+       x="477.10272"
+       y="190.27974"
        id="text7"><tspan
          sodipodi:role="line"
          id="tspan7"
-         x="477.93567"
-         y="182.27974">UL</tspan></text>
+         x="477.10272"
+         y="190.27974">UL</tspan></text>
     <text
+       class="fill-text"
        xml:space="preserve"
-       style="font-size:85.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill:#008080;fill-opacity:1"
-       x="854.29901"
-       y="180.0836"
+       style="font-size:85.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill-opacity:1"
+       x="847.49469"
+       y="188.0836"
        id="text8"><tspan
          sodipodi:role="line"
          id="tspan8"
-         x="854.29901"
-         y="180.0836">UR</tspan></text>
+         x="847.49469"
+         y="188.0836">UR</tspan></text>
     <text
+       class="fill-text"
        xml:space="preserve"
-       style="font-size:29.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill:#008080;fill-opacity:1"
-       x="396.09003"
-       y="239.37941"
+       style="font-size:29.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;display:inline;fill-opacity:1"
+       x="438.8801"
+       y="231.37941"
        id="text11"><tspan
          sodipodi:role="line"
          id="tspan11"
-         x="396.09003"
-         y="239.37941">1st person: &quot;I/Me&quot;</tspan></text>
+         x="438.8801"
+         y="231.37941">1st person &quot;I&quot;</tspan></text>
     <text
+       class="fill-text"
        xml:space="preserve"
-       style="font-size:29.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;fill:#008080;fill-opacity:1"
-       x="810.37622"
-       y="239.37941"
+       style="font-size:29.3333px;line-height:1.6;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0.92px;display:inline;fill-opacity:1"
+       x="803.87213"
+       y="233.37941"
        id="text12"><tspan
          sodipodi:role="line"
          id="tspan12"
-         x="810.37622"
-         y="239.37941">3rd person: &quot;It&quot;</tspan></text>
+         x="803.87213"
+         y="233.37941">3rd person &quot;It&quot;</tspan></text>
   </g>
 </svg>

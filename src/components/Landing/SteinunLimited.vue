@@ -71,7 +71,7 @@
             with the unknown to manifest and uncover existential meaning.
         </p>
           
-        <h2>Our Story:</h2>
+        <!-- <h2>Our Story:</h2>
         <p>A long, long time ago, a decreasingly imaginary Turquoise corporate entity was born, as
             a lost and discouraged young man finally looked the universe in the eyes and asked some serious questions.
             In his imagination, Stein came and spoke in a language as intimate and universal as it was inscrutible.
@@ -104,27 +104,27 @@
             Shredded up. In the river. <b>He was ridiculous.</b> He swore an 
             oath that he would face everything and never stop being ridiculous. 
             He defined a brand. 
-            <!-- And he said, "Being ridiculous is not a game to me, friends.It's who I am and what I do." -->
-            And he erected a humble storefront with a sandwich board which read:
-        </p>
+            --><!-- And he said, "Being ridiculous is not a game to me, friends.It's who I am and what I do." -->
+            <!-- And he erected a humble storefront with a sandwich board which read: -->
+        <!-- </p>  -->
         <h3>~We create The Future~</h3>
         
-        <h2>Art Resume:</h2>
+        <!-- <h2>Art Resume:</h2>
         <h3>Writer, arranger, producer of 1000+ strange pop songs.</h3>
         <img class="stu-banner" src="@/assets/img/Stein.png" />
-        <h3>Leader of <RouterLink to="/Music">Stein</RouterLink> experimental alternative rock band</h3>
+        <h3>Leader of <RouterLink to="/Music">Stein</RouterLink> experimental alternative rock band</h3> -->
         <!-- <img class="stu-banner" src="@/assets/img/accidance.jpg" /> -->
-        <img class="stu-banner" src="@/assets/img/Accustomed.png" />
+        <!-- <img class="stu-banner" src="@/assets/img/Accustomed.png" />
         <h3>Created feature comedy films "Accidance!" and "Going With the Flow".</h3>
         <img class="stu-banner" src="@/assets/img/GWTF.png" />
         <h3>Published science fiction author and content editor.</h3>
         <img class="stu-banner" src="@/assets/img/spiralstairs.jpeg" />
-        <h3>Online personality and philosopher <RouterLink to="/landing/UnThinkMe">unThinkMe</RouterLink>.</h3>
+        <h3>Online personality and philosopher <RouterLink to="/landing/UnThinkMe">unThinkMe</RouterLink>.</h3> -->
         <!-- <img class="stu-banner" src="@/assets/img/unthinkme.png" /> -->
-        <p>When you spend your time learning, you feel like an imposter a lot. 
+        <!-- <p>When you spend your time learning, you feel like an imposter a lot. 
             The difference between imposter and professional is time. I'm a professional imposter.
         </p>
         <h3>👉🏿 ~Head of Sales~!</h3>
-        
+         -->
     </div>
 </template>
