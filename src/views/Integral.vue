@@ -124,14 +124,16 @@ const toggleState = (sel: string) => {
             <template v-else-if="Selected == 'States'">
                 <template v-if="selState==='ordinary'">
                     <h1>Ordinary States</h1>
-                    <p>Throughout our normal lives, ordinary people experience a host of minor States, 
-    but all of us experience at least three Major States of consciousness: waking, dreaming, and 
-    deep sleep. Each of these Major States is You, experiencing reality in radically different 
-    ways.</p>
+                    <p>All people experience a host of minor States, 
+    but we have three Major States of consciousness that we enter every day: Waking, Dreaming, and 
+    Deep Sleep.</p>
+    <p>States where you are ordinarily asleep or unconscious can be accessed through 
+    spiritual practice, exposing entire realms of deep meaning and revealing transcendent 
+    modes of knowing and being.</p>
                 </template>
                 <template v-else-if="selState==='brainwaves'">
                     <h1>Brainwave States</h1>
-                    <p>There is nna strong desire for transpersonal mystical States to provide scientific 
+                    <p>There is a strong desire for transpersonal mystical States to provide scientific 
     backing. One thing that is evident and easily comprehensible is EEG scans. We can explore the 
     different Branwave ranges and how they correspond to the Major Ordinary States of consciousness, 
     and also how those might correspond to the overlapping comparitive religious progression of 

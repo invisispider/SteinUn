@@ -21,32 +21,36 @@
         </p> -->
         <!-- <h3>I'd love to share something personal with you.</h3> -->
         <h3>Ethical business for an Integral kosmos.</h3>
-        <h3>Mission: to make consciousness sustainable with disConnectors.</h3>
         <p>Imagine a unique product that instantly makes a person whole, free, healthy, 
-            and fulfilled. Now stop. We did it already. The product is the light and the way.
+            and fulfilled. Now stop, because we did it already. <b style="font-size: xx-large;">disConnectors!</b>
+            The Product is the light and the way.
+            
         </p>
-        <h3>Pitch: Everything You See Is Light.</h3>
+        <p><b>Mission:</b> Make consciousness sustainable with disConnectors.</p>
+        <p><b>Pitch:</b> Everything You See Is Light.</p>
         <div class="pitch-container">
             <audio controls>
                 <source src="https://firebasestorage.googleapis.com/v0/b/stein-unlimited.appspot.com/o/sounds%2FPITCH_Everything_You_See_Is_Light.mp3?alt=media&token=0baa3cac-b5ed-4246-ba66-9e1d7f7a7105" type="audio/mpeg">
                 Your browser does not support the audio tag.
             </audio>
-            <p><b>The Pitch</b> is a new form of verbal conjuring that opens the floodgates for 
-                <b>disConnectors</b> to fill You to the brim with love everlasting, set You free
+            <p><b>The Pitch</b> is a new form of verbal conjuring that opens the floodgates  
+                to fill You to the brim with love everlasting, set You free
                 from an imaginary tragic narrative, and update Your firmware to join the Future meta.</p>
         </div>
         <h3>Principles: the Path of Sales.</h3>
         <p>The art of tricking people into giving away a favorable value is what we 
             call Old Sales, or Orange Altitude. We compete for what we 
             already have, maximize infrastructure to empower sociopaths and 
-            leverage unfairness, and spend our time in patterns of transaction
+            leverage unfairness, and spend our time in patterns of transaction, rationalization,
             and consumption. This results in our apparent contemporary civilization
             and its comorbid pathologies. In short, we have evolved from 
-            violence to dishonesty. Let's keep moving.
+            violence to dishonesty. Let's keep going.
         </p>
         <h3>The drawing board.</h3>
-        <p>Everything a person does is motivated. Typically, motives are unconscious, hidden,
-            or dishonest. In the dawn of Second Tier business, it is our pleasure to 
+        <p>
+            <!-- Everything a person does is motivated. Typically, motives are unconscious, hidden,
+            or dishonest.  -->
+            In the dawn of Second Tier business, it is our pleasure to 
             interact in a forthright manner. The Future 
             of Sales is a reality wherein the best thing you could possibly do with your time 
             actually makes sense to do right now. This reality includes a self help rock opera 

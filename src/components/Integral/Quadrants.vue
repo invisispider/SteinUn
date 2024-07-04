@@ -2,12 +2,16 @@
 import {ref} from "vue"
 type QuadRef = 'base'|'up-down'|'left-right'|'upper-left'|'upper-right'|'lower-left'|'lower-right'; 
 const quadRef = ref('base')
-const changeQuad = (sel: QuadRef) => quadRef.value=sel
+const changeQuad = (sel: QuadRef) => {
+    quadRef.value=sel
+    // let tempEl = document.getElementById(sel);
+    // if (tempEl) tempEl.scrollIntoView();
+    // if (tempEl) 
+    window.scrollTo(0, 300);
+}
 </script>
 <template>
     <div class="quads-container">
-        <h1>Quadrants</h1>
-        <p>Click a Quadrant or axis for more info.</p>
         <svg class="quadrants-svg"
             width="757.66882"
             height="766.45337"
@@ -341,6 +345,9 @@ const changeQuad = (sel: QuadRef) => quadRef.value=sel
             </g>
         </svg>
         <template v-if="quadRef==='base'">
+            <h1 id="base">Quadrants</h1>
+            <p>Click a Quadrant or axis for more info.</p>
+
             <p class="desc">Quadrants are not a new concept to your 
                 mind, but a lens you already use. What is breathtakingly beautiful about this model is 
                 how we see the rainbow of Levels reflected across
@@ -683,7 +690,7 @@ const changeQuad = (sel: QuadRef) => quadRef.value=sel
             <!-- </div> -->
         </template>
         <template v-else-if="quadRef==='left-right'">
-            <h1>Internal and External</h1>
+            <h1 id="left-right">Internal and External</h1>
             <p>The <b>Internal</b> of reality is everything mental or subjective in nature, while 
                 the <b>External</b> refers to the objective and material. As we hope to demonstrate, 
                 it is easy to define this duality at the extremes, but the boundary is more elusive.
@@ -1151,7 +1158,7 @@ const changeQuad = (sel: QuadRef) => quadRef.value=sel
             </p> 
         </template>
         <template v-else-if="quadRef==='up-down'">
-            <h1>Individual and Collective</h1>
+            <h1 id="up-down">Individual and Collective</h1>
             <p>
                 It is easy to miss or overlook the fundamental tendency of reality to 
                 express itself in terms of pattern repetition. There are countless molecules, 
@@ -1260,7 +1267,7 @@ const changeQuad = (sel: QuadRef) => quadRef.value=sel
             </p>
         </template>
         <template v-else-if="quadRef==='upper-left'">
-            <h1>Upper Left: Interior Individual</h1>
+            <h1 id="upper-left">Upper Left: Interior Individual</h1>
             <p>Your thoughts, feelings, physical sensations, the experience of being the inside of an 
                 individual person, is the upper left. The Upper Left can only be truly known by the 
                 individual, and is composed of things that are directly experiential in nature, so cannot
@@ -1321,7 +1328,7 @@ const changeQuad = (sel: QuadRef) => quadRef.value=sel
             </p>
         </template>
         <template v-else-if="quadRef==='lower-left'">
-            <h1>Lower Left: Interior Collective</h1>
+            <h1 id="lower-left">Lower Left: Interior Collective</h1>
             <p>
                 This is the domain of culture and interpersonal relationships. 
                 Every person is taught how to be a person by their parents, their peers, and their educators
@@ -1367,7 +1374,7 @@ const changeQuad = (sel: QuadRef) => quadRef.value=sel
             </p>
         </template>
         <template v-else-if="quadRef==='upper-right'">
-            <h1>Upper Right: Exterior Individual</h1>
+            <h1 id="upper-right">Upper Right: Exterior Individual</h1>
             <p>Regardless of what you believe is happening, we can all agree objectively that experience  
                 occurs when a physically material human body with an advanced primate brain generates 
                 a characteristic waking brainwave pattern. Whatever happens to that brain directly produces
@@ -1426,7 +1433,7 @@ const changeQuad = (sel: QuadRef) => quadRef.value=sel
             </p>
         </template>
         <template v-else-if="quadRef==='lower-right'">
-            <h1>Lower Right: Exterior Collective</h1>
+            <h1 id="lower-right">Lower Right: Exterior Collective</h1>
             <p>The exterior collective perspective sees reality in terms of physically real systems.
                 The cognitive function associated with the lower right is thinking, or finding conceptual
                 patterns in the relationships between natural phenomena. This is typically the most difficult 
@@ -1507,6 +1514,8 @@ table
     // display: grid
     grid-template-columns: 1fr
     // grid-auto-rows: 1fr
+    p
+        text-align: center
     .quadrants-svg
         grid-area: quads
         max-width: 90vw

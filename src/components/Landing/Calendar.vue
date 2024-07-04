@@ -6,10 +6,11 @@ const calendarUnits = ref(['Day', 'Cycle', 'Habit', 'Year']);
 <template>
     <div>
         <h2>unLimited Time System</h2>
-        <p>A revolutionary and logical new way of knowing when it is. 
-            We redesigned the clock and calendar that we use every day to make 
-            them simple, easy, predictable, elegant, culturally inclusive, and  
-            maximized to address the concerns of our era.
+        <h4>A revolutionary and logical new way of knowing when it is.</h4>
+        <p> 
+            Redesigning the clock and calendar we use every day to make 
+            time simple, easy, predictable, elegant, inclusive, and  
+            maximized for the concerns of our era.
         </p>
         <h3><RouterLink to="/Time">View a working demo.</RouterLink></h3>
         <!-- <div class="flex-container">

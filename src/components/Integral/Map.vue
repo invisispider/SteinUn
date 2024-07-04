@@ -374,6 +374,20 @@
             <!-- AQALALATAS is the Level 7 map of reality.
             Most people don't have it. Level 7 wants everyone to have it, and to use it. -->
         </p>
+        <h3>Transcend and Include</h3>
+        
+        <p>Higher, deeper, more evolved, developed, or inclusive, do not necessarily mean
+            personally or morally superior, 
+            wise, mature, or smart. There's nothing smarter, more lovable or blameless, 
+            than a newborn baby. The purpose of the baby isn't to grow up, grow old, and die. A baby is an end in itself.
+            So says a moral stage far beyond a baby's comprehension, and thus it becomes the responsibility of the higher stage 
+            to make sure the baby's diapers get changed. It becomes your responsibility, quite naturally, 
+            to try and get the baby up to your stage, so you no longer have to take care 
+            of the things the baby is unaware of that are problematic to you.</p>
+        <p>If moving up Levels means any one thing, it means greater responsibility.
+            The challenge is not to get to the highest Level, or even the next Level. 
+            The challenge arises from recognizing the intuitive reality of this developmental heirarchy and 
+            where your primary stage expression exists within it.</p>
         <!-- 
         <p><b>Levels:</b> consider the maturity, cognitive aptitude, and education of the 
             person responding.

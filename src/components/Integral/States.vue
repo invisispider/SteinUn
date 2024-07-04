@@ -386,11 +386,14 @@ const emit = defineEmits(['ordinary', 'brainwaves', 'selves', 'spiritual']);
     </p>
     <h3>Ordinary States</h3>
     <p>
-        Most people experience reality in a particular way. We enter Three Major States 
-        every day: Waking, Dreaming, and Deep Sleep. We can generalize electrical brain activity into bands of frequency, 
-        with the Beta band characteristic of alert, high energy activity, Alpha more relaxed, able to step back and look at the bigger 
-        picture, calm and ambivalent. All of this takes place in the Gross realm, where we develop the Levels stack in four Quadrants.
-        It's very important and good. With Alpha and Beta waves, we act as Ego and Personality and we make the dream work. Great job, 
+        Most people experience reality in a particular way, entering Three Major States 
+        every day: Waking, Dreaming, and Deep Sleep. We can generalize electrical brain activity 
+        into bands of frequency, with the Beta band characteristic of alert, high energy activity, 
+        Alpha more relaxed, able to step back and look at the bigger 
+        picture, calm and ambivalent. All of this takes place in the Gross realm, where we develop 
+        the Levels stack in four Quadrants.
+        It's very important and good. With Alpha and Beta waves, we act as Ego and Personality 
+        and we make the dream work. Great job, 
         everyone!
     </p>
     <h3>Spiritual States</h3>
@@ -598,6 +601,7 @@ svg
     // width: 100vw
     // margin-bottom: 2em
 .states-container
+    align-items: center
     display: flex
     flex-direction: column
     justify-items: stretch

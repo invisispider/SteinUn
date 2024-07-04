@@ -1,14 +1,23 @@
 <script setup lang="ts"></script>
 <template>
     <div>
-        <h2>A <RouterLink to="/unThinkMe">YouTube</RouterLink> series, 
-            <a href="https://discord.gg/jZrS3GVXsS" target="_blank">Discord</a> community, and interpersonal 
-            story fueled by the transcendence of limitations.</h2>
+        <p><RouterLink to="/unThinkMe">YouTube</RouterLink> series, 
+            <a href="https://discord.gg/jZrS3GVXsS" target="_blank">Discord</a> community, and
+            a story about limits.</p>
+        <h3>Plot</h3>
+        <p>High school friends Adam and James come together from very different 
+            paths to share an intellectual podcast about philosophy, meaning, and values 
+            in today's world - without taking the topic, or themselves, too seriously.
+
+        </p>
+        <h3>Summary</h3>
         <!-- <h3>With fearless vulnerability and bad comic timing, our goal is to popularize Second Tier modes of thinking, feeling, and doing.</h3> -->
-        <h3>Tune in to tutorials and podcasts breaking down <RouterLink to="/landing/IntegralTheory">Integral Theory</RouterLink> 
-            and exposing groundbreaking new applications. Our goal is to spread Second Tier modes of thinking, feeling, and doing.
+        <p>Tune in to break down <RouterLink to="/landing/IntegralTheory">Integral Theory</RouterLink> 
+            and expose groundbreaking applications. unThinkMe brings
+            Second Tier into everyday conversations and ordinary topics,
+            making Ken Wilber accessible to a wider audience.
             <!-- This information should be available and accessible to everyone. -->
-        </h3>
+        </p>
             <!-- <h3>Tune in to tutorials and podcasts breaking down <RouterLink to="/landing/IntegralTheory">Integral Theory</RouterLink> 
             and exposing groundbreaking new applications.
             We have the attitude that this information should be available and accessible to everyone.</h3> -->
@@ -26,7 +35,7 @@
             Integral thoughts, values, and lifestyle are appropriate for an ordinary everyday millenial.
         </h4> -->
         <RouterLink to="/UnthinkMe"><img src="@/assets/img/unthinkme.png" class="stu-banner" /></RouterLink>
-        <h2><em>You're the protagonist.</em></h2>
+        <h4><em>You're the protagonist.</em></h4>
         <!-- This is a Love story.  -->
         <!-- <p>Transcend and include body, mind, and spirit in self, culture, and nature.
             Face shadow. Be self-aware and listen. You'll never have better friends than the ones

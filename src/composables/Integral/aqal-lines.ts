@@ -1,9 +1,10 @@
 export const AqalLines = [
     {
-        'name': '',
-        'line': 'Worldview',
+        'name': 'Worldview Structures',
+        'line': 'Gebser',
         'author': 'Jean Gebser',
-        'description': 'A Swiss philosopher, introduced a developmental model in his influential work "The Ever-Present Origin."',
+        'description': 'A Swiss philosopher, introduced a developmental model in his influential \
+        work "The Ever-Present Origin."',
         'notes': 'Gebser\'s model suggests that these stages are not necessarily linear or hierarchical but can coexist within individuals and societies to varying degrees. Additionally, Gebser argues that humanity is currently undergoing a transition towards a more integral consciousness, where all previous stages are integrated and synthesized.',
         'stages': {
             '1': {
@@ -29,8 +30,8 @@ export const AqalLines = [
         }
     },
     {
-        'name': 'Spiral Dynamics',
-        'line': 'Values',
+        'name': 'Values: Spiral Dynamics',
+        'line': 'SD',
         'author': 'Don Beck and Christopher Cowan',
         'description': 'Spiral Dynamics is a theory of human development and cultural evolution that emphasizes the dynamic interaction between individual and collective values and worldviews. Developed by Clare W. Graves and further popularized by Don Beck and Christopher Cowan, Spiral Dynamics describes a series of stages or "memes" through which both individuals and societies evolve.',
         'notes': 'Spiral Dynamics suggests that individuals and societies develop in response to environmental, social, and existential challenges. Different stages may coexist within a society or individual, with dominant memes influencing behavior and values. The theory emphasizes the importance of understanding and respecting the diversity of human perspectives and values.',
@@ -70,8 +71,8 @@ export const AqalLines = [
         }
     },
     {
-        'name': '',
-        'line': 'Cognitive',
+        'name': 'Child Cognitive Stages',
+        'line': 'Piaget',
         'author': 'Jean Piaget',
         'description': 'Pioneering psychologist Jean Piaget proposed a theory that outlines distinct stages of intellectual growth in children. His is often the most commonly recognized developmental stage theory.',
         'notes': 'Children progress through these stages in a fixed order, each stage building upon the achievements of the previous. Individual differences and cultural factors influence the pace and extent of development within each stage.',
@@ -95,9 +96,9 @@ export const AqalLines = [
         },
     },
     {
-        'name': 'Robert Keegan',
-        'line': 'Orders of Consciousness',
-        'author': 'Keegan',
+        'name': 'Orders of Consciousness',
+        'line': 'Keegan',
+        'author': 'Robert Keegan',
         'description': 'Robert Kegan, a developmental psychologist, proposed a theory of adult development known as the "Orders of Consciousness."',
         'notes': 'Kegan\'s theory suggests that individuals progress through these orders of consciousness over time, with each stage representing a more complex and nuanced understanding of the self and the world. However, not everyone reaches the higher orders of consciousness, and progression may be influenced by various factors such as life experiences, relationships, and cultural context.',
         'stages': {
@@ -117,7 +118,7 @@ export const AqalLines = [
     },
     {
         'name': 'Emergent Cyclical Theory',
-        'line': 'Levels',
+        'line': 'Graves',
         'author': 'Clare Graves',
         'description': 'Clare W. Graves was a psychologist who proposed a theory of human development known as the "Emergent, Cyclical Levels of Existence Theory" or simply the "Graves Model." While his model doesn\'t neatly fit into discrete stages like some other developmental theories, it describes a series of emergent levels of existence characterized by different value systems and worldviews.',
         'notes': 'Graves suggested that individuals and societies can transition between these levels in response to changing environmental conditions and existential challenges. His model emphasizes the dynamic and cyclical nature of human development, with each level building upon and transcending the previous ones.',
@@ -153,8 +154,8 @@ export const AqalLines = [
         } 
     },
     {
-        'name': 'Waking Up',
-        'line': 'States',
+        'name': 'Integral Yoga',
+        'line': 'Spiritual',
         'author': 'Sri Aurobindo',
         'description': 'Sri Aurobindo, an Indian philosopher, yogi, and spiritual leader, proposed a comprehensive framework of spiritual evolution and consciousness development. His model outlines stages of consciousness that individuals may progress through on their journey towards spiritual awakening and self-realization.',
         'notes': 'Aurobindo\'s model suggests that individuals can progress through these stages of consciousness over multiple lifetimes or through dedicated spiritual practice and inner transformation. He emphasizes the importance of integrating and transcending each stage to realize the full potential of human existence and achieve spiritual enlightenment.',
@@ -182,8 +183,8 @@ export const AqalLines = [
         } 
     },
     {
-        'name': 'Loevinger',
-        'line': 'Ego',
+        'name': 'Ego Development',
+        'line': 'Loevinger',
         'author': 'Jane Loevinger',
         'description': 'Jane Loevinger was a psychologist known for her theory of ego development, which describes stages of ego development and maturity across the lifespan.',
         'notes': 'Loevinger\'s model suggests that ego development is a lifelong process characterized by increasing complexity and maturity. Individuals may progress through these stages at different rates and may not necessarily reach the highest stages of development.',
@@ -230,8 +231,16 @@ export const AqalLines = [
         'name': 'Constructive Developmental Framework',
         'line': 'Self',
         'author': 'Suzanne Cook-Greuter',
-        'description': 'Suzanne Cook-Greuter, a developmental psychologist, expanded upon Jane Loevinger\'s work and proposed a theory of adult development known as the "Constructive Developmental Framework" (CDF). Cook-Greuter\'s model describes stages of development in adulthood, focusing on cognitive and ego development.',
-        'notes': 'Cook-Greuter\'s model suggests that individuals progress through these stages of development over time, with each stage representing a more advanced level of cognitive and ego maturity. However, not everyone reaches the highest stages of development, and progression may be influenced by various factors such as life experiences, education, and self-awareness. Additionally, individuals may exhibit characteristics of multiple stages simultaneously or regress to earlier stages under stress or unfamiliar circumstances.',
+        'description': 'Suzanne Cook-Greuter, a developmental psychologist, expanded upon \
+        Jane Loevinger\'s work and proposed a theory of adult development known as the \
+        "Constructive Developmental Framework" (CDF). Cook-Greuter\'s model describes stages of \
+        development in adulthood, focusing on cognitive and ego development.',
+        'notes': 'Cook-Greuter\'s model suggests that individuals progress through these \
+        stages of development over time, with each stage representing a more advanced level of cognitive \
+        and ego maturity. However, not everyone reaches the highest stages of development, and \
+        progression may be influenced by various factors such as life experiences, education, \
+        and self-awareness. Additionally, individuals may exhibit characteristics of multiple \
+        stages simultaneously or regress to earlier stages under stress or unfamiliar circumstances.',
         'stages': {
             '1': {
                 'title': 'Egocentric Stage (Opportunist)',
