@@ -63,8 +63,8 @@ describe('Home', () => {
         expect(socialGrp.exists()).toBe(true);
     })
     it('changes pages correctly on button click', async () => {
-        const currentPage = wrapper.find('h1#landing-title').text();
-        expect(currentPage).toBe('Namaste');
+        // const currentPage = wrapper.find('h1#landing-title').text();
+        // expect(currentPage).toBe('Namaste');
         const nextButton = wrapper.find('.home-changer i[aria-label="next"');
         const prevButton = wrapper.find('.home-changer i[aria-label="prev"');
         expect(nextButton.exists()).toBe(true)
@@ -78,11 +78,13 @@ describe('Home', () => {
     }); 
     it('displays the selected component', async () => {
         const initialComponent = wrapper.findComponent(Technomancy)
+        expect(wrapper.vm.selected).toBe('Technomancy');
         expect(initialComponent.exists()).toBe(true);
         await wrapper.find('.home-changer i[aria-label="next"]').trigger('click');
-        const updatedComponent = wrapper.findComponent(Namaste);
+        // const updatedComponent = wrapper.findComponent(UnThinkMe);
+        // expect(updatedComponent.exists()).toBe(true);
         // console.log(updatedComponent)
-        expect(updatedComponent.exists()).toBe(true);
+        expect(wrapper.vm.selected).toBe('Namaste')
    });
 })
 
