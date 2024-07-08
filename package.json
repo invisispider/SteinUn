@@ -16,6 +16,7 @@
     "axios": "^1.6.7",
     "firebase": "^10.12.2",
     "firebase-admin": "^12.2.0",
+    "firebase-functions": "^5.0.1",
     "lamejs": "^1.2.1",
     "luxon": "^2.3.1",
     "pinia": "^2.0.11",
