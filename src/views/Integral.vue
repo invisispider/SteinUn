@@ -135,6 +135,16 @@ const toggleState = (sel: string) => {
     <p>States where you are ordinarily unconscious can be accessed through 
     spiritual practice, exposing entire realms of deep meaning and revealing transcendent 
     modes of knowing and being.</p>
+   <p>
+        We can generalize electrical brainwave activity 
+        into bands of frequency, with the Beta band characteristic of alert, high energy activity, 
+        Alpha more relaxed, able to step back and look at the bigger 
+        picture, calm and ambivalent. Most of us are only conscious of this waking Gross realm, where we develop 
+        the Levels stack in four Quadrants.
+        It's very important and good. With Alpha and Beta waves, we act as Ego and Personality 
+        and we make the dream work. Great job, 
+        everyone!
+    </p>
                 </template>
                 <template v-else-if="selState==='brainwaves'">
                     <h1>Brainwave States</h1>

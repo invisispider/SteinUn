@@ -468,6 +468,33 @@
             sense of reality and identity, usually as the result of meditative practices. These practices 
             are commonly associated with and best upheld by religious traditions.
         </p>
+
+    <h3>Positive Medicine</h3>
+    
+    <p>
+        Integral tends to focus more on defining health rather than illness, but if you 
+        are interested in the How and Why of mental illness, all five modules contribute substantially to modeling patterns of illness, 
+        often termed Allergy and Fixation. Fixation or addiction would suggest an unhealthy allocation of consciousness to a particular 
+        Level, Quadrant, or Line, for example, to the exclusion of the others, creating a blind spot. If I focus exclusively on the UL 
+        Quadrant and completely shut out or can't comprehend any others, this will produce pathological behavior. 
+    </p> 
+    <h3>Integral Health</h3>
+    <p>Integral Health is expressed as openness, acceptance, and non-attachment to particular Levels, Quadrants, Lines, etc. Allergy would be the opposite, 
+        a total rejection or unconsciousness towards a particular Integral feature, or several. Altitudes all express 
+        some degree of Fixation in their current Level, and some degree of Allergy to all other Levels, particularly the immediately previous.
+        Gods of the previous religion become devils of the new. The First Tier is fundamentally unhealthy in today's world by today's 
+        standards, because it is unconscious of Levels, pretending hard Levels don't exist, which makes it seem like the motives and values 
+        of others are just some incomprehensible mystery box. There are a lot of Levels out there in the world today, and <em>most people
+        are not at your Level,</em> no matter which one it is. Frustrating. Eternal frustration is unhealthy, in Integral.
+    </p>
+    <h3>Cleaning Up</h3>
+    <p> 
+        In Integral, these can be called the Jungian term Shadow, and the positive (as opposed to clinical) role of therapies is 
+        to Clean Up the Shadow elements of your consciousness, which means integrating them with consciousness. To be crystal clear,
+        the work of Cleaning Up is somewhat unrelated to the work of Growing Up (Levels) and Waking Up (States), which means that 
+        you can still be quite neurotic or pathological, we prefer "unhealthy", while expressing   
+    </p>
+
         <!-- 
         <p><b>Levels:</b> consider the maturity, cognitive aptitude, and education of the 
             person responding.

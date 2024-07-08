@@ -348,4 +348,6 @@ h2, h1
 	padding-inline: 1em
 	li
 		margin-block: auto
+h2 a, h2 router-link
+	text-decoration: none
 </style>

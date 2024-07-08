@@ -4,8 +4,12 @@ import { pageSelections } from '@/composables/landing-pages';
 <template>
     <div>
         <!-- <h5>Repeat: Love Is Okay</h5> -->
-        <h4>🙏🏿 Thank you for Being 🙏🏿 with us. This is the living website of 
-            Stein unLimited.<br>
+        <h4>🙏🏿 Thank you for Being 🙏🏿 with us.</h4> 
+
+    <!-- <div class="home-logo"> -->
+    <!-- </div> -->
+        <h4>
+            This is our living website.<br>
             <span class="pedantic">Use top panels to open site menu, change color
             theme, and browse this orienting information (try arrow keys).</span> 
             </h4>

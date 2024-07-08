@@ -107,6 +107,7 @@ onBeforeUnmount(() => {
 </script>
 <template>
   <div class="flex-column" data-test-id="flex-column">
+
     <div class="home-changer" name="page-selector">
       <i class="material-icons" style="transform: rotate(180deg);" @click="togglePage('prev')"
         aria-label="prev">arrow_right_alt</i>
@@ -117,7 +118,11 @@ onBeforeUnmount(() => {
       </div>
       <i class="material-icons" @click="togglePage('next')" aria-label="next">arrow_right_alt</i>
     </div>
-    <h1 id="landing-title">{{ selected }}</h1>
+    <h1 v-if="selected!='Namaste'&&selected!='SteinunLimited'" id="landing-title">{{ selected }}</h1>
+    <div v-else>
+      <h1></h1>
+      <img class="stu-banner home-logo" src="@/assets/img/steinunlimited.png" alt="stein unlimited logo">
+    </div>
     <div class="home-content">
       <transition name="route" appear mode="out-in">
         <component :is="components[selected]" />
@@ -135,15 +140,17 @@ onBeforeUnmount(() => {
     </div>
   </div>
 </template>
-<style lang="sass" scoped>
+<style lang="sass">
 a, router-link
   text-decoration: none
   align-items: flex-end
   justify-content: flex-end
   margin-block: auto
   margin-inline: 1em
-  font-size: 0.4em
+  // font-size: 0.4em
   padding: 0
+.social-grp a
+  font-size: 9px
 .social
   margin-inline: 0
   margin-block: 0.5em
@@ -152,4 +159,7 @@ a, router-link
     // font-size: 1em
   // .social
     // font-size: 1em
+.home-logo
+  justify-self: center
+  max-height: 100px
 </style>

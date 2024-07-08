@@ -81,11 +81,12 @@ const props = defineProps(['infoview']);
                 2000 years ago, when Christians started taking it more seriously.
             </p>
             <h3>Wait, the day you guys start the year on doesn't relate to anything?</h3>
-            <p>Uh, yeah, we'll go ahead and fix that. We shift the start of the year back so that the seasons divide the year into 
+            <p>Within days (10) of alignment 
+                with true Solstice and Equinox. Uh, yeah, we'll go ahead and fix that. We shift the start of the year back so that the 
+                seasons divide the year into 
                 quarters, rather than slightly off from that. Including the addition of five days 
                 newZen Cycle, this only results in three (depending on leap year) days where unLimited 
-                and Roman will be in a different year. Within days of from perfect alignment 
-                with true Solstice and Equinox. 
+                and Roman are in a different year. 
             </p>
             <h3>Sold. 👍🏿 How can I use this?</h3>
             <p>

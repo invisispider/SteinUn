@@ -208,7 +208,7 @@ const checkAnswer = () => {
 	}
 	let test = checkAcross();
 	if (test) {
-		alert('My goodness you have completed all ppporgus! Congratulation');
+		alert('My goodness you have completed all ppporgus! Congratulation. Password: "LAVENDAR"');
 	} else {
 		alert('Hmm. Not quite.')
 	}

@@ -9,7 +9,7 @@ const emit = defineEmits(['ordinary', 'brainwaves', 'selves', 'spiritual']);
         height="480.71686"
         viewBox="0 60 434.55936 480.71686"
         version="1.1"
-        id="svg1"
+        id="states-model"
         inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
         sodipodi:docname="StatesModel.svg"
         inkscape:export-filename="StatesModel.png"
@@ -381,214 +381,202 @@ const emit = defineEmits(['ordinary', 'brainwaves', 'selves', 'spiritual']);
             inkscape:label="arrow" />
             </g>
     </svg>
-    <p>This model shows the range of All States that you can be conscious of, mapping objective brainwave 
-        patterns (common EEG readings) to the subjective experience of the State.  
+    <p><span class="pedantic">Click the map for more information.</span>
+        A State is a momentary snapshot of all information under consideration. 
+        States are a factor in All Quadrants at All Levels. You can have a state of public panic, a data state in 
+        software, a cellular metabolism state, etc, but here we are talking mostly about the UL view.   
+        In consciousness, States include 
+        things like sensations, thoughts, feelings, moods, perceptions, attitudes, and personal affinities.
+        The map above displays All States that you can be conscious of,  
+        illustrating the relationship between Ordinary States and a generalized progression 
+        of meditative Spiritual realizations, mapping objective brainwave 
+        patterns (electroencephalograph, EEG) to the described subjective experience.  
     </p>
-    <h3>Ordinary States</h3>
+    <h3>A Galaxy Within</h3>    
     <p>
-        Most people experience reality in a particular way, entering Three Major States 
-        every day: Waking, Dreaming, and Deep Sleep. We can generalize electrical brain activity 
-        into bands of frequency, with the Beta band characteristic of alert, high energy activity, 
-        Alpha more relaxed, able to step back and look at the bigger 
-        picture, calm and ambivalent. All of this takes place in the Gross realm, where we develop 
-        the Levels stack in four Quadrants.
-        It's very important and good. With Alpha and Beta waves, we act as Ego and Personality 
-        and we make the dream work. Great job, 
-        everyone!
+        The Integral Level recognizes colloquial, everyday States like hunger, fear, worry, and irritation. We call these 
+        <b>Ordinary</b> States. Psychology and medicine give us outstanding tools for decoding these felt and communicated State experiences. 
+        Mental and emotional States are commonly assessed and defined by doctors and psychologists. Many outstanding models and 
+        descriptions define the range and variety of Ordinary States, as well as neurotic and pathological States 
+        according to symptom Types (diagnostic criteria). 
     </p>
-    <h3>Spiritual States</h3>
-    <p>Many people throughout history describe states of consciousness called enlightment, peak experience, religious or mystical or 
-        transcendent states (the content 
-        is whatever you believe in), trances, visions, prophecies, disembodiedness, communion with God, oneness with everything, 
-        channeling various projected entities, nonduality. These states may be considered an epiphany, a breakthrough, and result in major life changes, 
-        in worldview, attitude and behavior. The range and scope and causes and veracity of these States is enormous, and unclear. Fortunately,
-        various religions spell out the process, in the form of legend and myth most of the time, but straightforward instructions in the case of 
-        Buddhism. Our States map gives the basic spread of what variety of transcendent States can be experienced, regardless of whether 
-        you interpret it as ancestors or spirits or dieties or angels or psychic manifest content of the unconscious, or how we describe it here,
-        regardless of the Level, States are experienced by Ego as intense revelation, epiphany, and ultimately lead to Ego's realization that it 
-        is constructed by the Psyche.
-    </p>
-    <h3>The Ego Dilemma</h3>
-    <p>Let's face facts. I don't know why I do what I do, feel what I feel. I don't know who I am, or what I should do. 
-        I'm futile, realizes mortal Ego. I'm doomed to lose everything, suffer, be betrayed, and die. Or be the spoiled lucky one 
-        that doesn't deserve anything. Tick tick tick. Those Noble Truths. Enlightenment does not cure hurting or death. It will hurt more, you will 
-        like it more, you can't even imagine living without fear, you're already dead, you were never born. On the plus side, 
-        we whipped out all those problems we had before. Freedom and fullness. We made the whole thing up. This is a love that touches 
-        you, hurts bad for a long time, takes away everything, makes you live forever devoted, it is 
-        the light and the Way. It is inspiration and growth, Eros,
-        whose Shadow is death and fear, Thanatos. Reflected Integral dieties, ascending and descending dynamics of reality. Some recognize 
-        the path, some follow the path, a few make it to the end. It is perfectly acceptable, ordinary, moral, and reasonable to have 
-        no interest in the path. Just don't pretend there isn't a path.  
-    </p>
-    <h3>Summer and Winter</h3>
-    <p> 
-        You Wake Up and everything is gone. Everything that matters. So you thought. But 
-        someone tugged on your arm. You shook yourself. Something woke you up. Who did you think it was?
-        If you haven't been bitten, you will be. The bell tolls. The Fourth Noble Truth is the Way. Spiritual Practice.
-    </p>
-    <h3>We experience through a dilation of self</h3>
+    <h3>Dilated Me</h3>
     <p>
         Nearly everyone in the world 
         will observe that we are conscious of Gross reality as Ego with various Personalities, we mostly are  
-        unconscious during Theta Dreaming, and we certainly are unconscious in Delta Sleep. This is true of almost everyone 
-        not engaged with an effective and well-informed long term transcendent Spiritual Practice.
+        unconscious during Theta Dreaming, and certainly unconscious in Delta Sleep. This is true of almost everyone 
+        not engaged with an effective and well-informed long term Spiritual Practice.
+        That's not a diss at all. We're nearly everyone who ever lived and we don't know what reality tastes like. 
+        It's okay. 🫶🏿 True wisdom is knowing that we 
+        know nothing. But hey... can we at least <em>listen</em> to the people who <em>have</em> done the work?
+        Is it okay to talk about this?
     </p>
-    <h3>Spiritual Practice...?</h3>
-    <p>We don't mean Magenta magic or Amber myth. The spirit of a thing is its fundamental overall nature, not a force ghost. We set out 
-        to comprehend reality. What is the spirit of everything? What is the fundamental nature of consciousness, the fundamental essence of your mind? 
-        Everything has a fundamental essence, 
-        right? What would you call that?
-        Religions call it things. We call it things. Regardless, in this moment you either experience spirit 
-        directly, in a transcendental State, or you don't. This is the primary source of Integral Theory, of reality, 
-        of consciousness, of everything: Being. It is easy to think that you understand what these silly words mean. It is 
-        easy to imitate and paraphrase them, as I do. It is also easy to access all of these transcendental States. What we're doing, 
-        this is the hard way. We like a challenge. So, the issue is that you can't experience Being or nondual union because you are 
-        currently being an ego with personalities, and these present insurmountable odds against you already. You're doomed. Meanwhile, 
-        I dare suggest that you spend twenty minutes a day sitting and paying attention to Being, reducing stress, relaxing 
-        your body and emotions, affirming yourself, tuning in, practicing being more awake and aware all the time, increasing 
-        your intelligence and lifespan?    
+    <h3>Spiritual... 😦</h3>
+    <p>We don't mean Magenta magic, Red cults, or Amber mythic membership. 
+        The spirit of a thing is its fundamental overall nature, not a force ghost. We name the spirit 
+        of everything God as that's the word in English. We set out 
+        to comprehend reality. What is the spirit of everything? What is the fundamental nature of consciousness, the 
+        essence of this now? 
+        Religions call that thing a name, and they have a relationship with it. 
     </p>
-    <p>Not at all. I'm simply relating to you the Four Noble Truths, that there is a path beyond ego to States of consciousness 
-        which enormously relieve the concerns of Ego, simply by being more Awake, more aware of more reality. There are many ways to 
-        arrive at States, but we recommend meditation, as this is the purpose of meditation, and it is effective. As you experience 
-        States, it will become easier to relate to discussions of Psychic, Subtle, Causal, and Nondual. 
+    <h3>Dharma</h3>
+    <p> 
+        You may hesitate to use names. Regardless, in this moment you either experience Spirit 
+        directly, in a transcendental State, or you don't. 
+        It is easy to think that you understand what these silly words mean. It seems 
+        easy to imitate and paraphrase, as I do. It's also easy to access transcendental States. 
+        You can't experience union while  
+        currently being an ego with personalities, reacting against all these various concepts. 
+        You're doomed. ⚰️
     </p>
+    <h3>Transcendental Consciousness</h3>
+    <p>  
+        We are most interested in States that contribute to our mission of 
+        comprehending reality. Our comprehension passes through, is generated by, whatever State we're 
+        in. If I have never worked on this, or thought about it before, probably I am not in the 
+        most sober, open, clear-headed State possible. I probably don't even know how to define 
+        what I'm assessing. As we pursue this question, we encounter 
+        mystical writings, and meditation. It is pre-rational mythology. We leave. 🚪 
+    </p>
+    <h3>Rational Mysticism</h3>
+    <p>We come back. 🚪 There is something <em>to</em> all of this. By controlling the attention, we can see and understand 
+        more clearly, more deeply, into the abstract and the unconscious. We can
+        Wake Up. This will require practice, and likely guidance from someone who has 
+        already been through training. Our only advice on finding effective teaching is that you should 
+        put at least as much care into this decision as you would into marrying someone. 
+        With effort and time, practice may ultimately grant access to the full States spectrum, 
+        and you begin entering different mental configurations, experienced transpersonally as
+        realms, or bodies. Spiritual States can feel unbelievably
+        different from Ordinary, and reveal primary, key, inexpressible truths about reality.
+    </p>
+    <h3>Spiritual States</h3>
+    <p>Sources throughout history describe elusive States of consciousness called enlightment, peak experience, religious or mystical or 
+        spiritualized states (the content 
+        is whatever you believe in), trances, visions, prophecies, disembodiedness, communion with God, oneness with everything, 
+        channeling various projected entities, nonduality. These states are often regarded as epiphany or breakthrough, and may result 
+        in major positive changes 
+        to worldview, attitude, and behavior. The range, scope, wisdom, and influence of these sources  
+        is enormous, including medical reports and modern journalism. The causes and veracity of these State claims 
+        is unclear, and eternally debated. 
+    </p>
+    <h3>Comparative Religion</h3>
+    <p>A sorely needed project of Integral is to foster understanding, communication, and interplay between 
+        the adherents of various values and beliefs. We point out the great strength of the religious traditions with States. We 
+        point out the deficiencies with Levels. 
+        Integral honors the supreme value of the esoteric visions underlying holy scriptures, and it makes 
+        no excuses for the inexcusable.
+        We encourage the religious to examine what Level your community expresses, 
+        and to express your religion at the Level you actually are. We embrace several, including atheism. 
+        For atheists, we challenge you to examine the science of meditation, and seriously try 
+        spiritual practice.  
+    </p>
+    <h3>Great Nest of Being 🪺</h3>
+    <p>
+        Integral observes a perennial wisdom, or core content that is central to every spiritual 
+        perspective. Our map is one way to iterate it: Personality, Ego, Psyche, Consciousness. 
+        In the medieval Great Chain of nested realms of spiritual density, it is more like Matter, Body, 
+        Mind, Soul, Spirit. Various religions (in their esoteric interpretations) provide their own maps, and spell out the process, in the form of legend and myth most of the time. 
+        In the case of Therevada Buddhism, the instructions are quite straightforward and rational, like a manual.
+        In Zen the instructions contradict themselves and break your mind. Many religions are not
+        straightforward with their instructions because the documents were multi-purpose.
+    </p>
+    <h3>Mystery Revealed</h3>
+    <p>
+        Our map gives the basic range of what variety of transcendent States can be experienced, regardless of whether 
+        you interpret it as ancestors or spirits or dieties or angels or psychic manifest content of the unconscious, 
+        or how we describe it here.
+        Regardless of our Level, States are experienced by Ego as intense revelation, as death, as Ego 
+        reflects on its construction from Psyche from Consciousness.
+    </p>
+
+
     <h3>Psychic States</h3>
-    <p>Psychic States are experienced almost as a sort of jailbreak. Prior to Psychic, you are configured with core assumptions 
+    <p>Early Psychic States are experienced as a sort of jailbreak. Prior to Psychic, you are configured with core assumptions 
         that you are located at some point inside your body, at the center, the center is in the head, that this thing is my name, 
         has my life story, is discrete from its environment, is moving through time, is at the center of space, is distant from distant 
         memories, discrete from its parents, from its lovers, from the people it communicates with. Maybe you have some of those config 
-        settings, and maybe you don't. Psychic States disrupt that, because they expose the Psyche, or how you imagine this whole thing, 
-        reality. The Nature Mystic is a classic example, and archetype. It may also happen in an art gallery, a suburban garage, or 
-        on a bus. As we learn to focus into slower, deeper, wider brainwave patterns, in meditation and in normal life, we start to 
-        get in touch with the invisible Psyche. We begin to comprehend how we construct reality, this very reality, from archetypes, 
-        or extremely basic memetic associations. That my sense of being in here with an objective world out there is an 
-        idea that I learned so long ago that it is the backbone of my language and thinking. Both sides are absurd from one another's 
-        perspective, which is why reality is nondual. Psychic States are often considered exciting, frightening, disturbing, life changing,
-        highly cerebral, and there is a tendency towards mythologizing the content of these States, appropriately enough. Since this is
+        settings, and maybe you don't. 
+    </p>
+    <h3>You Believe Me Now? 🤨</h3>
+    <p>
+        Psychic States are often considered exciting, frightening, disturbing, life changing,
+        highly cerebral, and there is a tendency to mythologize the content of these States, appropriately enough. Since this is
         the first realm, or the first depth, beyond Gross, Psychic States are somewhat common. These would generally fit the bill for the 
-        stories that spiritual people tell one another about mind-blowing "religious states" and such. It's generally all Psychic. An 
+        stories that spiritual people tell one another about mind-blowing "religious states" and such. That's mostly Psychic. An 
         ordinary person could expect Psychic States within months of starting a daily one hour meditation practice. Alternately, they 
         could read books on meditation and mimmick the gist of what they read, and it would be hard to tell the difference.
     </p>
 
-    <p> And if you don't, you only experience a portion of State 
-        reality, the ordinary waking, Gross realm, with all of its variety and diversity, all of its value, but if that is all you 
-        know, you can't imagine that other State realms might be valuable, and might have something to do with the feeling of unresolve, 
-        abandonment, antagonism, loneliness, emptiness, meaninglessness, that all people experience. If all you know is a dimly lit cave, 
-        you have no 
-        idea what's out there. I can sit here describing it all day, but if you don't go out there yourself, you can't comprehend it.
-    </p>
+    <h3>No Boundary</h3>
     <p>
-        And that's not a diss. At all. We don't get it. It's okay, it's okay. We don't know what reality tastes like. 🫶🏿 
-        True wisdom is knowing that you 
-        know nothing. But hey... can we at least <em>listen</em> to the people who <em>have</em> done the work?
-    </p><p>
-        The core pattern of getting to that State, 
-        we call Spiritual 
-        Practice, or Waking Up. The direct experience of the spirit of the Self, or ultimate reality, we call Enlightenment, or 
-        Nondual union, as there is no distinction between self, Self, and reality. It is a State prior to distinction.
+        As we learn to focus into slower, deeper, wider brainwaves, in meditation and ordinary life, we start to 
+        get in touch with the invisible Psyche. We begin to comprehend how we construct reality, this very reality, from archetypes, 
+        or extremely basic memetic associations. 
+        The Psyche exposes how Ego is imagining itself into being. This is disruptive, sometimes 
+        traumatic. Psychic 
+        mystics may struggle as the solidity of their boundaries dissolve, and they may need to 
+        isolate.
+        The Nature Mystic is a classic example and archetype. 
+        <!-- It may also happen in an art gallery, a suburban garage, or  -->
+        <!-- on a bus.  -->
+
     </p>
-    <h3>Comparative Religion</h3>
-    <p>One of the direly needed uses of Integral Theory is to foster understanding, communication, and brotherhood between 
-        the adherents of various values and beliefs. We point out the great strength of the religious traditions with States. We 
-        point out the deficiencies with Levels. For the religious, we encourage you to examine what Level your community expresses, 
-        and to express your religion at the Level that you actually are. We do that with several of them, including atheism. 
-        For the atheist, we challenge you to seriously try 
-        spiritual practice. Integral honors the supreme value of the esoteric visions underlying holy scriptures, and it makes 
-        no excuses for the inexcusable. 
-    </p>
-    <h3></h3>
-    <p>It may be noted that our presentation here differs from Wilber's, and we wanted to offer a couple explanatory remarks.
-        Part of the difference is aesthetic and generational. Wilber is himself highly trained and advanced in spiritual practice and research. We are not. In both cases, our purpose 
-        is to suggest to a common audience that these transcendent States exist, are real, and have been described all throughout 
-        history, to 
-        establish the legitimacy and validity of transcendent States with scientific measures, and 
-        to provide a language for everyone to use to communicate about all of that. Integral set out to comprehend reality,
-        and having done so, you 
-    </p>
+    <h3>Subject/Object Duality</h3>
     <p>
+        My sense of being in here with an objective world out there is an 
+        idea that I learned, so long ago that it precedes my language and thinking. 
+        If I look very carefully, and abandon my assumptions, I see that it's just this one thing.
+        Reality is nondual. There's not two things, or four things. Just this. 
+    </p>   
+    <h3>Light and Cave Thing 🌄</h3>
+    <p> We experience only a portion of State 
+        reality: Ordinary, Waking, Gross, with all of its variety and diversity, 
+        all of its value. That is all we 
+        know, and we can't imagine the value of other State realms. It might have something to do with the feeling of unresolve, 
+        abandonment, antagonism, loneliness, emptiness, meaninglessness, that all mature people know. 
+        Dim cave, no 
+        idea what's out there. I can describe it all day, but let's go out there, or we'll never comprehend.
+    </p>
+    <h3>Ego Dilemma</h3>
+    <p>Face facts. We don't get it. I don't know who I am, or what I should do. 
+        I'm futile, mortal Ego. I'm doomed to lose everything, suffer, be betrayed, die. 
+        I don't deserve anything I have. 
+        Tick tick tick. Going to hell someday. Oh, it burns now. Those Noble Truths. 
+        You Wake Up and everything is gone. Everything that mattered. So you thought. But 
+        someone tugged on your arm. You shook yourself. Something woke you up. Who did you think it was?
+        If it was a snake, it would have bit you. If you haven't been bitten, you will be. 
+        The bell tolls. 
+    </p>
+    <h3>Is This The End?</h3>
+    <p>Not at all. Simply relating some Noble Truths. The Light. The Way. Good News. There is a path beyond ego to States of consciousness 
+        which enormously relieve the concerns of Ego, simply by being more aware of reality. There are many ways to 
+        arrive at States. We recommend meditation, as this is the purpose of it, and it's effective. As you experience 
+        States, it becomes easier to relate to discussions of Psychic, Subtle, Causal, and Nondual, and you no longer 
+        need Integral Theory. 
+    </p>
+    
+    <h3>Why Enlightenment?</h3>
+    <p>
+        Enlightenment does not cure sorrow, pain, or death. It hurts more. You 
+        like it more. Imagine fearlessness. Already dead, never born. No problems. This is You.
+        Freedom and fullness. It's all made up. This is a love that touches 
+        you, hurts bad for a long time, takes away everything, makes you live forever devoted, and see that 
+        it was always your choice. 
+        Inspiration and growth, Eros, and her Shadow, death and fear, Thanatos. 
+        Reflected Integral dieties, 🧬ascending and 💔descending, beckoning you to recognize 
+        the path, follow the map, reach the conclusion. They lived happily ever after. 
+        It is perfectly acceptable, ordinary, moral, and reasonable to have 
+        insufficient or no interest in the path. Just don't pretend there isn't a path. We're already here.  
+    </p>
+    <h3>🧘🏿🧘🏽‍♀️🧘🏼🧘🏻🧘🏿‍♂️🧘🧘🏼🧘🏿‍♂️</h3><p>
+        Meanwhile, 
+        I dare suggest we spend twenty minutes a day sitting and paying attention to Being, reducing stress, relaxing 
+        body and emotions, affirming ourselves, tuning in, practicing being more awake and aware all the time, increasing 
+        our intelligence and lifespan. 
         Integral's primary goal is not to teach 
-        spiritual practice, it is first to suggest a map of the territory under discussion. This is the 
-        frustrating ultimate fact of the matter with Integral Theory. Thinking doesn't enlighten you. It illuminates the path. For all 
-        of those who feel disappointed by this, enjoy that light, you ingrate. 
-    </p>
-    <p>
-        However, there are 
-        people in the world who can remain "awake," or consciously present and aware, through all of these States. 
-    <!-- <h3> -->
-        How we do this, why we do this, what it means, why it matters, that's the topic. 
-    <!-- </h3> -->
-    </p>
-    <p>A State is a momentary snapshot of all information under consideration. In consciousness, States include 
-        things like sensations, thoughts, feelings, moods, perceptions, attitudes, and personal affinities.
-    </p>
-    <h2>Ordinary States</h2>
-
-
-
-    <p>  
-        , but we are most interested in States that 
-        differ from ordinary expectations, and States that contribute to our mission of 
-        comprehending reality. The States modeled here are <b>transcendental States of consciousness</b>, because these differ 
-        radically from ordinary expectations, and reveal primary, key, inexpressible truths about reality.
-    </p>
-      
-    <h3>What's Good?</h3>
-    <p>States are a factor in all Quadrants and all holonic Levels. You can have a state of public panic, a data state in 
-        software, etc, but here we are talking mostly about the view from UL, the  
-    </p>
-    <p>The first thing we often communicate when we greet one another is to inquire about the other person's State. 
-        We ask, "How are you?" "What's going on?" "How's it hangin'?" We're asking about their State of mind, mood, mentality, events, circumstances, 
-        lifestyle, relationships - everything relevant to the person's consciousness. Their State.
-    </p>
-    <p>The person may then elect to respond with any Quadrant: "I'm doing well." "I'm a little anxious." "My stocks tanked." 
-        "My dad's in rough shape." "I've been thinking about aviation." We give one another the opportunity to describe State 
-        from any perspective, with any focus, and this is the standard way to establish social rapport, or harmonizing the State of 
-        the collective.
-    </p>
-
-        <!-- "The car broke down," refers to a state of mechanical functioning. 
-        "I'm hungry," communicates the state of my appetite. We tend to communicate the state of something where it differs from 
-        expectations. I probably told you I was hungry assuming you didn't know whether I was or not. 
-    </p>
-    <h3>The Point of Talking About States</h3>
-    <p>The value of communication 
-        can be measured by how useful it is for the recipient. For example, just repeating, "I'm hungry!" over and over would 
-        not be useful, and would irritate and distract others. At the Level of Personality, I may do this because I'm oblivious to how 
-        others perceive me, or I don't understand that it interferes with my goal of being fed. I unconsciously assume that I can somehow 
-        force a more immediate resolution to my hunger through sheer insistence.
-    </p>
-    <p>It might seem like a silly example, but consider how many people "vent" on social media, and how often 
-        people express themselves without consideration for the receiver. They do this because they are a Personality. Self-centered.   -->
-    <!-- </p> -->
-    <h3>Positive Medicine</h3>
-    <p>
-        At the Level of Integral, we recognize colloquial, everyday States like hunger, fear, worry, and irritation. We call these 
-        <b>Ordinary</b> States. Psychology and medicine give us outstanding tools for decoding these felt and communicated State experiences. 
-        Mental and emotional States are commonly assessed and defined by doctors and psychologists. Many outstanding models and 
-        descriptions define the range and variety of Ordinary States, as well as neurotic and pathological States 
-        according to symptom Types (diagnostic criteria). Integral tends to focus more on defining health rather than illness, but if you 
-        are interested in the How and Why of mental illness, all five modules contribute substantially to modeling patterns of illness, 
-        often termed Allergy and Fixation. Fixation or addiction would suggest an unhealthy allocation of consciousness to a particular 
-        Level, Quadrant, or Line, for example, to the exclusion of the others, creating a blind spot. If I focus exclusively on the UL 
-        Quadrant and completely shut out or can't comprehend any others, this will produce pathological behavior. 
-    </p> 
-    <h3>Integral Health</h3>
-    <p>Integral Health is expressed as openness, acceptance, and non-attachment to particular Levels, Quadrants, Lines, etc. Allergy would be the opposite, 
-        a total rejection or unconsciousness towards a particular Integral feature, or several. Altitudes all express 
-        some degree of Fixation in their current Level, and some degree of Allergy to all other Levels, particularly the immediately previous.
-        Gods of the previous religion become devils of the new. The First Tier is fundamentally unhealthy in today's world by today's 
-        standards, because it is unconscious of Levels, pretending hard Levels don't exist, which makes it seem like the motives and values 
-        of others are just some incomprehensible mystery box. There are a lot of Levels out there in the world today, and <em>most people
-        are not at your Level,</em> no matter which one it is. Frustrating. Eternal frustration is unhealthy, in Integral.
-    </p>
-    <h3>Cleaning Up</h3>
-    <p> 
-        In Integral, these can be called the Jungian term Shadow, and the positive (as opposed to clinical) role of therapies is 
-        to Clean Up the Shadow elements of your consciousness, which means integrating them with consciousness. To be crystal clear,
-        the work of Cleaning Up is somewhat unrelated to the work of Growing Up (Levels) and Waking Up (States), which means that 
-        you can still be quite neurotic or pathological, we prefer "unhealthy", while expressing   
+        spiritual practice, but first to suggest a map of the territory under discussion. This is the 
+        frustrating ultimate fact of the matter with Integral Theory. Thinking doesn't enlighten you. It illuminates the path. 
+        👉🏿 It points. 🌙 For all of those who feel disappointed, don't forget to shut off that light when you leave. 🙏🏿 Namaste.     
     </p>
     </div>
 </template>
@@ -605,4 +593,6 @@ svg
     display: flex
     flex-direction: column
     justify-items: stretch
+#states-model
+    max-width: 100vw
 </style>
