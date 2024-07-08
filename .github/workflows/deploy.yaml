@@ -35,15 +35,15 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
-    - name: Deploy to Firebase
-      uses: w9jds/firebase-action@master
-      with:
-        arg: deploy --only hosting
-      env:
-        GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
-        PROJECT_ID: stein-unlimited
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
+    # - name: Deploy to Firebase
+    #   uses: w9jds/firebase-action@master
+    #   with:
+    #     arg: deploy --only hosting
+    #   env:
+    #     GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+    #     PROJECT_ID: stein-unlimited
+    #     FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+    #     FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
 
     - name: Deploy to firebase preview channel
       uses: FirebaseExtended/action-hosting-deploy@v0
