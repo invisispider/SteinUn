@@ -11,8 +11,8 @@ import TimeConversions from "@/components/Time/TimeConversions.vue";
 document.title = "unLimited Time";
 const store = useTime();
 const activePanel = ref('');
-const panelList = ["namaste", "unlimited",
-  "year", "clock", "moment", "instant",
+const panelList = ["namaste", 
+  "year", "unlimited", "clock", "moment", "instant",
   "calendar"];
 
 const timePulse = async () => {

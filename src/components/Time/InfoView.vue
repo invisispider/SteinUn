@@ -4,13 +4,11 @@ const props = defineProps(['infoview']);
 <template>
     <div class="info-template">
         <div v-if="props.infoview=='namaste'">
-            <h1>Welcome to unLimited Time</h1>
-            <p>A lightweight, open-source clock and calendar framework
+            <p><b style="font-size: xx-large;">unLimited Time</b><br>A lightweight clock and calendar framework
                 designed to improve time awareness.
             </p>
-            <h3>Once you see it... there's no turning back.
-            </h3><br>
-            <h2>Deconstructing Roman/Gregorian Time:</h2>
+            <h3>Once you see it... there's no turning back time.</h3>
+            <!-- <h2>Deconstructing Roman/Gregorian Time:</h2> -->
             <h2>🕔 What's wrong with my clock? 😦</h2>
             <p>
                 <b>Hours</b> divide Earth's daily rotation into 24 periods. 
@@ -18,33 +16,39 @@ const props = defineProps(['infoview']);
                 Base-24 and -60 wrap cleanly around a circle, they cut in half many times, 
                 but other than that,
                 they belabor conceptualization and computation for beings who mostly
-                have ten fingers and mostly work with base-10 number systems in daily life.
+                have ten fingers and work with base-10 in daily life.
             </p>
             <h3>Days aren't round?</h3>
             <p> 
                 Early sundials traced the progression of a pole's shadow as the sun crossed
-                the sky, resulting in circular depictions of the day. This made great sense to 
+                the sky, resulting in circular depictions of the day. 
+                <!-- This made great sense to 
                 early theorists who derived time from the very circular paths of objects
-                across the sky. We may even assume that
+                across the sky.  -->
+                We may even assume that
                 the motion of our clock's hour hand mirrors the rotation of the planet, only 
                 of course this is not the case. It goes around twice per day. 🌞 
             </p>
-            <h3>Clocks don't need to wrap around a circle at all.</h3> 
+            <h3>Clock as Sheduling Grid instead of Circle</h3> 
             <p>
-                It's just a visualization:
+                <!-- It's just a visualization:
                 three simultaneous pie charts, each hand traveling around a circle an arbitrary number
-                of times. Not bad. We use pie charts in quantitative analysis a lot. They are not as
-                useful for scheduling, which is why we schedule on grids rather than circles. 
+                of times. Not bad.  -->
+                Pie charts are handy for quantitative analysis, and as a clock, suggest relative duration, like 
+                how much time is left, but they are bad for sequencing, or seeing the order of 
+                various events. For day schedules, we prefer a grid rather than three 
+                simultaneous circular gauges. 
                 </p>
             <h3>What if my clock was designed for me?</h3>
             <h4>10 Sessions = 1 day</h4>
             <h4>100 Moments = 10 Whiles = 1 Session</h4>
             <p>Sessions are decimal numbers, as the sub-units are base-10. 
                 Session, Moment, While, and Instant are all intuitive unit names that we already 
-                use in common speech, so we're just going with the flow, and we can abandon the
-                baggage of seconds, minutes, and hours. Since we're all familiar with our current
+                use in common speech. We're just going with the flow, and we can abandon the
+                baggage of seconds, minutes, and hours. 
+                <!-- Being familiar with our current
                 system, it may be hard to see how convoluted it is, but it becomes more apparent if
-                you are teaching a child how to read a clock, or any aspect of the Roman time system.
+                you are teaching a child how to read a clock, or any aspect of the Roman time system. -->
             </p>
             <h4>Ante Meridiem</h4>
             <p>
@@ -58,17 +62,17 @@ const props = defineProps(['infoview']);
                 Most of us ultimately prefer working either less than or more 
                 than five out of seven week days, and most of us don't have the same preference every
                 week.
-                If we all dislike Monday, we should get rid of it. Five days is a Cycle. 
-                Five days, like human fingers. 
+                If we all hate Monday, get rid of it. Five days is a Cycle. 
+                Five fingers on a hand. 
             </p>
             <p>Months have weird names and unpredictable lengths, 
-                and they don't really track anything. So Habits always have the same amount of days every time (45),
+                and they don't really track anything. Our <b>Habits</b> always have the same amount of days every time (45),
                 and they evenly divide the seasons. 
             </p>
             <p>Holidays are clumped together oddly, they 
                 happen at complicated and unpredictable times, they are often found culturally
                 non-inclusive. On the first day of every Habit, we have a generic and secular
-                Holiday, named the same as the Habit, and with the same themes, which can then
+                <b>Holiday</b>, named the same as the Habit, and with the same themes, which can then
                 optionally be expanded with relevant cultural or religious observances. 
             </p>
             <p>It is difficult to conceptualize ancient 
@@ -76,9 +80,16 @@ const props = defineProps(['infoview']);
                 unLimited time 12000 years ago, when timekeeping starts to matter, rather than
                 2000 years ago, when Christians started taking it more seriously.
             </p>
+            <h3>Wait, the day you guys start the year on doesn't relate to anything?</h3>
+            <p>Uh, yeah, we'll go ahead and fix that. We shift the start of the year back so that the seasons divide the year into 
+                quarters, rather than slightly off from that. Including the addition of five days 
+                newZen Cycle, this only results in three (depending on leap year) days where unLimited 
+                and Roman will be in a different year. Within days of from perfect alignment 
+                with true Solstice and Equinox. 
+            </p>
             <h3>Sold. 👍🏿 How can I use this?</h3>
             <p>
-                We encourage You to try out this system in your own life, and become part of the community. 
+                Try out this system in your own life, and join the experiment. 
                 Bookmark and share this demo as your own unLimited clock and calendar for now.
                 For developers, you can implement unLimited Time into existing software, or refactor 
                 my work with my blessing. This page computes unLimited Time and displays 
@@ -88,8 +99,8 @@ const props = defineProps(['infoview']);
             </p>
             <h3>Contribute</h3>
             <p>
-                If you wish to see Stein unLimited develop this project, please 
-                consider donating via our venmo link with a note on what you would like to see.
+                If you wish to see this project develop, please 
+                consider donating via our venmo link with a note on features you would like to see.
                 We would like to develop an unLimited clock, lifestyle and scheduling app, and 
                 extensions to bring unLimited Time into existing apps.
             </p>
@@ -101,7 +112,7 @@ const props = defineProps(['infoview']);
                 <h3>Night 8.26`52</h3>
                 <p>"Night twenty-six, fifty two."</p>
             </div>
-            <p>Session decimal, "tick" Instants. It's a pun.
+            <p><b>How it works: </b>Session decimal, "tick" Instants. It's a pun.
                 You could also say, "Quarter Night".
             </p>
             <h2>Reading unLimited Date:</h2>
@@ -110,7 +121,7 @@ const props = defineProps(['infoview']);
                 <p>"Vivid twelve, twenty-four."</p>
             </div>
             <p>
-            The last four digits of the year are the same, so in common speech,
+                <b>How it works: </b>The last four digits of the year are the same, so in common speech,
             it is unchanged. We secretly subtract 12000 years (the dawn of time-keeping)
             instead of 2000 (Christ and Roman Empire).
             </p>
@@ -126,17 +137,18 @@ const props = defineProps(['infoview']);
         </div>
         <div v-else-if="infoview=='year'">
             <h1>The Year</h1>
-            <p>The first 360 days of a year are evenly divided into 8 45-day Habits, named for the generic Holiday 
-                on the first, always Sun day. Each Habit contains 9 5-day Cycles, which are basically "weeks" without 
-                Monday or Wednesday. A year also includes one extra
-                newZen Cycle (360 + 5) before the new year starts, considered "outside of" time.
+            <p>newZen is a five or six day Holiday Cycle centering on Winter Solstice. This period seperates 
+                two years, and is considered outside of time. 
+                The remaining 360 days are evenly divided into 8 45-day Habits, named for the generic Holiday 
+                on the first of the Habit, always Sun day. Each Habit contains 9 5-day Cycles, which are basically "weeks" without 
+                Monday or Wednesday. "Day" at the end of the day name is optional.
             </p>
             <h3>A seasonal calendar</h3>
             <p>
                 Solstice is the maximum intensity point of seasonal change, marking the halfway points 
                     of the year. Equinox is the center intensity point of seasonal transition, and defines quarters 
                     of the year. 
-                Habits divide seasons in half, changing within days of true solstice and equinox (displaced by newZen.)
+                Habits divide seasons in half.
             </p>
             <h3>Ditching months 🌒</h3>
             <p> 
@@ -168,25 +180,35 @@ const props = defineProps(['infoview']);
                 each day (not counting newZen), is one degree of rotation -  
                 not a new idea but perhaps exotic for those unaccustomed.
             </p>
-            <h3>Now, an interesting thing starts to happen....</h3>
-            <p>
+            <!-- <h3>Now, an interesting thing starts to happen....</h3> -->
+            <!-- <p>
             We all know from Tony Hawk pro skater that half of a 360 is a 180.
             The year's halfway point is 180 days.
             We know 90 degrees divide the 360 circle into quadrants.
             These are the solstices and equinoxes.
             Divide in half once more, and the 45-degree turns of the year create Habits.
-            </p>
+        </p> -->
             <h3>Just getting started...</h3>
-            <p>Every Year starts on Sun day, the Struggles Holiday on the first of the Struggles Habit.
-                The theme of the Struggles Habit, and the Struggles Holiday, is struggle, hardship, and 
-                perseverence. Every Holiday is first of every Habit, always Sun day, always themed exactly what 
-                it's name is. Birthdays and anniversaries are the same day of the 
+
+            <p>
+                ✔️ Every Year starts on Sun day, the Struggles Holiday on the first of the Struggles Habit just after 
+                the Solstice and the start of Winter. 
+            </p>
+            <p>
+                ✔️ The theme of the Struggles Habit and Holiday is struggle, hardship, and 
+                perseverence. The theme is 
+                in the name and reflects the season. 
+                Every Holiday is first of every Habit, always Sun. 
+            </p>
+            <p>✔️ Birthdays and anniversaries are the same day of the 
                 week every time. Every day of every year is the same Day and Date as it was every other year.
-                The rent or other monthly bill would occur every 45 days every time, and would reflect the same
+            </p>
+            <p>✔️ Rent or other "monthly" bills would occur every 45 days every time, and would reflect the same
                 length of time as all other bills. Business quarters and school semesters align with
                 the actual calendar.
-                If you think about all that, it's pretty crazy this isn't default. 🕵🏿‍♀️ 
             </p>
+            <h4>If you think about all that, it's pretty crazy this isn't default. 🕵🏿‍♀️ 
+            </h4>
             <h2>unLimited Era: Earth As People</h2>
             <p>
                 We aim to conceptualize human civilization, the simultaneity and inter-relatedness
@@ -202,21 +224,27 @@ const props = defineProps(['infoview']);
                 but this remains problematic because our frame of reference is ever-changing. If you 
                 read this years later, you have to do more math. Imagine now that you 
                 are writing about what I'm writing, and somebody is reading what you've written ten years later. 
-                The problem multiplies itself.
+                The problem multiplies.
             </p>
             <p>
-                <b>Solution: the event took place 8024 years into history, 4000 years later is now
-                    12,024, and years never decrease forward through time.</b> No matter 
-                    when you read this, it's true. No calculation.
+                <b>Solution: </b> the event took place 8024 years into history, 4000 years later is now
+                    12,024 as I write this, and years never decrease forward through time. <b>No matter 
+                    when you read this, it's true.</b> No calculation.
             </p>
             <h3>A calendar measures history</h3>
             <p>
                 We estimate the historical beginings of civilization
-                somewhere between 10 and 80+ thousand years ago, depending on what qualifies, so we can start time anywhere
+                somewhere between 10 and 80+ thousand years ago (depending on what qualifies,) so we can start time anywhere
                 in that fuzzy region, and describe every year since then as a positive 
-                number. We maintain the significance of the BC/AD 
-                change by placing that point at the year 10,000 instead of 0, so that nothing in history 
-                happens before the unLimited era, and we live roughly 12,000 years in. 
+                number. 
+            </p>
+            <p>
+                We maintain the significance of the BC/AD 
+                change by placing that point at the year 10,000 instead of 0. Nothing in history 
+                happened before the unLimited era. Before year zero, 
+                there is no significant human culture, so no events. The following ten thousand years is considered 
+                ancient history. At 10,000, a global culture began to emerge with 
+                the spread of religions (and centralized time-keeping). At 12,024 years into history, unLimited Time was launched.
             </p>
             <h3>Full compatibility</h3>
             <p>
@@ -238,10 +266,12 @@ const props = defineProps(['infoview']);
         <div v-else-if="infoview=='clock'">
         <h1>unLimited Clock</h1>
         <h3>As above, so below.</h3>
-        <p> Days begin and end before sunrise (not midnight). Time of day is designed around the 
-            way people naturally talk and think about time. A day divides into 10 Sessions, noticeably 
-            different in terms of how the world looks and what people are usually up to, with an 
-            extra 0.8x-length zenSession considered "outside" of the day. 
+        <p> ✔️ Time of day is designed around the way people naturally talk and think about time. </p>
+        <p> ✔️ Days begin and end before sunrise (not midnight). </p>
+        <p> ✔️ A day divides into 10 Sessions, noticeably  
+            different in terms of how the world looks and what people are usually up to.
+            <!-- , with an 
+            extra 0.8x-length zenSession considered "outside" of the day.  -->
         </p>
         <h3>A typical day:</h3>          
         <div class="holiday-flex">
@@ -281,51 +311,54 @@ const props = defineProps(['infoview']);
         <h2>Sessions</h2>
             <p>A <b>Session</b> is about how long an activity reasonably takes (about 2.2 hours), and is
             an amount of time that creates a noticable change in daylight.
+            We sleep through about three of them.
             Sessions divide the day in ten, with one ~zen~ Session that resets the day
-            before most people are awake (5am). We sleep through about three of them.
+            before most people are awake (5am). 
             </p>
             <p>
-            Sessions are centered around typical sleep and meal habits, and often 
+            Sessions center around typical sleep and dietary habits, and often 
             coincide with a full activity, a work period, an occasion,
-            weather pattern, group interaction, or location. Each Session has a name
-            that indicates what a typical person does around that time,
-            and these names also mirror common speech.
+            weather pattern, group interaction, or location. Session names
+            indicate what a typical person does around that time,
+            mirroring common expressions.
             </p>
             <h3>Sessions are intuitive.</h3>
             <p>Unlike with hours, we generally use
-            the name ("Dawn") rather than the number. Resultantly, people will not even notice
-            a difference when you speak unLimited Sessions.
+            the name (eg. "Dawn") rather than the number. Resultantly, people will not even notice
+            the difference when you speak Sessions.
             </p>
             <h3>😎 It's Your time now.</h3>
             <p>While we present what people generally do in a day as a clock,
-            the point is not to prescribe a particular lifestyle or belief. Nevertheless,
-            this framework aims to inspire health and productivity, and so is modestly
-            opinionated.</p>
+            the point is not to prescribe a particular lifestyle or belief. 
+            This framework aims to encourage health and development, but is otherwise
+            unopinionated.</p>
             <h2>~zen~</h2>
-            <p>The zenSession is just a time for timelessness. Most perspectives acknowledge
-            or recognize perhaps a time-transcendent quality to reality. It was a creative 
-            indulgence, perhaps, to take this lease-desirable span and declare it in the name
-            of deconstructing time itself. An ideal
-            time to meditate, or pray, or assert affirmations, catch a fish, work on your short game 🏌🏿‍♀️, 
-            catnap in the old office chair, silly time, micro dance party, contemplation, lovemaking,
-            watch the sun rise, do anything you want. It's like a Room of Requirements; anything
-            you can't make time for 😜 most people just sleep through it. Which is great. 
+            <p>zenSession is time for timelessness. Most perspectives acknowledge
+            or recognize perhaps a time-transcendent quality to reality. 
+            It was a creative 
+            indulgence, perhaps, to take this least-desirable span and declare it in the name
+            of deconstructing time itself. 
+            An ideal
+            time to meditate, pray, affirm, catch a fish, work on your short game 🏌🏿‍♀️, 
+            silly time, micro dance party, contemplation, lovemaking,
+            watch the sun rise, do anything you want. It's a Room of Requirements - anything
+            you can't make time for. Most people just sleep through it. 😜 Our little secret. 
             </p>
-            <h3>Timeless Time</h3>
+            <!-- <h3>Timeless Time</h3>
             <p>
                 A miniature Holiday before the sunrise,
                 where we lovingly place the Instants, Moments, and Whiles that don't conform 
                 to a base-10 grid. Use zenSession to awaken your senses, enliven your soul, renew, let go, 
                 make prophecy, plans, and judgments. 
-            </p>
-            <h3>Daily commitement</h3>
+            </p> -->
+            <!-- <h3>Daily commitement</h3>
             <p>People fall out of important routines such as meditation because there's never
                 enough time. We've literally made time for it.  
                 One justification: if you get more than 5 hours of sleep, an 
                 additional hour of meditation might be more beneficial than an 
                 extra hour of sleep. Many have reported feeling more rested, better health outcomes,
                 and overall improved personal energy and outlook.
-            </p>
+            </p> -->
             <h3>What's the punch line?</h3>
             <p>
                 There's 80 Instants in a Moment and 80 Moments in a 
@@ -349,7 +382,7 @@ const props = defineProps(['infoview']);
                 slightly longer than minutes, which is why there are 80 Instants in a Moment,
                 rather than 60.
             </p>      
-            <h3>1 Session = 10 Whiles = 100 Moments</h3>
+            <!-- <h3>1 Session = 10 Whiles = 100 Moments</h3>
             <p>
                 A Moment is like a sentence, and a While is like a paragraph. When you tell a story, 
                 you describe a situation (chapters/Sessions), in which a progression of events (paragraphs/Whiles)
@@ -357,10 +390,11 @@ const props = defineProps(['infoview']);
                 Instants are like individual words, which are mostly lost in service of a larger context.
                 Just as speed-readers largely intuit or skim individual words, people do not generally 
                 remember or even track particular Instants.
-            </p>
+            </p> -->
+            <h3>Intuitive Language Units</h3>
             <p>
-                The best way to test this system, is to say things like, "I had a session yesterday.
-                It will take me a while to get there. Give me a moment, please," and ask yourself
+                The best way to test this system is to say things like, "I had a session yesterday.
+                It took me a while to get there. Give me a moment, please," and ask yourself
                 whether you meant roughly what unLimited Time indicates.
             </p>
         </div>
@@ -372,18 +406,16 @@ const props = defineProps(['infoview']);
         timekeeping with maximum compatibility and interoperability. Technically,
         this is a framework, not its own system.
         </p>
-        <h3>80 Instants per Moment, 800 per While, 8000 per Session.</h3>
-        <h3>For you math nerds:</h3> 
-        <p>Why are there 80 Instants rather than 100?</p>
-        <h4>Greg Day: 24 * 60 * 60 = 86400 seconds<br>
-            unLimited: 10.8 * 100 * 80 = 86400 Instants
-        </h4>
-        
+        <!-- <h3>80 Instants per Moment, 800 per While, 8000 per Session.</h3> -->
+        <h3>For math nerds:</h3> 
+        <!-- <p>Why are there h 80 I mnstants s rather than 100?</p> -->
+        <p><b>Standard Clock:</b> <br>24 hours * 60 minutes * 60 <br>= 86400 seconds</p>
+        <p><b>unLimited:</b> <br>10.8 Sessions * 100 Moments * 80 <br>= 86400 Instants</p>        
         <p>In accepting seconds, we must accept a kink in the base-10 somewhere. 
         If you think about it a lot, we don't need to conceptualize and do mental math 
         with momentary incidents as much as with medium and long term scheduling, so we accept
-        the trade-off of a number base matching our number of fingers not including thumbs.</p>
-        <h3>✋🏿🤚🏿</h3>
+        the trade-off of a number base matching our number of fingers not including thumbs. ✋🏿🤚🏿</p>
+        <!-- <h3></h3> -->
         <p>
             We don't generally think in terms of Instants. They are more for quantitative measurement
             that is generally performed by machines anyway.
@@ -391,23 +423,21 @@ const props = defineProps(['infoview']);
         </div>
         <div v-else-if="infoview=='calendar'">
             <h1>unLimited Calendar</h1>
-            <h2>Habit: the time it takes to change</h2>
-            <h3>1 Habit = 45 days</h3>
+            <h2>1 Habit = 45 days</h2>
+            <h3>Habit: the time it takes to change</h3>
             <p>
-                It takes roughly 45 days to develop an enduring ability,
+                Aside from being half a season, it takes roughly 45 days to develop an enduring ability,
                 lifestyle or social habit, and so this seemed a logical way to divide time. We encourage using the Holiday to, among other things,
                 take a high-level assessment of one's own reality, and select one thing to 
-                seriously commit to over the course of the Habit.
+                seriously commit to over the course of the Habit. We call this a Judgment.
             </p>
             <h3>1 Year = 8 Habits + 5 days (newZen)</h3>
-            <p>Habits begin and end at seasonal halfway points. A Habit is half of an Earth season. Their names come from the Holiday
-            which occurs on the first day. These are generic, or "mono-myth" Holidays, 
+            <p>A Habit is half of an Earth season. Each begins and ends at season changes and mid-points. Their names come from the Holiday
+            which occurs on the first day. These are generic "mono-myth" Holidays, 
             which can be replaced with any existing observances occuring nearby. 
         </p>
 
-            <h2>Cycle: the flexible work schedule</h2>
-            <h3>1 Habit = 9 Cycles</h3>
-            <h3>1 Year = 8 Habits (360 days) + newZen Cycle (5 days)</h3>
+        <h2>Cycle: the flexible work schedule</h2>
         <p>A Cycle is a five-day "week" excluding Monday and Sunday. Drop "day"
             from the day name to distinguish the two systems, which of course don't line up.
         </p>
@@ -465,24 +495,25 @@ const props = defineProps(['infoview']);
             you work "unLimited Time," giving 10% more or less than average each Cycle as your ambitions, life, 
             health, and energy dictate. 
         </p>
-        <p>Oftentimes, employers have too much or too little work and have 
-            to do overtime or slash hours, so 
-            here you go. Get rid of silly loopholes we're using to 
-            subvert the miserable emprisonment of the 7 day full-time work schedule, and 
+        <p>Thus, you or your employer can now plan each Cycle to work slightly more or less than 
+            standard full time, or match it by switching each week. <b>Ya rly.</b> Employers often have too much or too little work and 
+            resort to overtime or slashing hours, so 
+            there you go. Get rid of silly loopholes used to 
+            subvert the miserable fake prison of the 7 day full-time work schedule, and 
             commit to a system that expresses You.
         </p>
         
         <h1>Holidays</h1>
-        <h3>1 Sun every Habit</h3>
-        <p>The first of every Habit is a Holiday Sun day sharing the name of the Habit. 
+        <h3>Every Habit 1 Sun</h3>
+        <p>The first of every Habit is a Holiday Sun sharing the name of the Habit. 
             These are derived from secular themes and global holidays occuring 
             around the same time. Whatever
-            locale holidays exist in your culture can be substituted in. For those more 
+            locale holidays exist in your culture can be subbed in. For those more 
             interested in unLimited culture, we invite you to celebrate, embody, and add your own 
             affectations or alterations to these prototypes, which can be updated as culture 
             develops. The spirit of every Habit and every Holiday is to both include  
             the diversity of traditional sentiments and distill them
-            into a universal and fundamental essence, and then use those as names.
+            into a universal and fundamental essence, and then those are the names.
         </p>
         <div class="holiday-flex">
             <h3>Struggles</h3>
@@ -510,7 +541,7 @@ const props = defineProps(['infoview']);
         </div>
         <div class="holiday-flex">
             <h3>Hallows</h3>
-            <p>🎃 Death, blackness, tricks, spooky stuff.</p>
+            <p>🎃 Death, darkness, tricks, spooky stuff.</p>
         </div>
         <div class="holiday-flex">
             <h3>Feasts</h3>
@@ -522,13 +553,15 @@ const props = defineProps(['infoview']);
         </div>
         <p>
             This is not in any way to discourage traditional observances, rituals or 
-            practices. It is to set a public tone that all people can celebrate together in 
-            spite of differing views. The newZen is everybody's newZen. 
-            These are "mono-myth" or meta-Holidays, and they are optional.
+            practices. It is to set a public tone that all people can celebrate together 
+            with differing views. newZen is everybody's newZen. 
+            These are optional "mono-myth" or meta-Holidays.
             Whether you spend the Struggles working, drinking, crying,  
             fasting, praying, partying, getting together with family... it's just called 
             the Struggles.
         </p>
+        <h3>1 Habit = 9 Cycles</h3>
+        <h3>1 Year = 8 Habits (360 days) + newZen Cycle (5 days)</h3>
 
         <h2>newZen Cycle</h2>
         <p>
@@ -536,23 +569,23 @@ const props = defineProps(['infoview']);
             length every year. On leap years, the extra day is added to newZen. Use 
             this time to distance yourself from the baggage of the preceding year, as 
             well as the pressures and expectations of the future. It is a time for the 
-            eternal Now, considered to exist in between years.
+            eternal Now, considered to exist between years. 
         </p>
         <h3>Timeless Festival</h3>
         <p>We discourage timekeeping 
-        and time-based conceptions during this Holiday.
-        Many cultures treat this time as a holiday festival, while others celebrate only 
+        and time-based conceptions during this global Holiday fiesta.
+        Many cultures treat this time as an extended holiday, while others celebrate only 
         the first of the year. 
         The Egyptian calendar chose 360 days with a festival period because 
         it seemed logical. We arrived at exactly the same solution 
-        before we knew it. 
+        before we knew it.
         </p>
 
         <h3>Judgement</h3>
-        <p>To get the full integrated effects of the Habit and Holiday concepts, we encourage 
+        <p>To get the full integrated effect of the Habit concepts, we encourage 
             a Judgment ritual on each Holiday. This is a day to act as your own coach and 
-            manager, to reflect on the previous Habit, to decide where you are at with everything,
-            how you feel about everything, even though you don't know for sure. You're just making 
+            manager, to reflect on the previous Habit, to decide where you are on your journey,
+            how you feel about everyone and everything, even though you don't know for sure. You're just making 
             firm decisions about who you are, what you're doing, what you think, feel, and do, and 
             leaving all of these perceptions open to future development. This is a time to make 
             decisions about now, to check in, to let go, to move forward.
@@ -563,28 +596,21 @@ const props = defineProps(['infoview']);
             find it agreeable, global, open-ended, and also robust. Using unLimited Time
             does not mean you have to meditate or develop yourself, any more than an 
             American atheist using standard time has to believe in Santa Claus or Columbus.
-            For average users, these would be vacation days, date nights, and road trips.
+            For average users, these could be vacation days, date nights, and road trips.
         </p>
         <h3>Holy and Divine</h3>
-        <p>For the spiritual, these are the times wherein we observe the personal, 
+        <p>For the spiritual, the ~zen~ times are when we observe the personal, 
             the cultural, the secular, the intimate, the beautiful, we commune, we practice.
             Psychologically, we may do things to reset, reboot, or self-manage. Just as with 
             traditional holidays, we have distilled the collective spirit of a time of 
             season into an official calendar date. These are focus nodes. 
         </p>
         </div>
-        <div v-else class="hack"></div>
+        <!-- <div v-else class="hack"></div> -->
     </div>
 </template>
 <style lang="sass">
-.work-schedules
-    td, th
-        border: 1px solid white
-    @media screen and (max-width: 400px)
-        display: none
-// this works but it doesn't reset
-// html:has(.info-template div p)
-//     overflow-y: hidden
+
 .holiday-flex
     display: flex
     flex-wrap: nowrap

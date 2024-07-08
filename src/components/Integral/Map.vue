@@ -3,10 +3,8 @@
     <div class="integral-map">
         <h1>Map</h1>
         <p><b>Stein unLimited</b> presents a visual model of <b>Integral Theory</b>. 
-            Top buttons allow you to browse the <b>5 Modules: Quadrants, Levels, Lines, 
-                Types,</b> and <b>States.</b>
-                The five factors of this Theory of Everything should feel familiar and 
-                largely intuitive as we go along. 
+           <span class="pedantic"> Top buttons allow you to browse the <b>5 Modules: Quadrants, Levels, Lines, 
+                Types,</b> and <b>States.</b> </span>
             </p>
         <h2>Consciousness in Five Words</h2>
         <h3>Reality = 
@@ -20,6 +18,8 @@
             <!-- <span class="hilight">A</span>ll  -->
             <span class="hilight">S</span>tates } 
         </h3>
+        <p>The five factors of this Theory of Everything should feel familiar and 
+                largely intuitive as we go along. </p>
         <!-- <h3><span class="hilight">AQALALATAS!</span> -->
             <!-- : "ah-kewl-a-lot-is" 🤣 -->
         <!-- </h3> -->
@@ -32,17 +32,18 @@
         <p>
             
         </p>
-        <h3>The Nature of Integral Theory (what is this?)</h3>
+        <h3>Integral Theory (what is this?)</h3>
         <p>
             This is not trademarked guru secrets, but a free map of extremely popular, accepted, and well-known ideas. They 
             make no falsifiable, ontological claims, other than suggesting a categorization framework. 
-            This is not an ideology. There is no belief. There is no guru. There is hardly any social movement. 
+            This is not an ideology. There is no belief, no leader, no interest.  
             It's just an extremely useful categorization schema for humans today, quite commonsense. We prefer 
-            to use Integral, in the absense of alternatives.
+            to use Integral in the absense of alternatives.
         </p>
+        <h3>The Nature of Integral</h3>
         <p> 
             Like the profound works of Freud, Jung, Einstein, Neitzche, and Marx, this should best be considered 
-            exploratory, adapatable, incomplete, open-ended, and interpretive. 
+            exploratory, adapatable, open-ended, and interpretive. 
             It is not pop psychology, nor is it new age 
             spiritualism or occultism. It is not pseudo-science. It just isn't science. It's not religion, though 
             it includes <em>all of these</em>, as it is a complete philosophy of reality and consciousness. 
@@ -50,22 +51,22 @@
             or primary factors generating the reality that we experience,
             and the structural dynamics of the kosmos.
         </p>            
-        <h2>Second Tier Reality</h2>
+        <h3>Second Tier Reality</h3>
         <p>
         Integral 
-        Theory is a tentatively complete philosophical system, so Integral synonymously 
-        refers to Wilber's work, any similar methodology, as well 
-        as any expression of the integral Level. Pretty much anything can be Integral.
+        Theory is a tentatively complete philosophical system, so "Integral" simultaneously 
+        refers to Wilber's work or any expression of Integral Levels or similar methodology.
         A <a href="https://www.stuartdavis.com/blog/creating-language" style="display: inline; text-decoration: none; color: teal;" target="_blank">language</a> 
         can be Integral. Even 
         a <a href="/time" target="_blank" style="display: inline; text-decoration: none; color: teal;">clock</a> can be Integral.
         </p>
+        <h3>AQALALATAS</h3>
         <p>
-            The complicated AQALALATAS diagram attempts to encapsulate and 
+            The complicated diagram attempts to encapsulate and 
         define an Integral, or Second Tier, perspective, which is the 
         most advanced <b>Level</b> of consciousness recognized today
         by a general survey of developmental psychology literature focusing on overall 
-        stage trends. And there it is, the Teal map of reality, totally naked and complicated
+        stage trends. And there it is: the Teal map of reality, totally naked and complicated
         because that's how Teal likes to do things.  
         Are you as excited as I am? 😃 
         </p>
@@ -79,17 +80,16 @@
             teaching these ideas in our own way, because we felt like it would be cool of us. 
         </p>
         <h3>Integral Thinking</h3>       
-        <p>Integral is not just the presentation of these concepts, or even usage of them, it is properly 
+        <p>Integral is not just the presentation or usage of these concepts. It is properly 
             the process of arriving at them. This is not the place for a biography of Ken Wilber, but he arrived 
-            somewhat decisively at a basic integral theory through intense research, spiritual practice, and an 
-            exhaustive process of trying to organize all existing and accepted or just influential fundamental notions 
-            of philosophy. 
+            somewhat decisively at a basic Integral Theory through intense research, spiritual practice, and a 
+            process of trying to organize fundamental notions and trends in philosophy. 
         </p>
         <h3>The Ken Wilber Process</h3>
         <p>
-            In the case of developmental psychology, this was achieved by laying out all existing models (some 
+            With developmental psychology, this was achieved by laying out all existing models (some 
             interpretation necessary) and observing that they all trace different aspects of a person, and for different 
-            purposes, but the overlap is unmistakable. The overlap itself generates a stage model, which is Altitudes.
+            purposes, but the overlap is unmistakable. The overlap itself generates a stage model, Altitudes.
             And then you see that the Altitudes not only apply to individuals, the same general patterns characterize 
             civilization, history, the way society is structured, everything everyone creates, everything everyone does,
             the reasons that we do what we do, and the relative nature of our own current perspective in the grand scope 
@@ -97,10 +97,11 @@
 
         </p>
         <p>
-            side by side, and organizing 
+            <!-- side by side, and organizing 
             them logically. Truly novel individual progress is unlikely
-            vis a vis the greatest and most earnest thinkers who ever lived. Wilber 
-            organized his own research on consciousness, reality, and the mind, into the Five 
+            vis a vis the greatest and most earnest thinkers who ever lived.  -->
+            Wilber 
+            organized his own vision of consciousness, reality, and the mind, into the Five 
             Modules (AQALALATAS). As we return to the more ordinary deductive, social, and procedural 
             realities that we mostly face, we now have a map of the infinite 
             possibilities and perspectives available at all times.
@@ -126,26 +127,109 @@
             elegant and comprehensive model of reality. It includes the material universe, this experience, 
             consciousness, perspectives, the unconscious, and the unknown. 
         </p>
+        <h3>Integral Level</h3>
+        <p>
+            Integral Theory
+            <!-- does a very similar move, charting  -->
+            is a system of generalizations that can be used as basic orientation 
+            points across professional fields, cultures, and contexts to ensure an Integral Level 
+            standard of perspective inclusion.
+
+            In a survey of psychological concepts and 
+            models of consciousness, Wilber discovered that Integral was a 
+            commonly used term to describe this emerging Level of consciousness, 
+            meaning system holistic and 
+            heirarchically inclusive, also dialectical.
+            In a parallel of central significance and influence to the Wilberian perspective, the theoretical 
+            advances of eastern mystic Sri Aurobindo were also self-termed Integral Yoga.
+ 
+            <!-- For discussion of the Integral stage, see the 
+            Levels page. Importantly, Wilber's work is an attempt to create a sort of  -->
+        </p>
+        <h3>Transcend and Include</h3>
         
+        <p>Higher, deeper, more evolved, developed, or inclusive, do not necessarily mean
+            personally or morally superior, 
+            wise, mature, or smart. There's nothing smarter, more lovable or blameless, 
+            than a newborn baby. The purpose of the baby isn't to grow up, grow old, and die. The baby is an end in itself. 
+            So says a moral Level far beyond a baby's comprehension, and thus it becomes the responsibility of the higher Level 
+            to make sure the baby's diapers get changed. It becomes your responsibility, quite naturally, 
+            to try and get the baby up a few Levels, so you no longer have to take care 
+            of the things the baby is unaware of that are problematic for both of you.</p>
+        <p>If moving up Levels means any one thing, it means greater responsibility.
+            The challenge is not to get to the highest Level, or even the next Level. 
+            The challenge arises from the intuitive nature of this developmental heirarchy and 
+            recognizing where your primary expressions exist within it.</p>        
+        <h3>We're Expecting More of Us 😺</h3>
+        <p>Wilber provides a philosophical groundwork, a manifesto, or just introduction to the Integral 
+            Level, but the Level arises in nature, and the word Integral will most likely forever be 
+            nothing more than a reference to his books. Whether or not the Integral Level 
+            identifies itself with Wilber, 
+            <!-- or whether Ken Wilber will ever be 
+            recognized as a forefather of a massive global movement,  -->
+            for our purposes, it is 
+            most important just to judge the plausibility of these ideas, and observe that 
+            the integral Level which exists in reality is mostly unaware of Wilber and Integral 
+            Theory. We wanted to try using this framework self-consciously and conspicuously, see how fluent 
+            we can become with it, what it may reveal to us, and what effects it might have on 
+            our lives.
+            <!-- and so didn't coin the term per se, certainly 
+            his philosophy moves to identify as Integral as an expression of the philosophical 
+            meta-meme, or meta-paradigm, of this emergent stage of human consciousness termed 
+            Integral. -->
+        </p>
+        <h3>Hey, This Is Like Some Other Thing...</h3>
+        <p>
+            It is. The Five Modules are entirely
+            matter-of-fact observations and concepts we use 
+            intuitively in today's world. Insights pertaining to spirituality apply equally to all religious, 
+            spiritual, and atheist or agnostic perspectives. Wilber's work is a grand synthesis; practically no 
+            aspect of it is entirely original, and nearly everything
+            represented in this model derives from the overlap of numerous common sources
+             <!-- which might or might not
+            find Integral Theory agreeable.  -->
+            What is unique and creative to Wilber's work is his selection, curation, and framing 
+            of these academic, literary, and esoteric sources,
+            the way he organizes and categorizes them, and the pioneering scope of his entire articulated vision. 
+        </p>
+        <!-- <p>
+            For most people, Quadrants, Levels, and States are intuitive 
+            and familiar, but we generally have not seen them stated in this way.
+            Types and Lines are considered more in the domain of conventional psychology and 
+            social sciences. What Integral contributes to those is mostly the inclusion of 
+            the others. We consider Lines and Types helpful but somewhat incomplete, as contemporary approaches
+            (DSM-V classification, Myers-Briggs, Piaget cognitive levels, enneagram, Astrology, Hawkins scale...) attempt to exist
+            as isolated systems and classify some aspects of consciousness without regard for others. 
+        </p> -->
+        <!-- <h3>How does all of this relate to the Map?</h3>
+        <p>All of what is being conveyed here, Integral Theory and all, is typical Level 7, typical Teal Meme. Couldn't 
+            be more on the nose. The 
+            message of a Second Tier culture is a genuine, personal call to Wake Up, Grow Up, and Clean Up. 
+            Spirituality, Development, and Integrity. It is a call to Transcend and Include - to take a step back 
+            into abstraction and hold the apparent as sacred treasure.  -->
+            <!-- AQALALATAS is the Level 7 map of reality.
+            Most people don't have it. Level 7 wants everyone to have it, and to use it. -->
+        <!-- </p> -->
+ 
         <h3>Physics and A Theory of Everything</h3>
         <p>
             There is a common 
-            conception that fundamental particles, waves, or field concepts in physics, as the building 
+            conception that fundamental particles, waves, or field dynamics in physics, as the building 
             blocks, or structural essence, of reality, perhaps even the thoughts of God,  
             should reveal everything we need to know about the nature of reality. 
-            "Theory of Everything" historically refers to a theory uniting relativity and 
-            quantum mechanics. This is a conservative appraisal of "everything". Since Integral Theory
-            includes material reality as the Right Quadrants and Levels beneath 
-            Altitudes, and also 
-            includes consciousness and culture, 
-            which are real but do not have mass, charge, volume, or 
-            spin, Integral is a better contender for Theory of Everything, if anyone still cares.
+            "Theory of Everything" canonically refers to a theory uniting relativity and 
+            quantum theory. This is a conservative appraisal of "everything," leaning heavily towards 
+            extremely large and small things. Since Integral Theory
+            includes material reality, and also 
+            consciousness and culture (which are real but do not have mass, charge, volume, or 
+            spin), Integral is a better contender for Theory of Everything, if anyone still wants to 
+            fight about it. 🥊
         </p>
         <h3>Integral Particle Physics</h3>
         <p>
             <!-- And not talking about spacial dimensions, but Quadrants.   -->
             Reality is not merely a massive heap of protons, neutrinos, leptons, etc., but those 
-            particles stack and organize at various Levels, atoms, molecules, cells, tissues, and 
+            particles stack and organize at various Levels: neutrons, atoms, molecules, cells, tissues, and 
             each Level has unique dynamics and 
             mechanics, all flexing and flowing operationally with one another, moving together. The nature of  
             particles is of great interest to technology and philosophy. At every scale 
@@ -153,92 +237,161 @@
             and dynamics. The cells of my body each do their own thing, they all have their function, 
             but also they "integrate" into my body. We discovered cells, and 
             this opened up a new world of comprehending biology and medicine. We discovered 
-            genetics. The derivative of cells, step down one Level, and you find that cells are integral 
+            genetics. The derivative of cells, step down a Level, and you find that cells are integral 
             molecules. The periodic table yields the substance of reality. Of course, molecules are integral 
-            atoms, are integral subatomic particles, are integral quarks. We'll find reality, 👍🏿 just keep digging.
+            atoms, are integral subatomic particles, are integral quarks. We'll find reality. 👍🏿 Just keep digging.
         </p>
         <h3>A Thing Made Out Of Things That Makes A Thing</h3>
         <p> 
             It's okay to talk about physics. 
-            Material reality is composed of Levels of holons, or whole entities which are whole unto themselves, but exist as 
-            a part of another entity, as far up and as far down as we have ever been able to see. These are holons, 
-            because whole atoms are parts of whole molecules, which are parts of whole cells. 
+            Material and mental reality are both composed of Levels of holons, or whole entities unto themselves which exist as 
+            part of another entity, as far up and as far down as we have ever been able to see. These are holons, 
+            because whole atoms are parts of whole molecules, which are parts of whole cells.
+            And I see you looking up towards the top of the stack of atoms and molecules and thinking, <b>what's the top Level?</b>  
         </p>
         <h3>The Most Interesting Thing Anywhere</h3>
         <p>
-            And I see you looking up towards the top of the stack of atoms and molecules and thinking, what's the top Level? Is it the Universe?
+            Is it the Universe?
             The Meta-Versity? An embryo floating in space? Closer. You see, the Universe is very very big, 
             and so I see how, after looking at very very small, you might think the other extreme. What is the Universe?
             It's not a bunch of this, far as we know. There's not a bunch of people in it. Nah, it's pretty much just tons and 
             tons of lower Levels: particles, waves, molecules. These low Levels take up all of the physical 
             space in the Universe. Low Levels exist everywhere, with extreme amounts of space between them, and 
-            they collectively form galaxies, stars, and planets. The very little compose the very big, not intelligent or 
-            self-aware or alive, just big, relatively empty. It's very impressive, very 
-            vast, and as far as we know, there is nothing out there, in any of that, doing what's going on right here.
-            It's you, my love. You are a higher Level than the galaxy. Molecules and stars aren't alive.  
+            they collectively form galaxies, stars, and planets. The very little compose the very big - not intelligent or 
+            self-aware or alive - just big, and relatively empty and unremarkable. It's very impressive, very 
+            vast, and as far as we know, there is nothing out there, in any of that, doing what's going on right here,
+            where we marvel at its vastness and comprehend its meaning.
+            It's you, my love. You are a higher Level than the galaxy. Molecules and stars aren't alive. 
+            And what's more, if you can but reach it, the highest Level in existence is pure integrated experience itself. 
         </p>
         <h3>Middle Way ftw</h3>
         <p>Big and small are elusive frontiers, but normal-sized, or every-sized, is where you'll find 
             higher Levels. Because, 
             look at reality right now. The atoms, the molecules, they are being you and this environment, aren't they, and they are being 
             experienced because You are here. Now, this is very relevant to you, being at your scale. You, too, are a holon.
-            When I say You, what do I mean? I mean a concept (meme) that your body (brain(chemisty(waves))) generates. That self concept 
-            is a holon which could potentially form a higher self concept holon by integrating with other holons, but it is itself 
-            made of holons 
-            made of holons made of holons until you get to instinct, and here we see that over the natural history on Earth,
-            life itself underwent a sort of memetic transformation, or evolution, or we can say phylogeny. 
+            When I say You, what do I mean? I mean a concept (meme) that your body (brain(chemisty(waves))) generates. 
         </p>
-        <h3>The Entire Stack Is Evolving</h3>
+        <h3>Evolving Self Concepts</h3>
+        <p>
+            You ever think about who you really are? The self concept amalgam 
+            is a holon, perhaps made of rational or progressive self concept memes. These could potentially form a higher Level 
+            self concept holon by integrating with other holons. 
+        </p>
+        <p>
+            Nevertheless, the self concept is composed of 
+            memetic conceptual holons, which developed from more immature or simple memes,  
+            made of holons 
+            made of holons made of holons, until you get to instinct.
+        </p>
+        <h3>The Evolving Stack</h3>
         <p>
             Inevitably, the self concept must have arisen from instinct. What is 
             this thing we call instinct? It must be a form of consciousness that we share with the animals, but it 
-            is a lower Level of consciousness, because they are not self aware. If we want to know how what instinct 
+            is a lower Level of consciousness, and clearly so, as they are not self aware. If we want to know how what instinct 
             is made of, or what it is, we can look at how it comes to be as a human sperm and egg transform into any old 
             human baby, or we can look at how our structure evolved biologically as we were shaped from the primate meme 
             from the mammal meme from the vertebrate meme from the animal meme from the life meme. 
+        </p><p>
             These memes have developed from the trial and error of reproduction and death, 
             but as you can see, the laboratory of life shows us, though it is abstract, that life evolves just like self 
             concepts, by integrating more primitive structural concepts into higher-Level structural concepts, because 
             higher Levels, though more fragile, offer enormous survival advantages under ideal conditions (higher Levels 
-            are less stable and happen faster).
+            are overpowered and transformative, but increasingly brief and unstable).
         </p>
+        <h3>Any Old Baby is a Masterpiece of DNA</h3>
+        <p>
+            Over the history of Earth,
+            life underwent a sort of overall memetic transformation, or meta-evolution, or we can say the phylogeny
+            of consciousness. Tracing history over the vast stretches of geological time, it is clear 
+            that emergent biological structures come to dominate the food chain, then to become the 
+            basis of future emergence, often in association with cataclismic global changes.
+        </p>
+        <h3>Ontogeny Recapitulates Phylogeny</h3>
+        <p>
+            These emergent 
+            holon structures (organ systems, essentially), when taken over the total span of evolution in an arguably abstract sense, map out the primary divisions of taxonomical 
+            systems. The same sequence of structural emergence occurs within the womb 
+            during pregnancy, and the embryonic infant oddly mirrors the general structure of each creature 
+            leading up to homo sapiens, as these structures were largely built atop of, starting from the Level 
+            of chemical proteins, which started the whole thing in either case.
+        </p>
+        <h3>Life to Mind Levels (Infrared and Visible Light)</h3>
+        <p> 
+            Genetic holons, over the history of our species from the primordial ooze, 
+            evolved the advanced organs that enable symbolic social communication. From here, 
+            evolution is no longer at the Level of biological Life, and the holonic unit switches from instinct holons to  
+            mental conceptual holons. 
+        </p>
+        <h3>Any Old Baby is a Cave Person</h3>
+        <p>
+            The baby must learn through communication everything that has occured in  
+            history (of civilization and thought, or the Level of Mind), but this is also the human superpower, as any old baby can 
+            pick up where every old dead person left off. Physical Matter, substance, and genetic Life have 
+            culminated in memetic Mind, and at this Level, the scale of a life is for once quite meaningful.
+        </p>
+
         <h3>The Spectrum is One Process</h3>
         <p> 
-            Oh boy, we're like, all 
-            the way back now. To the microbial. This is the boundary where evolution goes from 
-            biological to physical material. What's the difference in this case? <em>Exactly</em>. Where chemicals become life, 
+            Perhaps more interesting than discovering the smallest thing that makes up all things and the 
+            rules that apply to it's impossibly tiny Level, we can trace a continuous spectrum, just like the 
+            electromagnetic spectrum we use as a Levels analogy, from the Big Bang of tiny stuff burning through 
+            space in the Universe, to the emergence of life on Earth, to the rise of civilization, to the present 
+            day and perhaps the Future. 
+        </p>
+        <p>
+            In the grand analogy of Integral Theory, we refer to this with the 
+            metaphor of an electromagnetic spectrum of Levels, with Matter and Substance in the Radio range, Life 
+            in the Microwave and Infrared, Mind Levels (Altitudes) in the Visible Light rainbow, and leaving plenty of 
+            room for evolution in the diverse bands of cosmic rays. It is a great metaphor in many ways, particularly
+            in that Integral pursues integrating perspectives on the visible, or known, rather than extremes, or the unkown.
+            It is all about recognizing where perspectives show up relative to other perspectives. 
+        </p>
+        <h3>Reality-Assembling Memes As Colors</h3>
+        <p>
+            As we focus in closer to home, 
+            closer to now, at the Level of Mind and social memetic interaction, we enter the visible light 
+            range, the reality that we can actually see first-hand. Just more Levels of holons stacking 
+            ever higher. And hopefully you are starting to see now that if you play your cards right, you have the potential to be the 
+            highest stack of holons that exists in the known Universe. For all you know, you are already 
+            as high as shit stacks, but Second Tier is telling you there's higher. It's inward. Even 
+            closer to home. Always closer, always effortless after the fact.
+        </p>
+       <!-- <h3>Creatures from Earth</h3> -->
+        <!-- <p>
+            How did evolution cross the boundary where biological life meets  
+            physical matter? What's the difference in this case? <em>Exactly</em>. Where chemicals become life, 
             you find things very similar to the DNA creating our structures, and just like our self concept, and our knowledge 
             quest, the biological organisms have been adapting to their environment, but the DNA, as a collective, as itself 
             an evolutionary system,
             driven by the simple concrete reality of self-preservation to organize itself into more and more intelligent 
             creatures. Not on purpose, but just because it works better. Every Level of reality is implicated in evolutionary 
             processes, making evolution perhaps the primary dynamic of reality.
-        </p>
-        <p>
+        </p> -->
+        <!-- <p>
             All Levels of holons, possibly. You don't exist, except as holons. Cells form your tissues, like plants have. 
             These tissues form your organs, like animals have. Ah, so the higher Levels are life? Well, duh. So, then what, 
             grandpa. All right, all right, you settle down. One more and then it's off to sleepy land for you. There's Levels 
             of matter which, in some rare, very special circumstances, can form higher Level, transcendent things, called life.
 
-        </p>
+        </p> -->
         <p>
             It is 
             more true to say your physical body is a stack of holonic Levels, than 
-            to say that it is a collection of organs, a story of a woman named "Stevie," or the vibrations
-            of eleventh dimensional super-strings. 
-            These entities are so small that ideas of "seeing something happen" and "which direction it moved" stop 
+            to say that it is a collection of organs, a bunch of carbon, water, and protein, a story of a woman named "Stevie," or the vibrations
+            of eleventh dimensional super-strings. These would be single-Level perspectives on the self.
+            <!-- These entities are so small that ideas of "seeing something happen" and "which direction it moved" stop 
             making the same kind of sense that they do in our personal scale of reality that we are familiar with.
             You can't look at light the same way you can look at something else, because light is the medium of vision.
-            Everything you see is light. To look at light, you just look. There's no other way to do it. 
+            Everything you see is light. To look at light, you just look. There's no other way to do it.  -->
         </p>
-        <p>
+        <!-- <p>
             Science, philosophically, methodologically, can only rely on detected sense data. Thus, when we reach the 
             range of sense detection, we begin to use metaphors and mathematical models and talk like philosophers. Because 
             that which is outside of the range of science can only be comprehended through abstraction by a sensual being, 
             and that's all wonderful, I'm sure we'll make a super huge bomb. For some reason, we thought this would tell 
             us something about the meaning of life.
-        </p>
-        <p>
+        </p> -->
+        <!-- <p>
             By the way, I get that we're four dimensions of pointless heat 
             death falling, but where would I go if I wanted to understand the meaning of life? 
             Thus, the startling
@@ -256,36 +409,7 @@
             as well as the holonic stacking nature of reality itself. This is the nature of reality 
             as understood by the "ordinary" State of consciousness, in which I am an ego trying to 
             persuade you that what I'm saying will fulfill your ambitions in order to fulfill my ambitions. 
-        </p>
-        <p>
-            Integral thought does a very similar move, 
-            charting a system of generalizations that can be used as basic orientation 
-            points across professional fields, cultures, and contexts.
-
-            It means holistic and 
-            inclusive, also often dialectical. 
-            In a survey of psychological concepts and 
-            models of consciousness, Wilber discovered that Integral was the 
-            most commonly used term to describe a new stage of consciousness, typically the 
-            final stage in these models. For discussion of the Integral stage, see the 
-            Levels page. Importantly, Wilber's work is an attempt to create a sort of 
-            philosophical groundwork, a manifesto, or just an introduction to the Integral 
-            stage of consciousness, and so the word Integral will most likely forever be 
-            nothing more than a reference to Ken Wilber. Whether or not the Integral stage 
-            identifies itself by the word Integral, or whether Ken Wilber will ever be 
-            recognized as a forefather of a massive global movement, for our purposes, it is 
-            most important just to judge the plausibility of these stages, and observe that 
-            the integral stage which exists in reality is mostly unaware of Wilber and Integral 
-            Theory.
-
-            The influential theoretical 
-            advances of eastern mystic Sri Aurobindo also self-referred as Integral Yoga.
-
-            <!-- and so didn't coin the term per se, certainly 
-            his philosophy moves to identify as Integral as an expression of the philosophical 
-            meta-meme, or meta-paradigm, of this emergent stage of human consciousness termed 
-            Integral. -->
-        </p>
+        </p> -->
         <!-- <h3>This is the 12 Stages Of Consciousness thing From YouTube?</h3>
         <p>Same people. We do a YouTube channel 
             called unThinkMe with Integral podcasts and tutorials, and we present to you this fun summary 
@@ -294,7 +418,7 @@
         <h2>The Nature of Reality</h2>
         <p>As a through-line, consider the question, "What is reality?"  
             Consider asking all the people you walk past, you work with, all the people you 
-            know, all around the world, famous people all throughout history. <b>What's real?</b>
+            know, all around the world, the great thinkers and famous minds all throughout history. <b>What's real?</b>
             How could you organize <em>all of that</em> into a simple expression of what is?
             And faced with each of these people, what would you say, if you had to explain it all?
             This presentation should be for everybody, for a kid, for an alien, for grandma, 
@@ -341,53 +465,9 @@
             brand consciously own and embrace our own versions of magic and myth, and find them to 
             be healthy and valuable within their domain. The majority of what is considered spiritual 
             in this context pertains to permanent changes to a person's regular brain functioning and felt
-            sense of reality and identity, usually as the result of meditative practices.
-            These practices are typically discovered within and best upheld by the religious traditions.  
+            sense of reality and identity, usually as the result of meditative practices. These practices 
+            are commonly associated with and best upheld by religious traditions.
         </p>
-        <h3>Hey, This Is Like Some Other Thing...</h3>
-        <p>
-            It is the other thing. The Five Modules are entirely
-            matter-of-fact observations and concepts we use 
-            intuitively in today's world. Insights pertaining to spirituality apply equally to all religious, 
-            spiritual, and atheist or agnostic perspectives. Wilber's work is a grand synthesis; practically no 
-            aspect of it is entirely original, and nearly everything
-            represented in this model derives from the overlap of numerous credited sources which might or might not
-            find Integral Theory agreeable. What is unique and creative to Wilber's work is his selection, curation, and framing 
-            of these academic, literary, and esoteric sources,
-            the way he organizes and categorizes them, and the scope of the entire articulated vision. 
-        </p>
-        <!-- <p>
-            For most people, Quadrants, Levels, and States are intuitive 
-            and familiar, but we generally have not seen them stated in this way.
-            Types and Lines are considered more in the domain of conventional psychology and 
-            social sciences. What Integral contributes to those is mostly the inclusion of 
-            the others. We consider Lines and Types helpful but somewhat incomplete, as contemporary approaches
-            (DSM-V classification, Myers-Briggs, Piaget cognitive levels, enneagram, Astrology, Hawkins scale...) attempt to exist
-            as isolated systems and classify some aspects of consciousness without regard for others. 
-        </p> -->
-        <h3>How does all of this relate to the Map?</h3>
-        <p>All of what is being conveyed here, Integral Theory and all, is Level 7, typical Teal Meme. It couldn't 
-            be more on the nose. The 
-            message of a Second Tier culture is a genuine, personal call to Wake Up, Grow Up, and Clean Up. 
-            Spirituality, Development, and Integrity. It is a call to Transcend and Include - to take a step back 
-            into abstraction and hold the apparent as sacred treasure. 
-            <!-- AQALALATAS is the Level 7 map of reality.
-            Most people don't have it. Level 7 wants everyone to have it, and to use it. -->
-        </p>
-        <h3>Transcend and Include</h3>
-        
-        <p>Higher, deeper, more evolved, developed, or inclusive, do not necessarily mean
-            personally or morally superior, 
-            wise, mature, or smart. There's nothing smarter, more lovable or blameless, 
-            than a newborn baby. The purpose of the baby isn't to grow up, grow old, and die. A baby is an end in itself.
-            So says a moral stage far beyond a baby's comprehension, and thus it becomes the responsibility of the higher stage 
-            to make sure the baby's diapers get changed. It becomes your responsibility, quite naturally, 
-            to try and get the baby up to your stage, so you no longer have to take care 
-            of the things the baby is unaware of that are problematic to you.</p>
-        <p>If moving up Levels means any one thing, it means greater responsibility.
-            The challenge is not to get to the highest Level, or even the next Level. 
-            The challenge arises from recognizing the intuitive reality of this developmental heirarchy and 
-            where your primary stage expression exists within it.</p>
         <!-- 
         <p><b>Levels:</b> consider the maturity, cognitive aptitude, and education of the 
             person responding.

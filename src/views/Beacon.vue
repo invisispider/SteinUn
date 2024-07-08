@@ -72,7 +72,7 @@ of the Complex. </p><p>
 "But what now? What do we do with forever? Does this flavor last? If it goes on and on like 
 this, I may learn everything there is to know. Try everything. Be every type of person. 
 And then what? Does the enchantment ever fall away?
-Do any of you find this tedius, the endless responsibilities and transactions?
+Do any of you find this tedious, the endless responsibilities and transactions?
 No. The Beacon adjusts us away from negative emotions. Then, can you imagine it just 
 gets better and better? 
 Could it be that we haven't seen <em>anything</em> yet?</p><p>
@@ -82,10 +82,16 @@ When we get to the end, we react to it however that goes, and then
 we engineer it all up so that we can play again.</p><p> 
 "As I list off these potential
 perspectives, these ways of seeing reality, you relate to all of them without resistance.
-Because we're Green Zone.
+Green Zone.
 Amongst differing perspectives, we depend on one another.
-So far, it works. I intuit a hidden symmetry to things, a kind of order. 
-I think the Beacon is waiting for that to fracture."</p>
+So far, it works. We see here a concrete culmination to a hidden symmetry to things, a kind of order. 
+The Beacon delivered us here, and the whole time, we felt that we were behind the whole thing. 
+Always the goose, and always the egg in hindsight. We never understand the Beacon.
+It is possible that we must now reach the end of that pattern.</p>
+<p>"This time, we are watching, and we anticipate our antithesis. But I believe this time it will 
+be fundamentally different. I think it is our turn to move.
+This is my understanding of the security situation."
+</p>
 
     </div>
 </template>

@@ -3,8 +3,9 @@ export const AqalLines = [
         'name': 'Worldview Structures',
         'line': 'Gebser',
         'author': 'Jean Gebser',
-        'description': 'A Swiss philosopher, introduced a developmental model in his influential \
-        work "The Ever-Present Origin."',
+        'description': 'The groundbreaking Swiss philosopher introduced a developmental model in his \
+        influential work "The Ever-Present Origin," describing fluid, spectrum-like mutations to the \
+        structure of consciousness that result from inadequacy dealing with more complex problems.',
         'notes': 'Gebser\'s model suggests that these stages are not necessarily linear or hierarchical but can coexist within individuals and societies to varying degrees. Additionally, Gebser argues that humanity is currently undergoing a transition towards a more integral consciousness, where all previous stages are integrated and synthesized.',
         'stages': {
             '1': {
@@ -74,7 +75,8 @@ export const AqalLines = [
         'name': 'Child Cognitive Stages',
         'line': 'Piaget',
         'author': 'Jean Piaget',
-        'description': 'Pioneering psychologist Jean Piaget proposed a theory that outlines distinct stages of intellectual growth in children. His is often the most commonly recognized developmental stage theory.',
+        'description': 'Pioneering psychologist Jean Piaget proposed a theory that outlines distinct stages of intellectual growth in children. \
+        This is among the more commonly taught and recognized developmental stage theories.',
         'notes': 'Children progress through these stages in a fixed order, each stage building upon the achievements of the previous. Individual differences and cultural factors influence the pace and extent of development within each stage.',
         'stages': {
             '1': {
@@ -231,14 +233,13 @@ export const AqalLines = [
         'name': 'Constructive Developmental Framework',
         'line': 'Self',
         'author': 'Suzanne Cook-Greuter',
-        'description': 'Suzanne Cook-Greuter, a developmental psychologist, expanded upon \
-        Jane Loevinger\'s work and proposed a theory of adult development known as the \
-        "Constructive Developmental Framework" (CDF). Cook-Greuter\'s model describes stages of \
+        'description': 'Developmental psychologist Cook-Greuter expanded upon \
+        Loevinger\'s work and proposed a "Constructive Developmental Framework" (CDF) \
+        of adult development. This model describes stages of \
         development in adulthood, focusing on cognitive and ego development.',
-        'notes': 'Cook-Greuter\'s model suggests that individuals progress through these \
-        stages of development over time, with each stage representing a more advanced level of cognitive \
-        and ego maturity. However, not everyone reaches the highest stages of development, and \
-        progression may be influenced by various factors such as life experiences, education, \
+        'notes': 'Each stage represents a more advanced level of cognitive \
+        and ego maturity. Not everyone reaches the highest stages of development, and \
+        progression may be influenced by various factors such as life experience, education, \
         and self-awareness. Additionally, individuals may exhibit characteristics of multiple \
         stages simultaneously or regress to earlier stages under stress or unfamiliar circumstances.',
         'stages': {

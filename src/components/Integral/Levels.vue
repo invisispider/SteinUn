@@ -6,7 +6,7 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
 <template>
     <div class="levels">
         <h1>Levels</h1>
-        <p>Click a Level for a full description</p>
+        <p class="pedantic center">Click Levels for descriptions</p>
         <!-- width="431.27167"
         height="690.69128"
         viewBox="0 0 431.27166 690.69128" -->
@@ -113,7 +113,7 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
             gradientUnits="userSpaceOnUse"
             gradientTransform="matrix(0.34542226,0,0,0.97948418,376.12163,14.484565)" />
         </defs>
-        <g class="levels-g"
+        <g
             inkscape:label="Layer 1"
             inkscape:groupmode="layer"
             id="layer1">
@@ -136,7 +136,7 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
             inkscape:label="rainbow"
             sodipodi:insensitive="true" />
             <text
-            @click="emit('infrared')"
+            class="levels-g" @click="emit('infrared')"
             xml:space="preserve"
             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.3333px;line-height:1.5;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';display:inline;fill:#b54e64;fill-opacity:1"
             x="602.56311"
@@ -205,7 +205,7 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
                 id="tspan20"
                 style="font-size:37.3333px;line-height:1.5;fill:#b54e64;fill-opacity:1">1 INFRARED</tspan></text>
             <text
-            @click="emit('magenta')"
+            class="levels-g" @click="emit('magenta')"
             xml:space="preserve"
             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.3333px;line-height:1.5;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';display:inline;fill:#a3094d;fill-opacity:1"
             x="599.76703"
@@ -269,7 +269,7 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
                 id="tspan234"
                 style="font-size:37.3333px;line-height:1.5;fill:#a3094d;fill-opacity:1">2 MAGENTA</tspan></text>
             <text
-            @click="emit('red')"
+            class="levels-g" @click="emit('red')"
             xml:space="preserve"
             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.3333px;line-height:1.5;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';display:inline;fill:#df1305;fill-opacity:1"
             x="598.36896"
@@ -328,7 +328,7 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
                 id="tspan222"
                 style="font-size:37.3333px;line-height:1.5;fill:#df1305;fill-opacity:1">3 RED</tspan></text>
             <text
-            @click="emit('amber')"
+            class="levels-g" @click="emit('amber')"
             xml:space="preserve"
             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.3333px;line-height:1.5;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';display:inline;fill:#bb6626;fill-opacity:1"
             x="598.36896"
@@ -382,7 +382,7 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
                 id="tspan210"
                 style="font-size:37.3333px;line-height:1.5;fill:#bb6626;fill-opacity:1">4 AMBER</tspan></text>
             <text
-            @click="emit('orange')"
+            class="levels-g" @click="emit('orange')"
             xml:space="preserve"
             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.3333px;line-height:1.5;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';display:inline;fill:#e39722;fill-opacity:1"
             x="598.36896"
@@ -431,7 +431,7 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
                 id="tspan185"
                 style="font-size:37.3333px;line-height:1.5;fill:#e39722;fill-opacity:1">5 ORANGE</tspan></text>
             <text
-            @click="emit('green')"
+            class="levels-g" @click="emit('green')"
             xml:space="preserve"
             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.3333px;line-height:1.5;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';display:inline;fill:#0e8f14;fill-opacity:1"
             x="596.97089"
@@ -475,7 +475,7 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
                 id="tspan161"
                 style="font-size:37.3333px;line-height:1.5;fill:#0e8f14;fill-opacity:1">6 GREEN</tspan></text>
             <text
-            @click="emit('teal')"
+            class="levels-g" @click="emit('teal')"
             xml:space="preserve"
             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.3333px;line-height:1.5;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';display:inline;fill:#00abb7;fill-opacity:1"
             x="601.16504"
@@ -514,7 +514,7 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
                 style="font-size:37.3333px;line-height:1.5;fill:#00abb7;fill-opacity:1"
                 id="tspan149">7 TEAL</tspan></text>
             <text
-            @click="emit('turquoise')"
+            class="levels-g" @click="emit('turquoise')"
             xml:space="preserve"
             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.3333px;line-height:1.5;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';display:inline;fill:#3e70e3;fill-opacity:1"
             x="599.76703"
@@ -553,7 +553,7 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
                 id="tspan115"
                 style="font-size:37.3333px;line-height:1.5;fill:#3e70e3;fill-opacity:1" /></text>
             <text
-            @click="emit('indigo')"
+            class="levels-g" @click="emit('indigo')"
             xml:space="preserve"
             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.3333px;line-height:1.5;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';display:inline;fill:#4243e0;fill-opacity:1"
             x="598.36896"
@@ -582,7 +582,7 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
                 id="tspan94"
                 style="font-size:37.3333px;line-height:1.5;fill:#4243e0;fill-opacity:1">9 INDIGO</tspan></text>
             <text
-            @click="emit('violet')"
+            class="levels-g" @click="emit('violet')"
             xml:space="preserve"
             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.3333px;line-height:1.5;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';display:inline;fill:#4f2af1;fill-opacity:1"
             x="580.19421"
@@ -611,7 +611,7 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
                 id="tspan75"
                 style="font-size:37.3333px;line-height:1.5;fill:#4f2af1;fill-opacity:1" /></text>
             <text
-            @click="emit('ultraviolet')"
+            class="levels-g" @click="emit('ultraviolet')"
             xml:space="preserve"
             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.3333px;line-height:1.5;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';display:inline;fill:#7b65c0;fill-opacity:1"
             x="584.38837"
@@ -630,7 +630,7 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
                 id="tspan54"
                 style="font-size:37.3333px;line-height:1.5;fill:#7b65c0;fill-opacity:1">11 ULTRAVIOLET</tspan></text>
             <text
-            @click="emit('clearlight')"
+            class="levels-g" @click="emit('clearlight')"
             xml:space="preserve"
             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.3333px;line-height:1.5;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';display:inline;fill:#ffffff;fill-opacity:1"
             x="584.38837"
@@ -1255,128 +1255,143 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
                 style="font-style:normal;font-variant:normal;font-weight:200;font-stretch:ultra-condensed;font-size:10.7946px;font-family:Sans;-inkscape-font-specification:'Sans, Ultra-Light Ultra-Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.37545">Tier</tspan></text>
         </g>
         </svg>
-        <h3>This scale measures stages of consciousness.</h3>
-        <p>Notice that for a greatly simplified discussion, we have indicated to the left our <b>Four Selves mini-model</b>: generalized holonic
-            Levels of felt affinity as <b>Personality, Ego, Psyche,</b> and <b>Consciousness</b>. In unThinkMe, we have found this excellent for basic 
-            everyday discussion of Levels.
+        <h3>A Scale of Consciousness</h3>
+        <p>Notice that for simple discussion, we indicate to the left our <b>Four Selves mini-model</b>: generalized
+            Levels of affinity as <b>Personality, Ego, Psyche,</b> and <b>Consciousness</b>.
         </p>
-        <p>The rainbow, or visible light spectrum, of consciousness, indicates Levels of holonic inclusion. These should align with 
-            any measure of overall human development, or Line, and possibly any specific measure of human development. This is not 
+        <p>The rainbow, or visible spectrum, of consciousness, indicates Levels of holonic inclusion. These should align with 
+            any measure of overall human development, or Line, and possibly any specific measure of developmental ability. This is not 
             Spiral Dynamics, though it expresses the same natural pattern, and some presentation elements. Ken Wilber considers Spiral
-            Dynamics to be an expression of the Values Line, and Altitudes to be an overall developmental Level basis. We present all
-            of Wilber's concepts differently from how he does, but this is our version of his current Levels model. We have renamed the 
-            Levels to reflect our concept of what a person considers to be reality at that Level.  
+            Dynamics an expression of the Values Line, and Altitudes to be an overall developmental Level basis. We present
+            Wilber's concepts differently from how he does, but this is his current Levels model. We have renamed the 
+            Levels to reflect concepts of reality at that Level.  
         </p>            
 
-        <h3>UL Lines Demonstration: Think -> Feel -> Do</h3>
+        <h3>UL Lines Demonstration</h3>
         <p>
-            Try out a sample, and measure the Altitudes of your 
-            general behavior, expression, and lifestyle, throughout the day. Don't worry, nobody is watching. 
-            This is between you and yourself.
-        </p>
+            Try out a sample. Measure your Altitudes.
+            Don't worry, nobody is watching. 
+            This is between you and yourself.  
+            <!-- You should find a top Level you Think, a top Level you Feel, -->
+            <!-- and a top Level you Do. It is our hypothesis that Think will always be higher than Feel, and Feel  -->
+            <!-- higher than Do, but this logical mechanic assumption may be false.  -->
+            You may consider "Your" Level 
+            by the criteria of what you Think, Feel, Do, or an average of the three. 
+            We consider the Think 
+            Line very liberal for defining people overall, and the Do Line relatively conservative. In any 
+            event, an honest self-concept will yield few surprises.
+            <span class="pedantic">Look at each Altitude, and one by one, determine if you 
+            express that Level with each of the three Lines in your ordinary, everyday life, most of the time.
+        </span></p>
         <p>
-            <b>Think: </b>Does this stage make sense to you? Do find it agreeable? Does it describe your mind, and the 
+            <b>Think: </b>Does this stage make sense to you? Do you find it credible? Does it describe the 
             sorts of things you like to think and talk about?
         </p>
         <p>
-            <b>Feel: </b>Does this stage seem to represent some ultimate guiding truth for you? 
-            Which stage do you communicate and relate to people with?
+            <b>Feel: </b>Does this stage represent some ultimate guiding truth for you? 
+            Does this stage express how you communicate and relate with people?
         </p>
         <p>
-            <b>Do: </b>Which of these stages describes what you generally do these days, most of the time, and why you do it?
+            <b>Do: </b>Does this stage describe what you generally do these days, most of the time, and why you do it?
         </p>
+        <img alt="Lines Mini-Model Think Feel Do" class="square-banner" src="@/assets/img/LinesModel.png" />
 
-        <h2>Origin</h2>
-        <p>The first two tiers, stages 1 through 7 or so, result from an extensive survey 
-            of developmental Line models in mainstream psychology. The Spiral Dynamics values
+        <h2>Origin of Altitudes</h2>
+        <p>The First and Second Tiers, Levels 1 through 8, result from an extensive survey 
+            of developmental Line models in mainstream psychology. The Spiral Dynamics Values
             Line model was a progenitor of Altitudes, coming from the mostly business-related 
             efforts of researchers Don Beck and Christopher Cowan, adapted from the academic 
-            work of Clare Graves. However, the Altitudes model does not define a particular
-            Line, it instead attempts to generalize the core pattern of Levels which appears 
-            regardless of what Line is being studied. The third tier Levels, similarly, result from
-            an extensive survey of mystical and transpersonal sources, finding the conceptual 
-            overlap between spiritual practice methodologies and insights from all around the 
+            research of Clare Graves. Altitudes does not define a particular
+            Line, it instead attempts to generalize the core pattern which appears 
+            regardless of the Line or Quadrant under consideration. 
+        </p><p>
+            The Third Tier Levels, similarly, result from
+            a survey of mystical and transpersonal sources, finding base conceptual 
+            overlap between advanced consciousness methodologies and wisdom insights all around the 
             world and all throughout history.
         </p>
 
         <h2>Define Healthy, Mature, and Adult</h2>
         <p>A funny thing happens when you study human development. You try and define maturity,
-            and no matter what you say, you will find empirically that most "adults" are technically 
+            and no matter what you say, you find empirically that most "adults" are technically 
             still at the measured stages considered appropriate for children. Unless you are talking 
-            about skeletons, graying, and pubes, or any physical effects of aging. If you are looking at 
-            personality, abilities, or intellect, you will find that age 
-            is correlated with development, and the vast majority of "adults" are 
-            children in terms of their actual maturity.
+            about skeletons, graying, pubes, and physical effects of aging. If you look at 
+            personality, abilities, or intellect, you find that age 
+            is positively correlated with development, but the vast majority of "adults" are 
+            the same as children in terms of their maturity.
         </p>
         <h2>The Reality of the Situation</h2>
         <p>In America right now, Red Meme is considered childish and immature, while everyone Amber 
-            and above is granted the dignity of being an adult (we would then attack the Amber belief system
-            as "childish" while still considering the person holding these views a mature adult.) 
-            There is no recognition of a change in maturity from Amber to Orange to Green,
+            and above is granted the dignity of being an adult (Orange then attacks Amber belief 
+            as "childish" while still considering them mature adults.) 
+            There is no formal recognition of a change in maturity from Amber to Orange to Green,
             but these perspectives are commonly believed to be matters of choice, preference, or 
             upbringing. In other words, we conceptualize Levels as a horizontal Type system, ignoring
             the fact of directionality over time and that skipping Levels doesn't happen because it isn't
             mechanically possible. Green Meme 
             is often considered youthful, naive, or immature, even though it is
-            the highest Level commonly recognized by developmental theorists, and always appears above
-            Amber and Orange every time. And this is 
-            simply because Amber and Orange call everything childish or wrong that does not 
-            agree with them. This is precisely the monumental advance of Green Meme: it 
+            the highest Level commonly recognized by developmental theorists, and always appears after
+            Amber and Orange developmentally. 
+            Amber and Orange call everything childish or wrong that does not 
+            agree with them. This is the monumental advance of Green Meme: it 
             doesn't dismiss everything it disagrees with as childish and stupid - which is less childish
-            and stupid, thus more mature.
+            and stupid, so more mature.
         </p>
             <!-- As an example, Ken Wilber's accessible 
             and comprehensible work is heavily influenced by the Integral Yoga of Sri Aurobindo, in 
             particular his book The Life Divine. However, this book is notoriously longwinded,
             confusing, muddled, and obtuse.  -->
         <h2>Terminology</h2>
-        <p>Levels might be called a different name in a particular context, to 
+        <p>Levels might be called different names in a given context to 
             reflect various aspects. <b>Levels</b> is popular, but <b>stages</b> seems 
             prefered because it feels more natural to say. In the current system, the 
             term <b>Altitudes</b> emphasizes 
             verticality and progression. In the Spiral Dynamics Level system, they are called 
             value <b>memes</b> (vMemes), refering to the Richard Dawkins memetic notion that conceptual ideas 
             exhibit evolutionary mechanics similar to the way DNA replicates in biological 
-            evolution, and also because SD studies the values developmental Line. Finally, 
-            calling Levels <b>waves</b> emphasizes their oscillating, fluid dynamic, rising and falling 
-            like ocean waves across the gradient spectrum of consciousness, as opposed to 
+            evolution, and because SD studies the Values developmental Line.  
+            Calling Levels <b>waves</b> emphasizes their oscillating, fluid dynamic, rising and falling 
+            like mysterious tides across the gradient spectrum of consciousness, as opposed to 
             discrete stages that a person clicks into and never backslides, stagnates, or plateaus. 
         </p>
         <h3>The Levels of All Lines in All Quadrants</h3>
         <p>
-            <b>UL: </b>Of course, these match and 
-            resemble the classic Piaget stages of Cognitive Line development. Thus, you should see the broad 
+            <b>UL: </b>Levels match and 
+            resemble classic Piaget stages of Cognitive Line development, or really, most stage systems. You should see the broad 
             sketch of your own life in the chart, arriving somewhere around the top of the First Tier in general.
             For more spiritual thinkers, you may recognize the Third Tier from meditative, mystical, and contemplative
             traditions. You may see the overlap of Altitudes with the tree of life, Buddhism, or yogic chakras.   
         </p>
         <p>
             <b>UR: </b>These Levels express the overall technological paradigm of any tool, item, artifact, or system.
-            An architech applies Altitudes to their ideas of how to design buildings. We find ourselves in an era of 
-            history clearly characterized by digitized media, internet, mobile phones, smart devices, web, social media, 
+            An architect applies Altitudes to their ideas of how to design buildings. We find ourselves in an era of 
+            history clearly characterized by digital media, internet, mobile phones, smart devices, web, social media, 
             and more recently AI personalities and encyclopedias. These devices are connected to, plugged into, an 
-            overall Green Meme era tech base. In the industrial, steam locomotive era, a cellphone would be largely 
+            overall Green Meme tech base. In the Industrial, steam locomotive era, a cellphone would be largely 
             meaningless, as the parts to make the parts to make the parts could not be made without significant 
             advances. Similarly, imagine time traveling somehow to the paleolithic, Infrared era. You know what a gun 
-            is, basically, and it would be really nice to have one. How could you do it? 
+            is, basically, and it would be nice to have one. How could you do it? 
         </p>
         <p>
-            <b>LL: </b>Culture is Altitudes. All of the people you meet, your friends and enemies, family and strangers, all of their thoughts 
-                and feelings, their motives, their interests, their personality and drives, all of these Lines exist 
-                somewhere on the Altitudes chart. Entertainment, media, literature, music, these are expressions of 
-                Altitudes. The Altitudes trace the history of literature and artistic expression, providing an 
-                essential and universal context to the work that is self evident and easy to see. If we ignore the other 
-                Modules, these Altitudes are the key to communication, charisma, and teamwork, as each Altitude represents a 
-                major shift in attitude, abilities, and capacities.
+            <b>LL: </b>Altitudes are moral value positions and political parties. Also, 
+                personal identity affiliations, relationship roles, and membership. 
+                All of the people you meet, your friends and enemies, family and strangers, all of their thoughts 
+                and feelings, their motives, their interests, their personality and drives, all of these Lines 
+                express Levels. Entertainment, media, literature, music, all 
+                arise from Altitudes, tracing the history of literature and artistic expression, providing an 
+                essential and universal contextual framework. 
+                <!-- If we ignore the other 
+                Modules, Altitudes are the key to communication, charisma, and teamwork, as each Altitude represents a 
+                major shift in attitude, abilities, and capacities. -->
         </p>    
         <p>
-            <b>LR: </b>Students of history, economics, or any social sciences will recognize these as the stages of 
-            world civilization itself, going through the same progression as the human individual, the same basic 
-            descriptors apply to the individual and the collective. These are the global paradigms of the human 
+            <b>LR: </b>Students of history, economics, or any social science will recognize these as stages of 
+            world civilization, going through the same progression of major paradigm shifts as the human individual, the same basic 
+            descriptors apply to the collective. These are the global paradigms of the human 
             collective and all of its endeavors.
         </p>  
         <h3>The Ultimate Hack Job</h3>
-        <p> It can be argued that these third tier stages are 
+        <p> It can be argued that Third Tier stages are 
             unrelated to the first and second tier Levels, or loosely related, and so stacking
             perrenial spiritual wisdom of a supposed third tier atop the Levels discovered
             with entirely different methodologies may seem disingenuous or unfounded. 
@@ -1388,32 +1403,32 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
             progression that behave unmistakeably like the Levels of Growing Up, and result in sentiments, 
             cognition, and capacities that seem categorically improved in many ways. 
         </p>
-        <p>Integral represents the first clear,
+        <p>Integral may perhaps represent the first clear,
             comprehensible, formidable, and valid attempt to reconcile these two 
-            fundamental quests of the human being. Conventional developmentalists are  
+            fundamental quests of the human spirit. Conventional developmentalists are  
             unconcerned with spirituality and enlightenment, while spiritual masters 
-            may advance theories that include the lower levels and miss subtleties and nuances
-            of lower stages that are less the concern of their approach. Typically, these 
+            may advance theories that include lower Levels but miss subtleties and nuances
+            that are less the concern of their approach. Typically, these 
             works lack the professional polish and clear presentation of conventional and 
             commercial models, requiring a vast amount of study and cultural familiarity to 
             translate the work into what it simply means. 
         </p>
-        <h3>Welcome to the Second Tier! 👋🏿</h3>
-        <p>If you are reading this, and it makes sense to you, that means that cognitively, at
+        <h3>Welcome to Second Tier! 👋🏿</h3>
+        <p>If you're reading this, and it makes sense to you, that means that cognitively, at
             the Level of how you Think, you are at least stage 7 Teal Meme. It's not a contest, as you 
             know. What this means is that there is no world for you, there is no tech base. It's just
-            us, and we're poineering the Second Tier, because not clearly comprehending reality is a 
-            clear and present threat to civilization itself. I hope that we can all work together in 
-            an integral meshwork, because as you know, and as I've indicated, Altitudes is a map of 
-            how to deal with that problem. We develop it. 
+            us. We're Second Tier poineers, because not comprehending reality is a 
+            clear and present threat to civilization. I hope that we can all work together in 
+            an Integral meshwork, because Altitudes shows 
+            how Integral can address that issue. We develop it. 
         </p>
-        <h3>Teal is the Integral Developer</h3>
+        <h3>The Integral Developer</h3>
         <p>
             Development starts with
-            conceptualizing it, talking about it, <b>Think</b> it. <b>Feel</b> comes much later for most people,
-            where you start to genuinely ask yourself whether this theory and these models actually map 
-            and describe <em>this</em> reality itself, and whether that then motivates you to decide things 
-            that this map illuminates for you (making it a useful tool by any stretch), to come into alignment with 
+            conceptualizing and talking about a meme. <b>Think</b> it. <b>Feel</b> comes much later for most people,
+            where you start to genuinely ask yourself whether this theory actually  
+            describes <em>this</em> reality, and whether that motivates you to decide things 
+            that are illuminated for you with this perspective (making it a useful tool by any stretch), to come into alignment with 
             your various selves 
             and your highest and most positive aspects, to Upgrade to the latest stable human 
             operating system: to Wake Up, Clean Up, and Grow Up in All Quadrants. 
@@ -1425,63 +1440,122 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
             in areas that are very nice to be, areas of major commerce or opportunity, and they tend 
             to move a lot.    -->
         </p>
-        <h3>Integral Nerd Sesh</h3>
+        <h3>Altitudes Are Holons</h3>
         <p>
             The holonic nature of
-            Memes (ideas, and Altitudes) might not be clear at first. So let us imagine how these are holons, whole-parts, or whole Memes that transcend, but 
-            include, smaller part Memes into themselves. 
+            Memes (Altitudes) might not be clear at first. So let us examine how Memes are 
+            holons, whole-parts, or they transcend but include shallower Memes into themselves. 
         </p>
         <p>
-            We are saying that the development of a person, civilization, culture, and technology, 
-            functions in the same way that cells enfold molecules enfold atoms. The same way that paragraps enfold sentences enfold words enfold 
-            letters, each at its own level and scale, with its own rules. 
+            The development of people, civilization, culture, and technology, 
+            all function in the same way that cells enfold molecules enfold atoms. The same way that paragraphs enfold sentences enfold words enfold 
+            letters, each at its own level and scale, with its own rules. A complex motor includes many simple wedges,
+            levers, and inclined planes. A progressive contemporary painting includes techniques and themes developed in isolation over 
+            the course of art history.
         </p>
-        <p> Stage 1 Infrared is, of course, simply the instinctual patterns of cognition and behavior 
-            which occur to our body in nature as roving packs of homo sapiens with fire and sticks. This moment is of key interest to us, just as the moment when Earth 
-            developed life. The moment when life became people. In the UR, this was the moment when evolution went from biological to 
-            memetic, or the evolution of concepts, culture, technology, and social order, from the replication of DNA and  
-            natural selection, to creatures that communicate. Just as it had formerly gone from a physical and chemical process, to the 
-            process of biological life evolving on Earth. Each at its own level and scale, with its own rules. If we take the electromagnetic
-            metaphor seriously, Levels do extend down to the microwave range, the cellular, and the radio ranges of chemical molecular levels, and the physical atomic, and so on.
+        <h3>Mind From Instinct</h3>
+        <p>Level 1 Infrared is simply the instinctual patterns of cognition and behavior 
+            which occur to our body in nature as roving packs of homo sapiens with fire and sticks, and the full Infrared range can be 
+            considered to stretch back 
+            into monkeys and shrews and lizards and fish. The language revolution is of key interest. 
+            In the UR, the unit or currency of evolution went from biological DNA to 
+            memetic self-concept. The new evolution is concepts, culture, technology, and legal systems.
+        </p>
+        <h3>People From Animals</h3>
+        <p>
+            From DNA replication and natural selection of instinct, to ideological replication and 
+            social innovation of memes, there is a smooth transition in the Level stack that 
+            often goes unnoticed.
+            Life changed the kosmic evolution vehicle from physical and chemical processes to the 
+            processes of biological life. Each at its own Level and scale, with its own dynamics. 
+            If we take the electromagnetic spectrum 
+            metaphor to extremes, Levels extend down to the microwave range, the cellular, and 
+            the radio ranges of chemical molecular levels, the physical atomic, and so on.
             Just as they likely will extend upward into super-conscious
-            planetary AI motherbrain, or interdimensional kosmic alignment, or whatever is next up there in the cosmic rays. 
+            planetary AI motherbrain, or interdimensional kosmic alignment, or whatever is next up 
+            there in the cosmic rays. 
         </p>
+        <h3>Mind Level 2</h3>
         <p>
-            Specifically in this transition to language and culture in Magenta, the vehicle of kosmic 
-            evolution changed from DNA to language. Just as atoms are enfolded in molecules are enfolded in cells, holonically, so are these conceptual 
-            Levels of consciousness. And that was the point where it changed. Of course, in real life, it didn't actually change, and this could all 
-            continue to be described in the Right Quadrants as brainwaves, but we lack the sophistication, and ideas are easier to describe from 
+            In the transition to language and culture of Magenta, the vehicle of kosmic 
+            evolution transformed from instinct to conceptual language. Just as atoms are enfolded in molecules are enfolded in cells, holonically, Magenta 
+            is a conscious cluster of instincts with a tendency to communicate, enfolded in a 
+            magical fantasy self concept resulting from communication. That was the point when everything changed. 
+            You gave it a Name. Logos. Of course, in real life, nothing actually changed. This could all 
+            continue to be described in the UR as brainwaves, but we lack the sophistication, and ideas are easier to describe from 
             the inside... with language. 
         </p>
+        <h3>Instant Replay</h3>
         <p>
-            So watch how it happens. Somehow, magically, (get it?) instinct to communicate becomes an entirely 
-            new Meme of words that stand for things. Various instincts have predisposed us to have this capacity to convert ideas into words and 
-            then shape them with our mouths and speak them to one another. Now what is reality? It is lore. Our comprehension is magical. As societies
-            grow and organize into Red, all the lore becomes assembled into only the most superlative, ultimate, epic lore, and that is legend. So 
-            what is the ultimate legend. The greatest story ever told. In comes the axial period, the Amber wave, the religious order, the absolutist, 
-            the member, and what is the Bible, for example? It starts with a collection of the most important legends. The myth is a collection of 
-            legends. The religion ultimately begins to educate its people, so they can teach religion, and they become privy to truths which 
-            lead to doubt concerning the mythic tradition. And of course, they don't start society over at that point. They build on top of it. They 
-            keep all of the literature and knowledge and wisdom that arose from the Amber mythic member world, and they tested everything as rational 
-            or not rational. So rationality is constructed of myth, by collecting the myths which are true, and discarding those which are likely 
-            irrational or non-productive.  
+            Somehow, magically 🪄, instinct to communicate becomes an entirely 
+            new Meme of vocal sounds that stand for realities. Various instincts have predisposed us to have this capacity to convert ideas into words and 
+            then shape them with our mouths and speak them to one another and then hear and comprehend what was said. 
+            Great, it talks. Ask it what reality is.
         </p>
-        <h3>And VOILA!</h3>
-        <p>Reality is a stack of Levels in four Quadrants.</p>
-        <p>You are now certifiable.</p>
+        <h3>Magenta Reality</h3>
+        <p>
+            It is lore. Everything I know is what my local village tells me. As societies
+            grow and organize into Red, the lore becomes assembled by authorities into only the most 
+            superlative, ultimate, epic lore, and that is legend. Understand here, literally, I am 
+            legend. We are legend. The world is legend. Read what the ancient Greeks and Egyptians 
+            had to say about reality. They proudly present tall tales of great deeds that speak of the 
+            tragedy and foils of experience. 
+        </p>
+        <h3>Instinct -> Lore -> Legend -> Myth</h3>
+        <p>
+            Sooner or later, the legendary assembler of legend encounters the greatest story ever 
+            told, the perfect story that requires no embellishment. The God spell. In comes the axial period, the Amber wave, the religious order, the absolutist, 
+            the member, and what is the Bible, for example? It starts with a collection of the most important legends. Myth is a collection of 
+            ultimate legends, all serving the central purpose of fully explaining reality to everyone. 
+        </p>
+        <h3>Simple As It Seems</h3>
+        <p>
+            The religious order educates some priviledged myth members to teach and spread religion 
+            effectively. The educated class becomes privy to truths and methods which 
+            shed doubt on the mythic tradition, which are perhaps more compelling than bureaucratic dogma. They don't start society over just yet. Everyone 
+            in the world doesn't suddenly realize they know nothing but wish-fulfilling myth and reject all 
+            prior knowledge. They laboriously challenge and 
+            scrutinize their assumptions, picking them apart with reason, logic, and science. 
+        </p>
+        <h3>Rationality Orders Myth</h3>
+        <p>
+            When we became a 
+            Stage 5 democratic nation, we did not burn all mythic literature and forbid religious thinking, as that methodology would 
+            reflect Stage 4. 
+            We retained our traditions, calling them cultural mythology instead of absolute truth. Transcend and 
+            include. Society and knowledge succesfully existed before 
+            rationality. We are historically and statistically not rational by nature. 
+            Rational social order is a centuries-old (extremely recent) emergence. 
+            Science doesn't properly discover new truths, they check whether new truths are true. 
+            <!-- keep all of the literature and knowledge and wisdom that arose from the Amber mythic member world, and they tested everything as rational  -->
+            <!-- or not rational. So  -->
+            Rationality arises by testing and collecting those myths which prove true, discarding 
+            those which prove irrational or non-productive.  
+        </p>
+        <h3>The Integral Revolution</h3>
+        <p>Just as we beg our audience to not receive Integral as a religious myth, we also 
+            insist that the emergence of Second Tier should not expect to look anything like any prior Level. 
+            Bloody social revolt is clearly characteristic of lower Levels. If you are Teal and want to know 
+            what the revolution looks like, just ask yourself what you would do, and if it isn't being done, 
+            do it. 👋🏿 Hi.
+        </p>
+        <h3>And Voila!</h3>
+        <p>Reality is a stack of Levels in four Quadrants. You get it. You are now certifiable.</p>
     </div>
 </template>
 <style lang="sass" scoped>
 svg
     max-width: 95vw
     max-height: 95vw
-.levels-g text:hover
-    fill: white
-.levels-g text
+
+.levels-g
     cursor: pointer
+    :hover
+        stroke: white
 @media screen and (min-width: 350px)
     svg
         // max-width: 350px
         // max-height: 100vh
-
+.center
+    text-align: center
 </style>

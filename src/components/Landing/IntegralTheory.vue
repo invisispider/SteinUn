@@ -62,7 +62,7 @@
             one without other, one with all manifestation, and this human memory story person 
             arising within you is in fact only a view through the very set of lenses in question. -->
         </p> 
-        <img class="stu-banner" style="filter: invert(1); max-height: 400px;" src="@/assets/img/kwquads.png" />       
+        <img class="stu-banner invert" src="@/assets/img/kwquads.png" />       
 
        
         <h3>A New Wave is Rising</h3> 
