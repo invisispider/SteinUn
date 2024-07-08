@@ -4,21 +4,22 @@ import { pageSelections } from '@/composables/landing-pages';
 <template>
     <div>
         <!-- <h5>Repeat: Love Is Okay</h5> -->
-        <h4>🙏🏿 Thank you for Being 🙏🏿 with us.</h4> 
+        <p>🙏🏿 Thank you for Being 🙏🏿 with us. 
 
     <!-- <div class="home-logo"> -->
     <!-- </div> -->
-        <h4>
-            This is our living website.<br>
+            This is our living website.
             <span class="pedantic">Use top panels to open site menu, change color
             theme, and browse this orienting information (try arrow keys).</span> 
-            </h4>
+            </p>
 
-        <h2>Welcome:</h2>
+        <h2>Welcome Information:</h2>
         <div class="kill-birds">
-            <div v-for="selection of pageSelections" class="bird" :key="selection.name">
-                <router-link :to="'/landing/'+selection.name" v-if="selection.name!='Namaste'" >
-                <i class="material-icons">{{ selection.icon }}</i>{{ " "+selection.name }}
+            <div v-for="selection of pageSelections" class="bird" :key="selection.name" 
+                :style="{ display: selection.name=='Namaste'?'none':'default'}" 
+            >
+                <router-link :to="'/landing/'+selection.name">
+                <i class="material-icons bird">{{ selection.icon }}</i>{{ " "+selection.name }}
                 </router-link>
             </div>
         </div>
@@ -61,8 +62,13 @@ import { pageSelections } from '@/composables/landing-pages';
 .kill-birds
     display: flex
     flex-wrap: wrap
-    justify-content: center
+    justify-content: space-evenly
+    // width: 100%
+    align-items: center
     .bird
+        // display: none
         margin: 10px
+        // :has(:not(i))
+            // display: none
 
 </style>

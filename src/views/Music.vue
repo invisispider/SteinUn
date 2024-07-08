@@ -7,7 +7,7 @@ const showPlaylist = ref(true);
 // const toggleSteinPlayers = () => steinPlayers.value = !steinPlayers.value;
 </script>
 <template>
-	<div id="bodyMain">
+	<div id="music-main">
 		<!-- <div v-if="steinPlayers" class="stein-players">
 			<iframe style="border: 0;"
 				src="https://bandcamp.com/EmbeddedPlayer/album=2892329347/size=large/bgcol=ffffff/linkcol=7137dc/tracklist=false/artwork=small/transparent=true/"
@@ -47,13 +47,6 @@ const showPlaylist = ref(true);
 			<h3>⚕️ Therapy</h3>
 			<img class="stu-banner" src="@/assets/img/musicbusinesscardF.png" />
 		</div>
-		<!-- <h2 class="double-width">Availability</h2> -->
-		<!-- <h4>
-			While music and teaching are not my current focus, I genuinely
-			enjoy the rewards and experiences of teaching and
-			try to keep a handful of students.
-		</h4> -->
-
 		<h3>Currently Available:</h3>
 		<p>Remote online lessons.</p>
 		<p>In-home lessons around Missoula, MT.</p>
@@ -61,13 +54,6 @@ const showPlaylist = ref(true);
 		<p>$30 per half hour - includes lesson prep but not travel
 			costs or materials.
 		</p>
-
-		<!-- <h3>
-			To be honest, some lessons are the most fun I've
-			ever had in my life, and I've been told that by students.
-			What could be better?
-		</h3> -->
-
 		<h2 class="double-width">Benefits</h2>
 		<ul class="benefits">
 			<li>Master music reading, theory, and vocabulary.</li>
@@ -145,7 +131,6 @@ const showPlaylist = ref(true);
 			in Michigan.
 		</h4>
 
-
 		<!-- <h2 class="double-width">Specialization</h2>
 		<h3>
 			I teach the same way as conventional teachers, at base.
@@ -217,7 +202,7 @@ const showPlaylist = ref(true);
 	font-family: "mistral"
 	src: url(@/assets/fonts/mistral.ttf) format("truetype")
 
-#bodyMain
+#music-main
 	// max-width: 100vw
 	margin: 2em 0
 	display: flex
@@ -291,7 +276,6 @@ const showPlaylist = ref(true);
 	border-radius: 6px
 	// font-size: 3rem
 	// font-family: 'Lobster', cursive
-	box-shadow: 1px 0 10px white
 	// color: white
 // @media screen and (min-width: 430px)
 // 	.headban
@@ -329,10 +313,7 @@ h4, p
 	font-family: Poppins
 h2, h1
 	font-family: 'Lobster', cursive
-	color: white
-	text-shadow: 2px 1px 4px #2c0b4c
 .testimonial
-	text-shadow: 2px 1px 4px #2c0b4c
 	padding: 1em
 .stu-banner
 	max-width: 500px

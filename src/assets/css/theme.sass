@@ -3,7 +3,7 @@ $dark-purple: #92099e
 $dark-green: #2f855a
 $light-black: #5a5a5a
 $medium-thalmon: rgb(245, 120, 89)
-
+$peace-peace: #115f83
 @mixin style-icons($name, $color)
     ##{$name}
         color: $color
@@ -12,6 +12,7 @@ $medium-thalmon: rgb(245, 120, 89)
 @include style-icons("dark-green", $dark-green)
 @include style-icons("light-black", $light-black)
 @include style-icons("medium-thalmon", $medium-thalmon)
+@include style-icons("peace-peace", $peace-peace)
 @mixin unThemeMe($theme-name, $style-changer-color, $wrapper-bg, $wrapper-tx, $mod-bg, $sidebar-bg, $smooth-bg, $vid-div, $spice, $schleem, $hooks)
     #appWrapper.#{""+$theme-name}
         background-color: $wrapper-bg
@@ -28,7 +29,6 @@ $medium-thalmon: rgb(245, 120, 89)
             background-color: $wrapper-bg
         .sidebar
             background-color: $sidebar-bg
-
 
         .pedantic
             color: $schleem
@@ -60,8 +60,6 @@ $medium-thalmon: rgb(245, 120, 89)
                 background-color: $mod-bg
             h2:hover
                 background-color: $hooks
-
-
 
         #puzzle-body:not(.clearme)
             color: $wrapper-tx
@@ -188,7 +186,7 @@ $medium-thalmon: rgb(245, 120, 89)
             color: $schleem
         .uncell
             background-color: $sidebar-bg
-        
+
         .selected-date
             background-color: $mod-bg
             color: $spice
@@ -242,7 +240,7 @@ $medium-thalmon: rgb(245, 120, 89)
             // box-shadow: 2px 2px rgb(74 32 126), -2px -2px rgb(126 220 74)
             box-shadow: 1px 2px $smooth-bg, -1px -2px $spice
         .home-changer a:hover
-                background-color: $spice
+            background-color: $spice
 
         .bisque
             stroke: $style-changer-color
@@ -267,10 +265,43 @@ $medium-thalmon: rgb(245, 120, 89)
                 border: 2px solid dodgerblue
             .border-pink
                 border: 2px solid hotpink
-// $style-changer-color, $wrapper-bg, $wrapper-tx, $mod-bg, 
-// $sidebar-bg, $smooth-bg, $vid-div, $spice
+
+        // MUSIC
+        #music-main
+            h2, h1
+                color: $spice
+                text-shadow: 2px 1px 4px $schleem
+            .testimonial
+                text-shadow: 2px 1px 4px $vid-div 
+            .double-width
+                background-color: $vid-div 
+                box-shadow: 1px 0 10px $style-changer-color
+
+        .glow
+            animation: glow 4s infinite alternate
+        // @keyframes glow
+        //     0%
+        //         text-shadow: 0px 0px 8px c, -3px -1px 7px $wrapper-bg, 2px 0px 4px $mod-bg
+        //     to
+        //         text-shadow: -3px 0px 8px $vid-div, 0px -3px 6px $wrapper-tx, 1px 0px 10px $spice
+
+        .zenwheel text.active
+            animation: glow 2.5s ease-in-out infinite alternate
+            @keyframes glow
+                0%
+                    text-shadow: 0px 0px -3px $wrapper-tx, 3px 3px 6px $spice
+                to
+                    text-shadow: 0px 0px 4px $style-changer-color, 0px 0px 6px $schleem
+            // @keyframes glow
+            // 	0%
+            // 		text-shadow: 0px 0px -3px #aaa, 3px 3px 6px #90d
+            // 	to
+            // 		text-shadow: 0px 0px 4px #50d, 0px 0px 6px #ff4da6
+
 @include unThemeMe(thalmon, $medium-thalmon, #333, rgb(249, 194, 159), #1b0c10, #555, #2f1b14, #444, $medium-thalmon, #704433, lighten(orange, 20%))
 @include unThemeMe(green, $dark-green, #161616, #68f78e, #100a14, #0a270a, rgb(0, 0, 0), #070708, #2f855a, rgb(31, 237, 55), #53e6cb)
-@include unThemeMe(light, $light-black, #faf0f0, #012121, #c4acd4, #957fc8, #dad0d0, #5a5a5a, rgb(139, 107, 228), #022326, #666)
+@include unThemeMe(light, $light-black, #faf0f0, #012121, #9981a8, #7b7096, #dad0d0, #797171, rgb(170, 181, 248), #022326, #666)
 @include unThemeMe(dark, $dark-purple, #000000, #cfb0ef, #1e0127, #0e031b, #750ab7, #040007, #92099e, #6f8d7d, #333)
-
+@include unThemeMe(peace, $peace-peace, #e6e7df, rgb(6, 1, 17), #ac91a3, #e4cbc4, #a1a2af, #b8cce6, #db8896, #00e1ff, #fa0303)
+// $style-changer-color, $wrapper-bg, $wrapper-tx, $mod-bg, 
+// $sidebar-bg, $smooth-bg, $vid-div, $spice

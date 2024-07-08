@@ -99,7 +99,7 @@ const toggleState = (sel: string) => {
     <div class="integral-wrapper">
         <div class="info-panel" v-if="showInfo" @click="toggle" key="apple">
             <template v-if="Selected == 'Levels'">
-                <div class="btn-grp btn-group-int">
+                <div class="btn-group-int">
                 <button v-for="{color, number} of AqalLevels" @click.stop="toggleLevel(color)">{{number}}</button>
                 </div>
                 <template v-if="!levelInfo.color">
@@ -124,7 +124,7 @@ const toggleState = (sel: string) => {
                 </template>
             </template>
             <template v-else-if="Selected == 'States'">
-                <div class="btn-grp btn-group-int">
+                <div class="btn-group-int">
                 <button v-for="st of ['ordinary', 'brainwaves', 'selves', 'spiritual']" @click.stop="selState=st">{{st}}</button>
                 </div>
                 <template v-if="selState==='ordinary'">
@@ -351,7 +351,7 @@ const toggleState = (sel: string) => {
 
             </template>
         </div>
-        <div class="home-changer">
+        <div class="home-changer home-changer-int">
             <a @click="SelectButton(btn)" v-for="btn in modeSelectorButtons" :key="btn">{{ btn }}</a>
         </div>
         <h1></h1>
@@ -375,7 +375,7 @@ const toggleState = (sel: string) => {
             </div>
             <div v-if="chosenType=='base'" class="types-info">
                 <h1>Types</h1>
-                <img alt="Types elemental tarot Mini-Model" class="stu-banner" src="@/assets/img/TypesModel.png" />
+                <img alt="Types elemental tarot Mini-Model" class="square-banner" src="@/assets/img/TypesModel.png" />
                 <p>If Levels are thought of as <b>Vertical</b> stages of Growing Up, then Types should
                     account for the things about a person that never change, the <b>Horizontal</b> aspects.
                     The prime differences between people at the same Level. What aspects
@@ -1189,7 +1189,7 @@ const toggleState = (sel: string) => {
 .home-changer
     justify-content: center
     // position: fixed
-    top: 35px
+    top: 40px
     z-index: 2
     font-size: 0.9em
     margin-inline: auto
@@ -1207,6 +1207,7 @@ const toggleState = (sel: string) => {
     @media screen and (max-width: 350px)
         a
             font-size: 0.7em
+// .home-changer-int
 
 .info-panel
     display: flex
@@ -1243,6 +1244,7 @@ const toggleState = (sel: string) => {
 .square-banner
     max-height: 40vh
     border-radius: 10%
+    max-width: 80vw
 .invert
     filter: invert(1)
     max-height: 400px
@@ -1250,10 +1252,16 @@ const toggleState = (sel: string) => {
 .btn-group-int
     display: flex
     flex-direction: row
+    flex-wrap: wrap
     grid-template-columns: repeat(10, 10%)
     margin-block: 3px
     padding-inline: 1em
-    width: auto
+    // width: auto
+    *
+        // flex-shrink: 1
+        margin: 0em 0.1em
+        font-size: medium
+        padding: 0.3em 0.5em
 
 
 </style>

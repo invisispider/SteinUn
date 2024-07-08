@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { onMounted, watchEffect, onUnmounted } from "vue";
-// import { RouterLink } from "vue-router";
-// import UnJamMeComponent from "@/components/UnJamMeComponent.vue";
 import { useStore } from "@/stores/index";
 import SidebarLink from "@/components/Sidebar/SidebarLink.vue";
 import { collapsed, toggleSidebar, sidebarWidth } from "@/components/Sidebar/state";
@@ -52,15 +50,15 @@ onUnmounted(() => {
     ><i class="material-icons" :class="{ 'rotate-180': collapsed}">keyboard_double_arrow_left</i>
   </span>
   <template v-if="!collapsed">
-      <transition-group
+    <transition-group
+        class="glow"
         name="shrink2"
         key="banana"
         tag="div"
-        class="glow"
         mode="out-in"
         appear
         >
-        <SidebarLink to="/" key="link1" class="navItem" @click="toggleSidebar">Home</SidebarLink>
+        <SidebarLink to="/landing/Namaste" key="link1" class="navItem" @click="toggleSidebar">Home</SidebarLink>
         
         <SidebarLink to="/UnThinkMe" key="link2" class="navItem" @click="toggleSidebar"
           >unThinkMe</SidebarLink
@@ -76,10 +74,6 @@ onUnmounted(() => {
           icon="keyboard_double_arrow_left" @click="toggleSidebar"
           >TEMP</SidebarLink
           > -->
-          <!-- <component :is="UnJamMeComponent" v-if="showJams" key="7a" class="navItem"
-            id="music-player" /> -->
-            <!-- <a v-else id="songToggle" @click="doShowJams" -->
-              <!-- >UnJamMe</a> -->
               <!-- <SidebarLink to="/UnReadMe" key="8a" class="navItem"
                 >unReadMe</SidebarLink> -->
         <SidebarLink to="/Integral" key="link55" class="navItem" @click="toggleSidebar">Integral</SidebarLink>
