@@ -57,9 +57,9 @@ export const useTime = defineStore("time", {
     dayOfWeekZen: (state) => (state.dayNum)%5,
     dayOfHabit: (state) => (state.dayOfYear - (state.habitNum * 45)),
     displayZenDate: (state) => {
-      return String(state.habitNames[state.habitNum])+" "+
+      return state.dayNames[(state.dayNum) % 5]+" "+
         String(state.dayNum + 1)+" "+
-        state.dayNames[(state.dayNum) % 5]+" "+
+        String(state.habitNames[state.habitNum])+" "+
         String(Number(state.forma.slice(-4)) + 10000)
     },
     displayZenTime: (state) => {

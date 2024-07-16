@@ -578,6 +578,8 @@ const emit = defineEmits(['ordinary', 'brainwaves', 'selves', 'spiritual']);
         frustrating ultimate fact of the matter with Integral Theory. Thinking doesn't enlighten you. It illuminates the path. 
         👉🏿 It points. 🌙 For all of those who feel disappointed, don't forget to shut off that light when you leave. 🙏🏿 Namaste.     
     </p>
+    <h5 class="pedantic" style="cursor: pointer;" @click="emit('spiritual')">STATE DESCRIPTIONS</h5>
+
     </div>
 </template>
 <style lang="sass" scoped>

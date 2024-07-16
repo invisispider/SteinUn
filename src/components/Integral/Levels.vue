@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
+const emit = defineEmits(['next', 'clearlight', 'ultraviolet', 'violet', 'indigo',
     'turquoise', 'teal', 'green', 'orange', 'amber', 'red', 'magenta', 'infrared'
 ]);
 </script>
@@ -1541,6 +1541,9 @@ const emit = defineEmits(['clearlight', 'ultraviolet', 'violet', 'indigo',
         </p>
         <h3>And Voila!</h3>
         <p>Reality is a stack of Levels in four Quadrants. You get it. You are now certifiable.</p>
+        <h5 class="pedantic" @click="emit('infrared')" style="cursor: pointer;">LEVEL DESCRIPTIONS</h5>
+        <h5 class="pedantic" @click="emit('next')" style="cursor: pointer;">LINES</h5>
+
     </div>
 </template>
 <style lang="sass" scoped>

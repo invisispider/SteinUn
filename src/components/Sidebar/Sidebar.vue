@@ -50,8 +50,8 @@ onUnmounted(() => {
     ><i class="material-icons" :class="{ 'rotate-180': collapsed}">keyboard_double_arrow_left</i>
   </span>
   <template v-if="!collapsed">
+    <!-- class="glow" -->
     <transition-group
-        class="glow"
         name="shrink2"
         key="banana"
         tag="div"

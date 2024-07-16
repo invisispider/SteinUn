@@ -1,5 +1,5 @@
 export const AqalTypes = {
-    'bigfive': {
+    'Big Five': {
         'description': 'Based on five somewhat independent personality factors, this is perhaps \
         the most simple and scientifically verified measure of personality.',
         'types': {
@@ -23,7 +23,7 @@ export const AqalTypes = {
         'setbacks': 'Widely tested, accepted, and used to assess personality factors, but limited \
         as an expression of Integral Types by lack of theoretical grounding and comprehensiveness.',
     },
-    'myers-briggs': {
+    'Myers-Briggs': {
         'description': 'Popular system in common usage, preferred \
         because it assumes no development. Criticized for scientific and statistical methodology. The deeper theory to it is \
         compelling. The section on Jungian \
@@ -62,7 +62,7 @@ export const AqalTypes = {
         people have difficulty translating the things they ordinarily think and care about \
         into this system\'s language.',
     },
-    'archetypes': {
+    'Archetypes': {
         'description': 'Jung\'s notion of people playing collective story roles as personnae uses a nascent\
          sort of memetics to approach the Psyche. The Psyche recognizes and generates story to help \
          us make sense of our world. Thus, our reality recapitulates the most basic stories we tell. Under \
@@ -126,7 +126,7 @@ export const AqalTypes = {
          Refers to Magenta core content often without reference to the \
          depth dimension (Level) of the current observation.'
     },
-    'enneagram': {
+    'Enneagram': {
         'description': 'Unique system of roughly equal-represented personality archetypes. Originally \
         and traditionally based on humble thought experiments observing typical monk behaviors, \
         this model nevertheless is comprehensive, descriptive, and widely used, \
@@ -175,7 +175,7 @@ export const AqalTypes = {
         Can be used for personal development in interesting ways, though methodologies vary and \
         efficacy is disputed.',
     },
-    'astrology': {
+    'Astrology': {
         'description': 'Based on birthday and pre-scientific observation of celestial bodies, \
         astrology is commonly used in contemporary expressions of Magenta and Red through Green Meme, and \
         celebrated for it\'s lack of predictive power and theoretical validity, or being, "just for fun." \

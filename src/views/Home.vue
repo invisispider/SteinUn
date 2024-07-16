@@ -141,25 +141,13 @@ onBeforeUnmount(() => {
   </div>
 </template>
 <style lang="sass">
-a, router-link
-  text-decoration: none
-  align-items: flex-end
-  justify-content: flex-end
-  margin-block: auto
-  margin-inline: 1em
-  // font-size: 0.4em
-  padding: 0
-.social-grp a
-  font-size: 9px
 .social
   margin-inline: 0
-  margin-block: 0.5em
+  margin-block: 1em
 // @media screen and (min-width: 425px)
   // a, router-link
     // font-size: 1em
   // .social
     // font-size: 1em
-.home-logo
-  justify-self: center
-  max-height: 100px
+
 </style>

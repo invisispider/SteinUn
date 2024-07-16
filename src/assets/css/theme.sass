@@ -3,7 +3,7 @@ $dark-purple: #92099e
 $dark-green: #2f855a
 $light-black: #5a5a5a
 $medium-thalmon: rgb(245, 120, 89)
-$peace-peace: #115f83
+$peace: #115f83
 @mixin style-icons($name, $color)
     ##{$name}
         color: $color
@@ -12,11 +12,24 @@ $peace-peace: #115f83
 @include style-icons("dark-green", $dark-green)
 @include style-icons("light-black", $light-black)
 @include style-icons("medium-thalmon", $medium-thalmon)
-@include style-icons("peace-peace", $peace-peace)
-@mixin unThemeMe($theme-name, $style-changer-color, $wrapper-bg, $wrapper-tx, $mod-bg, $sidebar-bg, $smooth-bg, $vid-div, $spice, $schleem, $hooks)
+@include style-icons("peace-peace", $peace)
+@mixin unThemeMe($theme-name, $icon-color, $bg-color, $color, $mod-bg, $sidebar-bg, $smooth-bg, $vid-div, $loud, $contrast, $hooks)
     #appWrapper.#{""+$theme-name}
-        background-color: $wrapper-bg
-        color: $wrapper-tx
+        background-color: $bg-color
+        color: $color
+        a
+            color: $hooks
+        // .topnav
+        .christmas-icon
+            color: rgb(49, 232, 51)
+        .navItem
+            box-shadow: 0 0 5px $contrast
+            border: solid 1px white
+        .nav-item-dark
+            box-shadow: 0 0 40px $color
+        a:hover, router-link:hover
+            color: $contrast
+
         .rotate-180
             background-color: $sidebar-bg
         .home-changer, #style-selector
@@ -26,29 +39,28 @@ $peace-peace: #115f83
             i:hover, .tinytext *:hover
                 background-color: $sidebar-bg
         #style-selector
-            background-color: $wrapper-bg
+            background-color: $bg-color
         .sidebar
             background-color: $sidebar-bg
 
         .pedantic
-            color: $schleem
+            color: $contrast
 
         // crossword
         #acrossDiv, #downDiv
             h2
                 box-shadow: 1px 1px 5px 1px $hooks
         .couch
-            // color: $schleem
+            // color: $contrast
             background-color: $vid-div
-        // $style-changer-color, $wrapper-bg, $wrapper-tx, $mod-bg, $sidebar-bg, $smooth-bg, $vid-div, $spice, $schleem, $hooks
         .buttons
             background-color: $mod-bg
-            color: $wrapper-tx
+            color: $color
             span
-                background-color: $spice
+                background-color: $loud
             span:hover
-                color: lighten($wrapper-tx, 20%)
-                background-color: darken($spice, 20%)
+                color: lighten($color, 20%)
+                background-color: darken($loud, 20%)
         .crossword-body
             span
                 box-shadow: 1px 1px 5px 1px $sidebar-bg
@@ -56,40 +68,40 @@ $peace-peace: #115f83
             span:hover
                 background-color: $hooks
             h2
-                color: $wrapper-tx
+                color: $color
                 background-color: $mod-bg
             h2:hover
                 background-color: $hooks
 
         #puzzle-body:not(.clearme)
-            color: $wrapper-tx
+            color: $color
         #puzzle-body .clearme
-            color: $schleem
+            color: $contrast
         .navItem, #puzzle-body .clearme
             background-color: $smooth-bg
 
         .video-div
             background-color: $vid-div
-            border-color: $spice
+            border-color: $loud
         .login-page
             background-color: $mod-bg
-            box-shadow: 1px 1px 5px 1px $spice
+            box-shadow: 1px 1px 5px 1px $loud
             border-radius: 8px
             h2
                 // background-color: $sidebar-bg
-                color: $spice
+                color: $loud
             input
-                background-color: $wrapper-bg
+                background-color: $bg-color
                 border: 1px solid $vid-div
-                color: $wrapper-tx
+                color: $color
                 &[name="submit"]
                     border-radius: 8px
-                    color: $style-changer-color
+                    color: $icon-color
             i
-                color: $wrapper-bg
-                text-shadow: -1px -2px $spice
+                color: $bg-color
+                text-shadow: -1px -2px $loud
             a, router-link
-                color: $wrapper-tx
+                color: $color
                 padding-block: 3px
             button, .login-submit-button
                 cursor: pointer
@@ -97,33 +109,37 @@ $peace-peace: #115f83
                 margin: 3em
                 padding: 1rem
                 margin: 1rem auto
-                color: $wrapper-tx
+                color: $color
                 border-radius: 8px
-                border: 1px solid $wrapper-tx
+                border: 1px solid $color
                 padding: 0.6rem 1rem
 
         // TIME
+        .zen-wrapper
+            background-color: lighten($bg-color, 10%)
+            
+        
         .title-logo h2
-            color: $spice
+            color: $loud
         .smiley
-            background-image: linear-gradient(to bottom, $sidebar-bg, $style-changer-color, $sidebar-bg)
+            background-image: linear-gradient(to bottom, $sidebar-bg, $icon-color, $sidebar-bg)
             i:hover
                 color: $smooth-bg
         .active
             background-color: $vid-div
             background-color: $smooth-bg
-            background-color: $wrapper-tx
-            stroke: $spice
-            fill: $spice
-            color: $wrapper-bg
+            background-color: $color
+            stroke: $loud
+            fill: $loud
+            color: $bg-color
         .zenwheel
             text:not(.year-markers)
                 // cursor: pointer
-                fill: $wrapper-tx
-                stroke: $wrapper-tx
+                fill: $color
+                stroke: $color
             text.active
-                fill: $spice
-                stroke: $spice
+                fill: $loud
+                stroke: $loud
             .pie-chart
                 fill: $mod-bg
                 // stroke: $mod-bg
@@ -131,39 +147,39 @@ $peace-peace: #115f83
             .zen-cycle-arm
                 stroke: $smooth-bg
             .habit-divider
-                fill: $wrapper-bg
+                fill: $bg-color
                 stroke: $smooth-bg
 
-        #habits
-            h2
-                box-shadow: 0 0 1px $sidebar-bg
+        // #habits
+            // h2
+                // box-shadow: 0 0 1px $sidebar-bg
         .holiday
-            color: $spice
+            color: $loud
 
         .clock-hand
-            stroke: $schleem
+            stroke: $contrast
             stroke-width: 2
         .greg-dark, .greg-light, .greg-text
-            stroke: $wrapper-tx
+            stroke: $color
         .zen-borders
-            stroke: $style-changer-color
-            stroke: $wrapper-tx
+            stroke: $icon-color
+            stroke: $color
             stroke: $smooth-bg
         .greg-dark
             fill: $smooth-bg
         .greg-light
             fill: $vid-div
         .greg-text
-            fill: $wrapper-tx
+            fill: $color
         .zen-mint
-            fill: $wrapper-tx
+            fill: $color
         .inner-rect
-            fill: $spice
+            fill: $loud
         .daytop-bg
             fill: $smooth-bg
         .daytop-tx
-            fill: $wrapper-tx
-            stroke: $wrapper-tx
+            fill: $color
+            stroke: $color
         .alt-fill
             fill: $mod-bg
         .black-fill
@@ -171,25 +187,25 @@ $peace-peace: #115f83
         .session-before
             fill: $sidebar-bg
         .sessionActive
-            fill: $spice
+            fill: $loud
         .session-after
             fill: $vid-div
         .year-hand
-            stroke: $schleem
+            stroke: $contrast
         .year-clock-hand-axis
-            fill: $spice
+            fill: $loud
 
         .baheader-zen
             background-color: $mod-bg
-            color: $wrapper-tx
+            color: $color
         .unchunk
-            color: $schleem
+            color: $contrast
         .uncell
             background-color: $sidebar-bg
 
         .selected-date
             background-color: $mod-bg
-            color: $spice
+            color: $loud
         .uncell-zen
             border: 1px solid $mod-bg
         .uncell-zen:hover
@@ -197,12 +213,12 @@ $peace-peace: #115f83
         .zen-borders:hover
             fill: $smooth-bg
         .conversion-table
-            background-color: $wrapper-bg
+            background-color: $bg-color
             table
-                color: $wrapper-tx
-                box-shadow: 0 0 8px 1px $schleem
+                color: $color
+                box-shadow: 0 0 8px 1px $contrast
                 .th
-                    border: 1px solid $style-changer-color
+                    border: 1px solid $icon-color
                 .th-blue
                     border: 1px solid $sidebar-bg
         .info-panel
@@ -221,7 +237,7 @@ $peace-peace: #115f83
                 background-color: $sidebar-bg
         // INTEGRAL
         .hilight
-            color: $spice
+            color: $loud
         .btn-group
             :hover
                 background-color: $sidebar-bg
@@ -229,34 +245,34 @@ $peace-peace: #115f83
                 // background-color: #08F
                 // background-color: #101
                 background-color: $smooth-bg
-                color: $wrapper-tx
+                color: $color
                 :hover
                     background-color: $vid-div
             .darken
                 background-color: darken($smooth-bg, 30%)
         .home-changer a
             background-color: $sidebar-bg
-            color: $wrapper-tx
+            color: $color
             // box-shadow: 2px 2px rgb(74 32 126), -2px -2px rgb(126 220 74)
-            box-shadow: 1px 2px $smooth-bg, -1px -2px $spice
+            box-shadow: 1px 2px $smooth-bg, -1px -2px $loud
         .home-changer a:hover
-            background-color: $spice
+            background-color: $loud
 
         .bisque
-            stroke: $style-changer-color
+            stroke: $icon-color
             fill: $mod-bg
         #arrow path
-            fill: $schleem
+            fill: $contrast
         .year-markers
             fill: $smooth-bg
-            stroke: $wrapper-tx
+            stroke: $color
             opacity: 1
             // fill: bisque
             // stroke: tomato
 
         .work-schedules
             td, th
-                border: 1px solid $wrapper-tx
+                border: 1px solid $color
             .border-red
                 border: 2px solid red
             .border-black
@@ -269,39 +285,39 @@ $peace-peace: #115f83
         // MUSIC
         #music-main
             h2, h1
-                color: $spice
-                text-shadow: 2px 1px 4px $schleem
+                color: $loud
+                text-shadow: 2px 1px 4px $contrast
             .testimonial
                 text-shadow: 2px 1px 4px $vid-div 
             .double-width
                 background-color: $vid-div 
-                box-shadow: 1px 0 10px $style-changer-color
+                box-shadow: 1px 0 10px $icon-color
 
         .glow
             animation: glow 4s infinite alternate
         // @keyframes glow
         //     0%
-        //         text-shadow: 0px 0px 8px c, -3px -1px 7px $wrapper-bg, 2px 0px 4px $mod-bg
+        //         text-shadow: 0px 0px 8px c, -3px -1px 7px $bg-color, 2px 0px 4px $mod-bg
         //     to
-        //         text-shadow: -3px 0px 8px $vid-div, 0px -3px 6px $wrapper-tx, 1px 0px 10px $spice
+        //         text-shadow: -3px 0px 8px $vid-div, 0px -3px 6px $color, 1px 0px 10px $loud
 
         .zenwheel text.active
             animation: glow 2.5s ease-in-out infinite alternate
             @keyframes glow
                 0%
-                    text-shadow: 0px 0px -3px $wrapper-tx, 3px 3px 6px $spice
+                    text-shadow: 0px 0px -3px $color, 3px 3px 6px $loud
                 to
-                    text-shadow: 0px 0px 4px $style-changer-color, 0px 0px 6px $schleem
+                    text-shadow: 0px 0px 4px $icon-color, 0px 0px 6px $contrast
             // @keyframes glow
             // 	0%
             // 		text-shadow: 0px 0px -3px #aaa, 3px 3px 6px #90d
             // 	to
             // 		text-shadow: 0px 0px 4px #50d, 0px 0px 6px #ff4da6
 
-@include unThemeMe(thalmon, $medium-thalmon, #333, rgb(249, 194, 159), #1b0c10, #555, #2f1b14, #444, $medium-thalmon, #704433, lighten(orange, 20%))
-@include unThemeMe(green, $dark-green, #161616, #68f78e, #100a14, #0a270a, rgb(0, 0, 0), #070708, #2f855a, rgb(31, 237, 55), #53e6cb)
+@include unThemeMe(thalmon, $medium-thalmon, #333, rgb(249, 194, 159), #1b0c10, #555, #2f1b14, #444, $medium-thalmon, #704433, #ff5050)
+@include unThemeMe(green, $dark-green, #161616, #68f78e, #100a14, #0a270a, rgb(0, 0, 0), #070708, #2f855a, rgb(31, 237, 55), #298372)
 @include unThemeMe(light, $light-black, #faf0f0, #012121, #9981a8, #7b7096, #dad0d0, #797171, rgb(170, 181, 248), #022326, #666)
-@include unThemeMe(dark, $dark-purple, #000000, #cfb0ef, #1e0127, #0e031b, #750ab7, #040007, #92099e, #6f8d7d, #333)
-@include unThemeMe(peace, $peace-peace, #e6e7df, rgb(6, 1, 17), #ac91a3, #e4cbc4, #a1a2af, #b8cce6, #db8896, #00e1ff, #fa0303)
-// $style-changer-color, $wrapper-bg, $wrapper-tx, $mod-bg, 
-// $sidebar-bg, $smooth-bg, $vid-div, $spice
+@include unThemeMe(dark, $dark-purple, #000000, #cfb0ef, #1e0127, #0e031b, #15082e, #040007, #92099e, #6f8d7d, #4a6cb6)
+@include unThemeMe(peace, $peace, #e6e7df, rgb(6, 1, 17), #ac91a3, #e4cbc4, #a1a2af, #b8cce6, #db8896, #00e1ff, #fa0303)
+// $icon-color, $bg-color, $color, $mod-bg, 
+// $sidebar-bg, $smooth-bg, $vid-div, $loud

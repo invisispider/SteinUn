@@ -1,5 +1,5 @@
 @use "src/assets/css/theme.sass"
-@use "src/assets/css/desktop.sass"
+// @use "src/assets/css/desktop.sass"
 @use "src/assets/css/sidebar.sass"
 @use "src/assets/css/unthinkme.sass"
 @use "src/assets/css/landing.sass"
@@ -24,7 +24,10 @@ button, a, router-link, RouterLink, i
 #appWrapper
     display: flex
     flex-direction: column
-    font-family: Poppins, Roboto, verdana
+    font-family: Roboto
+    // font-family: verdana
+    // font-family: Poppins
+    // font-family: Poppins, Roboto, verdana
     // height: 100dvh
     min-height: 100vh
     text-align: center
@@ -35,6 +38,13 @@ button, a, router-link, RouterLink, i
             text-indent: 3em
   
     // max-width: 100vw
+a, router-link
+  text-decoration: none
+  align-items: flex-end
+  justify-content: flex-end
+  margin-block: auto
+  padding: 0
+
 // MOBILE VERTICAL STYLE
 #appWrapper.vertical
     .flex-column
@@ -42,8 +52,6 @@ button, a, router-link, RouterLink, i
     .home-content
         font-family: Poppins
         padding-inline: 0.4em
-    #landing-title
-        margin-block-start: 25%
 .flex-column
     display: grid
     grid-auto-rows: min-content min-content auto min-content
@@ -56,7 +64,9 @@ button, a, router-link, RouterLink, i
     display: flex
 // .flex-grow
 //     flex-grow: 1
+
 .home-content
+    padding: 0
     // padding-inline: 1.2em
     display: flex
     flex-direction: column
@@ -68,14 +78,17 @@ button, a, router-link, RouterLink, i
     // overflow-y: scroll
     margin-block-end: 3em
     // margin-block: 3em
-    a
+    a:not(.stu-banner)
         display: inline
         color: $active
+    a
         text-decoration: none
     p
         text-align: left
         text-indent: 2em
         padding-block: 0.2em
+        a 
+            margin-inline: 0
 .active-link
     color: $active
 .social-grp
@@ -91,11 +104,15 @@ button, a, router-link, RouterLink, i
     padding: 0.2em
     // margin-block: auto
     // align-self: flex-end
-    .social
-        max-width: 100%
-        max-height: 27px
-        margin-inline: 0.3em
-        // padding-inline: 0.3em
+    a
+        font-size: 12px
+    a:has(.social)
+        .social
+            max-width: 100%
+            max-height: 27px
+            margin-inline: 0.3em
+            // padding-inline: 0.3em
+        
 #style-selector
     position: fixed
     z-index: 2
@@ -120,16 +137,21 @@ button, a, router-link, RouterLink, i
         align-self: center
         justify-self: center
         border-radius: 20%
-        padding: 0.16em
+        padding: 0.23em
     @media screen and (min-width: 350px)
         i, span
             margin-inline: 0.2em
-    
+   
 .stu-banner
     display: inline-block
     height: auto
-    max-width: 100%
+    margin-inline: auto
+    @media screen and (max-width: 500px)
+        max-width: 90%
+    max-width: 94%
     border-radius: 10px
+    margin: 0
+    padding: 0
 .sidebar
     color: #fff
     display: flex
@@ -167,28 +189,20 @@ button, a, router-link, RouterLink, i
     // background-position: top
     // background-size: contain
     .christmas-icon
-        color: #31e833
         font-size: 1.8rem
         list-style-type: none
         justify-content: center
     .navItem
-        // font-size: 1.6em
-        box-shadow: 0 0 5px #31e833
-        // background-color: #000c
+        font-family: 'Roboto'
+        font-weight: 600
         border-radius: 7px
         margin-block: 0.4em
         white-space: nowrap
         cursor: pointer
-        border: solid 1px white
         list-style-type: none
         justify-content: center
-    .nav-item-dark
-        box-shadow: 0 0 40px #f0cf6c
     a, router-link
-        color: #fbf
         border-radius: 6px
-    a:hover, router-link:hover
-        color: #fff
     // h3
         // text-shadow: 2px 2px 5px #000
         // font-size: 26px
@@ -238,7 +252,7 @@ button, a, router-link, RouterLink, i
     margin: auto
     @media screen and (max-width: 400px)
         display: none
-// this works but it doesn't reset
-// html:has(.info-template div p)
-//     overflow-y: hidden
-
+.home-logo, #landing-title
+  justify-self: center
+  margin-top: 3em
+//   max-height: 100px

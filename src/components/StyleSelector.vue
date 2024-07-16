@@ -35,15 +35,15 @@ onMounted(()=>{
         <div class="btn-grp">
             <!-- <span class="tinytext">{{ store.styleMode }}</span> -->
             <i @click="switchStyle('green')"
-                id="dark-green" class="material-icons">bolt</i>
+                id="dark-green" class="material-icons" title="Green Dark Theme">bolt</i>
             <i @click="switchStyle('dark')" data-testid="dark-purple"
-                id="dark-purple" class="material-icons">nightlight</i>
+                id="dark-purple" class="material-icons" title="Purple Dark Theme">nightlight</i>
             <i @click="switchStyle('thalmon')"
-                id="medium-thalmon" class="material-icons">set_meal</i>
+                id="medium-thalmon" class="material-icons" title="Thalmon Theme">set_meal</i>
             <i @click="switchStyle('peace')"
-                id="peace-peace" class="material-icons">phishing</i>
+                id="peace-peace" class="material-icons" title="Peace Light Theme">phishing</i>
             <i @click="switchStyle('light')"
-                id="light-black" class="material-icons">view_timeline</i>
+                id="light-black" class="material-icons" title="Light Theme">view_timeline</i>
         </div>
     </div>
 </template>

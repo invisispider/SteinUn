@@ -9,6 +9,7 @@ const changeQuad = (sel: QuadRef) => {
     // if (tempEl) 
     window.scrollTo(0, 300);
 }
+const emit = defineEmits('next')
 </script>
 <template>
     <div class="quads-container">
@@ -350,23 +351,22 @@ const changeQuad = (sel: QuadRef) => {
             <h2>Overview</h2>
             <p class="desc">
                 Quadrants are not a new concept, 
-                but a hidden lens we already use. What is breathtaking about this model is 
-                the rainbow of Levels reflected across
-                the four Quadrants, illustrating the emergence of similar structural themes in self,
-                culture, local and systemic nature. This is because Altitudes are the same memetic (or noetic) 
-                structures, arising in four Quadrant perspectives. They intersect our brains, our 
-                lives, our interactions, and society itself.
+                but hidden lenses we already use. The left side is subjectivity, the right is objectivity,
+                bottom is collective, top is individual. A rainbow of Levels reflects across
+                "I", "We", "It", and "Its", illustrating the emergence of the same fundamental structural themes 
+                in the four simultaneous perspectives of self, culture, local and systemic nature. 
+                <!-- They intersect our brains, our 
+                lives, our interactions, and society itself. -->
             </p>
             <h2>Four Ways to Look At Everything</h2>
-            <p> Reality has an inside and outside, and it occurs at an individual 
-                and collective level. 
-                    This description of Quadrants may seem exotic at first, but it's very matter of fact.
-                    You are in here, world is out there, you're one person in a social system. 
-                    When we conjugate our language, "I", "We", "It", and "Its", we 
-                    show that we know Quadrants intuitively, if not explicitly.
+            <p> Reality has interiors and exteriors, and it occurs as groups and instances.
+                    This description may seem exotic, but only because Quadrants are so elementary.
+                    You're here, world is out there, you're one person in a social system. 
+                    When we conjugate our language, "I", "We", "It", and "Its", language structures 
+                    our thinking into Quadrants.
                 </p>
 
-                <p>Each Quadrant correctly answers the question, <b>"What is the nature
+                <p>Each Quadrant can correctly, but partially, answer the question, <b>"What is the nature
                     of reality?"</b>
                     A superior answer would thus include all four. 
                 </p>
@@ -376,20 +376,26 @@ const changeQuad = (sel: QuadRef) => {
                 information that I am aware of. I am reality.
                 </p>
                 <p><b>Lower Left "We" interior collective:</b> The collective consensus which we develop through interpersonal communication.
-                <br><b>Reality: </b>Relationships define our nature by socializing us into notions of who we are and what we do. 
-                We think the beliefs from our literature in the language of our culture. I'm a name and address and a citizen 
-                of political designations, a member
-                of ideological movements, a reputation and social credit. I am my job, my family, my country, my khakis. 
-                Moral actions are actions that positively affect people. That's our reality.
+                <br><b>Reality: </b>We are the social animal. No person starts life with the assumption that critical 
+                thinking is worthwhile. We must be 
+                taught both language and cooperation, which is traumatic to our instinctual and individualistic nature.  
+                Our thoughts are synthesized by imitating what is available in the language of our culture. 
+                <!-- I'm a name and address and citizen of political designations, a member
+                of ideological movements, a reputation and social credit.  -->
+                <!-- I am my job, my family, my country, my khakis.  -->
+                <!-- Moral actions are actions that positively affect people.  -->
+                As individuals, we only choose between collective 
+                options, based on socialized notions of who we are and what we should do.
+                That's our reality.
                 </p>
-                <p><b>Lower Right "It" exterior individual:</b> The apparent physical environment, my brain, body, and physical senses.
+                <p><b>Upper Right "It" exterior individual:</b> The apparent physical environment, my brain, body, and physical senses.
                 <br><b>Reality: </b>This brain interprets sense information into concepts so 
                 it can comprehend circumstances well enough to advantageously transform social and environmental 
                 outcomes, with the byproduct that it imagines itself into a supposedly cohesive story of my  
                 experience as a social being. I am chemicals, brainwaves, and cognitive functions. Everything this brain 
                 can directly sense and be logically certain of, that must be reality.
                 </p>
-                <p><b>Upper Right "Its" exterior collective:</b> The dynamics of collective and social systems.
+                <p><b>Lower Right "Its" exterior collective:</b> The dynamics of collective and social systems.
                 <br><b>Reality: </b>The Universe produces human civilization through a tendency towards 
                 greater novelty and complexity called evolution. Civilization continues to evolve memetically, and I 
                 will play the minute role of being carried along or participating in the unfolding of this 
@@ -424,13 +430,14 @@ const changeQuad = (sel: QuadRef) => {
                 <h3>Quadrant Fundamentalism</h3>
                 <p>
                     As you examine philosophy and thought, take care to observe 
-                    positions that are firmly rooted in some Quadrants and in denial of others. <em>Only consciousness and 
-                    the mind exist. Only material reality exists. We are one people. We are the thoughts of God. 
-                    It's every man for himself.</em> Recognize how these positions result from fierce denial of reality 
-                    and attachment to a Quadrant. Though they may superficially sound like the 
+                    positions that are in denail of, or firmly rooted in, particular Quadrants. Allergies and fixations. <em>Only consciousness and 
+                    the mind exist. Only material reality exists. The self is unreal. The Universe is a simulation or illusion. God rights 
+                    all wrongs. It doesn't matter what anyone thinks.
+                    </em>Recognize how these positions all express resistance to a major given aspect of reality. 
+                    Though they may superficially sound like the 
                     dissolution of Quadrants of higher Levels and deeper States, <em>denial</em> of perspectives is the 
-                    key discernment. Quadrant fundamentalism and denial are obvious indicators
-                    of mental illness. Not surprisingly, a moderate bias is typical of human personality.
+                    key discernment. Quadrant fundamentalism and denial are indicators
+                    of mental pathology. Not surprisingly, a moderate bias is typical of human personality.
                 </p>
             <!-- <div class="stats"> -->
                 <h3>Language Structures Thought</h3>
@@ -440,24 +447,26 @@ const changeQuad = (sel: QuadRef) => {
                     First, Second, and Third person, Singular and 
                     Plural. Classical milestones in human development include the formation of 
                     concepts of self, others, objectivity, and abstraction. In other words, 
-                    the First Tier of Levels solidify consciousness into familiarity with the Quadrants.
+                    the First Tier of Levels solidify consciousness into Quadrants.
                 </p>
                 <p>
-                    These four conjugations of reality are not only interconnected, but indeed are four 
-                    aspects of a singular reality. This recognition informs Second Tier 
+                    The four conjugations of reality are not only interconnected, but indeed are four 
+                    aspects of singular reality. This recognition informs Second Tier 
                     Levels. However, as an 
-                    experience of being, or State or even Level of consciousness, one will note that key 
-                    terms like "oneness", "union", and "nonduality" are all described conceptually in terms of a 
-                    suspension of Quadrants. Awakening from the Quadrants seems perhaps 
+                    experience of being, or State or even Level of consciousness, key 
+                    terms like "oneness", "union", and "nondual" are all defined in terms of a 
+                    transcendence of Quadrants. Awakening from the Quadrants is perhaps 
                     synonymous with spiritual enlightenment.
                 </p>
                 <h4>I, We, It, or Its? </h4>
                 <p>
-                    It's a subtle point, but my language forces me to assign everything into a 
-                    Quadrant when I think, when I communicate, and to use this language interface 
-                    with everyone else. Thus we might find it odd to suggest that 
+                    It's a subtle point, but language forces us to interface by assigning everything into a 
+                    Quadrant when we think and communicate. It might seem odd to suggest that 
                     these perspectives are imaginary mental constructs, when they are entirely basic to our comprehension. 
-                    Language is literally a mental prison. Kind of the only one.
+                    Language is the primary mental prison. When there is nothing desirable outside of a prison, and 
+                    everything desirable within, this 
+                    becomes a blatantly bad analogy. 
+                    I belabor this argument because it also applies to Integral Theory.
                 </p>
                 <!-- <p>
                     Speaking this language is one of many ways our social system causes us to think in Quadrants. 
@@ -472,51 +481,48 @@ const changeQuad = (sel: QuadRef) => {
             
                 <h3>Using Quadrants</h3>
                 <p>The main practical benefit is to recognize which Quadrants are focused on in 
-                    a situation, and to zoom out holistically and utilize all four. 
-                    In a particular sense - a kosmic evolutionary sense, Quadrants 
-                    are the metaphorical or functional "dimensions" of reality. 
+                    a situation or approach, and to zoom out holistically and utilize all four.
+                    Most problems and pursuits, including philosophy itself, benefit from 
+                    acknowledging and including all four metaphorical "dimensions" of reality. 
                 </p>
-                <h2>Second Tier Marketing: Who Is Integral For?</h2>
-                <!-- <p>You may be tempted to think Integral is one thing, only to find that you  
-                    are taking a narrow view. Here, we can illuminate the unfathomable scope of this model,
-                    and give simple Quadrant-based values offered by the theory. 
-                </p>  -->
-                <p><b>Upper-Left "I":</b> Integral is a map for self help and personal development.
+                <h3>Second Tier Marketing: Who Is Integral For?</h3>
+                <p><b>Upper-Left "I":</b> Integral is a guide to healthy life and personal development.
                     It explains how to improve one's moods, relationships, and lifestyle, how transcendental
                     states of consciousness work, what they reveal, and massively helps in the development 
                     of personal insight, spirituality, and maturity.
                 </p>
-                <p><b>Lower-Left "We":</b> Integral is a community, a values paradigm, a worldview, aimed 
+                <p><b>Lower-Left "We":</b> Integral is a community, or shared worldview meme, aimed 
                     at reconcilliation and inclusion of those extant. According 
-                to its own narrative, Integral is a Level of social organization based around shared recognition 
-                of evolutionary Levels and heirarchies of growth and inclusion, and Integral is the next major 
-                wave, or developmental Level the world will experience. If all of
-                this makes sense to you, you are Integral to precisely that extent.
+                to itself, Integral is a natural Level of consciousness based around shared recognition 
+                of evolutionary structures and heirarchies of growth and inclusion. 
+                It is the next major wave, or Level, emerging in society currently. 
+                If all of
+                this makes sense to you, you're a part of this wave to precisely that extent.
                 No Kool-Aid to drink. If a map of the way humankind understands reality is 
                 recognizable and desired, the Integral "We" includes you.</p>    
                 <p><b>Upper-Right "It":</b> Ken Wilber provides a relatively simple, comprehensive philosophical orientation 
                     tool or ideological swiss army knife, enabling ready solutions to eternal problems. 
                     All extant concepts fit together in a single continuity, which applies very directly and progressively 
                     to every topic and field, including Wilber's work in philosophy, psychology, religion, 
-                    spirituality, economics, sociology, anthropology, politics, history, business, sexuality, 
-                    entertainment, literature, art, criticism, health, and lifestyle.
+                    spirituality, sociology, anthropology, politics, history, science,
+                    critical theory, arts, entertainment, health, and lifestyle.
                 </p>    
                 <p><b>Lower-Right "Its":</b> Integral is like a Rosetta Stone for comprehending how fields and systems are inter-related
                     in the grandest scope. Embracing all of reality, it is applicable to every endeavor, and is best used as a universal 
                     translater, a way of reconciling disparate perspectives and checking in with every aspect of the big picture.
                 </p>
-                <h2>Social Holon: A Four Quadrant Stack of Levels</h2>
+                <h2>Social Holon: A Stack of Four-Quadrant Levels </h2>
                 <p>
-                 <b>A holon is a whole composed of parts, and also is itself a part of a greater whole. </b>The Quadrants illustrate
+                 <b>A holon is a whole composed of parts, which also is itself part of a greater whole. </b>The Quadrants illustrate
                 how a singular "holonic" source unfolds in and expresses all four dimensions simultaneously, rendering all 
-                four quadrants equally and entirely real. Everything certainly real exists in all four Quadrants and is 
+                equally and entirely real. Everything certainly real exists in all four Quadrants and is 
                 a holon.
                 Everything not real, by debatable standards, exists in some Quadrants, but not all, and thus is not a holon 
                 either.
                 </p>
                 <h3>Examples of Debatably Real Things</h3>
                 <p><b>😡 Buloney: </b>A lie is an exclusively LL reality that is unreal to the subjective teller of it, and is untrue 
-                    in physical reality. This would result in a misunderstanding where if you believed the lie, it would 
+                    in physical reality UR. This would result in a misunderstanding where if you believed the lie, it would 
                     then be true only in the UL, so ultimately false.
                 </p>
                 <p><b>🔮 Divination: </b>Astrology exists in the interior Quadrants as a way of determining a person's overall character based 
@@ -559,17 +565,25 @@ const changeQuad = (sel: QuadRef) => {
                         to you, I'm describing an UR machine from my perspective, which is 
                         UL, but I'm trying to convey things of interest to you, implying a 
                         shared LL between us, and we may talk vehicle makes and models 
-                        and market prices, all LR. Anyways, the perspective that you yourself 
+                        and market prices, all LR. The perspective you 
                         would end up with would be a LL view, shared between us, of the car 
-                        existing in the UR. This issue becomes central in describing the Levels.
-                        Every Level can be described in each Quadrant, and each of these can be
-                        seen from each quadrant, for a total of 16 basic descriptive perspectives.
-
+                        existing in the UR. 
+                        
+                </p>
+                <p>
+                    Compound Quadrants become problematic in describing Levels,
+                        which express distinctively in all four Quadrants. These can each be
+                        seen <em>from</em> each Quadrant, for a total of 16 basic descriptive perspectives.
+                    For example, if I consider Level 2 Magenta, I may take a LL view and consider 
+                    all of the ways Magenta values, ideas, and notions are expressed in our cultural surroundings. 
+                    I may look at this from my personal perspective, UL, from a practical perspective, UR, 
+                    I may look at it morally and critically, LL, or I may consider the abstract structural function
+                    of the meme, LR. 
                 </p>
                 <h3>More of Reality in Fewer Words</h3>
                 <p>
-                At a deeper level, Integral post-metaphysics reveals that probably the most accurate generalization 
-                    that can be made about reality, nature, the self, or society, is that it's an evolutionary system unfolding 
+                At a deeper level, Integral post-metaphysics reveals probably the most accurate generalization 
+                    that can be made about reality, nature, the self, and society: it's an evolutionary system unfolding 
                     holonic Levels across simultaneous interior, exterior, individual and collective perspectives. 
                     You can't just go around saying things like that without explaining yourself.
                 </p>
@@ -582,9 +596,8 @@ const changeQuad = (sel: QuadRef) => {
                 <p>  
                 🗻 A <b>heap</b> is a collective grouped by coincidental, arbitrary, or subjective distinction, 
                 such as a sand dune, the hundreds of words for "snow" arctic natives may use, or for example, 
-                "the birds on the lawn." Those references are not 
-                proper collectives (holons/Quadrants), as their group cohesion is not structural, but 
-                linguistic and contextual. 
+                "the birds on the lawn." Those references are not proper collectives (holons/Quadrants), as their 
+                group cohesion is not structural, but linguistic and contextual. 
                 The birds in the yard may exhibit collective behaviors, like if a horn honks, 
                 they all scatter, and they have come here because of the types of trees you have, eg.
                 But the birds are a heap, not a holon, because they are grouped by the unrelated properties 
@@ -618,7 +631,7 @@ const changeQuad = (sel: QuadRef) => {
                 <p> 
                     Artifacts have a 
                     special status, in that they somewhat distort the integral perspective. Our mental world is a 
-                    world of practical and social, as opposed to natural (holonic), concepts. 
+                    world of practical and social, as opposed to natural (holonic) concepts. 
                     This is a main reason that holonic or Integral Theory may seem abstract or cerebral to newcomers,
                     precisely <em>because</em> it is the opposite!
                     All of reality is holons, but our awareness and the language we use 
@@ -641,48 +654,39 @@ const changeQuad = (sel: QuadRef) => {
                     with me, all throughout history.
                 </p><p>
                     🧬 A baby born now begins fundamentally the same as 
-                    early hominids of the upper paleolithic, and will proceed through each 
+                    early hominids of the upper paleolithic, Level 1 Infrared instinctual, and will proceed through each 
                     of the Levels that society itself developed through. All great art and literature
                     are expressions of Levels, sometimes challenging contemporary Levels, and sometimes
-                    serving as foundation to emergent Levels at the time. 
-                </p><p>
-                    In each Level we observe a re-ordering of Quadrant perspectives. For example, Red, 
-                    Orange, Teal,
+                    contributing to emergent Levels. 
+                </p>
+                <p>
+                    In each Level we observe somewhat of a reversal of Quadrant perspectives. The odd numbered 
+                    Altitudes of Red, Orange, Teal,
                     Indigo, and Ultraviolet stress forms of objectivity and individualism or agency, while Magenta, Amber,  
-                    Green, Green, Turquoise, Violet, and Clearlight stress subjectivity and collectivism or communion.
+                    Green, Turquoise, Violet, and Clearlight stress subjectivity and collectivism or communion.
                     This classically male/female dualism is not some magic spell built into the fabric of evolution, it is rather just the effect of a 
                     season-style pattern. In development, we cycle between extremes of thought, feeling, and 
-                    action in an effort to synthesize or inhabit both sides of a duality. The developmental path 
-                    for the individual is a process of integrating cognitive dissonance.
+                    action in an effort to synthesize or inhabit both sides of duality. The developmental path 
+                    is a process of integrating cognitive dissonance.
                 </p>
-                <!-- <p>
-                    As the planet traverses 
-                    the Universe within the galaxity within the sun's orbit, we experience a quaternistic
-                    cycle of seasons. In the maturity cycle of our human life, we tend to develop up the Levels 
-                    and make progress by bringing new development across Quadrants and ultimately transcending 
-                    the dualism of the Quadrant perspective of that pair of Levels. 
-                </p> -->
                 <h3>Lines and Quadrants</h3>
-                <p>In nearly every case, a particular Line will only study or observe a single 
+                <p>In nearly every case, a particular developmental Line only studies or observes a single 
                     Quadrant. Thus, advances in medicine, psychology, social sciences, and economics appear 
                     to exist each in their own domain while of course they are all naturally implicated
-                    in one another. Integral Thought portrays the overlap in these four 
-                    perspectives, and in the individual developmental Lines or multiple intelligences, as 
-                    Altitudes Levels.
+                    in one another. Integral portrays the overlap in these four 
+                    perspectives, and in individual Lines, as Altitudes Levels.
                 </p>
                 <h3>Types and Quadrants</h3>
                 <p>It would not be novel at all to say that many, perhaps the majority, of 
-                    personality typologies, are based on medieval classical elements (earth, air,
+                    personality typologies, are descended from medieval alchemy (earth, air,
                     water, and fire) which correspond to the four secular seasons and formerly dominated type theory in 
-                    systems East and West, as well as medicine 
-                    in the theory of sanguine, phlegmatic, melancholic, and choleric temperaments and many aspects of esoteric 
-                    philosophy and alchemy. 
-                </p><p>These notions are not obscure antiquities, but foreshadow our current understanding. 
-                    These medieval mythological concepts helped 
+                    systems East and West, as well as medicine, referring to the four humors (bodily fluids) and temperaments. 
+                </p><p>These obscure antiquities foreshadow our current understanding. 
+                    Alchemical mythology helped 
                     Carl Jung to develop his own typology, which entirely informed the development of the 
-                    Myers-Briggs system. Thus, small world, there really aren't a lot of typologies in common 
-                    usage, other than colloquial observational truisms of the nature, "You know Julie, there's 
-                    two types of people in this world, XXXXXers, and XXXXers." 
+                    Myers-Briggs system. Small world. There aren't a lot of accepted typologies in common 
+                    usage, other than colloquial observational truisms of the nature, "You know, there's 
+                    two types of people in this world, _____s, and _____s." 
                 </p>
                 <p>
                     Observe particularly 
@@ -692,15 +696,19 @@ const changeQuad = (sel: QuadRef) => {
                 </p>
                 <h3>☯️</h3>
                 <p>
-                    The duality, or Tao, which exists on every Level of nature is expressed on Earth as seasons, in life as birth and 
-                    death, in animals as sex and in culture as gender. In personality, the duality is expressed as extroversion or 
-                    objectivity attitude towards the left and right Quadrants, as well as affinity with individuality or collectivism.
-                    These four functional types (Quadrants) were called by Jung intuition, sensing, thinking, and feeling. Here is a 
-                    table expressing the relationships between these. 
+                    The duality which exists on every Level of nature is expressed on Earth as seasons, in life as birth and 
+                    death, in animals as sex and in people as gender. In personality, duality is expressed as extroversion and 
+                    introversion. This primary preference is expressed through the duality of Judging and Perceiving. Judging makes 
+                    conclusions with known information, Perceiving gathers new information. Judging has subjective and objective versions, which 
+                    Jung called Feeling (based on subjective factors) and Thinking (based on abstract logic). Perceiving 
+                    also has subjective and objective versions, where iNtuition works with the self abstraction and the unconscious, 
+                    and Sensing gathers hard facts and data about the environment and social events. These three layers of duality 
+                    generate Jung's Four Cognitive Functions, which each can be extraverted, expressed outwardly, or introverted,
+                    experienced internally. The table below shows the cognitive functions as equivalent to Quadrant preference. 
                 </p>
                 <table>
                     <tr>
-                        <th>UL: Intuition</th>
+                        <th>UL: iNtuition</th>
                         <th>UR: Sensing</th>
                     </tr>
                     <tr>
@@ -710,14 +718,13 @@ const changeQuad = (sel: QuadRef) => {
                 </table>
                 <p>As we observe repeatedly, each Quadrant can be viewed through a Quadrant, which 
                     results in the compounded multiplicity of perspectives we encounter in Jungian types as well 
-                    as Quadrant reality itself. Thus, the extraversion attitude and superiority parameter
-                    of a cognitive function 
+                    as Quadrants. Thus, extraversion and superiority of cognitive functions 
                     give us Quadrants to view these Quadrants through. This is to say that many, or most,
                     Typologies, or the Types module itself, can largely be seen as another way of expressing 
                     Quadrants, this case in human personality. 
                 </p><p>
                     The Big Five traits (Types) correlate with 
-                    Quadrant types, except for neuroticism. Many systems such as the enneagram use 
+                    Quadrants, except for neuroticism. Many systems such as the enneagram use 
                     divisions of three to express fundamentally similar personality factors, most typically accomplished 
                     by squishing the right quadrants together, or by defining the intersection of Quadrants as 
                     points of reference.   
@@ -731,20 +738,22 @@ const changeQuad = (sel: QuadRef) => {
                     infinite void of the kosmos, understands itself to be nothing but the eternal 
                     conscious awareness of material reality, feels the world and people around itself
                     as its own skin, expresses radical loving compassion that sees deeper into you than you do, 
-                    is radiantly annointed with the light of creation. <b>Sounds familiar?</b>
+                    is radiantly annointed with the light of creation. <b>Sound familiar?</b>
                 </p>
                 <p> 
                     Nearly all descriptions of spirituality across time and tradition involve transcending 
                     the mentally constructed boundaries of Quadrants. In other words, nondual enlightenment 
                     can be expressed as the experience of being entirely I, We, It, and Its, at once.
-                    You are just as much the story of your life as you are the Big Bang, just as much the 
-                    developmental efforts of sentient beings throughout history as you are the systems 
-                    and infrastructure which organize it. Truly, you are a stack of Levels in Quadrants.
+                    You are just as much the story of your life as you are a speck of Universe, just as much a 
+                    representative of humanity as you are a detatched observer. This is all One thing. 🍣 You.
+                    <!-- Truly, you are a stack of Levels in Quadrants. -->
                     <!-- Everyone and everything is this, reality is this, it is all You, it is all not-You, it is 
                     nondual, there is
                     no You, only this, a stack of Levels in Quadrants, which I'm saying is You.
                     And me. And everything. -->
                 </p>
+                <h5 class="pedantic" @click="changeQuad('left-right')" style="cursor: pointer;">NEXT</h5>
+
             <!-- </div>
             <div class="panel">
             </div>
@@ -1258,6 +1267,8 @@ const changeQuad = (sel: QuadRef) => {
                 the entire universe into one in which a person moved their hand there. All at once. No 
                 trick. We're a stack of Levels in four Quadrants.
             </p> 
+            <h5 class="pedantic" @click="changeQuad('up-down')" style="cursor: pointer;">NEXT</h5>
+
         </template>
         <template v-else-if="quadRef==='up-down'">
             <h1 id="up-down">Individual and Collective</h1>
@@ -1483,6 +1494,8 @@ const changeQuad = (sel: QuadRef) => {
                 could possibly <em>not</em> be real.
                 But of course, here you are, and it has four Quadrants.  
             </p>
+            <h5 class="pedantic" @click="changeQuad('upper-left')" style="cursor: pointer;">NEXT</h5>
+
         </template>
         <template v-else-if="quadRef==='upper-left'">
             <h1 id="upper-left">Upper Left: Interior Individual</h1>
@@ -1544,6 +1557,8 @@ const changeQuad = (sel: QuadRef) => {
                 of healing the cognitive dissonance of a fundamental split in reality, or duality of the mind, by embracing 
                 and integrating the supposed opposing side. The Tao is just all four at once.
             </p>
+            <h5 class="pedantic" @click="changeQuad('lower-left')" style="cursor: pointer;">NEXT</h5>
+
         </template>
         <template v-else-if="quadRef==='lower-left'">
             <h1 id="lower-left">Lower Left: Interior Collective</h1>
@@ -1592,6 +1607,8 @@ const changeQuad = (sel: QuadRef) => {
                 grounding in positive self-appraisal may cause a person to seem needy or dependent, and may 
                 result in dishonest, unethical behaviors for the sake of superficial approval.
             </p>
+            <h5 class="pedantic" @click="changeQuad('upper-right')" style="cursor: pointer;">NEXT</h5>
+
         </template>
         <template v-else-if="quadRef==='upper-right'">
             <h1 id="upper-right">Upper Right: Exterior Individual</h1>
@@ -1651,6 +1668,8 @@ const changeQuad = (sel: QuadRef) => {
                 of the body, and the disinterest in larger and grander narratives may result in superficial or 
                 transactional role relationships lacking in intimacy.  
             </p>
+            <h5 class="pedantic" @click="changeQuad('lower-right')" style="cursor: pointer;">NEXT</h5>
+
         </template>
         <template v-else-if="quadRef==='lower-right'">
             <h1 id="lower-right">Lower Right: Exterior Collective</h1>
@@ -1714,6 +1733,8 @@ const changeQuad = (sel: QuadRef) => {
                 beyond advancing the position of their eternal unspoken chess game. Objectification and
                 commodification of people can become antisocial or manipulative at the extremes. 
             </p>
+            <h5 class="pedantic" @click="emit('next')" style="cursor: pointer;">LEVELS</h5>
+
         </template>
     </div>
 </template>

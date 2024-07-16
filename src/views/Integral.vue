@@ -8,7 +8,7 @@ import Levels from "@/components/Integral/Levels.vue";
 import Map from "@/components/Integral/Map.vue";
 import States from "@/components/Integral/States.vue";
 document.title = "Integral Theory Map";
-const chosenType = ref<'base'|'gender'|'jungian'|'archetypes'|'astrology'|'bigfive'|'myers-briggs'|'enneagram'>('base');
+const chosenType = ref<'base'|'gender'|'jungian'|'Archetypes'|'Astrology'|'Big Five'|'Myers-Briggs'|'Enneagram'>('base');
 watch(chosenType, () => {
     window.scrollTo(0,0);
 })
@@ -127,6 +127,7 @@ const toggleState = (sel: string) => {
                 <div class="btn-group-int">
                 <button v-for="st of ['ordinary', 'brainwaves', 'selves', 'spiritual']" @click.stop="selState=st">{{st}}</button>
                 </div>
+                <br>
                 <template v-if="selState==='ordinary'">
                     <h1>Ordinary States</h1>
                     <p>All people experience a host of minor States, 
@@ -356,20 +357,20 @@ const toggleState = (sel: string) => {
         </div>
         <h1></h1>
         <!-- <h1 @click="toggleBase" class="module-name">{{ Selected }}</h1> -->
-        <Map v-if="Selected == 'Map'" />
-        <Quadrants v-else-if="Selected == 'Quadrants'" />
+        <Map @next="SelectButton('Quadrants')" v-if="Selected == 'Map'" />
+        <Quadrants @next="SelectButton('Levels')" v-else-if="Selected == 'Quadrants'" />
         <Levels v-else-if="Selected == 'Levels'"
                 @infrared="toggleLevel('infrared')" @magenta="toggleLevel('magenta')" @red="toggleLevel('red')"
                 @amber="toggleLevel('amber')" @orange="toggleLevel('orange')" @green="toggleLevel('green')"
                 @teal="toggleLevel('teal')" @turquoise="toggleLevel('turquoise')" @indigo="toggleLevel('indigo')"
                 @violet="toggleLevel('violet')" @ultraviolet="toggleLevel('ultraviolet')"
-                @clearlight="toggleLevel('clearlight')" 
+                @clearlight="toggleLevel('clearlight')" @next="SelectButton('Lines')"
         />
         <template v-else-if="Selected == 'Types'">
             <div class="btn-group">
-                <button @click="chosenType='base'">unthinkme</button>
-                <button @click="chosenType='gender'">gender</button>
-                <button @click="chosenType='jungian'">jungian</button>
+                <button @click="chosenType='base'">unThinkMe</button>
+                <button @click="chosenType='gender'">Gender</button>
+                <button @click="chosenType='jungian'">Jungian</button>
                 <button class="darken" v-for="tGet, index of AqalTypes" 
                 @click="chosenType = index" :key="index">{{ index }}</button>
             </div>
@@ -539,6 +540,7 @@ const toggleState = (sel: string) => {
                     people in this world," is the way to start a lecture for your nephew. Serious people want some 
                     sort of realistic, mature concept of what Types of people, thinking, and behavior exist in their reality.
                 </p> -->
+                <h5 class="pedantic" style="cursor: pointer;" @click="chosenType='gender'">GENDER</h5>
             </div>
             <div v-else-if="chosenType=='gender'">
                 <h3>Sexing Nature</h3>
@@ -690,6 +692,7 @@ const toggleState = (sel: string) => {
                 <!-- <p>Notice we snuck in cognitive functions, too. Please read on in the Jungian 
                     section if you want your mind blown.
                 </p>  -->
+                <h5 class="pedantic" style="cursor: pointer;" @click="chosenType='jungian'">JUNGIAN</h5>
             </div>
             <div v-else-if="chosenType=='jungian'">
                 <h2>Your Brain does Four Things</h2>
@@ -918,6 +921,8 @@ const toggleState = (sel: string) => {
                 <h2>Verdict:</h2>
                 <p>{{ AqalTypes[chosenType].setbacks }}</p>
             </div>
+            <h5 class="pedantic" @click="SelectButton('States')" style="cursor: pointer;">STATES</h5>
+
         </template>
         <template v-else-if="Selected == 'Lines'">
             <div class="btn-group">
@@ -926,16 +931,17 @@ const toggleState = (sel: string) => {
                     }}</button>
             </div>
             <template v-if="lineInfo.line">
-                <h1>{{ lineInfo.line }}</h1>
-                <h2>{{ lineInfo.name }}</h2>
-                <h2>Author: {{ lineInfo.author }}</h2>
-                <h3>{{ lineInfo.description }}</h3>
+                <h2>{{ lineInfo.line }}</h2>
+                <h3>{{ lineInfo.name }}</h3>
+                <h3>Author: {{ lineInfo.author }}</h3>
+                <p>{{ lineInfo.description }}</p>
                 <h2>Stages:</h2>
                 <div v-for="({title, desc}, id) of lineInfo.stages" key="stg.title">
                     <h4>{{ id }}: {{ title }}</h4>
                     <p>{{ desc }}</p>
                 </div>
-                <h3>{{ lineInfo.notes }}</h3>
+                <h2>Notes:</h2>
+                <p>{{ lineInfo.notes }}</p>
             </template>
             <template v-else>
                 <h1>Lines</h1>
@@ -1144,6 +1150,17 @@ const toggleState = (sel: string) => {
                     has made a great case for an exhaustive, minimal, and empirically verified set of 
                     developmental Lines.
                 </p>
+                <p>While the examples of IQ/EQ and Multiple Intelligences propose  
+                    systems of Lines, the examples below are pioneering attempts at universal 
+                    Levels systems, and can be seen as roughly equivalent to Altitudes, but the key distinction 
+                    between Levels and a very major Line (such as Cognition or Worldview), is that Levels occur 
+                    in all four Quadrants and apply to every Line, while for the sake of scientific rigor, as 
+                    opposed to philosophical completeness, a Line theorist researches and analyzes specific 
+                    criteria concerning a particular aspect of a person.  
+                    <h5 class="pedantic" @click="toggleLine('Worldview Structures')" style="cursor: pointer;">NEXT</h5>
+                    <h5 class="pedantic" @click="SelectButton('Types')" style="cursor: pointer;">TYPES</h5>
+                </p>
+
             </template>
             <!-- </div> -->
         </template>
@@ -1250,6 +1267,7 @@ const toggleState = (sel: string) => {
     max-height: 400px
 
 .btn-group-int
+    position: fixed
     display: flex
     flex-direction: row
     flex-wrap: wrap

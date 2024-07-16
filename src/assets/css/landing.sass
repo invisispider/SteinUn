@@ -9,16 +9,21 @@
     padding-block: 8px 4px
     font-size: 22px
     width: 100vw
+        // .material-icons:first-of-type
+            // visiblity: hidden
+    @media screen and (max-width: 500px)
+        [aria-label='prev'], [aria-label='next']
+            visibility: hidden
+            width: 0
     i
         cursor: pointer
         margin-inline: auto
     .tinytext
         justify-content: center
-        font-size: 0.6em
-        // align-content: center
-        // margin: auto
+        padding: 0.3em
         .landing-icons
             margin: 0
+            font-size: 1.3em
 .technomancy
     justify-content: center
     text-align: left

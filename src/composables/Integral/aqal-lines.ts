@@ -1,9 +1,9 @@
 export const AqalLines = [
     {
         'name': 'Worldview Structures',
-        'line': 'Gebser',
+        'line': 'Worldview',
         'author': 'Jean Gebser',
-        'description': 'The groundbreaking Swiss philosopher introduced a developmental model in his \
+        'description': 'The groundbreaking Swiss philosopher Jean Gebser introduced a developmental model in his \
         influential work "The Ever-Present Origin," describing fluid, spectrum-like mutations to the \
         structure of consciousness that result from inadequacy dealing with more complex problems.',
         'notes': 'Gebser\'s model suggests that these stages are not necessarily linear or hierarchical but can coexist within individuals and societies to varying degrees. Additionally, Gebser argues that humanity is currently undergoing a transition towards a more integral consciousness, where all previous stages are integrated and synthesized.',
@@ -31,8 +31,8 @@ export const AqalLines = [
         }
     },
     {
-        'name': 'Values: Spiral Dynamics',
-        'line': 'SD',
+        'name': 'Spiral Dynamics',
+        'line': 'Values',
         'author': 'Don Beck and Christopher Cowan',
         'description': 'Spiral Dynamics is a theory of human development and cultural evolution that emphasizes the dynamic interaction between individual and collective values and worldviews. Developed by Clare W. Graves and further popularized by Don Beck and Christopher Cowan, Spiral Dynamics describes a series of stages or "memes" through which both individuals and societies evolve.',
         'notes': 'Spiral Dynamics suggests that individuals and societies develop in response to environmental, social, and existential challenges. Different stages may coexist within a society or individual, with dominant memes influencing behavior and values. The theory emphasizes the importance of understanding and respecting the diversity of human perspectives and values.',
@@ -73,10 +73,12 @@ export const AqalLines = [
     },
     {
         'name': 'Child Cognitive Stages',
-        'line': 'Piaget',
+        'line': 'Cognitive',
         'author': 'Jean Piaget',
         'description': 'Pioneering psychologist Jean Piaget proposed a theory that outlines distinct stages of intellectual growth in children. \
-        This is among the more commonly taught and recognized developmental stage theories.',
+        This is among the more commonly taught and recognized developmental stage theories. \
+        This is an example of a model that captures early stages, but requires supplementing higher \
+        stages from theorists who study adult development.',
         'notes': 'Children progress through these stages in a fixed order, each stage building upon the achievements of the previous. Individual differences and cultural factors influence the pace and extent of development within each stage.',
         'stages': {
             '1': {
@@ -98,12 +100,20 @@ export const AqalLines = [
         },
     },
     {
-        'name': 'Orders of Consciousness',
-        'line': 'Keegan',
+        'name': 'Constructive Developmental Theory',
+        'line': 'Orders',
         'author': 'Robert Keegan',
-        'description': 'Robert Kegan, a developmental psychologist, proposed a theory of adult development known as the "Orders of Consciousness."',
+        'description': 'Developmental psychologist Robert Kegan proposed a theory of adult development known as the "Orders of Consciousness."',
         'notes': 'Kegan\'s theory suggests that individuals progress through these orders of consciousness over time, with each stage representing a more complex and nuanced understanding of the self and the world. However, not everyone reaches the higher orders of consciousness, and progression may be influenced by various factors such as life experiences, relationships, and cultural context.',
         'stages': {
+            '1': {
+                'title': 'Impulsive Mind (Order 1)',
+                'desc': 'Entirely impulse and reflex, or instinct. Lacking consistent object permanence and concept of other.',
+            },
+            '2': {
+                'title': 'Instrumental Mind (Order 2)',
+                'desc': 'People are instrumental, little capacity for empathy or compassion. Rules are rigid and absolute.',
+            },
             '3': {
                 'title': 'Socialized Mind (Order 3)',
                 'desc': 'Individuals at this stage are largely shaped by the norms, values, and expectations of their social environment. They conform to societal roles and expectations without questioning them. Identity is primarily defined by social roles, relationships, and external factors.',
@@ -122,7 +132,9 @@ export const AqalLines = [
         'name': 'Emergent Cyclical Theory',
         'line': 'Graves',
         'author': 'Clare Graves',
-        'description': 'Clare W. Graves was a psychologist who proposed a theory of human development known as the "Emergent, Cyclical Levels of Existence Theory" or simply the "Graves Model." While his model doesn\'t neatly fit into discrete stages like some other developmental theories, it describes a series of emergent levels of existence characterized by different value systems and worldviews.',
+        'description': 'Clare W. Graves was a psychologist who proposed a theory of human development known \
+        as the "Emergent, Cyclical Levels of Existence Theory" or simply the "Graves Model." This model \
+        was the basis for Spiral Dynamics. While his model doesn\'t neatly fit into discrete stages like some other developmental theories, it describes a series of emergent levels of existence characterized by different value systems and worldviews.',
         'notes': 'Graves suggested that individuals and societies can transition between these levels in response to changing environmental conditions and existential challenges. His model emphasizes the dynamic and cyclical nature of human development, with each level building upon and transcending the previous ones.',
         'stages': {
             '1': {
@@ -228,39 +240,39 @@ export const AqalLines = [
                 'desc': 'In this stage, individuals experience a deep sense of inner freedom and self-actualization. They are self-directed, adaptable, and able to maintain a strong sense of identity while remaining open to growth and change.',
             },
         } 
-    },
-    {
-        'name': 'Constructive Developmental Framework',
-        'line': 'Self',
-        'author': 'Suzanne Cook-Greuter',
-        'description': 'Developmental psychologist Cook-Greuter expanded upon \
-        Loevinger\'s work and proposed a "Constructive Developmental Framework" (CDF) \
-        of adult development. This model describes stages of \
-        development in adulthood, focusing on cognitive and ego development.',
-        'notes': 'Each stage represents a more advanced level of cognitive \
-        and ego maturity. Not everyone reaches the highest stages of development, and \
-        progression may be influenced by various factors such as life experience, education, \
-        and self-awareness. Additionally, individuals may exhibit characteristics of multiple \
-        stages simultaneously or regress to earlier stages under stress or unfamiliar circumstances.',
-        'stages': {
-            '1': {
-                'title': 'Egocentric Stage (Opportunist)',
-                'desc': 'At this stage, individuals are primarily self-centered and focused on their own needs and desires. They may lack empathy and have difficulty considering perspectives other than their own. Decision-making is often driven by immediate self-interest.',
-            },
-            '2': {
-                'title': 'Socialized Stage (Diplomat)',
-                'desc': 'In this stage, individuals begin to internalize societal norms and values. They prioritize social harmony and conformity to group expectations. Identity is largely defined by external roles and relationships, and individuals may struggle with autonomy and self-expression.',
-            },
-            '3': {
-                'title': 'Self-Aware Stage (Expert)',
-                'desc': 'At this stage, individuals develop a greater awareness of their own thoughts, feelings, and motivations. They become more reflective and critical thinkers, capable of considering multiple perspectives and questioning established norms and beliefs. Identity is more self-defined, and individuals take responsibility for their own growth and development.',
-            },
-            '4': {
-                'title': 'Self-Transforming Stage (Strategist)',
-                'desc': 'In this stage, individuals transcend the limitations of the previous stages and embrace complexity and ambiguity. They are open to change and personal growth, and they integrate diverse perspectives and experiences into their worldview. Identity becomes more fluid and inclusive, capable of holding paradoxes and contradictions.',
-            }
-        } 
     }
 ]
+
+// {
+//     'name': 'Constructive Developmental Framework',
+//     'line': 'Ego',
+//     'author': 'Suzanne Cook-Greuter',
+//     'description': 'Developmental psychologist Cook-Greuter expanded upon \
+//     Loevinger\'s work and proposed a "Constructive Developmental Framework" (CDF) \
+//     of adult development. This model describes stages of \
+//     development in adulthood, focusing on cognitive and ego development.',
+//     'notes': 'Each stage represents a more advanced level of cognitive \
+//     and ego maturity. Not everyone reaches the highest stages of development, and \
+//     progression may be influenced by various factors such as life experience, education, \
+//     and self-awareness. Additionally, individuals may exhibit characteristics of multiple \
+//     stages simultaneously or regress to earlier stages under stress or unfamiliar circumstances.',
+//     'stages': {
+//         '1': {
+//             'title': 'Egocentric Stage (Opportunist)',
+//             'desc': 'At this stage, individuals are primarily self-centered and focused on their own needs and desires. They may lack empathy and have difficulty considering perspectives other than their own. Decision-making is often driven by immediate self-interest.',
+//         },
+//         '2': {
+//             'title': 'Socialized Stage (Diplomat)',
+//             'desc': 'In this stage, individuals begin to internalize societal norms and values. They prioritize social harmony and conformity to group expectations. Identity is largely defined by external roles and relationships, and individuals may struggle with autonomy and self-expression.',
+//         },
+//         '3': {
+//             'title': 'Self-Aware Stage (Expert)',
+//             'desc': 'At this stage, individuals develop a greater awareness of their own thoughts, feelings, and motivations. They become more reflective and critical thinkers, capable of considering multiple perspectives and questioning established norms and beliefs. Identity is more self-defined, and individuals take responsibility for their own growth and development.',
+//         },
+//         '4': {
+//             'title': 'Self-Transforming Stage (Strategist)',
+//             'desc': 'In this stage, individuals transcend the limitations of the previous stages and embrace complexity and ambiguity. They are open to change and personal growth, and they integrate diverse perspectives and experiences into their worldview. Identity becomes more fluid and inclusive, capable of holding paradoxes and contradictions.',
+//         }
+//     } 
 
 // Emergent Cyclical, Kohlberg, Gilligan/Wade, Maslow, Aurobindo, Chakras, Great Chain, Tree of Life

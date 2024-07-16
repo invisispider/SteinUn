@@ -5,13 +5,10 @@ import { pageSelections } from '@/composables/landing-pages';
     <div>
         <!-- <h5>Repeat: Love Is Okay</h5> -->
         <p>🙏🏿 Thank you for Being 🙏🏿 with us. 
-
-    <!-- <div class="home-logo"> -->
-    <!-- </div> -->
-            This is our living website.
-            <span class="pedantic">Use top panels to open site menu, change color
-            theme, and browse this orienting information (try arrow keys).</span> 
-            </p>
+            This is our living website.</p>
+            <p class="pedantic">Use top panels to open site menu, change color
+            theme, and browse this orienting information (try arrow keys).</p> 
+            <!-- </p> -->
 
         <h2>Welcome Information:</h2>
         <div class="kill-birds">
@@ -19,7 +16,7 @@ import { pageSelections } from '@/composables/landing-pages';
                 :style="{ display: selection.name=='Namaste'?'none':'default'}" 
             >
                 <router-link :to="'/landing/'+selection.name">
-                <i class="material-icons bird">{{ selection.icon }}</i>{{ " "+selection.name }}
+                <i class="material-icons bird">{{ selection.icon }}</i><span>{{ " "+selection.name }}</span>
                 </router-link>
             </div>
         </div>
@@ -66,9 +63,13 @@ import { pageSelections } from '@/composables/landing-pages';
     // width: 100%
     align-items: center
     .bird
-        // display: none
         margin: 10px
+        justify-content: center
         // :has(:not(i))
             // display: none
+        a 
+            display: inline-flex
+            span
+                align-self: center
 
 </style>
