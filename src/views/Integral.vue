@@ -1173,19 +1173,8 @@ const toggleState = (sel: string) => {
     </div>
 </template>
 <style lang="sass">
-.integral-wrapper
-    display: flex
-    flex-direction: column
-    align-items: center
-    // max-width: 100vw
-    padding-block: 3em
-    p
-        text-align: left
-        text-indent: 3em
-        margin-inline: 1.3em
-    @media screen and (min-width: 1000px)
-        p   
-            margin-inline: 12%   
+
+              
 .btn-group
     position: fixed
     bottom: 0
@@ -1203,6 +1192,21 @@ const toggleState = (sel: string) => {
     @media screen and (max-width: 350px)
         button
             font-size: 0.7em
+.integral-wrapper
+    display: flex
+    flex-direction: column
+    align-items: center
+    // max-width: 100vw
+    padding-block: 3em
+    p
+        margin-inline: 1.3em
+        max-width: 85ch
+        text-align: justify
+        text-justify: inter-word
+        text-indent: 3em
+    // @media screen and (min-width: 1000px)
+        // p   
+            // margin-inline: 12% 
 .home-changer
     justify-content: center
     // position: fixed

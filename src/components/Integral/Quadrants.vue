@@ -1,15 +1,21 @@
 <script setup lang="ts">
-import {ref} from "vue"
+import {ref, computed} from "vue"
+import { useMonitorSize } from '@/composables/monitor-size';
 type QuadRef = 'base'|'up-down'|'left-right'|'upper-left'|'upper-right'|'lower-left'|'lower-right'; 
+const sizes = useMonitorSize();
 const quadRef = ref('base')
 const changeQuad = (sel: QuadRef) => {
     quadRef.value=sel
-    // let tempEl = document.getElementById(sel);
-    // if (tempEl) tempEl.scrollIntoView();
-    // if (tempEl) 
     window.scrollTo(0, 300);
 }
-const emit = defineEmits('next')
+const screenBig = computed(()=>{
+    if(sizes.browserWidth.value > 475) {
+        return true
+    } else {
+        return false
+    }    
+})
+const emit = defineEmits(['next'])
 </script>
 <template>
     <div class="quads-container">
@@ -781,10 +787,9 @@ const emit = defineEmits('next')
                 environment surrounding you. It is a mental construction based 
                 off of sense information, memory, and assumption, catering to what you 
                 focus on and are aware of. We as minds never experience anything but mind. 
-                Our stories are the only sense that is made of reality, our understanding 
+                Our stories are the only sense that is made of reality. Our understanding 
                 is the only knowledge in existence. The material world is a sort of mental 
-                abstraction that we deduce from experience, organized entirely by the history 
-                and priorities of the development of human thought through Levels (Altitudes).
+                abstraction that we deduce from experience.
             </p>
             <h3>We Live in a Simulation</h3>
             <p>
@@ -806,7 +811,7 @@ const emit = defineEmits('next')
                 we know is an illusion generating itself for no reason.
             </p>
             <p> Integration of these opposing
-                perspectives seems to result in the reality that we experience. Because I want to be here, 
+                perspectives seems to result in the reality that we experience. Because I am here, 
                 my brain generates thoughts and feelings in response to signals I recognize as patterns, and 
                 I choose between patterns to generate motivated thought, and this provokes the physical body 
                 of a person in an environment to do actions that will impact the interior thoughts and feelings
@@ -820,7 +825,7 @@ const emit = defineEmits('next')
             </p>
             <p>
                 Mastering the interface, Quadrants, tends to mark milestones 
-                of maturity in Levels. In the Third Tier Levels or spiritual States, nondual, union, or oneness, a 
+                of maturity in Levels. In the Third Tier Levels or spiritual States, nondual union, or oneness, a 
                 deeper, higher, more supreme or true or absolute reality is discovered which is either described in 
                 terms of some poem about an owl covered in snow, or in a way that can be paraphrased as transcending
                 the Quadrants. I and the father are one, etc. 
@@ -854,7 +859,7 @@ const emit = defineEmits('next')
                 force. It isn't the case that your choices don't "matter" because your destiny is
                 calculated by physics. That's like saying love is boring because it's calculated by 
                 reproduction. Category error. That your choices matter is an aspect of nature, 
-                a part of the entire physics of the kosmos, if you care, and if you say so. 
+                a part of the structure of the kosmos, if you care, and if you say so. 
                 You're the sole being that certainly makes choices, you're the closest thing 
                 to certainty there could be. 
                 From this perspective, and objectively, human choice is the most powerful force 
@@ -865,9 +870,11 @@ const emit = defineEmits('next')
                 large, but has no desire to 
                 do anything and must fall and dissipate forever. An ant can lift fifty times its own 
                 weight, but it can't stop a human toddler from mangling it. I can smush the ant, but I can also not 
-                smush it. That's power. I can say mean things to you and hurt your feelings, but 
+                smush it. That's power. 
+                <!-- I can say mean things to you and hurt your feelings, but 
                 anything I could think to do with a quasar, if it were even possible, would annihilate 
-                myself as well. If anything were capable of getting a quasar 
+                myself as well.  -->
+                If anything were capable of getting a quasar 
                 to harm you without harming me, I have to imagine human choice would be involved.
                 Only human choice has the physical ability to accomplish purposeful things.
             </p>
@@ -934,7 +941,7 @@ const emit = defineEmits('next')
             <h3>The Conscious Kosmos</h3>
             <p>
                 Expand your notion of the universe to include 
-                this notion of consciousness, of holon interiority, and you start to see the Integral 
+                consciousness, or holonic interiority, and you start to see the Integral 
                 kosmos. Just simply, you're the kosmos, all of it. Do you think it's a coincidence 
                 that you're you, on this planet, in this time, interacting with me right now? Do you think 
                 it's some sort of absurd, ridiculous comedy of errors that produced 
@@ -957,30 +964,46 @@ const emit = defineEmits('next')
                of nothing, as we observe. Watch what it does next. I'm watching. Go.
             </p>
             <h3>Evolutionary Impulse</h3>
-            <p>The universe tends, or leans, 
+            <p>The universe falls and dissipates, but as a kosmos, it also naturally falls upward. It ascends and develops, 
                towards higher Levels. As seen here. Just due to the nature of reality, a planet like Earth would 
                fall into having life, and eventually life would very likely fall into sentience 
                and civilization. Why would a universe or planet act this way?
             </p><p>
-               The prevailing scientific perspective that the origin of 
+               The prevailing scientific perspective is that the origin of 
                life on Earth, the evolution of life towards more progressive forms, 
                life becoming self aware, self awareness forming civilization - all happen on accident 
                for no reason just because. This all 
                occurs in a cold, dead, empty, remote, lifeless, unconscious, probabilistic universe - 
                it's a miracle! A
                total accident, huge fluke. A coincidence which comes but once in billions of years 
-               of billions of galaxies. 
+               in billions of galaxies. 
             </p><p>
                 What a disappointment it would be to learn that there is no miracle, 
                that everything happening is precisely what a functional universe does mechanically, 
                that the kosmic absolute, the central organizing law, is unfolding Levels 
                of social holons whose only commonality is an innate tendency to evolve. In other 
-               words, it's all about love.
-               There's no scientific reason to believe that whatsoever other than everything in 
+               words, it's all about love. Eros. Ascending.
+               There's no scientific reason to believe that whatsoever, other than everything in 
                existence.
             </p>
-            <p>And you may feel frustrated or confused. You may ask why, why does the kosmos 
-                always do this? Where are the tiny, oh so tiny building blocks and imaginary waves 
+            <h3>⛪✝️</h3>
+            <p>Whether you see that the Kosmos creatively evolves as a
+                matter of fact, or believe in a God who performs miracles, is nothing more than a matter of your Level. 
+                Rationality (Level 5) does not believe, it checks. It doesn't claim ownership of truth or have authority 
+                over it. Truth is the authority, as it would be if there were a God.  
+            </p>
+            <p> 
+                You can't have your cake 🍰 and eat it too. If there is God, 
+                then God is precisely this, not a story about this, not whatever some person said once. It's no 
+                miracle if God is real and did this. It's nature. Just 
+                how things are. Of course, there wouldn't be any conflict between religion and reality, 
+                natural and supernatural. If God creates the universe, then science studies God. 
+                A higher-Level Judaism, Christianity, or Islam <em>is</em> interested in the nature of reality.
+                The Level of Personality (original sin) believes whatever feels right. 
+            </p>
+            <p>
+                So anyways, you may ask, why does the kosmos 
+                do this? Where are the tiny, oh so tiny building blocks and imaginary waves 
                 that prove this true or false? I'm some idiot, I don't know. But let's have a look. 
                 You have all the Levels. Atoms. Molecules. Cells. Mind. So you tell us. Why are you doing this?
             </p>
@@ -991,37 +1014,41 @@ const emit = defineEmits('next')
                 person that I apparently am? 
             </p><p>
                 Let's answer all of them. The structural 
-                nature of reality is that holons organize into higher Level holons. A higher Level 
-                holon means it is constructed of lower holons. As these holons organize 
-                or evolve over the history of the universe into conscious organisms, 
-                those creatures internally organize into sentient mental beings, experiencing individuality
+                nature of reality is that lower-Level holons organize into higher-Level holons. 
+                Once holons evolve over the history of time into conscious organisms, 
+                then into sentient conceptual social beings, they experience individuality
                 within a collective from internal and external perspectives. If those individuals aren't 
                 treating one another right, maybe they ought to aim higher.
             </p>
-            <h3>Consciousness of Atoms</h3>
+            <h3>Instinctual Consciousness</h3>
             <p>
                 To illustrate the evolutionary nature of the Quadrants, it is essential 
                 that we understand that the interiority of Quadrants goes <em>all the way down.</em>
                 This is not to suggest that atoms are conscious like we are. The nature of what should 
                 be considered "consciousness" is a matter of Levels. As complex mental beings, our 
-                interiority is readily self-apparent. I think therefore I am. What about a cat?
-                A cat doesn't think, but it lives, and it has a personality of sorts. Does the cat 
-                have no soul? Is it just anthropomorphic fallacy to think that a cat has interiority?
-                Of course not. We know that we share the brain functions of emotions and instinctual 
-                response with animals, so as we climb down the kosmic evolutionary ladder, we find 
+                interiority is readily self-apparent. I think therefore I am. But what about a cat? 🐈‍⬛
+            </p>
+            <p>
+                A cat doesn't think, but it might "am" somewhat, and it has a personality of sorts. Does the cat 
+                have no soul? 😺 Is it just anthropomorphic fallacy to think that a cat has interiority?
+                We know that we share the brain functions of emotions and instinctual 
+                response with "higher" animals, so as we climb down the kosmic evolutionary ladder, we find 
                 that cats are conscious, but in a categorically different way than humans are.
-                What about plants? Do plants experience in some way? Well, they respond to stimuli.
+            </p>
+            <h3>Atomic Consciousness</h3>
+            <p>
+                What about plants? 🪴 Do plants experience in some way? Well, they respond to stimuli.
                 They respirate. Is there a sort of soul in all of life? Well, we can say that there 
-                must be more "soul" or consciousness, within the experience of being a plant, 
+                must be more "soul" or consciousness, in the experience of being a plant, 
                 than there is in the experience of being a rock or a molecule. And finally, I must 
                 insist that while a rock, or a molecule, shows nothing resembling what we would consider 
-                consciousness, would you not accept that the material existence of a thing lends it
+                consciousness, perhaps we can accept that the material existence of a thing lends it
                 more of a sense of informational existence than nothing at all? And so, the truly 
                 holistic, Turquoise, or ultimately Integral view of reality is illustrated below.
                 A stack of Levels in four Quadrants.
             </p>
             <h3>Levels of Quadrants</h3>
-            <table>
+            <table class="int-table disappear" v-if="screenBig">
                 <tr>
                     <th>Analogy</th>
                     <th>Level</th>
@@ -1078,8 +1105,9 @@ const emit = defineEmits('next')
                     <td>Universe</td>
                 </tr>
             </table>
+            <p class="pedantic" v-else>Turn device horizontal to view</p>
             <h3>The Visible Spectrum</h3>
-            <table>
+            <table class="int-table disappear" v-if="screenBig">
                 <tr>
                     <th>Analogy</th>
                     <th>Level</th>
@@ -1180,12 +1208,13 @@ const emit = defineEmits('next')
                 <tr class="t-infrared">
                     <td>Infrared</td>
                     <td>1</td>
-                    <td>Fusion of Quadrants</td>
-                    <td>Genetic Default Personality</td>
+                    <td>Quadrant Fusion</td>
+                    <td>Phenotypic Personality</td>
                     <td>Interaction</td>
                     <td>Survival Clans</td>
                 </tr>
             </table>
+            <p class="pedantic" v-else>Turn device horizontal to view</p>
             <h3>Developer Kosmos</h3>
             <p>Carrying this narrative forward, we're assuming that what is happening here is in every 
                 respect just naturally how the kosmos works. We don't live in a kosmos that works 
@@ -1256,12 +1285,15 @@ const emit = defineEmits('next')
                 are atoms, which interact to form molecules. We have already traversed an 
                 incomprehensible scale, but molecules can be assembled into organic forms, 
                 which can be cells, such as the cells of your body, your brain cells, even.
-                <!-- And it just so happens that the stuff of the universe at each of these scales
-                is able to interact at these utterly different Levels, each with different rules. -->
                 Each Level includes the previous Level into a
-                greater system of order. Instinct Leveled towards more complex, self-aware organisms. 
-                Awareness Leveled towards communication. Communication Leveled towards social organization. 
-            </p><p>
+                greater system of order. Instinct Leveled up towards more complex, self-aware organisms. 
+                Awareness Leveled up towards communication and social organization. 
+                At this Level of organization, 
+                Level 6 Green Meme, global communications technology grants an individual immediate access to humanity's general information.
+                This is Level 7, where we organize that information into something coherent. Once we're 
+                organized, we'<link rel="alternate" href="atom.xml" type="application/atom+xml" title="Atom">l all be on the same page about where we're heading.
+            </p>
+            <p>
                 If you move your hand, you move the atoms of your hand,
                 you make it the case that Earth produces people who move their hand, and you change 
                 the entire universe into one in which a person moved their hand there. All at once. No 
@@ -1277,18 +1309,37 @@ const emit = defineEmits('next')
                 express pattern repetition. There are countless molecules, 
                 countless stars, countless people, countless perspectives, countless 
                 brain states. Each has statistical differences, but each conforms 
-                to the general rules that define it: every star is different, but every star 
+                to the general rules that define it. Every star is different, but every star 
                 is similar enough to be called a star. This is the <b>Individual</b> and <b>Collective</b> of 
-                nature, found in every instance of reality, on every occasion. Every horse is 
-                unique, but is also just a horse. Every feeling is unique, but can be named. It's not 
-                that everything belongs to categories, but that category patterns (memes/archetypes/ideals) generate the instances 
+                nature, found in every occasion of reality. 
+            </p>
+            <h3>Categories and Instances</h3>
+            <p>
+                Every horse is unique, but is just another horse. If you point out a single horse 
+                to me, I can now identify horses quite succesfully. They're all like that.  
+                It's not that using nouns to name things forces them into conceptual groups, but that 
+                everything in reality is replicated from the same fundamental memes. In this sense, 
+                reality is profoundly uncreative, but thankfully clumsy. 
+            </p>
+            <h3>Conjuring Words</h3>
+            <p>To validate Magenta, the "horse" 
+                word is a magic spell which binds the animal to the horse spirit's form. Level 2 identifies 
+                the "horse" ideal readily, even if it can't reasonably explain how. 
+                Much later, Orange science can tell us exactly what defines a horse, and can explain 
+                rationally how those traits come to be from genotypes. No matter which Level, there is 
+                a horse instance and a horse category, and this is true of anything that can be named, which is 
+                everything possible to discuss.
+            </p>
+            <p> 
+                Category patterns (ideals/archetypes/nouns) generate the instances 
                 which are apparent. There is nothing in 
-                reality that doesn't have a collective and individual aspect. There is no plant 
-                without a species, no person that isn't a primate, no house that's safe from planetary 
-                annihilation. Everything in reality is 
-                self-evidently unique, and uniqueness of course can't exist within the generative 
-                constraints. Quadrants create these 
-                apparent "paradoxes." There is no spoon. 
+                reality without a collective and individual aspect. There is no plant 
+                without a species, no person without family, no books without publishers,
+                no melody without harmony. 
+                There aren't a plethora of substance-generating holons: it's always 
+                molecules. There is no Life or Mind that is not arising from, and built of, molecules. 
+                Everything in reality has individual features and details, but 
+                there is no true uniqueness within the generative constraints of reality.
             </p>
             <h3>External Collectives: Lower Right</h3>
             <p>
@@ -1313,18 +1364,20 @@ const emit = defineEmits('next')
                 total of human knowledge and perspective is infinitely superior to that of the 
                 individual, but unfortunately, communication greatly limits our ability to share, 
                 and to receive. We each walk around with a tiny, hazy pinhole sliver of the collective comprehension.
-            </p><p>
+            </p>
+            <h3>Whole Individual vs Collective Part</h3>
+            <p>
                 Extraversion and introversion outcomes demonstrate 
                 that the communicated views of an incidental collective are neither clearly superior nor 
-                inferior to that individual's own native capacities. The integrated 
-                mind is ambidextrous; the individual and collective supplement one another.
+                inferior to any individual's own native capacities. Individualism and Collectivism 
+                are not competitors. They supplement one another. The integrated mind is ambidextrous.
                 To be smarter, be easier. To be easier, be smarter.
             </p>
-            <h3>I Am The Collective</h3>
-            <p>
-                I learn by reading books and being educated through relationships, and commercial and public interests, 
-                in their 
-                language, with their politics, technology, and style. Only then can I apply that 
+            <!-- <h3>I Am The Collective</h3> -->
+            <!-- <p>
+                I learn from instructions, examples, and relationships, motivated by personal, public, 
+                and commercial interest, 
+                in their language, with their technology and rules. Only then can I apply that 
                 abstract understanding to my 
                 own personal use cases and develop my own divergent aesthetic, and that is only 
                 received well if my divergence reflects a collective trend. About half of reality
@@ -1336,10 +1389,11 @@ const emit = defineEmits('next')
                 we must exist in a universe and world that produces advanced brain functions, 
                 and then socially teaches those brains how to reflect upon nature mentally. 
             </p>
-            <p>Knowing this, it makes you wonder what you might be missing out on.</p>
+            <p>Knowing this, it makes you wonder what you might be missing out on.</p> -->
             <!-- <p>Does society make you go to work, or do you choose to? Another paradox. Individual and 
                 collective, two sides of a coin. Your work or non-work is society.
             </p> -->
+            <h3>Novelty and Diversity</h3>
             <p>
                 <!-- This is why the cultural experience of "we," and the systemic comprehension
                 of the "its," are considered the lower half of reality.  -->
@@ -1358,30 +1412,33 @@ const emit = defineEmits('next')
                 its relationship with other molecules. Here, we can point out a subtle misunderstanding 
                 which is common. The molecule, like everything, has a holonic nature. There is a 
                 special sort of "collective" (social holon) formed by atoms grouping together into molecules, and these 
-                molecules form a sort of collective to make substances. In the Integral view, these are 
-                Levels, <em>not</em> Quadrants. The Lower Right quadrant of an Upper Right atom is not a molecule
+                molecules form a sort of collective to make cells. In the Integral view, these are 
+                Levels, <em>not</em> Quadrants. The Lower Right collective of an Upper Right atom is not a molecule
                 or a chair or everything inside the planet's atmosphere,
                 but the universe itself, or whatever you consider the entire collective of atoms.
             </p>
             <h3>Social Holons at Every Level</h3>
             <p>
-                Atoms, molecules, substances, cells, thought patterns, are Levels 
+                Atoms, molecules, cells, tissues, organs, instincts, and self-concepts are Levels 
                 of material reality that compose themselves holonically - by including individual wholes as parts into 
                 individual wholes which each themselves have collective social dynamics at each Level.
                 At the Level of molecules, we can 
-                see that molecules exert forces and have interactions with one another, they can align into 
-                magnetic or chrystalline configurations, they may collectively have a net charge, mass, 
-                alkalinity, they exhibit material states and flow dynamics. At the Life Levels, we 
+                see that molecules exert forces and have interactions with one another. They can align into 
+                magnetic or chrystalline configurations, they may exchange atoms and ions with one another, 
+                they exhibit material states and chemical dynamics.
+            </p>
+            <p>
+                At the Life Levels, we 
                 may observe that matter has evolved this special band of Levels that behave utterly 
                 different from how other substances behave - <em>it's alive!</em> Every creature has organic structures, and indeed, consciousness, 
                 catering to its role in a web of life or food chain. Creatures behave according to 
                 instincts, which are granted by genes, which result from web of life and 
                 food chain dynamics. At the Mind Levels, we see how genetic instinct delivered the material 
-                molecules of Earth through Life Levels, up to this point where we talk and scheme.
+                molecules of Earth through Life Levels, up to this point where we talk and think.
             </p>
             <h3>What is a Man?</h3>
             <p>
-                A similar temptation is to identify the collective of an individual as the Earth, or the 
+                Before thinking this over carefully, you may be tempted to identify the collective of an individual as the Earth, or the 
                 Universe, because it's bigger and it contains me, or to identify the biosphere as the collective of civilization. Silly notions 
                 like that.
             </p>
@@ -1413,17 +1470,20 @@ const emit = defineEmits('next')
                 noted that nondual enlightenment is about as frequent among people today as this trend suggests, 
                 being the highest Level. Since higher 
                 Levels are literally composed of special configurations (social holons) of lower Levels, there 
-                will always be infinitely more low-Level holons than high, at scales of extraordinary magnitude.
+                will always be staggeringly more low-Level holons than high, at scales of extraordinary magnitude.
                 It's a pyramid scheme. 👁️  
             </p>
             <h3>🌍 You're not my collective. 😿</h3>
             <p>
-                While it is 
+                The Earth is a social holon in exactly one sense: its biosphere is the collective of 
+                cellular lifeforms. While it is 
                 intuitive to think of Earth as our collective, in fact, it is an utter, 
                 total coincidence to everyone but the molecule pioneer forefathers who long ago somehow became proteins, 
                 and those proteins which learned to use fire to cook food,
                 that I and my collective are  
-                 on the surface of this planet heap. Likewise, it seems to me from my perspective utter coincidence 
+                 on the surface of this planet heap.
+            </p><p> 
+                Likewise, it seems to me from my perspective utter coincidence 
                 who I am and when and where I'm living. It has nothing to do with anything which one I am. 
                 Oh, sure it does. As molecules, I'm one with everything. The Mind is the one I refer to. It 
                 has learned Quadrants from social communication, and now it wonders why it is this one.
@@ -1443,29 +1503,28 @@ const emit = defineEmits('next')
                 has been exposed to since infancy. These stories of your life are the love you can feel, and you can feel 
                 it because it was modeled for you. What you know creates you. It isn't a coincidence to you that 
                 you're this one. It's very special and important to be the one you are, unless you think it isn't. 
-                You're The One who acts out your perspective and values in real life. You're the response 
-                to the injustice you see. You're the only possible solution. You're our only hope. That's 
+                You're The One who acts out your perspective and values in real life. You're the reaction to this. 
+                The only possible solution. You're our only hope. That's 
                 the most important and meaningful thing in existence, so far.
             </p>
-            <h3>Ad Nauseum: thank me later</h3>
+            <h3>Ad Nauseum (thank me later)</h3>
             <p>
                 Collective atoms are the universe. Earth is a coincidental molecular heap 
                 in the solar system, coincidentally heaped into 
                 the Milky Way 🍫. That's just apparently what molecules do. I'm not part of Earth, 
-                my molecules are part of Earth. I'm an ego person, whose collective is society and culture. 
+                my cells are part of Earth. I'm an ego person, whose collective is society and culture. 
                 I'm not a Collective 
                 of my cells (the cell collective is the biosphere), I'm a Level of my 
                 cells. Atoms, molecules, and cells are Levels 
                 of people, and likewise people are extremely rare potential Levels for atoms, molecules, and cells. 
                  
             </p><p>
-                The atoms of my body 
-                are Individual pieces of universe, and are also a holonic Level of myself. 
-                My molecules are Individual bits of the planet Earth, or a chemical configuration,
-                and also a holonic Level of myself. My cells are Individuals within the 
-                biosphere of life on Earth, also a holonic Level of my tissues and organs and brain and me. 
-                My body is part of the 
-                animal kingdom, which is a Level of evolution in my genes.
+                The atoms and molecules of my body 
+                are Individual pieces of universe, and are also holonic Levels of myself. 
+                My cells are Individual bits of Earth's biological life, 
+                and also a holonic Level of myself. 
+                My body is a replication of the homo sapiens genotype, so its collective is 
+                my species. Primate, mammal, vertebrate, and animal are Levels of my genes.  
             </p><p>
                 My self-aware human brain puts me at 
                 an extremely rare, advanced Level that is not found elsewhere in the Universe, 
@@ -1475,44 +1534,46 @@ const emit = defineEmits('next')
                 the universe. The collective of us, humanity, is not Earth or the 
                 Universe, but rather, that <em>is</em> the people collective, or collective consciousness.
             </p>
-            <h3>The Chicken and the Egg</h3>
-            <p>A question that insists on the discernment of Upper and Lower:
-                they came together. It started laying and in that moment became "chicken".
+            <h3>🐔 Chicken and Egg 🥚</h3>
+            <p>A question that insists on the discernment of Upper and Lower Quadrants.
+                They came together. The first chicken to lay chicken eggs was the first 
+                chicken. 🍳 🍗
             </p>
             <p>
-                You may think of yourself as an individual, 
-                isolated self. This way of self-conceptualizing was taught to you 
-                by others. You learned by imitation. Your concepts come from 
+                We think of ourselves as individual, 
+                isolated selves, and we all have that in common. This self-concept was taught to us 
+                by the collective. 
+                <!-- We learn by imitation. Your concepts come from 
                 literature and media, from family and peers, from traditions 
                 and education systems, from brain chemistry, resulting in personality. The language you think and communicate in was taught 
-                to you. You continue the story of your family, your country, the 
-                people of the world, you represent the nature of consciousness itself.
-                From the perspective of everyone else in the world, your interior is nothing more 
-                than an abstract assumption. Something which is real to you and nobody else 
-                would seem to be the least real thing there could be, and so the internal experience 
+                to you.  -->
+                Ego is a story, but also a character in the larger story of a family, a country, the 
+                people of the world, homo sapiens, and Life itself. We are a collective of protagonists.
+            </p>
+            <!-- <p>
+                For everyone else, your interior is nothing more than an abstract assumption, just 
+                as theirs is to you. A thing which is real to you and nobody else 
+                is unreal, and so the internal experience 
                 we call "my reality" is in fact the only thing that 
                 could possibly <em>not</em> be real.
                 But of course, here you are, and it has four Quadrants.  
-            </p>
+            </p> -->
             <h5 class="pedantic" @click="changeQuad('upper-left')" style="cursor: pointer;">NEXT</h5>
-
         </template>
         <template v-else-if="quadRef==='upper-left'">
             <h1 id="upper-left">Upper Left: Interior Individual</h1>
-            <p>Your thoughts, feelings, physical sensations, the experience of being an 
-                individual person. The Upper Left can only be known by the 
-                individual, and is composed of things that are directly experiential in nature, so cannot
-                be communicated or conveyed in an absolute sense. Upper Left has no physical existence, 
-                as identity, concepts, values, dreams, aesthetics, and guesses, for example, are mental, cerebral, 
-                abstract, or experiential in nature. 
+            <p>Thoughts, feelings, consciousness, and physical sensations  
+                directly experienced by the individual. The UL cannot
+                be conveyed in an absolute sense, and is physically unreal. Examples include a 
+                dream, a sense of familiarity, and sexual attraction. 
             </p>
             <h3>UL Applications</h3>
             <p>
-                The Upper Left can be developed through meditation, contemplation, introspection, and self-reflection.
+                The UL can be developed through meditation, contemplation, facing fears, and creativity.
                 Psychology offers us pathways to insight, as spiritual disciplines reveal astounding domains of 
                 the unconscious. Our general personal style, tone, temperament, type, mood, or feel are all 
-                aspects of our Upper Left that spill across into the Lower Left cultural domain and become 
-                descriptive of our individual character. Experience is the Upper Left of our Upper Right brain 
+                aspects of our UL that spill across into the LL cultural domain and become 
+                descriptive of our individual character. Experience is the UL of our UR brain 
                 functions. 
             </p>
             <h3>UL Health</h3>
@@ -1524,38 +1585,37 @@ const emit = defineEmits('next')
             </p>
             <h3>UL Pathology</h3>
             <p>
-                An overly strong preference for the Upper Left may result in narcissism, isolation, being socially 
-                perceived as strange, overly cerebral, or unmannered. Reflection and introspection can result in  
-                depression, worsened by having a strong sense of personal morality that is misunderstood 
-                as suspicious because it is well constructed and considered and thought out. A lack of 
+                An overly strong preference for the UL may result in narcissism, isolation, being socially 
+                perceived as strange, intense, or unmannered. Excess introspection can result in  
+                depression and alienation. A lack of 
                 focus on external and collective Quadrants can result in 
                 a lack of personal success and interpersonal connection.
             </p>
-            <h3>Stages in the UL</h3>
+            <h3>Levels in the UL</h3>
             <p>
                 Interior individual consciousness develops through a holonic progression of 
                 stages of self conceptualization. Each stage builds upon the previous self concept via integration
-                of prior assumptions into a new pattern. We can visualize it like zooming out a perspective. Our subjective
+                of prior assumptions into a new pattern. Our ordinary
                 perspective transforms by zooming out to see competing perspectives, forming a new 
-                perspective which now sees the previous perspectives as existing among many. We can then 
+                perspective which integrates the previous parts into a synthesized whole. We can then 
                 integrate those perspectives into a meta-perspective which transcends, but includes, the previous
                 perspective. Each Level creates a new subjective reality by including the previous subjective
                 realities as objects of awareness.
             </p>
             <h3>Evolving Four Selves</h3>
             <p>
-                All Altitudes unfold according to this holonic, or dialectic, pattern, but as you can see, this 
-                is complicated, so in our simplified mini-model, we can say that lower Levels experience Upper
-                Left as a Personality in response, or reaction, to reality in the present. Through experience, the 
-                Personality develops a cohesion of its range of moods and tones, some awareness of 
-                the mechanisms of the objective world, and begins to see themselves as an Ego: a rational agent 
-                telling a personal story over the course of a lifetime in relationship with others and with history.
-                This Ego begins to gain awareness of fundamental uniting truths, and the invisible forces underlying 
-                the mental activities, and so starts the course of developing towards a total Psyche, or psychic 
-                being. This can then proceed through transcendental state practice into an affinity with the entire 
-                kosmic interior itself, or pure Consciousness without subject or object. In each case, it is a matter
+                All Altitudes unfold according to the holonic, or dialectical, process, but as you can see, this 
+                is complicated, so in our simplified mini-model, we can say that lower Levels experience UL 
+                as a <b>Personality</b> in response, or reaction, to reality in the present. Through experience,  
+                Personality develops a cohesion of moods and priorities, and an awareness of 
+                the causal mechanics of the world. It begins to recognize itself as <b>Ego</b>, the reasonable agent 
+                experiencing a personal story over the course of a lifetime in relationship with others and history.
+                Ego begins to gain intuitive awareness of fundamental uniting abstractions, and the invisible 
+                forces underlying mental activities, and so starts developing towards a total <b>Psyche</b>, or psychic 
+                being. An integrated Psyche can then proceed through transcendental State practice into an affinity with the entire 
+                Kosmos, or pure <b>Consciousness</b> without subject or object. In each case, it is a matter
                 of healing the cognitive dissonance of a fundamental split in reality, or duality of the mind, by embracing 
-                and integrating the supposed opposing side. The Tao is just all four at once.
+                and integrating the supposed opposing side. The Tao is all four at once.
             </p>
             <h5 class="pedantic" @click="changeQuad('lower-left')" style="cursor: pointer;">NEXT</h5>
 
@@ -1565,35 +1625,37 @@ const emit = defineEmits('next')
             <p>
                 This is the domain of culture and interpersonal relationships. 
                 Every person is taught to be a person by their parents, their peers, their educators
-                and guardians. A large part of the personality and self concept is not a unique creation, but a 
+                and guardians. The personality and self are not original creations, but a 
                 system of mimmicked habits, or memes, consciously and unconsciously taught to us by culture. 
                 The heros and villains, celebrities, and important individuals 
                 in our lives become a sort of collective story, an overall narrative involving a team of relevant
                 characters, the "We". The We ultimately "writes the history books", or decides what is important, 
                 what is moral, what is a true accomplishment, and what is worthy of looking at. Through the lens of 
-                the Lower Left Quadrant, we see that reality is a network of relationships, and we aim to maximize 
-                our role in that network. Thus, feeling is the cognitive function of the lower left.
+                the LL Quadrant, reality is a network of relationships, and we aim to maximize 
+                our role in that network. 
             </p>
-            <p>If we consider for a moment the extraverted individual in relationship, we see that they have 
-                less of a preference, perhaps even a fear, of their own isolated depths, and instead, they 
-                experience reality through communicating with others, and conceptualizing themselves as part of 
-                a group, rather than an individual, achieving their goals through persuasion of the group rather 
-                than personally confronting the problem. While the 
-                introvert experiences the UL as freedom and LL as constraint, the extravert
-                experiences the LL as fullness and UL as loneliness. The extravert feels more whole or real in a group because their 
+            <p>The extraverted individual has 
+                less of a preference, perhaps even a fear, of their own isolated depths, called loneliness
+                and boredom. They instead prefer to 
+                experience reality through communication, conceptualizing reality as 
+                a group, and achieving goals through persuasion, manipulation, and charisma, based on the 
+                solidarity of shared understanding, affinity, and values.
+
+                Introverts experience UL as freedom and LL as constraint. Extraverts
+                experience UL as emptiness and LL as fullness. The extravert feels more whole or real in a group because their 
                 mental self is collective. In the case of a dependent relationship, a beaurocratic pawn, a cultish zealot,
                 the collective identity is seen as preferable to the personal, but a LL preference is also 
-                expressed by socialites, philanthropists, managers, teachers, and artists.
+                expressed by socialites, philanthropists, managers, teachers, and influencers.
             </p>
             <h3>LL Applications</h3>
             <p>
-                The collective interior is the domain of communication, conflict resolution, public relations, social and literary criticism, politics, motivation, persuasion,
+                The collective interior is the domain of communication, team building, public relations, social and literary criticism, politics, motivation, persuasion,
                 sales, marketing, and being an overall cool, interesting, appropriate and likable person. LL is often 
                 synonymous with "people skills" or "soft skills". 
             </p>
             <h3>LL Health</h3>
             <p>
-                A preference for the LL perspective will result in a sense of connectedness, and a tendency 
+                LL preference will result in a sense of connectedness, and a tendency 
                 to attract opportunities, praise, acknowledgement, and consideration. Focusing on cultural 
                 realities and engaging interpersonally may help a person get out of their own head and feel 
                 like a part of something greater, as well as offering great diversity of perspectives.
@@ -1612,28 +1674,36 @@ const emit = defineEmits('next')
         </template>
         <template v-else-if="quadRef==='upper-right'">
             <h1 id="upper-right">Upper Right: Exterior Individual</h1>
-            <p>Regardless of what you believe is happening, we can all agree objectively that experience  
+            <p>Regardless of what else might be happening, we can all agree objectively that experience  
                 occurs when a physically material human body with an advanced primate brain generates 
-                a characteristic waking brainwave pattern. Whatever happens to that brain directly produces
+                a characteristic waking brainwave pattern. Whatever happens in that brain directly produces
                 the experience that you experience. In common speech, we use the word "I" to refer to both our 
-                mind, and our body. We don't call the body "It" because we understand ourself to be that body, 
-                as well as also being the mind.
+                mind and body. You can remove most of your body and still be "I", so it's funny that most of us 
+                refer to our brain as "It". Classic mental vehicle behavior.
             </p>
             <p>
-                However, the brain really isn't the "I", from the experience of the UL mind. This is to say, we 
-                did not even realize that awareness was generated by the brain until relatively recent.
-                At present, even the best expert in the world would have a tough time making any sense out of
-                the relationship between the physics and chemistry of the brain and the subtle operations of the psyche.
-                Nobody looks at your physical brain to understand what you are thinking. The UR perspective 
-                prioritizes the sensing cognitive function, or directly experiencing physical 
+                The brain really isn't "I", from the experience of itself in the UL Mind. We 
+                didn't even realize consciousness was generated by the brain until relatively recent.
+                At present, the best expert in the world has a tough time making any sense of
+                the relationship between the physics and chemistry of the brain and the subtle operations of 
+                the subjective Psyche.
+                Nobody looks at your physical brain to understand your thoughts. The UR perspective 
+                prioritizes the Sensing cognitive function, or directly experiencing physical 
                 reality through the senses. 
             </p>
             <p>
-                For the sake of simplicity, I refer to the UR brain functioning structures by vocabulary that 
-                comes more from UL self concepts like Personality, Ego, Psyche, and Consciousness. In this sense, 
-                I mean these structures as the brainwave patterns that generate these internal structures, and since
-                we have no vocabulary for generalizing brainwave states into apparent structural social entities,
-                I find that these terms suffice to account for the material, physical, structural reality of
+                For simplicity, we refer to the UR physical brain system by vocabulary that 
+                comes more from UL self concepts like Personality, Ego, Psyche, and Consciousness. In this context, 
+                we mean these structures as analogies for the generative neuron configurations and 
+                various other physical factors. In order to give these brain States proper names or categories,
+                scientists would first need to adopt the Levels system, and then they could measure and analyze the brain 
+                and give us lay people better vocabulary to generalize the physical changes that occur with 
+                each Altitude Level. In the States section, we discuss preliminary work which references 
+                very general EEG brainwave patterns in relation to transcendental States of consciousness.
+                Long story short, enlightenment is a very major change to how the brain works.  
+                Since
+                we lack vocabulary for generalizing brain activity into apparent structural social entities,
+                our basic terms should suffice to account for the material, physical, structural reality of
                 neuro-cognitive functions.
             </p>
             <p>
@@ -1646,27 +1716,35 @@ const emit = defineEmits('next')
             <p>Grounded in the UR, a person will prefer clear objective facts and tasks that allow them to 
                 physically manipulate reality. They may express that they don't feel like they are accomplishing 
                 anything by talking or moving data points, but they see results when the rubber hits the road.
-                The upper right is the domain of skilled trades, mathematics and physical sciences, construction, 
-                engineering, architecture, deductive
-                logic and procedural reasoning. The UR is often procedural, more comfortable working within standard
+                The upper right is the domain of skilled trades, logistics, accounting, applied science, construction, 
+                engineering, medicine, investigation, deductive
+                logic and procedural reasoning. The UR is often methodical, more comfortable working within standard
                 logical roles, rules, and methods. 
             </p>
             <h3>UR Health</h3>
             <p>While much of the information that reaches our consciousness may be ethereal abstractions, colored
                 perceptions, deliberate misrepresentations, misunderstandings, or falsehoods, there is an 
                 absolute certainty in the solidity of the desk 
-                in front of me. The UR is both concrete and certain, so for the more extraverted and cerebral, 
+                in front of me. The UR is concrete and certain, so for the more extraverted and cerebral, 
                 it may be beneficial to take a moment and simply sense the reality occuring in this present environment 
                 and body, and to celebrate the power we have as physical entities to build, design, destroy, and 
-                optimize the objects surrounding us.  
+                optimize the objects surrounding us. Healthy UR enjoys cooking a meal, bare feet on the 
+                grass, small quiet gatherings, and celebrating small victories. 
             </p>
             <h3>UR Pathology</h3>
-            <p>The key pathology is alienation. Both individualistic and materialistic, the UR perspective can result
-                in exclusive interest in apparent material reality, as other perspectives may seem overly abstract or
-                vain. The isolation of lacking interpersonal connection and intimacy may lead to 
-                addictive and compulsive patterns unconsciously attempting to hack the physical chemistry 
+            <p>The key pathologies are acquisitiveness and alienation. Both individualistic and materialistic, 
+                excess UR is exclusive interest in apparent material reality. Other perspectives may seem overly 
+                abstract, uncertain, fruitless.
+                The isolation of lacking interpersonal connection and intimacy may lead to 
+                self medication patterns attempting to hack the physical chemistry 
                 of the body, and the disinterest in larger and grander narratives may result in superficial or 
-                transactional role relationships lacking in intimacy.  
+                transactional role relationships lacking intimacy or challenge. UR is pentacles in the Tarot, or coins, or 
+                diamonds on Hoyl playing cards.
+                The Earthly tendency can become obsessive about money, health, and other currencies. They may 
+                enjoy sharing their wealth strategy and status, which can come off as boastful. They may exhibit 
+                a deficiency mindset, constantly looking for what is wrong, what problem there is to solve or 
+                explain away. They may be suspicious and worryful, cronically despairing the
+                loss or dwindling of their various currencies.    
             </p>
             <h5 class="pedantic" @click="changeQuad('lower-right')" style="cursor: pointer;">NEXT</h5>
 
@@ -1742,9 +1820,20 @@ const emit = defineEmits('next')
 table
     margin: auto
     td, th
-        padding: 3px
         border: 1px solid white
-
+        padding: 3px
+.int-table
+    font-size: smaller
+    td, th
+        border: none
+        padding: 0
+    // td:nth-child(-n+3), th:nth-child(n-3)
+    @media screen and (min-width: 850px)
+        font-size: default
+        td, th
+            border: 1px solid white
+            padding: 3px
+        
 .fill-text, .shadow-box, .quadrant-text
     cursor: pointer
 .quadrant-text
@@ -1756,8 +1845,8 @@ table
     // display: grid
     grid-template-columns: 1fr
     // grid-auto-rows: 1fr
-    p
-        text-align: center
+    // p
+        // text-align: center
     .quadrants-svg
         grid-area: quads
         max-width: 90vw
